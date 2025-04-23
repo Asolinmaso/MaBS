@@ -1,0 +1,197 @@
+import React, { useState } from 'react';
+import Bg from '../../assets/Career/HeroSection.jpg';
+import Footer from '../Footer/Footer';
+
+const Careers = () => {
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [selectedRole, setSelectedRole] = useState(null);
+  const [selectedDepartment, setSelectedDepartment] = useState(null);
+  const [selectedLocation, setSelectedLocation] = useState(null);
+
+  const toggleDropdown = (type) => {
+    setActiveDropdown(prev => (prev === type ? null : type));
+  };
+
+  const roles = ["UI/UX Designer", "Full-Stack Developer", "Sales Executive", "QA Tester", "DevOps Engineer"];
+  const departments = ["Design", "Development", "Sales", "Marketing", "HR", "Operations"];
+  const locations = ["Tamil Nadu", "Karnataka", "Kerala", "Maharashtra", "Delhi", "West Bengal", "Telangana", "Gujarat"];
+
+  const allJobOpenings = [
+    { title: "Full-Stack Developer", location: "Remote", experience: "1–3 Years", description: "Currently hiring full-stack dev to handle end-to-end development.", role: "Full-Stack Developer", department: "Development" },
+    { title: "Junior Full-Stack Developer", location: "Karnataka", experience: "0–1 Years", description: "Internship opportunity for full-stack role. Basic React and Java knowledge needed.", role: "Full-Stack Developer", department: "Development" },
+    { title: "Senior Full-Stack Developer", location: "Hyderabad", experience: "4–6 Years", description: "Lead-level opening for experienced full-stack engineer with system design knowledge.", role: "Full-Stack Developer", department: "Development" },
+    { title: "UI/UX Designer", location: "Remote", experience: "1–3 Years", description: "Current opening for UI/UX Designer with Figma/Adobe skills.", role: "UI/UX Designer", department: "Design" },
+    { title: "Intern UI Designer", location: "Chennai", experience: "0 Years", description: "Design intern to support UX research and prototyping.", role: "UI/UX Designer", department: "Design" },
+    { title: "Senior UX Designer", location: "Delhi", experience: "4–6 Years", description: "Looking for a senior UX designer to lead experience strategy.", role: "UI/UX Designer", department: "Design" },
+    { title: "Sales Executive", location: "Remote", experience: "1–3 Years", description: "Current opening for B2B sales with communication skills.", role: "Sales Executive", department: "Sales" },
+    { title: "Inside Sales - Fresher", location: "Tamil Nadu", experience: "0–1 Years", description: "Fresh graduate with interest in sales and client interaction.", role: "Sales Executive", department: "Sales" },
+    { title: "Sales Manager", location: "Kerala", experience: "4–6 Years", description: "Experienced sales manager with leadership and CRM tools knowledge.", role: "Sales Executive", department: "Sales" },
+  ];
+
+  // Filter logic to reset other filters when a new filter is selected
+  const filterJobOpenings = () => {
+    return allJobOpenings.filter(job => {
+      const matchesRole = selectedRole ? job.role === selectedRole : true;
+      const matchesDepartment = selectedDepartment ? job.department === selectedDepartment : true;
+      const matchesLocation = selectedLocation ? job.location === selectedLocation : true;
+      return matchesRole && matchesDepartment && matchesLocation;
+    });
+  };
+
+  const jobOpenings = filterJobOpenings();
+
+  // Update filter when a new selection is made
+  const handleDropdownSelection = (type, value) => {
+    if (type === 'role') {
+      setSelectedRole(value);
+      setSelectedDepartment(null);  // Reset department filter
+      setSelectedLocation(null);    // Reset location filter
+    }
+    if (type === 'department') {
+      setSelectedDepartment(value);
+      setSelectedRole(null);        // Reset role filter
+      setSelectedLocation(null);    // Reset location filter
+    }
+    if (type === 'location') {
+      setSelectedLocation(value);
+      setSelectedRole(null);        // Reset role filter
+      setSelectedDepartment(null);  // Reset department filter
+    }
+
+    setActiveDropdown(null); // Close dropdown after selection
+  };
+
+  return (
+    <>
+      <header className='flex w-[1440px] h-[822.86px] justify-center items-center relative'>
+        <img className='absolute pt-20 w-full h-full z-0' src={Bg} alt="" />
+        <div className='flex flex-col justify-center items-center gap-6 text-center w-6xl h-96 z-20 text-white'>
+          <h1 className='text-[#19BDE8] font-semibold text-6xl'>Join Our Team</h1>
+          <p className='font-light text-2xl'>We’re driven by a passion for innovation and impact. At our company, you’ll collaborate on meaningful projects that empower brands and improve experiences. If you're looking for a place where your ideas matter and your growth is a priority — you’re in the right place.</p>
+        </div>
+      </header>
+
+      {/* Openings */}
+      <div className="bg-white text-black font-sans min-h-screen relative">
+        <div className="text-center pt-20 pb-10">
+          <h2 className="text-3xl font-semibold text-[#19BDE8]">Current Openings</h2>
+        </div>
+
+        {/* Filter Buttons */}
+        <div className="flex justify-center gap-4 pb-10 relative z-10 ">
+          {/* Role */}
+          <div className="relative ">
+            <button onClick={() => toggleDropdown("role")} className=" border border-gray-300 text-gray-600 px-4 py-2 rounded-full flex items-center gap-2">
+              Role 
+              <svg
+                className={`w-3 h-3 mt-0.5 transform ${activeDropdown === "role" ? "rotate-180" : ""}`}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            {activeDropdown === "role" && (
+              <ul className="absolute bg-white border border-gray-300 mt-2 rounded-md shadow-md w-48">
+                {roles.map((role, idx) => (
+                  <li key={idx} className="px-4 py-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleDropdownSelection('role', role)}>
+                    {role}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
+          {/* Department */}
+          <div className="relative">
+            <button onClick={() => toggleDropdown("department")} className=" border border-gray-300 text-gray-600 px-4 py-2 rounded-full flex items-center gap-2">
+              Department 
+              <svg
+                className={`w-3 h-3 mt-0.5 transform ${activeDropdown === "role" ? "rotate-180" : ""}`}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            {activeDropdown === "department" && (
+              <ul className="absolute bg-white border border-gray-300 mt-2 rounded-md shadow-md w-48">
+                {departments.map((dept, idx) => (
+                  <li key={idx} className="px-4 py-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleDropdownSelection('department', dept)}>
+                    {dept}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+
+          {/* Location */}
+          <div className="relative">
+            <button onClick={() => toggleDropdown("location")} className=" border border-gray-300 text-gray-600 px-4 py-2 rounded-full flex items-center gap-2">
+              Location 
+              <svg
+                className={`w-3 h-3 mt-0.5 transform ${activeDropdown === "role" ? "rotate-180" : ""}`}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            {activeDropdown === "location" && (
+              <ul className="absolute bg-white border border-gray-300 mt-2 rounded-md shadow-md w-48 max-h-60 overflow-y-auto">
+                {locations.map((loc, idx) => (
+                  <li key={idx} className="px-4 py-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleDropdownSelection('location', loc)}>
+                    {loc}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+
+        {/* Job Cards */}
+        <div className="flex justify-center gap-6 flex-wrap pb-20">
+          {jobOpenings.length === 0 ? (
+            <p>There are currently no job openings available. </p>
+          ) : (
+            jobOpenings.map((job, index) => (
+              <div key={index} className="border border-gray-300 rounded-lg p-6 w-80 shadow-md hover:shadow-xl transition duration-300">
+                <h3 className="font-semibold text-lg mb-1">{job.title}</h3>
+                <p className="text-sm text-gray-700 mb-2">
+                  Location: {job.location} | Experience: {job.experience}
+                </p>
+                <p className="text-sm text-gray-600 mb-4">{job.description}</p>
+                <button className="bg-cyan-400 text-white px-4 py-2 rounded hover:bg-cyan-500">
+                  Apply Now
+                </button>
+              </div>
+            ))
+          )}
+        </div>
+      </div>
+
+      {/* Footer */}
+      <Footer />
+    </>
+  );
+};
+
+export default Careers;

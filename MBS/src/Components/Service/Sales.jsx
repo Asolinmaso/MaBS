@@ -1,0 +1,156 @@
+import React from 'react'
+import bg from '../../assets/Service/Sales/HeroSection.png'
+import Footer from '../Footer/Footer';
+import one from '../../assets/Service/Sales/1.png'
+import two from '../../assets/Service/Sales/2.png'
+import three from '../../assets/Service/Sales/3.png'
+import four from '../../assets/Service/Sales/4.png'
+import Explore from './Explore';
+const Sales = () => {
+    const problems = [
+        {
+            title: "Low Lead Conversion",
+            description:
+                "Sales teams struggle to turn prospects into paying customers."
+        },
+        {
+            title:
+                "Ineffective Sales Strategy",
+            description:
+                "Lack of structure and insights hurts sales performance."
+        },
+
+        {
+            title: " Unqualified Leads",
+            description:
+                "Time and resources are lost on leads that won't convert."
+        },
+        {
+            title: "Disconnected Sales & Marketing",
+            description:
+                "Poor alignment leads to missed opportunities and lower ROI."
+        },
+    ];
+    const solutions = [
+        {
+            title: "Sales Process Consulting",
+            image: one,
+            description:
+                "We help you define and optimize a predictable, repeatable sales strategy."
+        },
+        {
+            title: "CRM & Automation",
+            image: two,
+            description:
+                "We implement tools that streamline lead nurturing, follow-ups, and data tracking."
+        },
+
+        {
+            title: "Lead Qualification Support",
+            image: three,
+            description:
+                "We provide systems and support to identify, score, and prioritize sales-ready leads."
+        },
+        {
+            title: "Marketing-Sales Alignment",
+            image: four,
+            description:
+                "We bridge the gap between your marketing and sales teams for smooth handoffs & ROI."
+        },
+    ];
+
+
+
+    return (
+        <>
+            {/* Header */}
+            <header className='flex w-[1440px] h-[822.86px]  justify-center items-center relative'>
+                <img className='absolute w-full h-full  z-0' src={bg} alt="" />
+                {/* overlay */}
+                <div className='absolute top-0 left-0 w-full h-full bg-black/65 z-10'></div>
+                <div className='flex flex-col items-center gap-6 text-center w-6xl h-96 z-20 text-white' >
+                    <h1 className='text-[#19BDE8] font-semibold text-6xl' >Sales Solutions</h1>
+                    <p className='font-normal text-xl'>
+                        Manvian empowers your sales teams with strategic guidance, automation tools, and data-driven tactics — helping you convert leads faster, retain customers longer, and scale growth sustainably.
+                    </p>
+                    <a href="#" className=''>
+                        <button className='flex items-center gap-3 font-semibold text-2xl text-white bg-[#19BDE8] py-3 px-3.5 rounded-xl cursor-pointer'>
+                            Let’s Boost Your Sales
+                            <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1.50005 1.5C1.50005 1.5 7.5 5.9189 7.5 7.5C7.5 9.0812 1.5 13.5 1.5 13.5" stroke="#EBEBEB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+                    </a>
+                </div>
+
+            </header>
+            {/* Content */}
+            <main className=''>
+                <div className="px-4 py-12 bg-white text-gray-800">
+                    {/* Problems Section */}
+                    <section className="text-center mb-16">
+                        <h2 className="text-3xl font-bold text-[#19BDE8]">
+                            The Problem – What Businesses Struggle With
+                        </h2>
+                        <p className="mt-2 text-gray-600 text-2xl">
+                            Visual Noise is Everywhere – Are You Cutting Through?
+                        </p>
+
+                        <div className="mt-10 flex flex-wrap justify-center gap-8">
+                            {problems.map((problem, index) => (
+                                <div
+                                    key={index}
+                                    className={`w-[281px] h-[355px] rounded-2xl py-[60px] px-4 shadow-lg hover:shadow-2xl mb-4
+                              ${index % 2 === 0
+                                            ? 'bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF]'
+                                            : 'bg-gradient-to-b from-[#19BDE8] to-[#FFFFFF]'
+                                        }`}
+                                >
+                                    <div className="w-10 h-10 border-2 border-black text-black font-normal rounded-[50px] p-6 mx-auto mb-4 flex items-center justify-center text-4xl ">
+                                        {index + 1}
+                                    </div>
+                                    <h3 className="font-semibold text-2xl mb-4 text-black">{problem.title}</h3>
+                                    <p className="text-lg font-normal text-black">{problem.description}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+
+                    {/* Solutions Section */}
+                    <section className="max-w-4xl mx-auto">
+                        <h2 className="text-3xl font-bold text-[#19BDE8] text-center mb-8">
+                            Our Solutions – How Manvian Helps
+                        </h2>
+                        <div className="space-y-4">
+                            {solutions.map((solution, index) => (
+                                <div
+                                    key={index}
+                                    className="flex justify-between items-center border-b-1 border-black/20  p-4  transition duration-300 mb-6"
+                                >
+                                    <div className='flex gap-4 items-center justify-center'>
+                                        <img className='h-15 w-15' src={solution.image} alt="" />
+                                        <div>
+                                            <h4 className="font-medium text-2xl">{solution.title}</h4>
+                                            <p className="text-md text-gray-600 mt-1">
+                                                {solution.description}
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <button className="w-12 h-12 bg-black text-white text-3xl  cursor-pointer font-normal rounded-full flex items-center justify-center hover:bg-sky-600 transition">
+                                        ↗
+                                    </button>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
+                </div>
+            </main>
+
+           <Explore/>
+
+            <Footer />
+        </>
+    )
+}
+
+export default Sales
