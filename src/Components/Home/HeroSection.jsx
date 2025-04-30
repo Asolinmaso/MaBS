@@ -1,6 +1,6 @@
 import React from 'react';
-import HomeVideo from '../../assets/Home/Home_Video.mov';
-
+import HomeVideo from '../../assets/Home/HomeVideo.mov';
+import CustomBtn from '../Button/CustomBtn';
 const HeroSection = () => {
     return (
         <>
@@ -31,9 +31,9 @@ const HeroSection = () => {
                         by providing valuable solutions through Innovative Strategies and Exceptional Execution.
                     </p>
                     <a href="https://outlook.office365.com/book/Catherine1@deepdarkcreations.com/" target='_blank'>
-                        <button className='mt-4  border-2 rounded-lg p-4 border-[#19BDE8] text-[#19BDE8] font-medium text-2xl  hover:border-white focus:scale-90 hover:text-white  cursor-pointer'>
+                        <CustomBtn className='mt-4  border-2 rounded-lg p-4 border-[#19BDE8] text-[#19BDE8] font-medium text-2xl  hover:border-white focus:scale-90 hover:text-white  cursor-pointer'>
                             Booking Appointment
-                        </button></a>
+                        </CustomBtn></a>
                 </div>
             </header>
         </>

@@ -20,61 +20,91 @@ const logos = [
   "https://logo.clearbit.com/spotify.com",
   "https://logo.clearbit.com/shopify.com",
   "https://logo.clearbit.com/paypal.com",
-  "https://logo.clearbit.com/tesla.com"
+  "https://logo.clearbit.com/tesla.com",
+  "https://logo.clearbit.com/salesforce.com",
+  "https://logo.clearbit.com/slack.com",
+  "https://logo.clearbit.com/adobe.com",
+  "https://logo.clearbit.com/intel.com"
 ];
 
-const COLUMNS = 6;
-
-const fillPlaceholders = (arr, columns) => {
-  const remainder = arr.length % columns;
-  const placeholders = remainder === 0 ? 0 : columns - remainder;
-  return [...arr, ...Array(placeholders).fill(null)];
-};
-
+// Added responsive styles for mobile view
 const ClientsLogo = () => {
-  const allLogos = fillPlaceholders([...logos, ...logos], COLUMNS); // doubled for loop
-
   return (
     <div className="flex flex-col md:flex-row items-center justify-between gap-8 pl-6 pt-6 bg-white rounded-xl border-2 border-gray-200">
-      
       {/* Left Content */}
-      <div className="md:w-1/3 text-center md:text-left space-y-4">
-        <h2 className="text-3xl font-bold text-gray-800">Our Clients</h2>
-        <p className="text-gray-600">
+      <div className="w-full md:w-1/3 text-center md:text-left space-y-4 mt-15 md:mt-0">
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 break-words">Our Clients</h2>
+        <p className="text-sm md:text-base text-gray-600">
           We’ve had the pleasure of working with some amazing brands. If you'd like to be one of them, let’s talk!
         </p>
-        <button className="px-6 py-3 bg-[#19BDE8] text-white rounded-md hover:bg-[#17A9D1] transition">
+        <button className="px-4 py-2 md:px-6 md:py-3 bg-[#19BDE8] text-white rounded-md hover:bg-[#17A9D1] transition">
           Contact Us
         </button>
       </div>
 
       {/* Right: Logos Scroll */}
-      <div className="md:w-2/3 h-[500px] overflow-hidden relative bg-gradient-to-b from-[#19BDE8] to-[#FFFFFF] rounded-lg">
-        {/* Shadows */}
-        <div className="absolute top-0 left-0 w-full h-16 z-10 pointer-events-none bg-gradient-to-b from-[#19BDE8] to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-16 z-10 pointer-events-none bg-gradient-to-t from-[#19BDE8] to-transparent" />
+      <div className="w-full md:w-2/3 h-[300px] md:h-[500px] overflow-hidden relative bg-gradient-to-b from-white to-[#FFFFFF] rounded-lg">
+        {/* Top and Bottom Gradient Shadows */}
+        <div className="absolute top-0 left-0 w-full h-8 md:h-16 z-10 pointer-events-none bg-gradient-to-b from-white to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-8 md:h-16 z-10 pointer-events-none bg-gradient-to-t from-white to-transparent" />
 
-        {/* Animated Grid */}
-        <div className="animate-scroll-up grid grid-cols-6 gap-4 p-4">
-          {allLogos.map((logo, index) => (
-            <div
-              key={index}
-              className={`flex items-center justify-center w-22 h-22 bg-white rounded-md border border-gray-300 shadow-md ${!logo ? "opacity-0 pointer-events-none" : ""
-                }`}
-            >
-              {logo && (
-                <img
-                  src={logo}
-                  alt={`Logo ${index}`}
-                  className="max-h-16 object-contain"
-                />
-              )}
+        {/* Scrolling container */}
+        <div className="relative h-full">
+          <div className="absolute w-full flex flex-col animate-scroll-up">
+            {/* 1st copy */}
+            <div className="grid grid-cols-3 md:grid-cols-6 gap-2 md:gap-4 p-2 md:p-4">
+              {logos.map((logo, index) => (
+                <div
+                  key={`first-${index}`}
+                  className="flex items-center justify-center w-16 h-16 md:w-22 md:h-22 bg-white rounded-md border border-gray-300 shadow-md"
+                >
+                  <img
+                    src={logo}
+                    alt={`Logo ${index}`}
+                    className="max-h-12 md:max-h-16 object-contain"
+                  />
+                </div>
+              ))}
             </div>
-          ))}
+            {/* 2nd copy */}
+            <div className="grid grid-cols-3 md:grid-cols-6 gap-2 md:gap-4 p-2 md:p-4">
+              {logos.map((logo, index) => (
+                <div
+                  key={`second-${index}`}
+                  className="flex items-center justify-center w-16 h-16 md:w-22 md:h-22 bg-white rounded-md border border-gray-300 shadow-md"
+                >
+                  <img
+                    src={logo}
+                    alt={`Logo ${index}`}
+                    className="max-h-12 md:max-h-16 object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
+
       </div>
     </div>
   );
 };
+
+// Inject keyframes for infinite bottom-to-top scroll
+const style = document.createElement("style");
+style.innerHTML = `
+  @keyframes scroll-up {
+    0% {
+      transform: translateY(0%);
+    }
+    100% {
+      transform: translateY(-50%);
+    }
+  }
+
+  .animate-scroll-up {
+    animation: scroll-up 30s linear infinite;
+  }
+`;
+document.head.appendChild(style);
 
 export default ClientsLogo;

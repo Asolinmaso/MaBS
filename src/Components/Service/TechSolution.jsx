@@ -8,7 +8,7 @@ import four from '../../assets/Service/TechSolution/4.png'
 import Explore from './Explore';
 import { useNavigate } from 'react-router-dom';
 const TechSolution = () => {
-    const navigate=useNavigate()
+    const navigate = useNavigate()
     const problems = [
         {
             title: "Outdated Digital Presence",
@@ -49,7 +49,7 @@ const TechSolution = () => {
         },
         {
             title: "Artificial Intelligence",
-            image:four,
+            image: four,
             description:
                 "We integrate AI to streamline operations, personalize experiences, and drive growth.",
         },
@@ -65,26 +65,48 @@ const TechSolution = () => {
     return (
         <>
             {/* Header */}
-            <header className='flex w-[1440px] h-[822.86px]  justify-center items-center relative'>
-                <img className='absolute w-full h-full  z-0' src={bg} alt="" />
-                {/* overlay */}
-                <div className='absolute top-0 left-0 w-full h-full bg-black/65 z-10'></div>
-                <div className='flex flex-col items-center gap-6 text-center w-6xl h-96 z-20 text-white' >
-                    <h1 className='text-[#19BDE8] font-semibold text-6xl' >Technology Solutions</h1>
-                    <p className='font-normal text-xl'>
-                    We don’t just build tech — we craft intelligent, scalable solutions that power your business growth. From stunning websites and intuitive apps to emerging technologies like blockchain and AI, we turn ideas into digital excellence.
+            <header className="relative w-full min-h-screen flex justify-center items-center">
+                {/* Background Image */}
+                <img
+                    className="absolute w-full h-full object-cover z-0"
+                    src={bg}
+                    alt="background"
+                />
+
+                {/* Overlay */}
+                <div className="absolute top-0 left-0 w-full h-full bg-black/65 z-10"></div>
+
+                {/* Content */}
+                <div className="relative z-20 flex flex-col items-center text-center text-white px-4 sm:px-6 md:px-12 lg:px-24 xl:px-0 w-full max-w-[1200px] gap-6">
+                    <h1 className="text-[#19BDE8] font-semibold text-4xl sm:text-5xl md:text-6xl leading-tight">
+                        Technology Solutions
+                    </h1>
+                    <p className="font-normal text-base sm:text-lg md:text-xl max-w-3xl">
+                        We don’t just build tech — we craft intelligent, scalable solutions that power your business growth. From stunning websites and intuitive apps to emerging technologies like blockchain and AI, we turn ideas into digital excellence.
                     </p>
-                    <a href="#" className=''>
-                        <button className='flex items-center gap-3 font-semibold text-2xl text-white bg-[#19BDE8] py-3 px-3.5 rounded-xl cursor-pointer'>
+                    <a href="#">
+                        <button className="flex items-center gap-3 font-semibold text-base sm:text-lg md:text-2xl text-white bg-[#19BDE8] py-3 px-5 rounded-xl cursor-pointer hover:bg-[#159dc3] transition">
                             Power Your Business with Innovation
-                            <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M1.50005 1.5C1.50005 1.5 7.5 5.9189 7.5 7.5C7.5 9.0812 1.5 13.5 1.5 13.5" stroke="#EBEBEB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <svg
+                                width="9"
+                                height="15"
+                                viewBox="0 0 9 15"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M1.50005 1.5C1.50005 1.5 7.5 5.9189 7.5 7.5C7.5 9.0812 1.5 13.5 1.5 13.5"
+                                    stroke="#EBEBEB"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />
                             </svg>
                         </button>
                     </a>
                 </div>
-
             </header>
+
             {/* Content */}
             <main className=''>
                 <div className="px-4 py-12 bg-white text-gray-800">
@@ -99,14 +121,14 @@ const TechSolution = () => {
 
                         <div className="mt-10 flex flex-wrap justify-center gap-8">
                             {problems.map((problem, index) => (
-                              <div
-                              key={index}
-                              className={`w-[281px] h-[355px] rounded-2xl py-[60px] px-4 shadow-lg hover:shadow-2xl mb-4
-                              ${index % 2 === 0 
-                                ? 'bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF]' 
-                                : 'bg-gradient-to-b from-[#19BDE8] to-[#FFFFFF]'
-                              }`}
-                            >
+                                <div
+                                    key={index}
+                                    className={`w-[281px] h-[355px] rounded-2xl py-[60px] px-4 shadow-lg hover:shadow-2xl mb-4
+                              ${index % 2 === 0
+                                            ? 'bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF]'
+                                            : 'bg-gradient-to-b from-[#19BDE8] to-[#FFFFFF]'
+                                        }`}
+                                >
                                     <div className="w-10 h-10 border-2 border-black text-black font-normal rounded-[50px] p-6 mx-auto mb-4 flex items-center justify-center text-4xl ">
                                         {index + 1}
                                     </div>
@@ -137,7 +159,7 @@ const TechSolution = () => {
                                             </p>
                                         </div>
                                     </div>
-                                    <button className="w-12 h-12 bg-black text-white text-3xl  cursor-pointer font-normal rounded-full flex items-center justify-center hover:bg-sky-600 transition">
+                                    <button className="w-12 h-12 min-w-[3rem] min-h-[3rem] aspect-square bg-black text-white text-3xl cursor-pointer font-normal rounded-full flex items-center justify-center hover:bg-sky-600 transition">
                                         ↗
                                     </button>
                                 </div>
@@ -163,19 +185,19 @@ const TechSolution = () => {
             </div>
             <div className='w-full flex flex-col items-center justify-center mt-3'>
 
-                
-                    <button className='flex items-center gap-3 font-semibold text-2xl text-white bg-[#19BDE8] py-3 px-3.5 rounded-xl cursor-pointer'
-                    onClick={()=>navigate("/portfolio/Technology")}>
-                        Explore Our Portfolio
-                        <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1.50005 1.5C1.50005 1.5 7.5 5.9189 7.5 7.5C7.5 9.0812 1.5 13.5 1.5 13.5" stroke="#EBEBEB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
-                    </button>
-                
+
+                <button className='flex items-center gap-3 font-semibold text-2xl text-white bg-[#19BDE8] py-3 px-3.5 rounded-xl cursor-pointer'
+                    onClick={() => navigate("/portfolio/Technology")}>
+                    Explore Our Portfolio
+                    <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.50005 1.5C1.50005 1.5 7.5 5.9189 7.5 7.5C7.5 9.0812 1.5 13.5 1.5 13.5" stroke="#EBEBEB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+
             </div>
 
-            <Explore/>
-            <Footer/>
+            <Explore />
+            <Footer />
         </>
     )
 }

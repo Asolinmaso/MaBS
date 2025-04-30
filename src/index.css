@@ -23,7 +23,6 @@
 .animate-scroll-up {
   animation: scroll-up 30s linear infinite;
 }
-
 /* client  Testimonial */
 @keyframes scroll {
   0% {

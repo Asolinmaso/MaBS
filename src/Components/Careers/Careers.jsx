@@ -63,13 +63,19 @@ const Careers = () => {
 
   return (
     <>
-      <header className='flex w-[1440px] h-[822.86px] justify-center items-center relative'>
-        <img className='absolute pt-20 w-full h-full z-0' src={Bg} alt="" />
-        <div className='flex flex-col justify-center items-center gap-6 text-center w-6xl h-96 z-20 text-white'>
-          <h1 className='text-[#19BDE8] font-semibold text-6xl'>Join Our Team</h1>
-          <p className='font-light text-2xl'>We’re driven by a passion for innovation and impact. At our company, you’ll collaborate on meaningful projects that empower brands and improve experiences. If you're looking for a place where your ideas matter and your growth is a priority — you’re in the right place.</p>
+      <header className='flex w-full min-h-[600px] sm:min-h-[700px] md:min-h-[822.86px] justify-center items-center relative'>
+        {/* Background Image */}
+        <img className='absolute top-0 left-0 w-full h-full object-cover z-0' src={Bg} alt="Background" />
+
+        {/* Content */}
+        <div className='flex flex-col justify-center items-center gap-6 text-center max-w-4xl px-4 z-20 text-white'>
+          <h1 className='text-[#19BDE8] font-semibold text-4xl sm:text-5xl md:text-6xl'>Join Our Team</h1>
+          <p className='font-light text-base sm:text-lg md:text-2xl'>
+            We’re driven by a passion for innovation and impact. At our company, you’ll collaborate on meaningful projects that empower brands and improve experiences. If you're looking for a place where your ideas matter and your growth is a priority — you’re in the right place.
+          </p>
         </div>
       </header>
+
 
       {/* Openings */}
       <div className="bg-white text-black font-sans min-h-screen relative">
@@ -82,7 +88,7 @@ const Careers = () => {
           {/* Role */}
           <div className="relative ">
             <button onClick={() => toggleDropdown("role")} className=" border border-gray-300 text-gray-600 px-4 py-2 rounded-full flex items-center gap-2">
-              Role 
+              Role
               <svg
                 className={`w-3 h-3 mt-0.5 transform ${activeDropdown === "role" ? "rotate-180" : ""}`}
                 fill="none"
@@ -111,7 +117,7 @@ const Careers = () => {
           {/* Department */}
           <div className="relative">
             <button onClick={() => toggleDropdown("department")} className=" border border-gray-300 text-gray-600 px-4 py-2 rounded-full flex items-center gap-2">
-              Department 
+              Department
               <svg
                 className={`w-3 h-3 mt-0.5 transform ${activeDropdown === "role" ? "rotate-180" : ""}`}
                 fill="none"
@@ -140,7 +146,7 @@ const Careers = () => {
           {/* Location */}
           <div className="relative">
             <button onClick={() => toggleDropdown("location")} className=" border border-gray-300 text-gray-600 px-4 py-2 rounded-full flex items-center gap-2">
-              Location 
+              Location
               <svg
                 className={`w-3 h-3 mt-0.5 transform ${activeDropdown === "role" ? "rotate-180" : ""}`}
                 fill="none"

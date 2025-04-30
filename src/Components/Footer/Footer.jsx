@@ -1,164 +1,161 @@
-import React from 'react';
-import { FaLinkedin, FaInstagram, FaFacebookF, FaTwitter, FaYoutube, } from 'react-icons/fa';
+import React from "react";
 import { MdEmail, MdPhone } from 'react-icons/md';
-import opptiverse from '../../assets/Logo/opptiverse.svg'
-import Linked from '../../assets/Logo/Linkedin.svg'
-import Insta from '../../assets/Logo/insta.svg'
-import Whatsapp from '../../assets/Logo/whatsapp.svg'
-import fb from '../../assets/Logo/facebook.svg'
+import opptiverse from '../../assets/Logo/opptiverse.svg';
+import Linked from '../../assets/Logo/Linkedin.svg';
+import Insta from '../../assets/Logo/insta.svg';
+import Whatsapp from '../../assets/Logo/whatsapp.svg';
+import fb from '../../assets/Logo/facebook.svg';
+import MABS from '../../assets/Logo/MBS.svg'
+import { useState } from "react";
+import { Link } from "react-router-dom";
+
 const Footer = () => {
+  const countries = [
+    "Afghanistan", "Algeria", "Argentina", "Australia", "Austria", "Bangladesh", "Belgium", "Botswana",
+    "Brazil", "Bulgaria", "Canada", "Chile", "China", "Colombia", "Croatia", "Czech Republic", "Denmark",
+    "Egypt", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Iceland", "India", "Indonesia",
+    "Iran", "Iraq", "Ireland", "Israel", "Italy", "Japan", "Kenya", "Kuwait", "Latvia", "Lithuania",
+    "Luxembourg", "Malaysia", "Mexico", "Morocco", "Namibia", "Nepal", "Netherlands", "New Zealand", "Nigeria",
+    "Norway", "Pakistan", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Saudi Arabia",
+    "Serbia", "Singapore", "Slovakia", "Slovenia", "South Africa", "South Korea", "Spain", "Sri Lanka", "Sweden",
+    "Switzerland", "Thailand", "Tunisia", "Turkey", "UAE", "Ukraine", "United Kingdom", "United States",
+    "Venezuela", "Vietnam", "Zambia", "Zimbabwe"
+  ];
+  const [selectedCountry, setSelectedCountry] = useState("");
+
   return (
-    <footer className="bg-[#1E1E1E] text-white px-10 py-10">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
-
-        {/* Column 1 - Brand and Contact */}
-        <div className="space-y-4 col-span-1">
-          <h2 className="text-2xl font-bold">Manvian</h2>
-
-          <div className="space-y-2">
+    <footer className="bg-[#1E1E1E] text-white py-10 px-5 md:px-20">
+      <div className="max-w-screen-xl mx-auto grid md:grid-cols-2 gap-10">
+        {/* Left Section */}
+        <div>
+          <div className="flex items-center space-x-3">
+            {/* Logo Image */}
+            <img src={MABS} alt="MABS Logo" className="w-25 h-auto" />
+          </div>
+          <p className="mt-4 text-sm">
+            Empowering Businesses Through Design, Technology,<br />
+            And Strategic Solutions.
+          </p>
+          <div className="mt-6 text-sm space-y-2">
             <p className="flex items-center gap-2 text-sm">
               <MdEmail /> operations@manvian.com
             </p>
             <p className="flex items-center gap-2 text-sm">
               <MdPhone /> +91 87783 59643
             </p>
-          </div>
-          
 
+            <div className="flex space-x-3 mt-4">
+              <a href="https://www.linkedin.com/company/manvian/" target="_blank" rel="noreferrer">
+                <img className="w-[50px] h-[50px]" src={opptiverse} alt="Opptiverse" />
+              </a>
+              <a href="https://www.linkedin.com/company/manvian/" target="_blank" rel="noreferrer">
+                <img className="w-[50px] h-[50px]" src={Linked} alt="LinkedIn" />
+              </a>
+              <a href="https://www.linkedin.com/company/manvian/" target="_blank" rel="noreferrer">
+                <img className="w-[50px] h-[50px]" src={Insta} alt="Instagram" />
+              </a>
+              <a href="https://www.linkedin.com/company/manvian/" target="_blank" rel="noreferrer">
+                <img className="w-[50px] h-[50px]" src={Whatsapp} alt="Whatsapp" />
+              </a>
+              <a href="https://www.linkedin.com/company/manvian/" target="_blank" rel="noreferrer">
+                <img className="w-[50px] h-[50px]" src={fb} alt="Facebook" />
+              </a>
 
-          <div className='flex mt-4 gap-3 text-xs whitespace-nowrap'>
-            <div>
-              <h1 className='font-semibold'>What we do</h1>
-              <ul className='font-extralight text-xs mt-2 flex flex-col gap-2'>
-                <li>RAAS</li>
-                <li>Sales</li>
-                <li>Multimedia Solution</li>
-                <li>Technology Solution</li>
-                <li>Digital Marketing Solution</li>
-              </ul>
-            </div>
-            <div>
-              <h1 className='font-semibold'>Who we are</h1>
-              <ul className='font-extralight text-xs mt-2 flex flex-col gap-2'>
-                <li>Our Mission</li>
-                <li>Our Vision</li>
-                <li>Goal</li>
-                <li>Value</li>
-              </ul>
-            </div>
-            <div>
-              <h1 className='font-semibold'>Career</h1>
-            </div>
-            <div>
-              <h1 className='font-semibold'>Insights</h1>
-            </div>
-            <div>
-              <h1 className='font-semibold'>Product</h1>
-            </div>
-            <div>
-              <h1 className='font-semibold'>Contact</h1>
             </div>
           </div>
         </div>
 
-        {/* Column 2 - Resources */}
-        <div className="w-max">
-          <h4 className="font-semibold mb-2">Resources</h4>
-          <ul className="space-y-1 text-sm">
-            <li>Blog</li>
-            <li>Newsletter</li>
-          </ul>
-        </div>
-
-        {/* Column 3 - Form spans 2 columns */}
-        <div className="md:col-span-2">
-          <h2
-            className="text-xl font-bold mb-4"
-            style={{ fontFamily: 'Montserrat' }}
-          >
-            Reach Us to Grow Your Business
-          </h2>
-          <form action="#" className="space-y-4">
-            <div className="flex flex-col md:flex-row gap-3">
-              <input
-                type="text"
-                placeholder="Name"
-                className="bg-white text-black p-2 w-full outline-none"
-              />
-              <input
-                type="email"
-                placeholder="Email ID"
-                className="bg-white text-black p-2 w-full outline-none"
-              />
-            </div>
-            {/* 2nd row */}
-            <div className="flex flex-col md:flex-row gap-3">
-              <input
-                type="tel"
-                placeholder="Phone Number"
-                className="bg-white text-black p-2 w-full outline-none"
-              />
-
-              <select
-                id="country"
-                name="country"
-                className="bg-white text-black p-2 w-full outline-none"
-              >
-                <option value="" className=''>-- Choose Country --</option>
-                <option value="United States">United States</option>
-                <option value="United Kingdom">United Kingdom</option>
-                <option value="Canada">Canada</option>
-                <option value="Germany">Germany</option>
-                <option value="France">France</option>
-                <option value="India">India</option>
-                <option value="Australia">Australia</option>
-                <option value="Japan">Japan</option>
-                <option value="China">China</option>
-                <option value="Brazil">Brazil</option>
-                <option value="Mexico">Mexico</option>
-                <option value="South Korea">South Korea</option>
-                <option value="Russia">Russia</option>
-                <option value="Italy">Italy</option>
-                <option value="Spain">Spain</option>
-              </select>
-            </div>
-
-
-            <textarea
-              placeholder="Tell us a little about yourself — we’re here for you and happy to help however we can!"
-              className="bg-white text-black p-2 w-full h-28 outline-none resize-none"
+        {/* Right Section */}
+        <div>
+          <h2 className="text-lg font-semibold mb-4">Reach Us to Grow Your Business</h2>
+          <div className="grid grid-cols-2 gap-4">
+            <input
+              type="text"
+              placeholder="Name"
+              className="p-2 rounded bg-white text-black outline-none"
             />
-            <button
-              type="submit"
-              className="group inline-flex items-center bg-transparent border border-white px-4 py-2 font-medium hover:bg-white hover:text-black transition-all duration-300"
+            <input
+              type="email"
+              placeholder="Email ID"
+              className="p-2 rounded bg-white text-black  outline-none"
+            />
+            <input
+              type="tel"
+              placeholder="phonenumber"
+              className="p-2 rounded bg-white text-black  outline-none"
+            />
+            <select
+              id="country"
+              name="country"
+              // className="bg-white text-black p-2 w-full outline-none rounded"
+              value={selectedCountry}
+              onChange={(e) => setSelectedCountry(e.target.value)}
+              className={`bg-white p-2 w-full outline-none rounded 
+               ${selectedCountry === "" ? "text-gray-400" : "text-black"}`}
             >
-              <span className="group-hover:pr-2 transition-all duration-300">
-                Reach Us
-              </span>
-              <span className="opacity-0 group-hover:opacity-100 transition-all duration-300">
-                →
-              </span>
-            </button>
-          </form>
+              <option value="" className="text-gray-300" disabled selected hidden>-- Choose Country --</option>
+              {countries.map((country, index) => (
+                <option key={index} value={country} className="text-black">
+                  {country}
+                </option>
+              ))}
+            </select>
+
+          </div>
+          <textarea
+            placeholder="Message"
+            className="mt-4 w-full p-2 rounded bg-white text-black h-24 outline-none"
+          ></textarea>
+          <button className="mt-4 px-6 py-2 border border-white rounded hover:bg-white hover:text-black transition">
+            Reach Us
+          </button>
         </div>
       </div>
 
       {/* Bottom Links */}
-      <div className="border-t border-gray-700 mt-10 pt-4 text-xs text-gray-300 flex flex-wrap justify-between items-center">
-        <div className="space-x-4">
-        <div className="flex mt-4 text-lg">
-            <a href="https://www.linkedin.com/company/manvian/" target='_blank'><img className='w-[50px] h-[50px]' src={opptiverse} alt="" /></a>
-            <a href="https://www.linkedin.com/company/manvian/" target='_blank'><img className='w-[50px] h-[50px]' src={Linked} alt="" /></a>
-            <a href="https://www.linkedin.com/company/manvian/" target='_blank'><img className='w-[50px] h-[50px]' src={Insta} alt="" /></a>
-            <a href="https://www.linkedin.com/company/manvian/" target='_blank'><img className='w-[50px] h-[50px]' src={Whatsapp} alt="" /></a>
-            <a href="https://www.linkedin.com/company/manvian/" target='_blank'><img className='w-[50px] h-[50px]' src={fb} alt="" /></a>
-          </div>
+      <div className="max-w-screen-xl mx-auto mt-10 border-b border-white pt-6 pb-4 grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-0 text-sm">
+        <div>
+          <h4 className="font-semibold mb-2">What We Do</h4>
+          <ul className="space-y-1">
+            <li><Link to='/service/RAAS' >RaaS</Link></li>
+            <li><Link to='/service/Sales'>Sales</Link></li>
+            <li><Link to='/service/TechSolution'>Technology</Link></li>
+            <li><Link to='/service/DigitalMarketing'>Digital Marketing</Link></li>
+            <li><Link to='/service/multimedia'>MultiMedia</Link></li>
+          </ul>
         </div>
-        <p className="mt-2 md:mt-0">
-          &copy; {new Date().getFullYear()} Manvian.com .All rights reserved.
-        </p>
+        <div>
+          <h4 className="font-semibold mb-2">Who We Are</h4>
+          <ul className="space-y-1">
+            <li> <Link to="/who#mission">Our Mission </Link></li>
+            <li> <Link to="/who#vision"> Our Vision</Link></li>
+            <li> <Link to="/who#goal">Goal</Link></li>
+            <li> <Link to="/who#value">Value</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-2">Quick Links</h4>
+          <ul className="space-y-1">
+            <li> <Link to='/careers'> Career </Link></li>
+            <li><Link to='/insights'> Insights</Link></li>
+            <li><Link to='/product'>Product</Link></li>
+            <li><Link to='/contact'>Contact</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="font-semibold mb-2">Resources</h4>
+          <ul className="space-y-1">
+            <li>Blog</li>
+            <li>Newsletter</li>
+          </ul>
+        </div>
       </div>
-    </footer>
+
+      {/* Copyright */}
+      <div className="text-center text-xs text-gray-400 mt-8">
+        © 2025 Manvian.Com. All Rights Reserved.
+      </div>
+    </footer >
   );
 };
 

@@ -43,30 +43,34 @@ const clientData = [
       "https://logo.clearbit.com/spotify.com",
       "https://logo.clearbit.com/shopify.com",
       "https://logo.clearbit.com/paypal.com",
-      "https://logo.clearbit.com/tesla.com"
+      "https://logo.clearbit.com/tesla.com",
     ],
   },
 ];
 
 const ClientsTable = () => {
   return (
-    <div className="max-w-7xl mx-auto p-6 bg-white">
+    <div className="max-w-7xl mx-auto p-6 mt-5 bg-white">
       {clientData.map((item, idx) => (
         <div
           key={idx}
-          className="flex flex-col sm:flex-row items-start sm:items-stretch  bg-gray-200 px-3 py-6 rounded mt-7"
+          className="flex flex-col sm:flex-row  px-4 py-6 rounded-xl shadow-md mb-6"
         >
-          <div className="w-full sm:w-1/4 font-semibold  text-gray-700 text-lg mb-2 sm:mb-0 sm:pr-4 sm:border-r sm:border-gray-400">
+          {/* Category Name */}
+          <div className="w-full sm:w-1/4 font-medium text-gray-700 text-lg mb-4 sm:mb-0 sm:pr-6 sm:border-r border-gray-300">
             {item.category}
           </div>
-          <div className="w-full sm:w-3/4 sm:pl-6 pt-2 sm:pt-0 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-4">
+
+          {/* Logos Grid */}
+          <div className="w-full sm:w-3/4 pt-2 sm:pt-0 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-4 sm:pl-6">
             {item.logos.map((logo, i) => (
-              <img
-                key={i}
-                src={logo}
-                alt={logo.split('.')[0]}
-                className="w-10 h-10 "
-              />
+              <div key={i} className="flex justify-center items-center">
+                <img
+                  src={logo}
+                  alt={`Client ${i}`}
+                  className="w-10 h-10 sm:w-12 sm:h-12 object-contain"
+                />
+              </div>
             ))}
           </div>
         </div>
