@@ -1,19 +1,18 @@
 import React from 'react';
-import HomeVideo from '../../assets/Home/HomeVideo.mov';
 import CustomBtn from '../Button/CustomBtn';
 const HeroSection = () => {
     return (
         <>
             <header className="relative w-full h-screen overflow-hidden flex items-center justify-center">
                 {/* Background Video */}
-                <video
+{/*                 <video
                     autoPlay
                     loop
                     muted
                     playsInline
                     className="absolute w-full h-screen object-cover"
                     src={HomeVideo}
-                />
+                /> */}
 
                 {/* Overlay */}
                 <div className='absolute bg-black/40 top-0 left-0 w-full h-full z-10'></div>
