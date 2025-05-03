@@ -6,7 +6,7 @@ import icon_creation from '../../assets/Portfolio/MultiMedia-portfolio/icon_crea
 import work_img from '../../assets/Portfolio/MultiMedia-portfolio/work_img.png';
 import Footer from '../Footer/Footer';
 import Explore from '../Service/Explore';
-
+import key1 from '../../assets/Portfolio/MultiMedia-portfolio/keyOutCome1.webp';
 const MultiMedia_portfolio = () => {
   return (
     <>
@@ -104,73 +104,68 @@ const MultiMedia_portfolio = () => {
         </section>
 
         {/* Impact */}
-        <section className='mt-10 mx-auto px-6 rounded-md'>
-          <div className='pl-10 pr-10'>
+      
+        <section className='mt-10 mx-auto px-4 md:px-6 rounded-md'>
+          <div className='px-4 md:px-10'>
             <h2 className="text-4xl font-semibold text-[#19BDE8] text-center mb-3">
               Impact of Our Multimedia Services
             </h2>
             <p className='font-normal text-xl pt-3 text-center'>
-              Our multimedia work helped clients strengthen brand identity, enhance visual communication,
+            Our multimedia work helped clients strengthen brand identity, enhance visual communication,
               and connect more effectively with their audiences. Through design and storytelling, we made
-              their message memorable.
-            </p>
+              their message memorable.            </p>
           </div>
-
-          <div className='relative w-full md:w-[1041px] h-[481px] mt-15 mx-auto'>
-            <div className='absolute top-10 left-0 bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] w-full md:w-[588px] min-h-[307px] p-6 rounded-lg shadow-xl z-10'>
-              <h1 className='mt-3 font-medium text-3xl'>Key Outcomes:</h1>
-              <ul className='list-disc pl-10 mt-5 text-xl font-normal space-y-4'>
-                <li>Improved audience engagement through clean, creative visuals.</li>
+          <div className='relative w-full lg:w-[1041px] min-h-[481px] mt-8 mx-auto'>
+            <div className='w-full lg:w-[588px] bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] p-6 rounded-lg shadow-xl absolute z-10'>
+              <h1 className='font-medium text-2xl md:text-3xl'>Key Outcomes:</h1>
+              <ul className='list-disc pl-6 md:pl-10 mt-5 text-lg md:text-xl font-normal space-y-4'>
+              <li>Improved audience engagement through clean, creative visuals.</li>
                 <li>Boosted professional image with meaningful branding.</li>
                 <li>Elevated communication of complex ideas using graphics and video.</li>
                 <li>Increased recognition through consistent and tailored design assets.</li>
               </ul>
             </div>
-
-            <div className='absolute right-0 top-0 z-0'>
+            <div className='w-full lg:w-[588px] absolute right-0'>
               <img
-                className='bg-gray-300 rounded-xl w-full md:w-[588px] h-[450px]'
-                src=""
-                alt="Impact Image"
+                className='rounded-xl w-full h-[300px] lg:h-[450px] object-cover'
+                src={key1}
+                alt="Impact Key Outcomes"
               />
             </div>
           </div>
         </section>
-
         {/* Value */}
-        <section className='mt-10 mx-auto px-6 rounded-md'>
-          <div className='pl-10 pr-10'>
-            <h2 className="text-4xl font-semibold text-[#19BDE8] text-center mb-3 pt-15">
+        <section className='mt-10 md:mt-[15px] mx-auto px-4 md:px-6 rounded-md'>
+          <div className='px-4 md:px-10'>
+            <h2 className="text-4xl font-semibold text-[#19BDE8] text-center mb-3">
               Value We Delivered to Our Clients
             </h2>
             <p className='font-normal text-xl pt-3 text-center'>
-              We didn’t just design — we delivered solutions with intent. Each project brought real value by aligning with the client’s goals and enhancing their brand presence.
+              By combining technical expertise with user-focused design, we created platforms that solve real problems and support business growth.
             </p>
           </div>
-
-          <div className='relative w-full md:w-[1041px] h-[481px] mt-15 mx-auto'>
-            <div className='absolute left-0 top-0 z-0'>
+          <div className='relative w-full lg:w-[1041px] min-h-[481px] mt-8 mx-auto'>
+            <div className='w-full lg:w-[588px] absolute left-0'>
               <img
-                className='bg-gray-300 rounded-xl w-full md:w-[588px] h-[450px]'
-                src=""
-                alt="Value Image"
+                className='rounded-xl w-full h-[300px] lg:h-[450px] object-cover'
+                src={key1}
+                alt="Value Key Outcomes"
               />
             </div>
-
-            <div className='absolute top-10 right-0 bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] w-full md:w-[588px] min-h-[307px] p-6 rounded-lg shadow-xl z-10'>
-              <h1 className='mt-3 font-medium text-3xl'>Key Outcomes:</h1>
-              <ul className='list-disc pl-10 mt-5 text-xl font-normal space-y-4'>
-                <li>Custom, high-quality visual assets for long-term use</li>
-                <li>A distinct visual identity that resonates with their audience</li>
-                <li>Greater confidence in presenting their work publicly</li>
-                <li>Time and effort saved through professional, ready-to-use designs</li>
+            <div className='w-full lg:w-[588px] bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] p-6 rounded-lg shadow-xl absolute right-0 z-10'>
+              <h1 className='font-medium text-2xl md:text-3xl'>Key Outcomes:</h1>
+              <ul className='list-disc pl-6 md:pl-10 mt-5 text-lg md:text-xl font-normal space-y-4'>
+                <li>Custom-built solutions tailored to their business model</li>
+                <li>Future-ready platforms using modern tech stacks</li>
+                <li>Improved customer interaction through intuitive interfaces</li>
+                <li>Stronger online presence backed by performance and reliability</li>
               </ul>
             </div>
           </div>
         </section>
 
         {/* Explore */}
-        <section className="flex flex-col md:flex-row justify-between items-center px-10 py-16 bg-white">
+        <section className="flex flex-col md:flex-row justify-between items-center px-10 py-16 mt-4  bg-white">
           <div className="w-full md:w-1/2 pr-10">
             <h2 className="text-3xl font-semibold text-[#19BDE8] mb-4">Want to Explore More?</h2>
             <p className="text-lg text-gray-800 mb-6">

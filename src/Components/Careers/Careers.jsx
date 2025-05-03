@@ -83,11 +83,11 @@ const Careers = () => {
           <h2 className="text-3xl font-semibold text-[#19BDE8]">Current Openings</h2>
         </div>
 
-        {/* Filter Buttons */}
-        <div className="flex justify-center gap-4 pb-10 relative z-10 ">
-          {/* Role */}
-          <div className="relative ">
-            <button onClick={() => toggleDropdown("role")} className=" border border-gray-300 text-gray-600 px-4 py-2 rounded-full flex items-center gap-2">
+        {/* Filter Buttons Container */}
+        <div className="flex flex-wrap justify-center gap-4 pb-10 relative z-10 px-4 sm:px-0">
+          {/* Role Dropdown */}
+          <div className="relative w-full sm:w-auto">
+            <button onClick={() => toggleDropdown("role")} className="w-full sm:w-auto border border-gray-300 text-gray-600 px-4 py-2 rounded-full flex items-center justify-between sm:justify-start gap-2">
               Role
               <svg
                 className={`w-3 h-3 mt-0.5 transform ${activeDropdown === "role" ? "rotate-180" : ""}`}
@@ -96,15 +96,11 @@ const Careers = () => {
                 strokeWidth="2"
                 viewBox="0 0 24 24"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19 9l-7 7-7-7"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
             {activeDropdown === "role" && (
-              <ul className="absolute bg-white border border-gray-300 mt-2 rounded-md shadow-md w-48">
+              <ul className="absolute bg-white border border-gray-300 mt-2 rounded-md shadow-md w-full sm:w-48 z-20">
                 {roles.map((role, idx) => (
                   <li key={idx} className="px-4 py-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleDropdownSelection('role', role)}>
                     {role}
@@ -114,26 +110,22 @@ const Careers = () => {
             )}
           </div>
 
-          {/* Department */}
-          <div className="relative">
-            <button onClick={() => toggleDropdown("department")} className=" border border-gray-300 text-gray-600 px-4 py-2 rounded-full flex items-center gap-2">
+          {/* Department Dropdown */}
+          <div className="relative w-full sm:w-auto">
+            <button onClick={() => toggleDropdown("department")} className="w-full sm:w-auto border border-gray-300 text-gray-600 px-4 py-2 rounded-full flex items-center justify-between sm:justify-start gap-2">
               Department
               <svg
-                className={`w-3 h-3 mt-0.5 transform ${activeDropdown === "role" ? "rotate-180" : ""}`}
+                className={`w-3 h-3 mt-0.5 transform ${activeDropdown === "department" ? "rotate-180" : ""}`}
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
                 viewBox="0 0 24 24"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19 9l-7 7-7-7"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
             {activeDropdown === "department" && (
-              <ul className="absolute bg-white border border-gray-300 mt-2 rounded-md shadow-md w-48">
+              <ul className="absolute bg-white border border-gray-300 mt-2 rounded-md shadow-md w-full sm:w-48 z-20">
                 {departments.map((dept, idx) => (
                   <li key={idx} className="px-4 py-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleDropdownSelection('department', dept)}>
                     {dept}
@@ -143,26 +135,22 @@ const Careers = () => {
             )}
           </div>
 
-          {/* Location */}
-          <div className="relative">
-            <button onClick={() => toggleDropdown("location")} className=" border border-gray-300 text-gray-600 px-4 py-2 rounded-full flex items-center gap-2">
+          {/* Location Dropdown */}
+          <div className="relative w-full sm:w-auto">
+            <button onClick={() => toggleDropdown("location")} className="w-full sm:w-auto border border-gray-300 text-gray-600 px-4 py-2 rounded-full flex items-center justify-between sm:justify-start gap-2">
               Location
               <svg
-                className={`w-3 h-3 mt-0.5 transform ${activeDropdown === "role" ? "rotate-180" : ""}`}
+                className={`w-3 h-3 mt-0.5 transform ${activeDropdown === "location" ? "rotate-180" : ""}`}
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
                 viewBox="0 0 24 24"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19 9l-7 7-7-7"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
             </button>
             {activeDropdown === "location" && (
-              <ul className="absolute bg-white border border-gray-300 mt-2 rounded-md shadow-md w-48 max-h-60 overflow-y-auto">
+              <ul className="absolute bg-white border border-gray-300 mt-2 rounded-md shadow-md w-full sm:w-48 z-20">
                 {locations.map((loc, idx) => (
                   <li key={idx} className="px-4 py-2 hover:bg-gray-100 cursor-pointer" onClick={() => handleDropdownSelection('location', loc)}>
                     {loc}
@@ -173,19 +161,19 @@ const Careers = () => {
           </div>
         </div>
 
-        {/* Job Cards */}
-        <div className="flex justify-center gap-6 flex-wrap pb-20">
+        {/* Job Cards Container */}
+        <div className="flex justify-center gap-6 flex-wrap pb-20 px-4 sm:px-6 md:px-8">
           {jobOpenings.length === 0 ? (
-            <p>There are currently no job openings available. </p>
+            <p className="text-center w-full">There are currently no job openings available.</p>
           ) : (
             jobOpenings.map((job, index) => (
-              <div key={index} className="border border-gray-300 rounded-lg p-6 w-80 shadow-md hover:shadow-xl transition duration-300">
+              <div key={index} className="border border-gray-300 rounded-lg p-4 sm:p-6 w-full sm:w-80 shadow-md hover:shadow-xl transition duration-300">
                 <h3 className="font-semibold text-lg mb-1">{job.title}</h3>
                 <p className="text-sm text-gray-700 mb-2">
                   Location: {job.location} | Experience: {job.experience}
                 </p>
                 <p className="text-sm text-gray-600 mb-4">{job.description}</p>
-                <button className="bg-cyan-400 text-white px-4 py-2 rounded hover:bg-cyan-500">
+                <button className="w-full sm:w-auto bg-cyan-400 text-white px-4 py-2 rounded hover:bg-cyan-500">
                   Apply Now
                 </button>
               </div>

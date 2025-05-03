@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import ManvianLogo from '../../assets/Logo/ManvianLogo.png';
@@ -235,54 +236,55 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="absolute top-full left-0 w-full bg-[#1E1E1E] text-white py-4 px-6 flex flex-col z-50 space-y-4 text-sm transition-transform duration-300 ease-in-out">
-          <div
-            className="relative"
-            onMouseEnter={() => {
-              setShowWhat(true);
-              setShowWho(false);
-            }}
-            onMouseLeave={() => setShowWhat(false)}
-          >
-            <li
-              className={`flex items-center gap-1 font-medium cursor-pointer ${showWhat
-                  ? "text-[#19BDE8] underline"
-                  : "hover:text-[#19BDE8]"
-                }`}
-              onClick={() => navigate("/")}
+          <div className="relative">
+            <div
+              className={`flex items-center gap-1 font-medium cursor-pointer ${
+                showWhat ? "text-[#19BDE8] underline" : "hover:text-[#19BDE8]"
+              }`}
+              onClick={(e) => {
+                e.preventDefault();
+                setShowWhat(!showWhat);
+              }}
             >
               What we do
               <svg
-                className="w-3 h-3 mt-0.5"
+                className={`w-3 h-3 mt-0.5 transform transition-transform ${
+                  showWhat ? 'rotate-180' : ''
+                }`}
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
                 viewBox="0 0 24 24"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M19 9l-7 7-7-7"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
               </svg>
-            </li>
+            </div>
 
             {showWhat && (
-              <div className="absolute left-58  transform -translate-x-1/2 top-full w-screen bg-[#2C2C2C] text-white z-50 px-[40px] py-6 shadow-lg flex lg:px-[20px]">
-                <div className="text-xs text-[#B0B0B0] w-full">
-                  <div className="space-y-2">
-                    {serviceList.map(service => (
-                      <div key={service.name} className="flex justify-between items-center border-b border-[#444] pb-2">
-                        <span className="text-sm">{service.name}</span>
-                        <button
-                          onClick={() => navigate(service.path)}
-                          className="bg-[#19BDE8] text-black px-3 py-1 rounded text-xs font-semibold hover:bg-[#17a1c7]"
-                        >
-                          View
-                        </button>
-                      </div>
-                    ))}
-                  </div>
+              <div className="mt-4 bg-[#2C2C2C] rounded-md p-4 space-y-3">
+                <div 
+                  className="cursor-pointer hover:text-[#19BDE8] pb-2 border-b border-[#444]"
+                  onClick={() => {
+                    navigate("/");
+                    setIsMobileMenuOpen(false);
+                    setShowWhat(false);
+                  }}
+                >
+                  Overview
                 </div>
+                {serviceList.map(service => (
+                  <div 
+                    key={service.name}
+                    className="cursor-pointer hover:text-[#19BDE8] pb-2 border-b border-[#444]"
+                    onClick={() => {
+                      navigate(service.path);
+                      setIsMobileMenuOpen(false);
+                      setShowWhat(false);
+                    }}
+                  >
+                    {service.name}
+                  </div>
+                ))}
               </div>
             )}
           </div>

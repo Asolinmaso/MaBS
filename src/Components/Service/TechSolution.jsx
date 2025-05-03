@@ -170,7 +170,7 @@ const TechSolution = () => {
             </main>
             {/* See Our Creativity in Action */}
             <div className='w-full flex flex-col items-center justify-center mb-8'>
-                <h1 className='text-[#19BDE8] font-semibold text-4xl'> See Our Creativity in Action</h1>
+                <h1 className='text-[#19BDE8] font-semibold text-2xl text-center'> See Our Creativity in Action</h1>
             </div>
             <div className="grid grid-cols-2 gap-4 max-w-4xl mx-auto p-4">
 

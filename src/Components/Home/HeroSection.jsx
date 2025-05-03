@@ -5,7 +5,7 @@ const HeroSection = () => {
         <>
             <header className="relative w-full h-screen overflow-hidden flex items-center justify-center">
                 {/* Background Video */}
-{/*                 <video
+                {/* <video
                     autoPlay
                     loop
                     muted

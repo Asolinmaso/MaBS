@@ -68,30 +68,51 @@ const Testimonial = () => {
 
   const settings = {
     dots: true,
-    infinite: true, // Ensures looping
+    infinite: true,
     speed: 500,
-    slidesToShow: 3, // Show 3 slides at a time for desktop view
-    slidesToScroll: 1, // Scroll one slide at a time for smoother experience
-    autoplay: true, // Auto-slide enabled
-    autoplaySpeed: 3000, // Time delay between slides in milliseconds (3 seconds)
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
     responsive: [
       {
-        breakpoint: 768, // Mobile view
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: true,
+        }
+      },
+      {
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1, // Move one slide at a time for mobile
-        },
+          slidesToScroll: 1,
+          dots: true,
+          arrows: false,
+        }
       },
-    ],
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true,
+          arrows: false,
+          centerMode: false,
+          adaptiveHeight: true,
+        }
+      }
+    ]
   };
 
   return (
-    <div className="testimonial-slider relative">
+    <div className="testimonial-slider relative px-4 md:px-8 lg:px-16">
       <h1 className="font-semibold text-2xl md:text-4xl text-[#19BDE8] text-center mb-8">Hear from Our Clients</h1>
       <Slider ref={sliderRef} {...settings}>
         {testimonials.map((item, index) => (
-          <div key={index} className="p-4">
-            <div className="relative w-full h-[250px] max-w-lg mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+          <div key={index} className="px-2 sm:px-4">
+            <div className="relative w-full h-[250px] bg-white shadow-lg rounded-lg overflow-hidden">
               <img
                 className="absolute right-4 top-4 rounded-full w-16 h-16"
                 src={item.image}
@@ -101,7 +122,7 @@ const Testimonial = () => {
                 <h2 className="text-lg font-bold text-gray-800">{item.name}</h2>
                 <p className="text-sm text-gray-500">{item.company}</p>
                 <div className="mt-2">{renderStars(item.rating)}</div>
-                <p className="mt-4 text-gray-600">{item.text.length > 150 ? item.text.slice(0, 150) + '...' : item.text}</p>
+                <p className="mt-4 text-gray-600 text-sm">{item.text.length > 150 ? item.text.slice(0, 150) + '...' : item.text}</p>
               </div>
             </div>
           </div>

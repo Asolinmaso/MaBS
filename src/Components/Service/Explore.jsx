@@ -1,22 +1,36 @@
 import React from 'react'
-
-const Explore = () => {
+import { Link } from 'react-router-dom'
+const  Explore = () => {
     return (
-        <div className='w-full min-h-[300px]  bg-gradient-to-t from-[#19BDE880]/50 to-white flex justify-center items-center mb-10'>
-            <div className='w-[500px] ml-20 '>
-                <h1 className='font-semibold text-4xl mb-5'>Explore More Ways We Can Help You Grow</h1>
-                <p>Your business needs more than just Multimedia. Discover how our full suite of services works together to drive real results.</p>
+        
+        <div className='w-full min-h-[300px] bg-gradient-to-t from-[#19BDE880]/50 to-white flex flex-col md:flex-row justify-around items-center px-8 py-12 lg:px-16'>
+            <div className='w-full md:w-[35%] mb-8 md:mb-0'>
+                <h1 className='font-semibold text-4xl lg:text-3xl md:text-2xl sm:text-xl mb-5'>
+                    Explore More Ways We Can Help You Grow
+                </h1>
+                <p className='text-base lg:text-sm md:text-xs'>
+                    Your business needs more than just Multimedia. Discover how our full suite of services works together to drive real results.
+                </p>
             </div>
-            <div className='ml-10'>
-                <button className='underline text-white bg-black rounded-lg py-3 px-4 m-3'>Technology Solutions</button>
-                <button className='underline text-white bg-black rounded-lg  py-3 px-4 m-3'>Digital Marketing</button>
-                <button className='underline text-white bg-black rounded-lg py-3 px-4 m-3'>Sales</button>
-                <button className='underline text-white bg-black rounded-lg py-3 px-4 m-3'>RaaS Solutions</button>
-                <button className='underline text-white bg-black rounded-lg py-3 px-4 m-3'>business strategy consulting</button>
+            
+            <div className='w-full md:w-[55%] flex flex-wrap gap-3 justify-center'>
+                <button className='text-white bg-black rounded-lg py-2 px-4 hover:bg-gray-800 transition-colors text-sm cursor-pointer underline'>
+               <Link to="/service/TechSolution">Technology Solutions</Link>     
+                </button>
+                <button className='text-white bg-black rounded-lg py-2 px-4 hover:bg-gray-800 transition-colors text-sm cursor-pointer underline'>
+                <Link to="/service/DigitalMarketing"> Digital Marketing</Link> 
+                </button>
+                <button className='text-white bg-black rounded-lg py-2 px-4 hover:bg-gray-800 transition-colors text-sm cursor-pointer underline'>
+                <Link to="/service/Sales"> Sales</Link> 
+                </button>
+                <button className='text-white bg-black rounded-lg py-2 px-4 hover:bg-gray-800 transition-colors text-sm cursor-pointer underline'>
+                <Link to="/service/RAAS"> RaaS Solutions</Link> 
+                </button>
+                <button className='text-white bg-black rounded-lg py-2 px-4 hover:bg-gray-800 transition-colors text-sm cursor-pointer underline'>
+                <Link to="/service/Business"> Business Strategy Consulting</Link> 
+                </button>
             </div>
-
         </div>
     )
 }
-
 export default Explore

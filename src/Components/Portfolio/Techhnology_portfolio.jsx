@@ -5,6 +5,7 @@ import two from '../../assets/Portfolio/Technology/2.png'
 import three from '../../assets/Portfolio/Technology/3.png'
 import Explore from '../Service/Explore';
 import Footer from '../Footer/Footer';
+import key1 from '../../assets/Portfolio/MultiMedia-portfolio/keyOutCome1.webp';
 
 const Technology_Portfolio = () => {
   return (
@@ -115,8 +116,8 @@ const Technology_Portfolio = () => {
         </section>
 
         {/* Impact */}
-        <section className='mt-10 mx-auto px-6 rounded-md'>
-          <div className='pl-10 pr-10'>
+        <section className='mt-10 mx-auto px-4 md:px-6 rounded-md'>
+          <div className='px-4 md:px-10'>
             <h2 className="text-4xl font-semibold text-[#19BDE8] text-center mb-3">
               Impact of Our Technology Services
             </h2>
@@ -124,47 +125,47 @@ const Technology_Portfolio = () => {
               Our tech solutions enabled clients to digitally transform, streamline their user experience, and present their services more efficiently online.
             </p>
           </div>
-          <div className='relative w-full sm:w-[1041px] h-[481px] mt-15 mx-auto'>
-            <div className='absolute top-10 left-0 bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] w-full sm:w-[588px] min-h-[307px] p-6 rounded-lg shadow-xl z-10'>
-              <h1 className='mt-3 font-medium text-3xl'>Key Outcomes:</h1>
-              <ul className='list-disc pl-10 mt-5 text-xl font-normal space-y-4'>
-                <li>Delivered custom solutions aligned with each client’s business goals.</li>
+          <div className='relative w-full lg:w-[1041px] min-h-[481px] mt-8 mx-auto'>
+            <div className='w-full lg:w-[588px] bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] p-6 rounded-lg shadow-xl absolute z-10'>
+              <h1 className='font-medium text-2xl md:text-3xl'>Key Outcomes:</h1>
+              <ul className='list-disc pl-6 md:pl-10 mt-5 text-lg md:text-xl font-normal space-y-4'>
+                <li>Delivered custom solutions aligned with each client's business goals.</li>
                 <li>Built future-ready platforms using the latest technologies.</li>
                 <li>Enhanced customer experience through intuitive interface design.</li>
                 <li>Strengthened online presence with high-performing, reliable systems.</li>
               </ul>
             </div>
-            <div className='absolute right-0 top-0 z-0'>
+            <div className='w-full lg:w-[588px] absolute right-0'>
               <img
-                className='bg-gray-300 rounded-xl w-[588px] h-[450px] sm:w-[588px] sm:h-[450px] '
-                src=""
-                alt=""
+                className='rounded-xl w-full h-[300px] lg:h-[450px] object-cover'
+                src={key1}
+                alt="Impact Key Outcomes"
               />
             </div>
           </div>
         </section>
 
         {/* Value */}
-        <section className='mt-10 mx-auto px-6 rounded-md'>
-          <div className='pl-10 pr-10'>
-            <h2 className="text-4xl font-semibold text-[#19BDE8] text-center mb-3 pt-15">
+        <section className='mt-10 md:mt-[15px] mx-auto px-4 md:px-6 rounded-md'>
+          <div className='px-4 md:px-10'>
+            <h2 className="text-4xl font-semibold text-[#19BDE8] text-center mb-3">
               Value We Delivered to Our Clients
             </h2>
             <p className='font-normal text-xl pt-3 text-center'>
               By combining technical expertise with user-focused design, we created platforms that solve real problems and support business growth.
             </p>
           </div>
-          <div className='relative w-full sm:w-[1041px] h-[481px] mt-15 mx-auto'>
-            <div className='absolute left-0 top-0 z-0'>
+          <div className='relative w-full lg:w-[1041px] min-h-[481px] mt-8 mx-auto'>
+            <div className='w-full lg:w-[588px] absolute left-0'>
               <img
-                className='bg-gray-300 rounded-xl w-[588px] h-[450px] sm:w-[588px] sm:h-[450px]'
-                src=""
-                alt=""
+                className='rounded-xl w-full h-[300px] lg:h-[450px] object-cover'
+                src={key1}
+                alt="Value Key Outcomes"
               />
             </div>
-            <div className='absolute top-10 right-0 bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] w-full sm:w-[588px] min-h-[307px] p-6 rounded-lg shadow-xl z-10'>
-              <h1 className='mt-3 font-medium text-3xl'>Key Outcomes:</h1>
-              <ul className='list-disc pl-10 mt-5 text-xl font-normal space-y-4'>
+            <div className='w-full lg:w-[588px] bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] p-6 rounded-lg shadow-xl absolute right-0 z-10'>
+              <h1 className='font-medium text-2xl md:text-3xl'>Key Outcomes:</h1>
+              <ul className='list-disc pl-6 md:pl-10 mt-5 text-lg md:text-xl font-normal space-y-4'>
                 <li>Custom-built solutions tailored to their business model</li>
                 <li>Future-ready platforms using modern tech stacks</li>
                 <li>Improved customer interaction through intuitive interfaces</li>
@@ -175,7 +176,7 @@ const Technology_Portfolio = () => {
         </section>
       </main>
 
-      <Explore className="" />
+      <Explore/>
       <Footer />
     </>
   );

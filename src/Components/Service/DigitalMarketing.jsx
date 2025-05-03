@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import bg from '../../assets/Service/DigitalMarketing/HeroSection.png'
 import Footer from '../Footer/Footer';
 import one from '../../assets/Service/DigitalMarketing/1.png'
@@ -167,7 +168,7 @@ const DigitalMarketing = () => {
             </main>
             {/* See Our Creativity in Action */}
             <div className='w-full flex flex-col items-center justify-center mb-8'>
-                <h1 className='text-[#19BDE8] font-semibold text-4xl'> See Our Creativity in Action</h1>
+                <h1 className='text-[#19BDE8] font-semibold text-2xl text-center'> See Our Creativity in Action</h1>
             </div>
             <div className="grid grid-cols-2 gap-4 max-w-4xl mx-auto p-4">
 
@@ -183,12 +184,12 @@ const DigitalMarketing = () => {
             <div className='w-full flex flex-col items-center justify-center mt-3'>
 
                 <a href="#" className=''>
-                    <button className='flex items-center gap-3 font-semibold text-2xl text-white bg-[#19BDE8] py-3 px-3.5 rounded-xl cursor-pointer'>
+                    <Link to="/portfolio/Multimedia"><button className='flex items-center gap-3 font-semibold text-2xl text-white bg-[#19BDE8] py-3 px-3.5 rounded-xl cursor-pointer'>
                         Explore Our Portfolio
                         <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.50005 1.5C1.50005 1.5 7.5 5.9189 7.5 7.5C7.5 9.0812 1.5 13.5 1.5 13.5" stroke="#EBEBEB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                    </button>
+                    </button></Link>
                 </a>
             </div>
 
