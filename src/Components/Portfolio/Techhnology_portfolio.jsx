@@ -34,81 +34,86 @@ const Technology_Portfolio = () => {
       {/* main */}
       <main className='mb-15'>
         {/* Web Design */}
-        <section className='max-w-6xl mt-10 mx-auto p-6 rounded-md'>
-          <h2 className="text-4xl font-semibold text-[#19BDE8] text-center mb-4">
+        <section className='max-w-6xl mt-10 mx-auto px-4 md:px-6 lg:px-8 py-10'>
+          <h2 className="text-4xl font-semibold text-[#19BDE8] text-center mb-8">
             Cutting-Edge Tech Solutions
           </h2>
-          <h2 className='font-medium text-2xl mt-8 sm:mt-15 mb-5'>Website Design</h2>
-          <img src={one} alt="Website Design" className="w-full rounded-lg" />
-          <div className="max-w-[1200px] h-auto mx-auto mt-6 p-5 text-black">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-full">
-              <div>
-                <h3 className="text-3xl font-medium mb-2">Client</h3>
-                <p className='font-normal text-lg'>Shimmr Studios</p>
+          <h2 className='font-medium text-2xl md:text-3xl mb-6'>Website Design</h2>
+          <img 
+            src={one} 
+            alt="Website Design" 
+            className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-lg shadow-lg" 
+          />
+          <div className="w-full max-w-[1200px] mx-auto mt-10">
+            <div className="flex flex-col md:flex-row md:justify-between md:gap-16 gap-6">
+              <div className="flex flex-col ">
+                <h3 className="text-2xl md:text-3xl font-medium mb-4">Client</h3>
+                <p className='text-lg text-gray-700'>Shimmr Studios</p>
               </div>
-              <div>
-                <h3 className="text-3xl font-medium mb-2">What they do</h3>
-                <p className='font-normal text-lg'>
+              <div className="flex flex-col ">
+                <h3 className="text-2xl md:text-3xl font-medium mb-4">What they do</h3>
+                <p className='text-lg text-gray-700 leading-relaxed'>
                   Shimmr Studios drives musical innovation through expert music production, including beat making, film scoring, recording, mixing, and mastering.
                 </p>
               </div>
-              <div>
-                <h3 className="text-3xl font-medium mb-2">Project overview</h3>
-                <p className='font-normal text-lg'>
+              <div className="flex flex-col ">
+                <h3 className="text-2xl md:text-3xl font-medium mb-4">Project overview</h3>
+                <p className='text-lg text-gray-700 leading-relaxed'>
                   <strong>Shimmr Studios website</strong> blends musical artistry with intuitive navigation and high user engagement. Built with <strong>PHP, JavaScript, and Firebase</strong>, it offers a dynamic and responsive experience.
                 </p>
               </div>
             </div>
           </div>
         </section>
+        
 
         {/* Ecommerce */}
         <section className='max-w-6xl mt-10 mx-auto p-6 rounded-md'>
           <h2 className='font-medium text-2xl mt-8 sm:mt-15 mb-5'>E-commerce Platform</h2>
           <img src={two} alt="E-commerce Platform" className="w-full rounded-lg" />
-          <div className="max-w-[1200px] h-auto mx-auto mt-6 p-5 text-black">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-full">
-              <div>
-                <h3 className="text-3xl font-medium mb-2">Client</h3>
-                <p className='font-normal text-lg'>Motiff Bespoke</p>
+          <div className="w-full max-w-[1200px] mx-auto mt-10">
+            <div className="flex flex-col md:flex-row md:justify-between md:gap-16 gap-6">
+              <div className="flex flex-col ">
+                <h3 className="text-2xl md:text-3xl font-medium mb-4">Client</h3>
+                <p className='text-lg text-gray-700'>Motiff Bespoke</p>
               </div>
-              <div>
-                <h3 className="text-3xl font-medium mb-2">What they do</h3>
-                <p className='font-normal text-lg'>
-                  Motiff Bespoke leverages 17+ years of fashion expertise to create custom garments blending art and functionality. They offer personalized, high-quality clothing tailored for professionals.
+              <div className="flex flex-col ">
+                <h3 className="text-2xl md:text-3xl font-medium mb-4">What they do</h3>
+                <p className='text-lg text-gray-700 leading-relaxed'>
+                Motiff Bespoke leverages 17+ years of fashion expertise to create custom garments blending art and functionality. They offer personalized, high-quality clothing tailored for professionals.
                 </p>
               </div>
-              <div>
-                <h3 className="text-3xl font-medium mb-2">Project overview</h3>
-                <p className='font-normal text-lg'>
-                  Motiff Bespoke is an <strong>e-commerce platform </strong> built with <strong>Next.js, Astro.js, and Cloudflare</strong>, offering a seamless shopping experience with fast performance and security.
+              <div className="flex flex-col ">
+                <h3 className="text-2xl md:text-3xl font-medium mb-4">Project overview</h3>
+                <p className='text-lg text-gray-700 leading-relaxed'>
+                Motiff Bespoke is an <strong>e-commerce platform</strong> built with <strong> Next.js, Astro.js, and Cloudflare,</strong> offering a seamless shopping experience with fast performance and security.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
+
         {/* Another E-commerce Platform */}
         <section className='max-w-6xl mt-10 mx-auto p-6 rounded-md'>
           <h2 className='font-medium text-2xl mt-8 sm:mt-15 mb-5'>E-commerce Platform</h2>
           <img src={three} alt="Another E-commerce Platform" className="w-full rounded-lg" />
-          <div className="max-w-[1200px] h-auto mx-auto mt-6 p-5 text-black">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-full">
-              <div>
-                <h3 className="text-3xl font-medium mb-2">Client</h3>
-                <p className='font-normal text-lg'>KISEM</p>
-                <p className='font-normal text-lg'>Kotak - IIT Madras</p>
+          <div className="w-full max-w-[1200px] mx-auto mt-10">
+            <div className="flex flex-col md:flex-row md:justify-around md:gap-16 gap-6">
+              <div className="flex flex-col ">
+                <h3 className="text-2xl md:text-3xl font-medium mb-4">Client</h3>
+                <p className='text-lg text-gray-700'>KISEM</p>
               </div>
-              <div>
-                <h3 className="text-3xl font-medium mb-2">What they do</h3>
-                <p className='font-normal text-lg'>
-                  KISEM (Kotak - IIT Madras Save Energy Mission) enhances energy efficiency in Indian MSMEs through assessments, sustainability studies, and energy conservation measures, promoting a sustainable future.
+              <div className="flex flex-col ">
+                <h3 className="text-2xl md:text-3xl font-medium mb-4">What they do</h3>
+                <p className='text-lg text-gray-700 leading-relaxed'>
+                KISEM (Kotak - IIT Madras Save Energy Mission) enhances energy efficiency in Indian MSMEs through assessments, sustainability studies, and energy conservation measures, promoting a sustainable future.
                 </p>
               </div>
-              <div>
-                <h3 className="text-3xl font-medium mb-2">Project overview</h3>
-                <p className='font-normal text-lg'>
-                  KISEM is a real-time <strong> chat application</strong> built using <strong>WordPress, MariaDB, and Google Analytics.</strong> It provides seamless communication while integrating performance tracking for enhanced user experience.
+              <div className="flex flex-col ">
+                <h3 className="text-2xl md:text-3xl font-medium mb-4">Project overview</h3>
+                <p className='text-lg text-gray-700 leading-relaxed'>
+                KISEM is a real-time <strong>chat application</strong>  built using <strong>WordPress, MariaDB, and Google Analytics.</strong> It provides seamless communication while integrating performance tracking for enhanced user experience.
                 </p>
               </div>
             </div>
@@ -126,7 +131,7 @@ const Technology_Portfolio = () => {
             </p>
           </div>
           <div className='relative w-full lg:w-[1041px] min-h-[481px] mt-8 mx-auto'>
-            <div className='w-full lg:w-[588px] bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] p-6 rounded-lg shadow-xl absolute z-10'>
+            <div className='w-full lg:w-[588px] bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] p-6 rounded-lg shadow-xl absolute z-10 top-10'>
               <h1 className='font-medium text-2xl md:text-3xl'>Key Outcomes:</h1>
               <ul className='list-disc pl-6 md:pl-10 mt-5 text-lg md:text-xl font-normal space-y-4'>
                 <li>Delivered custom solutions aligned with each client's business goals.</li>
@@ -137,7 +142,7 @@ const Technology_Portfolio = () => {
             </div>
             <div className='w-full lg:w-[588px] absolute right-0'>
               <img
-                className='rounded-xl w-full h-[300px] lg:h-[450px] object-cover'
+                className='rounded-xl w-full h-[300px] lg:h-[450px] object-cover lg:block hidden'
                 src={key1}
                 alt="Impact Key Outcomes"
               />
@@ -158,12 +163,12 @@ const Technology_Portfolio = () => {
           <div className='relative w-full lg:w-[1041px] min-h-[481px] mt-8 mx-auto'>
             <div className='w-full lg:w-[588px] absolute left-0'>
               <img
-                className='rounded-xl w-full h-[300px] lg:h-[450px] object-cover'
+                className='rounded-xl w-full h-[300px] lg:h-[450px] object-cover lg:block hidden'
                 src={key1}
                 alt="Value Key Outcomes"
               />
             </div>
-            <div className='w-full lg:w-[588px] bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] p-6 rounded-lg shadow-xl absolute right-0 z-10'>
+            <div className='w-full lg:w-[588px] bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] p-6 rounded-lg shadow-xl absolute right-0 z-10 top-10'>
               <h1 className='font-medium text-2xl md:text-3xl'>Key Outcomes:</h1>
               <ul className='list-disc pl-6 md:pl-10 mt-5 text-lg md:text-xl font-normal space-y-4'>
                 <li>Custom-built solutions tailored to their business model</li>

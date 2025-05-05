@@ -48,7 +48,8 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className='relative lg:flex hidden'>
+      {/* Desktop Menu - Only visible on large screens */}
+      <div className='relative xl:flex hidden'>
         <ul className='flex text-[#FFFFFF] gap-[20px] px-[70px] py-[16px] text-lg lg:px-[40px] lg:gap-[16px] lg:text-base'>
 
           {/* What We Do */}
@@ -223,9 +224,9 @@ const Navbar = () => {
         </ul>
       </div>
 
-      {/* Mobile Menu Button */}
+      {/* Mobile/Tablet Menu Button - Visible on xl and smaller screens */}
       <button 
-        className="lg:hidden text-white"
+        className="xl:hidden text-white"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
       >
         <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -233,9 +234,9 @@ const Navbar = () => {
         </svg>
       </button>
 
-      {/* Mobile Menu */}
+      {/* Mobile/Tablet Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-[#1E1E1E] text-white py-4 px-6 flex flex-col z-50 space-y-4 text-sm transition-transform duration-300 ease-in-out">
+        <div className="absolute top-full left-0 w-full bg-[#1E1E1E] text-white py-4 px-6 flex flex-col z-50 space-y-4 text-sm transition-transform duration-300 ease-in-out max-h-[80vh] overflow-y-auto">
           <div className="relative">
             <div
               className={`flex items-center gap-1 font-medium cursor-pointer ${
@@ -315,7 +316,7 @@ const Navbar = () => {
       )}
 
       {/* Right Logo */}
-      <div className='Logo lg:block hidden'>
+      <div className='Logo xl:block hidden'>
         <a href="https://manvian.com/" target='_blank' rel="noopener noreferrer">
           <img src={ManvianLogo} alt="Manvian Logo" className='w-[130px] h-[33px] lg:w-[110px] lg:h-[28px]' />
         </a>
