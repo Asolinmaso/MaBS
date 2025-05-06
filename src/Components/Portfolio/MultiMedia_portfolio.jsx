@@ -3,7 +3,7 @@ import bg from '../../assets/Portfolio/MultiMedia-portfolio/HeroSection.png';
 import icon from '../../assets/Portfolio/MultiMedia-portfolio/Icon-Design.png';
 import logo_Alg from '../../assets/Portfolio/MultiMedia-portfolio/Logo_Algorithms.png';
 import icon_creation from '../../assets/Portfolio/MultiMedia-portfolio/icon_creation.png';
-import work_img from '../../assets/Portfolio/MultiMedia-portfolio/work_img.png';
+import work_img from '../../assets/Portfolio/MultiMedia-portfolio/work.png';
 import Footer from '../Footer/Footer';
 import Explore from '../Service/Explore';
 import key1 from '../../assets/Portfolio/MultiMedia-portfolio/keyOutCome1.webp';
