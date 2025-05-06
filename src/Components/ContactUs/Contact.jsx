@@ -21,6 +21,30 @@ const Contact = () => {
         setActiveIndex(index === activeIndex ? null : index);
     };
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/contact`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                alert('Message sent successfully!');
+            } else {
+                alert('Failed to send message. Please try again.');
+            }
+        } catch (error) {
+            alert('An error occurred. Please try again later.');
+        }
+    };
+
     return (
         <>
             <header className='flex flex-col w-full min-h-screen justify-start items-center relative pb-15'>
@@ -118,7 +142,7 @@ const Contact = () => {
                         Didn't find your answer above? We're here to help. Just fill out the form below and we’ll get back to you soon.
                     </p>
                 </div>
-                <form action="" className='bg-white shadow-2xl rounded-xl px-4 sm:px-8 md:px-10 flex flex-col gap-6 w-full max-w-4xl mx-auto mt-15 mb-20 pb-10'>
+                <form onSubmit={handleSubmit} className='bg-white shadow-2xl rounded-xl px-4 sm:px-8 md:px-10 flex flex-col gap-6 w-full max-w-4xl mx-auto mt-15 mb-20 pb-10'>
                     <h1 className='text-[#19BDE8] font-semibold text-2xl sm:text-3xl md:text-4xl'>Get in Touch</h1>
                     <p className='font-normal text-sm sm:text-base md:text-lg text-[#1E1E1E]'>
                         Fill out our quick contact form, and we’ll get back to you promptly.
@@ -130,6 +154,7 @@ const Contact = () => {
                                 type='text'
                                 placeholder='Enter Name'
                                 className='w-full border border-gray-300 p-3 rounded focus:outline-none'
+                                name="name"
                             />
                         </div>
                         <div>
@@ -138,6 +163,7 @@ const Contact = () => {
                                 type='email'
                                 placeholder='Enter Email-ID'
                                 className='w-full border border-gray-300 p-3 rounded focus:outline-none'
+                                name="email"
                             />
                         </div>
                         <div>
@@ -146,6 +172,7 @@ const Contact = () => {
                                 type='tel'
                                 placeholder='Enter PhoneNumber'
                                 className='w-full border border-gray-300 p-3 rounded focus:outline-none'
+                                name="phone"
                             />
                         </div>
                         <div>
@@ -154,6 +181,7 @@ const Contact = () => {
                                 type='text'
                                 placeholder='Enter Location'
                                 className='w-full border border-gray-300 p-3 rounded focus:outline-none'
+                                name="location"
                             />
                         </div>
                     </div>
@@ -163,6 +191,7 @@ const Contact = () => {
                             rows="6"
                             placeholder='Write Message'
                             className='w-full border border-gray-300 p-3 rounded focus:outline-none'
+                            name="message"
                         ></textarea>
                     </div>
                     <div className='text-right'>
