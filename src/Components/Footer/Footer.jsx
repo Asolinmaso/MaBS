@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdEmail, MdPhone } from 'react-icons/md';
 import opptiverse from '../../assets/Logo/opptiverse.svg';
 import Linked from '../../assets/Logo/Linkedin.svg';
 import Insta from '../../assets/Logo/insta.svg';
 import Whatsapp from '../../assets/Logo/whatsapp.svg';
 import fb from '../../assets/Logo/facebook.svg';
-import MABS from '../../assets/Logo/MBS.svg'
-import { useState } from "react";
+import MABS from '../../assets/Logo/MBS.svg';
 import { Link } from "react-router-dom";
+import axios from 'axios';
 
 const Footer = () => {
   const countries = [
@@ -22,6 +22,28 @@ const Footer = () => {
     "Venezuela", "Vietnam", "Zambia", "Zimbabwe"
   ];
   const [selectedCountry, setSelectedCountry] = useState("");
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    country: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/contact`, formData);
+      alert(response.data.message);
+    } catch (error) {
+      alert('Failed to submit the form. Please try again.');
+    }
+  };
 
   return (
     <footer className="bg-[#1E1E1E] text-white py-10 px-5 md:px-20">
@@ -68,47 +90,59 @@ const Footer = () => {
         {/* Right Section */}
         <div>
           <h2 className="text-lg font-semibold mb-4">Reach Us to Grow Your Business</h2>
-          <div className="grid grid-cols-2 gap-4">
-            <input
-              type="text"
-              placeholder="Name"
-              className="p-2 rounded bg-white text-black outline-none"
-            />
-            <input
-              type="email"
-              placeholder="Email ID"
-              className="p-2 rounded bg-white text-black  outline-none"
-            />
-            <input
-              type="tel"
-              placeholder="phonenumber"
-              className="p-2 rounded bg-white text-black  outline-none"
-            />
-            <select
-              id="country"
-              name="country"
-              // className="bg-white text-black p-2 w-full outline-none rounded"
-              value={selectedCountry}
-              onChange={(e) => setSelectedCountry(e.target.value)}
-              className={`bg-white p-2 w-full outline-none rounded 
-               ${selectedCountry === "" ? "text-gray-400" : "text-black"}`}
-            >
-              <option value="" className="text-gray-300" disabled selected hidden>-- Choose Country --</option>
-              {countries.map((country, index) => (
-                <option key={index} value={country} className="text-black">
-                  {country}
-                </option>
-              ))}
-            </select>
-
-          </div>
-          <textarea
-            placeholder="Message"
-            className="mt-4 w-full p-2 rounded bg-white text-black h-24 outline-none"
-          ></textarea>
-          <button className="mt-4 px-6 py-2 border border-white rounded hover:bg-white hover:text-black transition">
-            Reach Us
-          </button>
+          <form onSubmit={handleSubmit}>
+            <div className="grid grid-cols-2 gap-4">
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Name"
+                className="p-2 rounded bg-white text-black outline-none"
+              />
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Email ID"
+                className="p-2 rounded bg-white text-black outline-none"
+              />
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="Phone Number"
+                className="p-2 rounded bg-white text-black outline-none"
+              />
+              <select
+                id="country"
+                name="country"
+                value={formData.country}
+                onChange={handleChange}
+                className={`bg-white p-2 w-full outline-none rounded 
+                 ${formData.country === "" ? "text-gray-400" : "text-black"}`}
+              >
+                <option value="" className="text-gray-300" disabled hidden>-- Choose Country --</option>
+                {countries.map((country, index) => (
+                  <option key={index} value={country} className="text-black">
+                    {country}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <textarea
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Message"
+              className="mt-4 w-full p-2 rounded bg-white text-black h-24 outline-none"
+            ></textarea>
+            <button type="submit" className="mt-4 px-6 py-2 border border-white rounded hover:bg-white hover:text-black transition">
+              Reach Us
+            </button>
+          </form>
         </div>
       </div>
 
