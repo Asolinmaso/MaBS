@@ -117,7 +117,7 @@ const Footer = () => {
         <div>
           <h4 className="font-semibold mb-2">What We Do</h4>
           <ul className="space-y-1">
-            <li><Link to='/service/RAAS' >RaaS</Link></li>
+            <li ><Link to='/service/RAAS' >RaaS</Link></li>
             <li><Link to='/service/Sales'>Sales</Link></li>
             <li><Link to='/service/TechSolution'>Technology</Link></li>
             <li><Link to='/service/DigitalMarketing'>Digital Marketing</Link></li>

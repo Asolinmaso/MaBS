@@ -32,10 +32,31 @@ const Contact = () => {
                     <p className='font-normal text-base sm:text-lg md:text-2xl max-w-3xl'>
                         We'd love to hear from you! Whether you have a question, need assistance, or want to explore how we can work together, our team is here to help.
                     </p>
-                    <a href="https://outlook.office365.com/book/Catherine1@deepdarkcreations.com/" target='_blank' rel="noopener noreferrer">
-                        <CustomBtn className='mt-4 border-2 rounded-lg p-3 md:p-4 border-[#19BDE8] text-[#19BDE8] font-medium text-base sm:text-lg md:text-2xl hover:border-white focus:scale-90 hover:text-white cursor-pointer'>
+                    <a
+                        href="https://outlook.office365.com/book/Catherine1@deepdarkcreations.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                    
+                        <button className="flex items-center gap-3 font-semibold text-base sm:text-lg md:text-2xl text-white bg-[#19BDE8] py-3 px-5 rounded-xl cursor-pointer hover:bg-[#159dc3] transition">
                             Booking Appointment
-                        </CustomBtn>
+                            <svg
+                                width="9"
+                                height="15"
+                                viewBox="0 0 9 15"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M1.50005 1.5C1.50005 1.5 7.5 5.9189 7.5 7.5C7.5 9.0812 1.5 13.5 1.5 13.5"
+                                    stroke="#EBEBEB"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />
+                            </svg>
+                        </button>
+                    
                     </a>
                 </div>
 

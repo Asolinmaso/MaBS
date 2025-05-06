@@ -39,7 +39,7 @@ const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className='w-screen h-[80px] bg-[#1E1E1E] flex justify-between items-center px-[80px] py-[16px] fixed z-40 lg:px-[40px] md:px-[20px] sm:px-[16px]'>
+    <nav className='w-full h-[80px] bg-[#1E1E1E] flex justify-between items-center px-[80px] py-[16px] fixed z-40 lg:px-[40px] md:px-[20px] sm:px-[16px]'>
       <div className="logo-section flex items-center gap-2 lg:gap-1.5 md:gap-1">
         <img className='cursor-pointer w-auto h-8 md:h-7 sm:h-6' src={MBS} alt="" />
         <div className="flex flex-col items-start ml-1 gap-1">
@@ -236,10 +236,10 @@ const Navbar = () => {
 
       {/* Mobile/Tablet Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-[#1E1E1E] text-white py-4 px-6 flex flex-col z-50 space-y-4 text-sm transition-transform duration-300 ease-in-out max-h-[80vh] overflow-y-auto">
+        <div className="absolute top-full left-0 w-full bg-[#1E1E1E] text-white py-2 px-4 flex flex-col z-50 space-y-2 text-sm transition-transform duration-300 ease-in-out max-h-[80vh] overflow-y-auto">
           <div className="relative">
             <div
-              className={`flex items-center gap-1 font-medium cursor-pointer ${
+              className={`flex items-center gap-1 font-medium cursor-pointer py-2 ${
                 showWhat ? "text-[#19BDE8] underline" : "hover:text-[#19BDE8]"
               }`}
               onClick={(e) => {
@@ -262,9 +262,9 @@ const Navbar = () => {
             </div>
 
             {showWhat && (
-              <div className="mt-4 bg-[#2C2C2C] rounded-md p-4 space-y-3">
+              <div className="mt-2 bg-[#2C2C2C] rounded-md p-3 space-y-2">
                 <div 
-                  className="cursor-pointer hover:text-[#19BDE8] pb-2 border-b border-[#444]"
+                  className="cursor-pointer hover:text-[#19BDE8] py-2 border-b border-[#444]"
                   onClick={() => {
                     navigate("/");
                     setIsMobileMenuOpen(false);
@@ -276,7 +276,7 @@ const Navbar = () => {
                 {serviceList.map(service => (
                   <div 
                     key={service.name}
-                    className="cursor-pointer hover:text-[#19BDE8] pb-2 border-b border-[#444]"
+                    className="cursor-pointer hover:text-[#19BDE8] py-2 border-b border-[#444]"
                     onClick={() => {
                       navigate(service.path);
                       setIsMobileMenuOpen(false);
@@ -300,16 +300,16 @@ const Navbar = () => {
             Who we are
           </li>
 
-          <Link to="/careers" onClick={() => setIsMobileMenuOpen(false)} className={`hover:text-[#19BDE8] ${location.pathname === '/careers' && 'text-[#19BDE8] underline'}`}>
+          <Link to="/careers" onClick={() => setIsMobileMenuOpen(false)} className={`py-2 hover:text-[#19BDE8] ${location.pathname === '/careers' && 'text-[#19BDE8] underline'}`}>
             Careers
           </Link>
-          <Link to="/insights" onClick={() => setIsMobileMenuOpen(false)} className={`hover:text-[#19BDE8] ${location.pathname === '/insights' && 'text-[#19BDE8] underline'}`}>
+          <Link to="/insights" onClick={() => setIsMobileMenuOpen(false)} className={`py-2 hover:text-[#19BDE8] ${location.pathname === '/insights' && 'text-[#19BDE8] underline'}`}>
             Insights
           </Link>
-          <Link to="/product" onClick={() => setIsMobileMenuOpen(false)} className={`hover:text-[#19BDE8] ${location.pathname === '/product' && 'text-[#19BDE8] underline'}`}>
+          <Link to="/product" onClick={() => setIsMobileMenuOpen(false)} className={`py-2 hover:text-[#19BDE8] ${location.pathname === '/product' && 'text-[#19BDE8] underline'}`}>
             Product
           </Link>
-          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className={`hover:text-[#19BDE8] ${location.pathname === '/contact' && 'text-[#19BDE8] underline'}`}>
+          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className={`py-2 hover:text-[#19BDE8] ${location.pathname === '/contact' && 'text-[#19BDE8] underline'}`}>
             Contact
           </Link>
         </div>

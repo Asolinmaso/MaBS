@@ -37,7 +37,7 @@ const ClientsLogo = () => {
         <p className="text-sm md:text-base text-gray-600">
           We’ve had the pleasure of working with some amazing brands. If you'd like to be one of them, let’s talk!
         </p>
-        <button className="px-4 py-2 md:px-6 md:py-3 bg-[#19BDE8] text-white rounded-md hover:bg-[#17A9D1] transition">
+        <button className="px-4 py-2 md:px-6 md:py-3 bg-[#19BDE8] text-white rounded-md hover:bg-[#17A9D1] transition cursor-pointer">
           Contact Us
         </button>
       </div>

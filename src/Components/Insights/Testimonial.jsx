@@ -69,18 +69,24 @@ const Testimonial = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 500,
+    speed: 1000,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
+    pauseOnHover: false,
+    swipeToSlide: false,
+    cssEase: "ease-out",
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
+          infinite: true,
           dots: true,
+          autoplay: true,
+          autoplaySpeed: 2000
         }
       },
       {
@@ -88,8 +94,11 @@ const Testimonial = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          infinite: true,
           dots: true,
-          arrows: false,
+          arrows: true,
+          autoplay: true,
+          autoplaySpeed: 2000
         }
       },
       {
@@ -97,37 +106,41 @@ const Testimonial = () => {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
+          infinite: true,
           dots: true,
-          arrows: false,
+          arrows: true,
           centerMode: false,
-          adaptiveHeight: true,
+          autoplay: true,
+          autoplaySpeed: 2000
         }
       }
     ]
   };
 
   return (
-    <div className="testimonial-slider relative px-4 md:px-8 lg:px-16">
+    <div className="testimonial-slider relative px-4 md:px-8 lg:px-16 overflow-hidden">
       <h1 className="font-semibold text-2xl md:text-4xl text-[#19BDE8] text-center mb-8">Hear from Our Clients</h1>
-      <Slider ref={sliderRef} {...settings}>
-        {testimonials.map((item, index) => (
-          <div key={index} className="px-2 sm:px-4">
-            <div className="relative w-full h-[250px] bg-white shadow-lg rounded-lg overflow-hidden">
-              <img
-                className="absolute right-4 top-4 rounded-full w-16 h-16"
-                src={item.image}
-                alt="Client image"
-              />
-              <div className="p-6">
-                <h2 className="text-lg font-bold text-gray-800">{item.name}</h2>
-                <p className="text-sm text-gray-500">{item.company}</p>
-                <div className="mt-2">{renderStars(item.rating)}</div>
-                <p className="mt-4 text-gray-600 text-sm">{item.text.length > 150 ? item.text.slice(0, 150) + '...' : item.text}</p>
+      <div className="slider-container overflow-visible">
+        <Slider ref={sliderRef} {...settings}>
+          {testimonials.map((item, index) => (
+            <div key={index} className="px-2 sm:px-4">
+              <div className="relative w-full h-[250px] bg-white shadow-lg rounded-lg overflow-hidden">
+                <img
+                  className="absolute right-4 top-4 rounded-full w-16 h-16"
+                  src={item.image}
+                  alt="Client image"
+                />
+                <div className="p-6">
+                  <h2 className="text-lg font-bold text-gray-800">{item.name}</h2>
+                  <p className="text-sm text-gray-500">{item.company}</p>
+                  <div className="mt-2">{renderStars(item.rating)}</div>
+                  <p className="mt-4 text-gray-600 text-sm">{item.text.length > 150 ? item.text.slice(0, 150) + '...' : item.text}</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
-      </Slider>
+          ))}
+        </Slider>
+      </div>
     </div>
   );
 };

@@ -18,25 +18,36 @@ import brand5 from '../../assets/Home/2 Work With/5.png'
 import brand6 from '../../assets/Home/2 Work With/6.png'
 import brand7 from '../../assets/Home/2 Work With/7.png'
 
-const FadeInSection = ({ children, direction = 'left' }) => {
-    const controls = useAnimation()
-    const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 })
+const FadeInSection = ({ children }) => {
+    const [ref, inView] = useInView({ 
+        triggerOnce: true, 
+        threshold: 0.3,
+        rootMargin: '-50px'
+    })
 
-    React.useEffect(() => {
-        if (inView) {
-            controls.start({
-                opacity: 1,
-                x: 0,
-                transition: { duration: 0.8, ease: 'easeOut' },
-            })
+    const variants = {
+        hidden: {
+            opacity: 0,
+            scale: 0.98
+        },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                duration: 1.5,
+                ease: [0.6, 0.05, 0.01, 0.99],
+                staggerChildren: 0.1
+            }
         }
-    }, [controls, inView])
+    }
 
     return (
         <motion.div
             ref={ref}
-            initial={{ opacity: 0, x: direction === 'left' ? -50 : 50 }}
-            animate={controls}
+            initial="hidden"
+            animate={inView ? 'visible' : 'hidden'}
+            variants={variants}
+            className="w-full"
         >
             {children}
         </motion.div>
@@ -89,10 +100,10 @@ const WhatWeDo = () => {
                     }
                 ].map((item, index) => (
                     <div key={index} className={`flex flex-col lg:flex-row ${item.reverse ? 'lg:flex-row-reverse' : ''} items-center gap-6 lg:gap-12`}>
-                        <FadeInSection direction={item.reverse ? 'right' : 'left'}>
+                        <FadeInSection>
                             <img className='w-full lg:w-[570px] h-auto lg:h-[322.27px] rounded-[32px]' src={item.img} alt="" />
                         </FadeInSection>
-                        <FadeInSection direction={item.reverse ? 'left' : 'right'}>
+                        <FadeInSection>
                             <div className='w-full lg:w-[570px] flex flex-col gap-4'>
                                 <h1 className='font-semibold text-2xl sm:text-3xl text-[#1E1E1E]'>
                                     <span className='text-[#19BDE8]'>{item.title.slice(0, 4)}</span>
@@ -114,7 +125,7 @@ const WhatWeDo = () => {
                         <img className='w-[100px] sm:w-[153px] h-auto' src={brand2} alt="" />
                         <img className='w-[100px] sm:w-[155px] h-auto' src={brand3} alt="" />
                         <img className='w-[100px] sm:w-[153px] h-auto' src={brand4} alt="" />
-                        <img className='w-[100px] sm:w-[153px] h-auto' src={brand5} alt="" />
+                        <img className='w-[100px] sm:w-[153px] h-auto bg-gray-300 p-2' src={brand5} alt="" />
                         <img className='w-[100px] sm:w-[153px] h-auto' src={brand6} alt="" />
                         <img className='h-[60px] sm:h-[80px] w-[60px] sm:w-[80px] rounded-full object-cover' src={brand7} alt="" />
                     </div>

@@ -8,19 +8,27 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-const Section = ({ children, direction = 'left' }) => {
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
+const Section = ({ children }) => {
+  const [ref, inView] = useInView({ 
+    triggerOnce: true, 
+    threshold: 0.3,  // Increased threshold for earlier trigger
+    rootMargin: '-50px' // Trigger animation slightly before element comes into view
+  });
 
   const variants = {
     hidden: {
       opacity: 0,
-      x: direction === 'left' ? -100 : 100,
+      scale: 0.98  // Slightly scaled down when hidden
     },
     visible: {
       opacity: 1,
-      x: 0,
-      transition: { duration: 0.8 },
-    },
+      scale: 1,
+      transition: { 
+        duration: 1.5,  // Longer duration for smoother effect
+        ease: [0.6, 0.05, 0.01, 0.99],  // Custom easing function
+        staggerChildren: 0.1  // Stagger children animations
+      }
+    }
   };
 
   return (
