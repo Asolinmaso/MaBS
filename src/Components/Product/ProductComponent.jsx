@@ -4,6 +4,31 @@ import Footer from '../Footer/Footer'
 import oppti_black from '../../assets/Logo/opptiverse.svg'
 
 const ProductComponent = () => {
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const formData = new FormData(e.target);
+        const data = Object.fromEntries(formData.entries());
+
+        try {
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/send-mail`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                alert('Message sent successfully!');
+            } else {
+                alert('Failed to send message. Please try again.');
+            }
+        } catch (error) {
+            console.error('Error sending message:', error);
+            alert('An error occurred. Please try again later.');
+        }
+    };
+
     return (
         <>
             <section className='relative w-full'>
@@ -29,13 +54,14 @@ const ProductComponent = () => {
                         </div>
 
                         {/* Form */}
-                        <form className='bg-white shadow-2xl rounded-xl p-6 sm:p-10 flex flex-col gap-6 w-full max-w-4xl mx-auto z-20 relative'>
+                        <form onSubmit={handleSubmit} className='bg-white shadow-2xl rounded-xl p-6 sm:p-10 flex flex-col gap-6 w-full max-w-4xl mx-auto z-20 relative'>
                             {/* Two Column Inputs */}
                             <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                                 <div>
                                     <label className='block text-gray-700 mb-2 font-medium'>Name</label>
                                     <input
                                         type='text'
+                                        name='name'
                                         placeholder='Enter Name'
                                         className='w-full border border-gray-300 p-3 rounded focus:outline-none'
                                     />
@@ -45,6 +71,7 @@ const ProductComponent = () => {
                                     <label className='block text-gray-700 mb-2 font-medium'>Email ID</label>
                                     <input
                                         type='email'
+                                        name='email'
                                         placeholder='Enter Email-ID'
                                         className='w-full border border-gray-300 p-3 rounded focus:outline-none'
                                     />
@@ -54,6 +81,7 @@ const ProductComponent = () => {
                                     <label className='block text-gray-700 mb-2 font-medium'>Phone Number</label>
                                     <input
                                         type='tel'
+                                        name='phone'
                                         placeholder='Enter your phone number'
                                         className='w-full border border-gray-300 p-3 rounded focus:outline-none'
                                     />
@@ -63,6 +91,7 @@ const ProductComponent = () => {
                                     <label className='block text-gray-700 mb-2 font-medium'>Location</label>
                                     <input
                                         type='text'
+                                        name='location'
                                         placeholder='Enter your Location'
                                         className='w-full border border-gray-300 p-3 rounded focus:outline-none'
                                     />
@@ -74,6 +103,7 @@ const ProductComponent = () => {
                                 <label className='block text-gray-700 mb-2 font-medium'>Message</label>
                                 <textarea
                                     rows='4'
+                                    name='message'
                                     placeholder='Tell us a little about yourself — we’re here for you and happy to help however we can!'
                                     className='w-full border border-gray-300 p-3 rounded resize-none focus:outline-none'
                                 />
