@@ -27,7 +27,7 @@ const Contact = () => {
         const data = Object.fromEntries(formData.entries());
 
         try {
-            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/contact`, {
+            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/send-mail`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -41,6 +41,7 @@ const Contact = () => {
                 alert('Failed to send message. Please try again.');
             }
         } catch (error) {
+            console.error('Error sending message:', error);
             alert('An error occurred. Please try again later.');
         }
     };
