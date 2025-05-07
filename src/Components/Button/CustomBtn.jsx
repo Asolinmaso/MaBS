@@ -1,13 +1,17 @@
-import React from "react";
-import "./Btn.css";
+import React from 'react';
+import './Btn.css';
 
 const CustomBtn = ({ children }) => {
   return (
-    <button className="custom-btn" style={{ "--btn-text": `"${children}"` }}>
-      <div className="left"></div>
-      <div className="text">{children}</div>
-      <div className="right"></div>
-    </button>
+    <div className="container">
+      <button id="auto" className="button">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        {children} 
+      </button>
+    </div>
   );
 };
 

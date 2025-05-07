@@ -63,7 +63,7 @@ const Contact = () => {
                         rel="noopener noreferrer"
                     >
                     
-                        <button className="flex items-center gap-3 font-semibold text-base sm:text-lg md:text-2xl text-white bg-[#19BDE8] py-3 px-5 rounded-xl cursor-pointer hover:bg-[#159dc3] transition">
+                        {/* <button className="flex items-center gap-3 font-semibold text-base sm:text-lg md:text-2xl text-white bg-[#19BDE8] py-3 px-5 rounded-xl cursor-pointer hover:bg-[#159dc3] transition">
                             Booking Appointment
                             <svg
                                 width="9"
@@ -80,7 +80,8 @@ const Contact = () => {
                                     strokeLinejoin="round"
                                 />
                             </svg>
-                        </button>
+                        </button> */}
+                        <CustomBtn> Booking Appointment</CustomBtn>
                     
                     </a>
                 </div>
