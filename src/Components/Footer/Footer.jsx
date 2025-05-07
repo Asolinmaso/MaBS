@@ -38,10 +38,11 @@ const Footer = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/contact`, formData);
-      alert(response.data.message);
+        const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/send-mail`, formData);
+        alert(response.data.message);
     } catch (error) {
-      alert('Failed to submit the form. Please try again.');
+        console.error('Error submitting footer form:', error);
+        alert('Failed to submit the footer form. Please try again.');
     }
   };
 
