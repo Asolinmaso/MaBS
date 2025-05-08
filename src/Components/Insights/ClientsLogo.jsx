@@ -64,7 +64,7 @@ const ClientsLogo = () => {
       </div>
 
       {/* Right: Logos Scroll */}
-      <div className="w-full md:w-2/3 h-[300px] md:h-[500px] overflow-hidden relative bg-[rgba(25,189,232,0.25)] rounded-lg">
+      <div className="w-full md:w-2/3 h-[300px] md:h-[500px] overflow-hidden relative bg-[rgba(25,189,232,0.25)] rounded-lg px-6">
         {/* Top and Bottom Gradient Shadows */}
         <div className="absolute top-0 left-0 w-full h-16 md:h-32 z-10 pointer-events-none bg-gradient-to-b from-[#FFFFFF] to-transparent" />
         <div className="absolute bottom-0 left-0 w-full h-16 md:h-32 z-10 pointer-events-none bg-gradient-to-t from-[#FFFFFF] to-transparent" />
@@ -73,7 +73,7 @@ const ClientsLogo = () => {
         <div className="relative h-full">
           <div className="absolute w-full flex flex-col animate-scroll-up">
             {/* Logos - first copy */}
-            <div className="grid grid-cols-4 md:grid-cols-6 gap-2 md:gap-4 p-2 md:p-4">
+            <div className="grid grid-cols-4 md:grid-cols-6 gap-2 md:gap-4 p-2 md:p-4 justify-items-center">
               {logos.map((logo, index) => (
                 <div
                   key={`first-${index}`}
@@ -89,7 +89,7 @@ const ClientsLogo = () => {
             </div>
 
             {/* Logos - second copy */}
-            <div className="grid grid-cols-4 md:grid-cols-6 gap-2 md:gap-4 p-2 md:p-4">
+            <div className="grid grid-cols-4 md:grid-cols-6 gap-2 md:gap-4 p-2 md:p-4 justify-items-center">
               {logos.map((logo, index) => (
                 <div
                   key={`second-${index}`}
