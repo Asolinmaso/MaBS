@@ -29,7 +29,7 @@ const HeroSection = () => {
                 <h1 className="font-Montserrat font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-[#19BDE8] leading-snug">
                     Creating a Path
                 </h1>
-                <p className="mt-4 font-normal text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed">
+                <p className="mt-4 font-normal text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed text-center mx-auto max-w-4xl">
                     Welcome to Manvian, your trusted partner in business development. We empower entrepreneurs and their businesses to reach new heights
                     through innovative strategies and exceptional execution.
                 </p>
