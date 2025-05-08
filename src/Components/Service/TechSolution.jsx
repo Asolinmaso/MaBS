@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import bg from '../../assets/Service/TechSolution/HeroSection.png'
 import Footer from '../Footer/Footer';
 import one from '../../assets/Service/TechSolution/1.png'
@@ -8,8 +8,40 @@ import four from '../../assets/Service/TechSolution/4.png'
 import Explore from './Explore';
 import { useNavigate } from 'react-router-dom';
 import CustomBtn from '../Button/CustomBtn';
+
 const TechSolution = () => {
-    const navigate = useNavigate()
+    const navigate = useNavigate();
+    const [tiltStyles, setTiltStyles] = useState({});
+
+    const handleMouseMove = (e, index) => {
+        const card = e.currentTarget;
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left; // X position within the element
+        const y = e.clientY - rect.top; // Y position within the element
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * 30; // Adjust the multiplier for tilt intensity
+        const rotateY = ((x - centerX) / centerX) * -30;
+
+        setTiltStyles((prevStyles) => ({
+            ...prevStyles,
+            [index]: {
+                transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+            }
+        }));
+    };
+
+    const handleMouseLeave = (index) => {
+        setTiltStyles((prevStyles) => ({
+            ...prevStyles,
+            [index]: {
+                transform: 'rotateX(0deg) rotateY(0deg)'
+            }
+        }));
+    };
+
     const problems = [
         {
             title: "Outdated Digital Presence",
@@ -112,6 +144,9 @@ const TechSolution = () => {
                                             ? 'bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF]'
                                             : 'bg-gradient-to-b from-[#19BDE8] to-[#FFFFFF]'
                                         }`}
+                                    style={tiltStyles[index]}
+                                    onMouseMove={(e) => handleMouseMove(e, index)}
+                                    onMouseLeave={() => handleMouseLeave(index)}
                                 >
                                     <div className="w-10 h-10 border-2 border-black text-black font-normal rounded-[50px] p-6 mx-auto mb-4 flex items-center justify-center text-4xl ">
                                         {index + 1}
@@ -186,4 +221,4 @@ const TechSolution = () => {
     )
 }
 
-export default TechSolution
+export default TechSolution;
