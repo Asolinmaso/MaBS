@@ -1,8 +1,4 @@
-import React from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css'; 
-import 'slick-carousel/slick/slick-theme.css';
-
+import React from 'react'
 const testimonials = [
   {
     name: "Malina John",
@@ -17,7 +13,7 @@ const testimonials = [
     role: "Software Engineer",
     image: "https://randomuser.me/api/portraits/men/2.jpg",
     company: "Turing Inc",
-    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique voluptas nobis est tempore ipsa modi suscipit rem a, velit officia quaerat officiis, quas maiores odit nam. Laborum, quas adipisci a praesentium sapiente, fugit labore quisquam, rem placeat debitis nisi ipsam? Quis deserunt quibusdam dolore vitae maxime, atque dolorum doloribus facilis unde earum laudantium soluta saepe aliquid ullam quaerat quae.",
+    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique voluptas nobis est tempore ipsa modi suscipit rem a, velit officia quaerat officiis, quas maiores odit nam. Laborum, quas adipisci a praesentium sapiente, fugit labore quisquam, rem placeat debitis nisi ipsam? Quis deserunt quibusdam dolore vitae maxime, atque dolorum doloribus facilis unde earum laudantium soluta saepe aliquid ullam quaerat quae. Deleniti dignissimos accusamus, iusto atque molestiae vel quisquam ipsam. Consequuntur aliquam ad molestiae ullam maiores veniam ab repudiandae enim sequi. Harum iure blanditiis vitae aut odio nisi eius hic cum ipsa, dolorem quod quibusdam, quisquam doloremque natus. Dolore doloremque a consectetur nesciunt voluptatum? Eos, animi! Iste rem minima eveniet, debitis autem similique neque id iusto maxime, itaque numquam, porro at enim? Iure, inventore at! Molestias tempore quibusdam similique qui iste possimus placeat repudiandae libero eligendi nobis! Ea iusto voluptas quos quaerat optio ab, odio neque vel? Aliquid maxime, fuga omnis possimus officia, sunt quibusdam, dicta nostrum sit totam aspernatur ratione dolorem vel. Cum consequuntur reprehenderit repellendus vero enim laborum dicta dolorum suscipit neque in, porro ipsa! Officia obcaecati aut modi, facere nulla totam doloremque, expedita vel ipsum blanditiis ex iure delectus laboriosam tempore nam veritatis maxime molestiae officiis ad vero at voluptatum esse assumenda perferendis? Fugiat velit, architecto ad inventore consequuntur sapiente incidunt ex aperiam reprehenderit sed corrupti atque ipsum nihil optio magni totam deserunt libero iste ullam recusandae nesciunt quos ab! Aspernatur, quod. Voluptas odio cum quis adipisci impedit voluptatibus magni neque, tempore id eum dolorem laboriosam repellendus, a dignissimos maxime numquam, aut iure quia quisquam. Odio ex iure laudantium recusandae corporis? Illum ratione ut dolorem maxime sed qui, voluptatibus, natus dignissimos adipisci inventore earum labore? Eligendi accusamus reiciendis unde molestiae assumenda provident quae tempore fuga laborum quo, odio ullam eum voluptate ipsa odit aliquam harum vero voluptates nesciunt veritatis velit error magni! Aspernatur ad labore temporibus provident ipsum aliquid iure, excepturi, cumque dicta eveniet magnam debitis commodi hic sit deserunt fuga quis, totam dignissimos illum minima id quas. Fugiat ratione laborum tenetur illo architecto nihil. Doloremque quas sequi tempore, suscipit aut eveniet eius. Deserunt, omnis. Unde magni, deleniti obcaecati consectetur distinctio culpa temporibus. A similique aperiam voluptatum rem quos nam harum nulla consequatur dolorem, sapiente eveniet aliquid reprehenderit id! Fugit delectus hic dolore dignissimos temporibus maxime a esse ratione error quisquam modi doloribus ducimus architecto voluptate laboriosam voluptatibus, quos veritatis? Corporis, amet suscipit nisi harum voluptatibus quidem magni quia maxime excepturi facilis, exercitationem, quis incidunt temporibus tempore aut! Blanditiis suscipit quisquam nam voluptate ratione odit laborum, quos error aspernatur illum. Qui animi earum error inventore necessitatibus nisi harum, maiores nesciunt, numquam, ut perferendis enim ipsum. Optio minus maiores sed possimus doloremque delectus nostrum facere incidunt harum saepe beatae distinctio quisquam nulla quasi, perferendis mollitia consequatur facilis veniam! Repudiandae, unde praesentium. Ullam ipsa expedita delectus, perspiciatis rem, impedit magni dolorum asperiores quas quidem aut magnam quis voluptatem labore dicta necessitatibus excepturi. Fugiat nam ab, laudantium, cupiditate consectetur quasi aperiam facilis consequatur enim, itaque tenetur excepturi illum eum adipisci nostrum. Sit!Catherine’s insights were incredibly helpful in making my transition smooth. Highly recommend their services",
     rating: 4,
   },
   {
@@ -53,7 +49,6 @@ const testimonials = [
     rating: 5,
   },
 ];
-
 const renderStars = (rating) => {
   const fullStar = "★";
   return (
@@ -62,87 +57,99 @@ const renderStars = (rating) => {
     </div>
   );
 };
-
 const Testimonial = () => {
-  const sliderRef = React.useRef(null);
-
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    pauseOnHover: false,
-    swipeToSlide: false,
-    cssEase: "ease-out",
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-          autoplay: true,
-          autoplaySpeed: 2000
-        }
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-          arrows: true,
-          autoplay: true,
-          autoplaySpeed: 2000
-        }
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true,
-          arrows: true,
-          centerMode: false,
-          autoplay: true,
-          autoplaySpeed: 2000
-        }
-      }
-    ]
-  };
-
   return (
-    <div className="testimonial-slider relative px-4 md:px-8 lg:px-16 overflow-hidden">
-      <h1 className="font-semibold text-2xl md:text-4xl text-[#19BDE8] text-center mb-8">Hear from Our Clients</h1>
-      <div className="slider-container overflow-visible">
-        <Slider ref={sliderRef} {...settings}>
-          {testimonials.map((item, index) => (
-            <div key={index} className="px-2 sm:px-4">
-              <div className="relative w-full h-[250px] bg-white shadow-lg rounded-lg overflow-hidden">
-                <img
-                  className="absolute right-4 top-4 rounded-full w-16 h-16"
-                  src={item.image}
-                  alt="Client image"
-                />
-                <div className="p-6">
-                  <h2 className="text-lg font-bold text-gray-800">{item.name}</h2>
-                  <p className="text-sm text-gray-500">{item.company}</p>
-                  <div className="mt-2">{renderStars(item.rating)}</div>
-                  <p className="mt-4 text-gray-600 text-sm">{item.text.length > 150 ? item.text.slice(0, 150) + '...' : item.text}</p>
+    <>
+      <div className='flex w-full  justify-center mt-15'>
+        <h1 className='font-semibold text-4xl text-[#19BDE8]'>Hear from Our Clients</h1>
+      </div>
+      <div className='w-full h-screen flex justify-center gap-20 items-center z-0'>
+        <div className='scroll-container flex gap-20 w-max animate-scroll px-10 items-center'>
+          {[...testimonials, ...testimonials].map((items, index) => (
+            < div className='relative w-[547px] h-[459px]'>
+              <img
+                className='absolute right-4 top-2 translate-y-0 rounded-[50%] z-30'
+                src={items.image}
+                alt="Client image"
+              />
+              <div className='absolute w-[265px] top-4 left-1 min-h-24 rounded-tr-4xl  bg-[#1E1E1E] z-30 '>
+                <div className='relative'>
+                  <div className='mt-1 text-white ml-5 font-medium text-2xl'>{items.name} </div>
+                  <p className='text-white text-[12px] ml-10'>Review</p>
+                  <div className='absolute right-4 top-17'>{renderStars(items.rating)} </div>
                 </div>
+              </div>
+              {/* SVG Triangle now inside the bordered box */}
+              <div className='absolute top-26 left-1 z-10'>
+                <svg
+                  width='74'
+                  height='95'
+                  viewBox='0 0 66 72'
+                  fill='none'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <g filter='url(#filter0_i_105_663)'>
+                    <path
+                      d='M33 72L0.957062 0.75L65.0429 0.75L33 72Z'
+                      fill='#19BDE8'
+                    />
+                  </g>
+                  <defs>
+                    <filter
+                      id='filter0_i_105_663'
+                      x='0.957062'
+                      y='0.75'
+                      width='64.0859'
+                      height='75.25'
+                      filterUnits='userSpaceOnUse'
+                      colorInterpolationFilters='sRGB'
+                    >
+                      <feFlood floodOpacity='0' result='BackgroundImageFix' />
+                      <feBlend
+                        mode='normal'
+                        in='SourceGraphic'
+                        in2='BackgroundImageFix'
+                        result='shape'
+                      />
+                      <feColorMatrix
+                        in='SourceAlpha'
+                        type='matrix'
+                        values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
+                        result='hardAlpha'
+                      />
+                      <feOffset dy='4' />
+                      <feGaussianBlur stdDeviation='2' />
+                      <feComposite
+                        in2='hardAlpha'
+                        operator='arithmetic'
+                        k2='-1'
+                        k3='1'
+                      />
+                      <feColorMatrix
+                        type='matrix'
+                        values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
+                      />
+                      <feBlend
+                        mode='normal'
+                        in2='shape'
+                        result='effect1_innerShadow_105_663'
+                      />
+                    </filter>
+                  </defs>
+                </svg>
+              </div>
+              {/* Main content with border and SVG inside it */}
+              <div className='ml-8 w-[510px] h-[372px] pt-24 px-9 pb-8 border-white shadow-2xl overflow-hidden mt-[81px] rounded relative z-20 bg-white flex flex-col gap-2 items-center text-center'>
+                <h1 className='text-[#19BDE8] text-lg font-normal w-[326px]'>{items.company}</h1>
+                {items.text.length > 300 ? items.text.slice(0, 300) + '...' : items.text}
               </div>
             </div>
           ))}
-        </Slider>
+        </div>
       </div>
-    </div>
-  );
-};
+    </>
+  )
+}
 
-export default Testimonial;
+export default Testimonial
+
