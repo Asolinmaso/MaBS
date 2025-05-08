@@ -1,3 +1,4 @@
+
 import React from 'react';
 import CustomBtn from '../Button/CustomBtn';
 
@@ -18,11 +19,11 @@ const HeroSection = () => {
                 {/* Overlay */}
                 <div className="absolute bg-black/30 top-0 left-0 w-full h-full z-10"></div>
 
-                <div className="relative z-20 flex flex-col items-center justify-center gap-4 text-center text-white  px-4">
+                <div className="relative z-20 flex flex-col items-center justify-center gap-4 text-center text-white  pt-20 pb-4 ">
                     <p className="font-Montserrat font-medium text-lg sm:text-xl md:text-2xl lg:text-3xl leading-tight">
                         Unlock the Secrets to Business Success
                     </p>
-                    <h1 className="font-Montserrat font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#19BDE8] leading-snug">
+                    <h1 className="font-Montserrat font-semibold text-3xl sm:text4xl md:text-5xl lg:text-6xl text-[#19BDE8] leading-snug">
                         Creating a Path
                     </h1>
                     <p className="mt-4 font-normal text-base sm:text-lg md:text-xl lg:text-2xl text-center leading-relaxed">
@@ -32,6 +33,7 @@ const HeroSection = () => {
                     <a
                         href="https://outlook.office365.com/book/Catherine1@deepdarkcreations.com/"
                         target="_blank"
+                        className='pt-10'
                         rel="noopener noreferrer"
                     >
                      <CustomBtn>Booking Appointment</CustomBtn>

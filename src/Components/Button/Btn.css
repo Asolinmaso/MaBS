@@ -1,8 +1,7 @@
 .container .button {
   padding: 1rem 2rem;
   font-size: 1.2rem;
-  /* background-color: transparent/40; */
-  background-color: rgba(0, 0, 0, 0.5); /* black with 40% opacity */
+  background-color: rgba(0, 0, 0, 0.4); 
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 600; 
@@ -46,7 +45,7 @@
   width: 2.5px;
   height: 100%;
   background: linear-gradient(180deg, #19BDE8, white);
-  animation: animate2 1s 0.25s infinite;
+  animation: animate2 2s 0.25s infinite;
 }
 
 @keyframes animate2 {
@@ -64,7 +63,7 @@
   width: 100%;
   height: 2.5px;
   background: linear-gradient(270deg, #19BDE8, white);
-  animation: animate3 1s 0.5s infinite;
+  animation: animate3 2s 0.5s infinite;
 }
 
 @keyframes animate3 {
@@ -82,7 +81,7 @@
   width: 2.5px;
   height: 100%;
   background: linear-gradient(360deg, #19BDE8, white);
-  animation: animate4 1s 0.75s infinite;
+  animation: animate4 2s 0.75s infinite;
 }
 
 @keyframes animate4 {
@@ -95,8 +94,9 @@
 }
 
 .container #auto:hover {
-  transition-delay: 0.5s;
+  transition-delay: 0.2s;
   background: white;
   color: black;
-  /* box-shadow: 0 0 5px white, 0 0 5px white, 0 0 5px white; */
+  transform: scale(0.97);
+
 }

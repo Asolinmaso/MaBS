@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Bg from '../../assets/Career/HeroSection.jpg';
 import Footer from '../Footer/Footer';
+import CustomBtn from '../Button/CustomBtn';
 
 const Careers = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -73,6 +74,7 @@ const Careers = () => {
           <p className='font-light text-base sm:text-lg md:text-2xl'>
             We’re driven by a passion for innovation and impact. At our company, you’ll collaborate on meaningful projects that empower brands and improve experiences. If you're looking for a place where your ideas matter and your growth is a priority — you’re in the right place.
           </p>
+        <CustomBtn>View Openings</CustomBtn>
         </div>
       </header>
 

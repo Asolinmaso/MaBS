@@ -7,6 +7,7 @@ import two from '../../assets/Service/MultiMedia/2_UI_UX.png';
 import three from '../../assets/Service/MultiMedia/3_Graphic.png';
 import four from '../../assets/Service/MultiMedia/4_VideoEditing.png';
 import Explore from './Explore';
+import CustomBtn from '../Button/CustomBtn';
 const MultiMedia = () => {
     const navigate = useNavigate()
     const problems = [
@@ -85,24 +86,8 @@ const MultiMedia = () => {
                         We bring your brand to life visually by crafting multimedia experiences that connect, communicate, and captivate. From engaging designs to compelling visual storytelling, our solutions ensure your message not only stands out but resonates with your audience across all platforms.
                     </p>
                     <a href="#">
-                        <button className="flex items-center gap-3 font-semibold text-base sm:text-lg md:text-2xl text-white bg-[#19BDE8] py-3 px-5 rounded-xl cursor-pointer hover:bg-[#159dc3] transition">
-                            Elevate Your Brand Visually
-                            <svg
-                                width="9"
-                                height="15"
-                                viewBox="0 0 9 15"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M1.50005 1.5C1.50005 1.5 7.5 5.9189 7.5 7.5C7.5 9.0812 1.5 13.5 1.5 13.5"
-                                    stroke="#EBEBEB"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                        </button>
+                        <CustomBtn>Elevate Your Brand Visually</CustomBtn>
+                   
                     </a>
                 </div>
             </header>

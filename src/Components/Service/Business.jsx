@@ -6,6 +6,7 @@ import two from '../../assets/Service/Business/2.png'
 import three from '../../assets/Service/Business/3.png'
 import four from '../../assets/Service/Business/4.png'
 import Explore from './Explore';
+import CustomBtn from '../Button/CustomBtn';
 const Business = () => {
     const problems = [
         {
@@ -81,24 +82,7 @@ const Business = () => {
                         At Manvian, we help businesses move with clarity and confidence. From refining your value proposition to scaling operations, we design strategies rooted in market insight, innovation, and measurable impact.
                     </p>
                     <a href="#">
-                        <button className="flex items-center gap-3 font-semibold text-base sm:text-lg md:text-2xl text-white bg-[#19BDE8] py-3 px-5 rounded-xl cursor-pointer hover:bg-[#159dc3] transition">
-                            Start Building a Smarter Strategy
-                            <svg
-                                width="9"
-                                height="15"
-                                viewBox="0 0 9 15"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M1.50005 1.5C1.50005 1.5 7.5 5.9189 7.5 7.5C7.5 9.0812 1.5 13.5 1.5 13.5"
-                                    stroke="#EBEBEB"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                        </button>
+                            <CustomBtn> Start Building a Smarter Strategy</CustomBtn>
                     </a>
                 </div>
             </header>

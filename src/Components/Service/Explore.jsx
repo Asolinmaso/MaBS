@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const  Explore = () => {
     return (
         
-        <div className='w-full min-h-[300px] bg-gradient-to-t from-[#19BDE880]/50 to-white flex flex-col md:flex-row justify-around items-center px-8 py-12 lg:px-16'>
+        <div className='w-full min-h-[300px] bg-gradient-to-t from-[#19BDE880]/50 to-white flex flex-col md:flex-row justify-around items-center px-8 py-12 lg:px-16 mb-20'>
             <div className='w-full md:w-[35%] mb-8 md:mb-0'>
                 <h1 className='font-semibold text-4xl lg:text-3xl md:text-2xl sm:text-xl mb-5'>
                     Explore More Ways We Can Help You Grow

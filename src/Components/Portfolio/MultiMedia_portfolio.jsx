@@ -7,6 +7,7 @@ import work_img from '../../assets/Portfolio/MultiMedia-portfolio/work.png';
 import Footer from '../Footer/Footer';
 import Explore from '../Service/Explore';
 import key1 from '../../assets/Portfolio/MultiMedia-portfolio/keyOutCome1.webp';
+import CustomBtn from '../Button/CustomBtn';
 const MultiMedia_portfolio = () => {
   return (
     <>
@@ -22,19 +23,14 @@ const MultiMedia_portfolio = () => {
             Ready to take your business to the next level? Whether you’re building a bold brand or creating something meaningful, we transform your ideas into powerful visuals and seamless digital experiences that make a real impact.
           </p>
           <a href="#">
-            <button className='flex items-center gap-3 font-semibold text-lg sm:text-xl text-white bg-[#19BDE8] py-3 px-6 rounded-xl cursor-pointer'>
-              Make Your Brand Stand Out
-              <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.50005 1.5C1.50005 1.5 7.5 5.9189 7.5 7.5C7.5 9.0812 1.5 13.5 1.5 13.5" stroke="#EBEBEB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              </svg>
-            </button>
+            <CustomBtn>Make Your Brand Stand Out</CustomBtn>
           </a>
         </div>
       </header>
 
       <main>
         {/* Brand Identity */}
-        <div className="max-w-6xl mt-10 mx-auto p-6 rounded-md">
+        <div className="max-w-6xl mt-20 mx-auto p-6 rounded-md">
           <h2 className="text-4xl font-semibold text-[#19BDE8] text-center mb-4">
             Brand Identity That Stands Out
           </h2>
@@ -70,19 +66,27 @@ const MultiMedia_portfolio = () => {
 
           {/* Icon Creation Section */}
           <div className="mt-6 text-center">
-            <div className="flex justify-center items-center space-x-4 text-sm">
+            <div className="flex justify-center items-center space-x-4 sm:space-x-6 md:space-x-8 text-sm">
               <div>
-                <img src={logo_Alg} alt="Logo Algorithms" className="w-[60%] md:w-[150px]" />
+                <img
+                  src={logo_Alg}
+                  alt="Logo Algorithms"
+                  className="w-[200px] sm:w-[220px] md:w-[280px] lg:w-[350px] transition-all duration-300"
+                />
               </div>
               <div>
-                <img src={icon_creation} alt="Icon Creation" className="w-[60%] md:w-[150px]" />
+                <img
+                  src={icon_creation}
+                  alt="Icon Creation"
+                  className="w-[200px] sm:w-[220px] md:w-[280px] lg:w-[350px] transition-all duration-300"
+                />
               </div>
             </div>
           </div>
         </div>
 
         {/* Visual Content */}
-        <section className="max-w-6xl mt-10 mx-auto p-6 rounded-md">
+        <section className="max-w-6xl mt-20 mx-auto p-6 rounded-md">
           <h2 className="text-4xl font-semibold text-[#19BDE8] text-center mb-3">
             Visual Content That Engages
           </h2>
@@ -104,14 +108,14 @@ const MultiMedia_portfolio = () => {
         </section>
 
         {/* Impact */}
-      
-        <section className='mt-10 mx-auto px-4 md:px-6 rounded-md'>
+
+        <section className='mt-20 mx-auto px-4 md:px-6 rounded-md'>
           <div className='px-4 md:px-10'>
             <h2 className="text-4xl font-semibold text-[#19BDE8] text-center mb-3">
               Impact of Our Multimedia Services
             </h2>
             <p className='font-normal text-xl pt-3 text-center'>
-            Our multimedia work helped clients strengthen brand identity, enhance visual communication,
+              Our multimedia work helped clients strengthen brand identity, enhance visual communication,
               and connect more effectively with their audiences. Through design and storytelling, we made
               their message memorable.            </p>
           </div>
@@ -119,7 +123,7 @@ const MultiMedia_portfolio = () => {
             <div className='w-full lg:w-[588px] bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] p-6 rounded-lg shadow-xl absolute z-10 top-10 '>
               <h1 className='font-medium text-2xl md:text-3xl'>Key Outcomes:</h1>
               <ul className='list-disc pl-6 md:pl-10 mt-5 text-lg md:text-xl font-normal space-y-4'>
-              <li>Improved audience engagement through clean, creative visuals.</li>
+                <li>Improved audience engagement through clean, creative visuals.</li>
                 <li>Boosted professional image with meaningful branding.</li>
                 <li>Elevated communication of complex ideas using graphics and video.</li>
                 <li>Increased recognition through consistent and tailored design assets.</li>
@@ -135,7 +139,7 @@ const MultiMedia_portfolio = () => {
           </div>
         </section>
         {/* Value */}
-        <section className='mt-10 md:mt-[15px] mx-auto px-4 md:px-6 rounded-md'>
+        <section className='mt-20 md:mt-[15px] mx-auto px-4 md:px-6 rounded-md'>
           <div className='px-4 md:px-10'>
             <h2 className="text-4xl font-semibold text-[#19BDE8] text-center mb-3">
               Value We Delivered to Our Clients
@@ -165,23 +169,33 @@ const MultiMedia_portfolio = () => {
         </section>
 
         {/* Explore */}
-        <section className="flex flex-col md:flex-row justify-between items-center px-10 py-16 mt-4  bg-white">
-          <div className="w-full md:w-1/2 pr-10">
+        <section className="flex flex-col md:flex-row justify-between items-center px-10 py-16 mt-10 bg-white">
+          <div className="w-full md:w-1/2 pr-0 md:pr-10 text-center md:text-left">
             <h2 className="text-3xl font-semibold text-[#19BDE8] mb-4">Want to Explore More?</h2>
             <p className="text-lg text-gray-800 mb-6">
-              If you’d like to see more of our creative work and how we bring brands to life through design,
+              If you'd like to see more of our creative work and how we bring brands to life through design,
               click the button below.
             </p>
-            <button className="bg-[#19BDE8] hover:bg-[#0eaed4] text-white text-lg px-6 py-3 rounded-md font-medium mb-5">
-              See More Multimedia Projects &nbsp; &gt;
-            </button>
+            <div className="flex justify-center md:justify-start">
+              <button className="bg-[#19BDE8] hover:bg-[#0eaed4] text-white text-lg px-6 py-3 rounded-md font-medium mb-5 cursor-pointer hover:scale-[0.98]">
+                See More Multimedia Projects
+              </button>
+            </div>
           </div>
 
           <div className="grid grid-cols-2 gap-4 w-full md:w-1/2">
-            <div className="bg-gray-200 h-30 rounded-md"></div>
-            <div className="bg-gray-200 h-32 rounded-md"></div>
-            <div className="bg-gray-200 h-34 rounded-md"></div>
-            <div className="bg-gray-200 h-24 rounded-md"></div>
+            <div className="bg-gray-200 h-30 rounded-md ">
+              <img src={key1} alt="" className='h-full w-full object-cover rounded-lg cursor-pointer' />
+            </div>
+            <div className="bg-gray-200 h-30 rounded-md">
+              <img src={key1} alt="" className='h-full w-full object-cover rounded-lg cursor-pointer' />
+            </div>
+            <div className="bg-gray-200 h-30 rounded-md">
+              <img src={key1} alt="" className='h-full w-full object-cover rounded-lg cursor-pointer' />
+            </div>
+            <div className="bg-gray-200 h-30 rounded-md">
+              <img src={key1} alt="" className='h-full w-full object-cover rounded-lg cursor-pointer' />
+            </div>
           </div>
         </section>
 

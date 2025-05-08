@@ -6,6 +6,7 @@ import two from '../../assets/Service/Sales/2.png'
 import three from '../../assets/Service/Sales/3.png'
 import four from '../../assets/Service/Sales/4.png'
 import Explore from './Explore';
+import CustomBtn from '../Button/CustomBtn';
 const Sales = () => {
     const problems = [
         {
@@ -64,48 +65,31 @@ const Sales = () => {
     return (
         <>
             {/* Header */}
-         
+
             <header className="relative w-full h-[822.86px] flex justify-center items-center">
-  {/* Background image */}
-  <img
-    className="absolute w-full h-full object-cover z-0"
-    src={bg}
-    alt=""
-  />
+                {/* Background image */}
+                <img
+                    className="absolute w-full h-full object-cover z-0"
+                    src={bg}
+                    alt=""
+                />
 
-  {/* Overlay */}
-  <div className="absolute top-0 left-0 w-full h-full bg-black/65 z-10"></div>
+                {/* Overlay */}
+                <div className="absolute top-0 left-0 w-full h-full bg-black/65 z-10"></div>
 
-  {/* Content */}
-  <div className="relative z-20 flex flex-col items-center text-center text-white px-4 sm:px-6 md:px-12 lg:px-24 xl:px-0 w-full max-w-[1200px] gap-6">
-    <h1 className="text-[#19BDE8] font-semibold text-4xl sm:text-5xl md:text-6xl leading-tight">
-      Sales Solutions
-    </h1>
-    <p className="font-normal text-base sm:text-lg md:text-xl max-w-3xl">
-      Manvian empowers your sales teams with strategic guidance, automation tools, and data-driven tactics — helping you convert leads faster, retain customers longer, and scale growth sustainably.
-    </p>
-    <a href="#">
-      <button className="flex items-center gap-3 font-semibold text-base sm:text-lg md:text-2xl text-white bg-[#19BDE8] py-3 px-5 rounded-xl cursor-pointer hover:bg-[#159dc3] transition">
-        Let’s Boost Your Sales
-        <svg
-          width="9"
-          height="15"
-          viewBox="0 0 9 15"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M1.50005 1.5C1.50005 1.5 7.5 5.9189 7.5 7.5C7.5 9.0812 1.5 13.5 1.5 13.5"
-            stroke="#EBEBEB"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </button>
-    </a>
-  </div>
-</header>
+                {/* Content */}
+                <div className="relative z-20 flex flex-col items-center text-center text-white px-4 sm:px-6 md:px-12 lg:px-24 xl:px-0 w-full max-w-[1200px] gap-6">
+                    <h1 className="text-[#19BDE8] font-semibold text-4xl sm:text-5xl md:text-6xl leading-tight">
+                        Sales Solutions
+                    </h1>
+                    <p className="font-normal text-base sm:text-lg md:text-xl max-w-3xl">
+                        Manvian empowers your sales teams with strategic guidance, automation tools, and data-driven tactics — helping you convert leads faster, retain customers longer, and scale growth sustainably.
+                    </p>
+                    <a href="#">
+                        <CustomBtn>Let’s Boost Your Sales</CustomBtn>
+                    </a>
+                </div>
+            </header>
 
             {/* Content */}
             <main className=''>
@@ -169,7 +153,7 @@ const Sales = () => {
                 </div>
             </main>
 
-           <Explore/>
+            <Explore />
 
             <Footer />
         </>

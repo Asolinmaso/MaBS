@@ -4,6 +4,7 @@ import Testimonial from './Testimonial'
 import Footer from '../Footer/Footer'
 import News from './News'
 import ClientGrid from './ClientGrid'
+import CallToAction from './CallToAction'
 
 const InsightsComponent = () => {
   return (
@@ -12,6 +13,7 @@ const InsightsComponent = () => {
     <ClientGrid/>
     <Testimonial/>
     <News/>
+    <CallToAction/>
     <Footer/>
     </>
   )

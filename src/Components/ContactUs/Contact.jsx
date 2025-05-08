@@ -5,6 +5,13 @@ import { HiOutlineLocationMarker } from "react-icons/hi";
 import { FiPhone, FiMail } from 'react-icons/fi';
 import CustomBtn from '../Button/CustomBtn';
 import ContactFooter from './ContactFooter';
+// Logo
+import Linked from '../../assets/Logo/Linkedin.svg'
+import Insta from '../../assets/Logo/insta.svg'
+import Whatsapp from '../../assets/Logo/whatsapp.svg'
+import fb from '../../assets/Logo/facebook.svg'
+import opptiverse from '../../assets/Logo/opptiverse_Black.svg'
+
 
 const faqs = [
     { question: "1. How do I get a quote for a project?", answer: "To get a quote, please contact us with your project details and requirements." },
@@ -60,29 +67,8 @@ const Contact = () => {
                     <a
                         href="https://outlook.office365.com/book/Catherine1@deepdarkcreations.com/"
                         target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                    
-                        {/* <button className="flex items-center gap-3 font-semibold text-base sm:text-lg md:text-2xl text-white bg-[#19BDE8] py-3 px-5 rounded-xl cursor-pointer hover:bg-[#159dc3] transition">
-                            Booking Appointment
-                            <svg
-                                width="9"
-                                height="15"
-                                viewBox="0 0 9 15"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M1.50005 1.5C1.50005 1.5 7.5 5.9189 7.5 7.5C7.5 9.0812 1.5 13.5 1.5 13.5"
-                                    stroke="#EBEBEB"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                        </button> */}
+                        rel="noopener noreferrer">
                         <CustomBtn> Booking Appointment</CustomBtn>
-                    
                     </a>
                 </div>
 
@@ -119,17 +105,35 @@ const Contact = () => {
                 </h2>
                 <div className="space-y-4">
                     {faqs.map((faq, index) => (
-                        <div key={index} className="border border-gray-300 rounded-xl transition-all duration-300">
+                        <div key={index} className="border border-gray-300 rounded-xl transition-all duration-300 hover:shadow-lg">
                             <button
-                                className="w-full text-left px-5 py-4 font-semibold hover:bg-gray-50"
+                                className="w-full text-left px-5 py-4 font-semibold hover:bg-gray-50 flex justify-between items-center transition-all duration-300"
                                 onClick={() => toggleFAQ(index)}
                             >
-                                {faq.question}
+                                <span className={`transition-transform duration-300 ${activeIndex === index ? 'text-[#19BDE8]' : ''}`}>
+                                    {faq.question}
+                                </span>
+                                <svg
+                                    className={`w-5 h-5 transition-transform duration-300 ${activeIndex === index ? 'rotate-180 text-[#19BDE8]' : ''}`}
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth={2}
+                                        d="M19 9l-7 7-7-7"
+                                    />
+                                </svg>
                             </button>
                             <div
-                                className={`px-5 pb-4 text-gray-600 text-sm sm:text-base transition-all duration-300 ${activeIndex === index ? 'block' : 'hidden'}`}
+                                className={`overflow-hidden transition-all duration-300 ${activeIndex === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}
                             >
-                                {faq.answer}
+                                <div className="px-5 pb-4 text-gray-600 text-sm sm:text-base">
+                                    {faq.answer}
+                                </div>
                             </div>
                         </div>
                     ))}
@@ -203,6 +207,26 @@ const Contact = () => {
                     </div>
                 </form>
             </div>
+
+            {/* Follow Us */}
+            <section className="bg-gradient-to-t from-[#19BDE880]/50 to-white pb-8 pt-2 text-center px-4">
+                <h3 className="text-lg md:text-3xl font-semibold text-[#19BDE8] mb-2">Follow Us</h3>
+                <p className="text-gray-700 mb-4 text-sm sm:text-base md:text-lg font-medium">
+                    Stay connected with us on social media for updates, insights, and more.
+                </p>
+
+                {/* Social Icons with improved responsiveness */}
+                <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-4 px-2">
+                    <img src={opptiverse} alt="opptiverse" className="h-12 sm:h-16 md:h-20 w-auto cursor-pointer" />
+                    <img src={Linked} alt="LinkedIn" className="h-12 sm:h-16 md:h-20 w-auto cursor-pointer" />
+                    <img src={Insta} alt="Instagram" className="h-12 sm:h-16 md:h-20 w-auto cursor-pointer" />
+                    <img src={Whatsapp} alt="whatsapp" className="h-12 sm:h-16 md:h-20 w-auto cursor-pointer" />
+                    <img src={fb} alt="Facebook" className="h-12 sm:h-16 md:h-20 w-auto cursor-pointer" />
+                </div>
+
+                <p className="text-gray-600 text-sm sm:text-base">Let's start the conversation today!</p>
+            </section>
+
 
             {/* Footer */}
             <ContactFooter />

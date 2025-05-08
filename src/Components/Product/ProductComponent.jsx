@@ -2,6 +2,9 @@ import React from 'react'
 import bg from '../../assets/Product/Product_Hero.png'
 import Footer from '../Footer/Footer'
 import oppti_black from '../../assets/Logo/opptiverse.svg'
+import Opptiverse_bg from '../../assets/Product/Opptiverse_Bg.png'
+import CustomBtn from '../Button/CustomBtn'
+// Logos
 
 const ProductComponent = () => {
     const handleSubmit = async (e) => {
@@ -41,15 +44,23 @@ const ProductComponent = () => {
                     <div className='absolute inset-0 bg-black/70 z-10'></div>
 
                     {/* Content & Form */}
-                    <div className='relative z-20 w-full max-w-5xl px-6 pt-24 pb-16'>
+                    <div className='relative z-20 w-full max-w-5xl px-6 pt-15 pb-16'>
                         {/* Heading & Description */}
                         <div className='text-white text-center flex flex-col items-center mb-12 pt-26'>
                             <h1 className='text-[#19BDE8] font-semibold text-5xl md:text-6xl mb-6'>Explore our Product</h1>
+                            <div className='w-full max-w-[800px] mx-auto'>
+                                <img 
+                                    src={Opptiverse_bg} 
+                                    className='w-full h-30 object-contain px-4 sm:px-6 md:px-8' 
+                                    alt="Opptiverse Background" 
+                                />
+                            </div>
                             <p className='text-xl md:text-2xl mt-8'>
                                 Welcome to Manvian, your trusted partner in business development. We empower entrepreneurs and their Businesses to Reach New Heights by providing valuable solutions through Innovative Strategies and Exceptional Execution
                             </p>
-                            <a href="">
-                                <img className='mt-10 w-[100px] h-[100px] cursor-pointer' src={oppti_black} alt="Logo" />
+                            <a href="" className="mt-10">
+                                {/* <img className='w-[100px] h-[100px] cursor-pointer' src={oppti_black} alt="Logo" /> */}
+                                <CustomBtn>explore now</CustomBtn>
                             </a>
                         </div>
 

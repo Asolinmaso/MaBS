@@ -7,6 +7,7 @@ import two from '../../assets/Service/DigitalMarketing/2.png'
 import three from '../../assets/Service/DigitalMarketing/3.png'
 import four from '../../assets/Service/DigitalMarketing/4.png'
 import Explore from './Explore';
+import CustomBtn from '../Button/CustomBtn';
 const DigitalMarketing = () => {
     const problems = [
         {
@@ -82,25 +83,8 @@ const DigitalMarketing = () => {
                     <p className="font-normal text-base sm:text-lg md:text-xl max-w-3xl">
                         We help brands cut through the digital noise with tailored strategies across SEO, SEM, SMO, and Google My Business Optimization — so your business gets found, clicked, and remembered.
                     </p>
-                    <a href="#">
-                        <button className="flex items-center gap-3 font-semibold text-base sm:text-lg md:text-2xl text-white bg-[#19BDE8] py-3 px-5 rounded-xl cursor-pointer hover:bg-[#159dc3] transition">
-                            Boost Your Brand Reach
-                            <svg
-                                width="9"
-                                height="15"
-                                viewBox="0 0 9 15"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    d="M1.50005 1.5C1.50005 1.5 7.5 5.9189 7.5 7.5C7.5 9.0812 1.5 13.5 1.5 13.5"
-                                    stroke="#EBEBEB"
-                                    strokeWidth="2"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                />
-                            </svg>
-                        </button>
+                    <a href="#">   
+                            <CustomBtn>Boost Your Brand Reach</CustomBtn>
                     </a>
                 </div>
             </header>

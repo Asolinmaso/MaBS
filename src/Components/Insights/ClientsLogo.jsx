@@ -5,10 +5,11 @@ const logos = [
   "https://logo.clearbit.com/microsoft.com",
   "https://logo.clearbit.com/amazon.com",
   "https://logo.clearbit.com/facebook.com",
+  "https://logo.clearbit.com/adobe.com",
   "https://logo.clearbit.com/apple.com",
+  "https://logo.clearbit.com/intel.com",
   "https://logo.clearbit.com/netflix.com",
   "https://logo.clearbit.com/adobe.com",
-  "https://logo.clearbit.com/intel.com",
   "https://logo.clearbit.com/ibm.com",
   "https://logo.clearbit.com/salesforce.com",
   "https://logo.clearbit.com/slack.com",
@@ -24,7 +25,7 @@ const logos = [
   "https://logo.clearbit.com/salesforce.com",
   "https://logo.clearbit.com/slack.com",
   "https://logo.clearbit.com/adobe.com",
-  "https://logo.clearbit.com/intel.com"
+
 ];
 
 // Added responsive styles for mobile view
@@ -37,26 +38,27 @@ const ClientsLogo = () => {
         <p className="text-sm md:text-base text-gray-600">
           We’ve had the pleasure of working with some amazing brands. If you'd like to be one of them, let’s talk!
         </p>
-        <button className="px-4 py-2 md:px-6 md:py-3 bg-[#19BDE8] text-white rounded-md hover:bg-[#17A9D1] transition cursor-pointer">
+        <button className="px-4 py-2 md:px-6 md:py-3 bg-[#19BDE8] text-white rounded-md hover:bg-[#17A9D1] transition">
           Contact Us
         </button>
       </div>
 
       {/* Right: Logos Scroll */}
-      <div className="w-full md:w-2/3 h-[300px] md:h-[500px] overflow-hidden relative bg-gradient-to-b from-white to-[#FFFFFF] rounded-lg">
+      <div className="w-full md:w-2/3 h-[300px] md:h-[500px] overflow-hidden relative bg-[rgba(25,189,232,0.25)] rounded-lg">
+
         {/* Top and Bottom Gradient Shadows */}
-        <div className="absolute top-0 left-0 w-full h-8 md:h-16 z-10 pointer-events-none bg-gradient-to-b from-white to-transparent" />
-        <div className="absolute bottom-0 left-0 w-full h-8 md:h-16 z-10 pointer-events-none bg-gradient-to-t from-white to-transparent" />
+        <div className="absolute top-0 left-0 w-full h-16 md:h-32 z-10 pointer-events-none bg-gradient-to-b from-[#FFFFFF] to-transparent" />
+        <div className="absolute bottom-0 left-0 w-full h-16 md:h-32 z-10 pointer-events-none bg-gradient-to-t from-[#FFFFFF] to-transparent" />
 
         {/* Scrolling container */}
         <div className="relative h-full">
           <div className="absolute w-full flex flex-col animate-scroll-up">
             {/* 1st copy */}
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-2 md:gap-4 p-2 md:p-4">
+            <div className="grid grid-cols-8 gap-2 md:gap-4 p-2 md:p-4">
               {logos.map((logo, index) => (
                 <div
                   key={`first-${index}`}
-                  className="flex items-center justify-center w-16 h-16 md:w-22 md:h-22 bg-white rounded-md border border-gray-300 shadow-md"
+                  className="flex items-center justify-center w-16 h-16 md:w-22 md:h-22 bg-white rounded-md shadow-md"
                 >
                   <img
                     src={logo}
@@ -67,11 +69,11 @@ const ClientsLogo = () => {
               ))}
             </div>
             {/* 2nd copy */}
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-2 md:gap-4 p-2 md:p-4">
+            <div className="grid grid-cols-8 gap-2 md:gap-4 p-2 md:p-4">
               {logos.map((logo, index) => (
                 <div
                   key={`second-${index}`}
-                  className="flex items-center justify-center w-16 h-16 md:w-22 md:h-22 bg-white rounded-md border border-gray-300 shadow-md"
+                  className="flex items-center justify-center w-16 h-16 md:w-22 md:h-22 bg-white rounded-md shadow-md"
                 >
                   <img
                     src={logo}

@@ -117,15 +117,15 @@ const WhatWeDo = () => {
             </div>
 
             {/* Who we Work With */}
-            <div className='bg-[#EEEDED] w-full mt-20 mb-10 py-10 flex items-center justify-center'>
-                <div className='w-full max-w-[1200px] text-center px-4'>
-                    <h1 className='text-[#19BDE8] font-semibold text-2xl sm:text-4xl mb-8'>Who We Work With</h1>
-                    <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4 justify-items-center items-center'>
+            <div className='w-screen relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] bg-[#EEEDED] mt-15 mb-10'>
+                <div className='w-full max-w-[1200px] mx-auto py-16 px-4'>
+                    <h1 className='text-[#19BDE8] font-semibold text-2xl sm:text-4xl mb-12 text-center'>Who We Work With</h1>
+                    <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-10 justify-items-center items-center'>
                         <img className='w-[100px] sm:w-[153px] h-auto' src={brand1} alt="" />
                         <img className='w-[100px] sm:w-[153px] h-auto' src={brand2} alt="" />
                         <img className='w-[100px] sm:w-[155px] h-auto' src={brand3} alt="" />
                         <img className='w-[100px] sm:w-[153px] h-auto' src={brand4} alt="" />
-                        <img className='w-[100px] sm:w-[153px] h-auto bg-gray-300 p-2' src={brand5} alt="" />
+                        <img className='w-[100px] sm:w-[153px] h-auto bg-gray-100 p-2' src={brand5} alt="" />
                         <img className='w-[100px] sm:w-[153px] h-auto' src={brand6} alt="" />
                         <img className='h-[60px] sm:h-[80px] w-[60px] sm:w-[80px] rounded-full object-cover' src={brand7} alt="" />
                     </div>

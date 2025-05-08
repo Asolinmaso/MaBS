@@ -8,7 +8,7 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [activeWhat, setActiveWhat] = useState('Overview');
-  const [activeWho, setActiveWho] = useState('Vision');
+  const [activeWho, setActiveWho] = useState('About');
 
   const [showWhat, setShowWhat] = useState(false);
   const [showWho, setShowWho] = useState(false);
@@ -30,6 +30,7 @@ const Navbar = () => {
   ];
 
   const whoWeAreItems = [
+    { key: 'About', label: 'About', description: 'A visionary force committed to delivering world-class solutions while uplifting society and creating a lasting global impact.' },
     { key: 'Vision', label: 'Our Vision', description: 'A visionary force committed to delivering world-class solutions while uplifting society and creating a lasting global impact.' },
     { key: 'Mission', label: 'Our Mission', description: 'Empowering businesses with tailored strategies to boost growth, elevate branding, and enrich client experiences.' },
     { key: 'Goal', label: 'Goal', description: 'Partnering with innovators and leaders to redefine industries and drive transformative change.' },
@@ -48,9 +49,9 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Desktop Menu - Only visible on large screens */}
+      {/* --------------Desktop Menu-------------------------------------------------------------- */}
       <div className='relative xl:flex hidden'>
-        <ul className='flex text-[#FFFFFF] gap-[20px] px-[70px] py-[16px] text-lg lg:px-[40px] lg:gap-[16px] lg:text-base'>
+        <ul className='flex text-[#FFFFFF] gap-[24px] px-[70px] py-[16px] text-base lg:px-[40px] lg:gap-[16px]'>
 
           {/* What We Do */}
           <div
@@ -62,10 +63,9 @@ const Navbar = () => {
             onMouseLeave={() => setShowWhat(false)}
           >
             <li
-              className={`flex items-center gap-1 font-medium cursor-pointer ${showWhat
-                  ? "text-[#19BDE8] underline"
-                  : "hover:text-[#19BDE8]"
-                }`}
+              className={`flex items-center gap-1 font-medium text-lg cursor-pointer mr-6 ${
+                showWhat ? "text-[#19BDE8] underline" : "hover:text-[#19BDE8]"
+              }`}
               onClick={() => navigate("/")}
             >
               What we do
@@ -85,38 +85,41 @@ const Navbar = () => {
             </li>
 
             {showWhat && (
-              <div className="absolute left-58  transform -translate-x-1/2 top-full w-screen bg-[#2C2C2C] text-white z-50 px-[40px] py-6 shadow-lg flex lg:px-[20px]">
-                <ul className="text-sm space-y-3 w-1/3 pr-4 border-r border-[#444]">
+              <div className="absolute left-85 transform -translate-x-1/2 top-full w-screen bg-[#2C2C2C] text-white z-50 px-[40px] py-6 shadow-lg flex lg:px-[20px]">
+                <ul className="text-sm space-y-5 w-1/3 pr-4 border-r border-[#444]">
                   {whatWeDoItems.map((item) => (
                     <li
                       key={item.key}
                       onClick={() => setActiveWhat(item.key)}
                       onMouseEnter={() => setActiveWhat(item.key)}
-                      className={`cursor-pointer ${activeWhat === item.key
-                          ? "text-[#19BDE8] font-semibold "
+                      className={`cursor-pointer transition-colors duration-200  ${
+                        activeWhat === item.key
+                          ? "text-[#19BDE8] font-semibold"
                           : "hover:text-[#19BDE8]"
-                        }`}
+                      }`}
                     >
                       {item.label}
+                      
                     </li>
+                    
                   ))}
                 </ul>
-                <div className="text-xs text-[#B0B0B0] w-2/3 pl-6">
+                <div className="text-xs text-[#B0B0B0] w-2/3 pl-6 transition-opacity duration-200">
                   {whatWeDoItems.map(
                     (item) =>
                       activeWhat === item.key && (
-                        <div key={item.key}>
-                          <h4 className="text-[#19BDE8] font-semibold mb-1">
+                        <div key={item.key} className="animate-fadeIn">
+                          <h4 className="text-[#19BDE8] font-medium text-xl  mb-3">
                             {item.label}
                           </h4>
                           {item.key === 'Services' ? (
                             <div className="space-y-2">
                               {serviceList.map(service => (
-                                <div key={service.name} className="flex justify-between items-center border-b border-[#444] pb-2">
+                                <div key={service.name} className="flex justify-between items-center border-b border-[#444] pb-2  transition-colors duration-200 px-2 rounded">
                                   <span className="text-sm">{service.name}</span>
                                   <button
                                     onClick={() => navigate(service.path)}
-                                    className="bg-[#19BDE8] text-black px-3 py-1 rounded text-xs font-semibold hover:bg-[#17a1c7]"
+                                    className="bg-[#19BDE8] text-black px-3 py-1 rounded text-xs font-semibold hover:bg-[#17a1c7] transition-colors duration-200 cursor-pointer"
                                   >
                                     View
                                   </button>
@@ -144,10 +147,9 @@ const Navbar = () => {
             onMouseLeave={() => setShowWho(false)}
           >
             <li
-              className={`flex items-center gap-1 font-medium cursor-pointer ${showWho
-                  ? "text-[#19BDE8] underline "
-                  : "hover:text-[#19BDE8]"
-                }`}
+              className={`flex items-center gap-1 font-medium text-lg cursor-pointer  mr-6 ${
+                showWho ? "text-[#19BDE8] underline" : "hover:text-[#19BDE8]"
+              }`}
               onClick={() => navigate("/who")}
             >
               Who we are
@@ -167,28 +169,29 @@ const Navbar = () => {
             </li>
 
             {showWho && (
-              <div className="absolute left-26  transform -translate-x-1/2 top-full w-screen  bg-[#2C2C2C] text-white z-50 px-[40px] py-6 shadow-lg flex lg:px-[20px]">
-                <ul className="text-sm space-y-3 w-1/3 pr-4 border-r border-[#444]">
+              <div className="absolute left-43  transform -translate-x-1/2 top-full w-screen  bg-[#2C2C2C] text-white z-50 px-[40px] py-6 shadow-lg flex lg:px-[20px]">
+                <ul className="text-sm space-y-5 w-1/3 pr-4 border-r border-[#444]">
                   {whoWeAreItems.map((item) => (
                     <li
                       key={item.key}
                       onClick={() => setActiveWho(item.key)}
                       onMouseEnter={() => setActiveWho(item.key)}
-                      className={`cursor-pointer ${activeWho === item.key
-                          ? "text-[#19BDE8] font-semibold "
+                      className={`cursor-pointer transition-colors duration-200 ${
+                        activeWho === item.key
+                          ? "text-[#19BDE8] font-semibold"
                           : "hover:text-[#19BDE8]"
-                        }`}
+                      }`}
                     >
                       {item.label}
                     </li>
                   ))}
                 </ul>
-                <div className="text-xs text-[#B0B0B0] w-2/3 pl-6">
+                <div className="text-xs text-[#B0B0B0] w-2/3 pl-6 transition-opacity duration-200">
                   {whoWeAreItems.map(
                     (item) =>
                       activeWho === item.key && (
-                        <div key={item.key}>
-                          <h4 className="text-[#19BDE8] font-semibold mb-1">
+                        <div key={item.key} className="animate-fadeIn">
+                          <h4 className="text-[#19BDE8] font-medium text-xl mb-3">
                             {item.label}
                           </h4>
                           <p>{item.description}</p>
@@ -202,29 +205,29 @@ const Navbar = () => {
 
           {/* Other Pages */}
           <li>
-            <Link to="/careers" className={`${location.pathname === '/careers' ? 'text-[#19BDE8] font-semibold  underline' : 'hover:text-[#19BDE8]'}`}>
+            <Link to="/careers" className={`font-medium text-lg mr-6 ${location.pathname === '/careers' ? 'text-[#19BDE8] ' : 'hover:text-[#19BDE8]'}`}>
               Careers
             </Link>
           </li>
           <li>
-            <Link to="/insights" className={`${location.pathname === '/insights' ? 'text-[#19BDE8] font-semibold  underline' : 'hover:text-[#19BDE8]'}`}>
+            <Link to="/insights" className={`font-medium text-lg mr-6 ${location.pathname === '/insights' ? 'text-[#19BDE8] ' : 'hover:text-[#19BDE8]'}`}>
               Insights
             </Link>
           </li>
           <li>
-            <Link to="/product" className={`${location.pathname === '/product' ? 'text-[#19BDE8] font-semibold  underline ' : 'hover:text-[#19BDE8]'}`}>
+            <Link to="/product" className={`font-medium text-lg mr-6 ${location.pathname === '/product' ? 'text-[#19BDE8] ' : 'hover:text-[#19BDE8]'}`}>
               Product
             </Link>
           </li>
           <li>
-            <Link to="/contact" className={`${location.pathname === '/contact' ? 'text-[#19BDE8] font-semibold  underline' : 'hover:text-[#19BDE8]'}`}>
+            <Link to="/contact" className={`font-medium text-lg mr-6 ${location.pathname === '/contact' ? 'text-[#19BDE8] ' : 'hover:text-[#19BDE8]'}`}>
               Contact
             </Link>
           </li>
         </ul>
       </div>
 
-      {/* Mobile/Tablet Menu Button - Visible on xl and smaller screens */}
+      {/*----------------------------- Mobile Menu---------------------------*/}
       <div className='xl:hidden relative md:mr-10 '>
       <button 
         className="text-white absolute bottom-[-10px] left-1 md:bottom-0 md:left-0"
@@ -239,10 +242,10 @@ const Navbar = () => {
 
       {/* Mobile/Tablet Menu */}
       {isMobileMenuOpen && (
-        <div className="absolute top-full left-0 w-full bg-[#1E1E1E] text-white py-2 px-4 flex flex-col z-50 space-y-2 text-sm transition-transform duration-300 ease-in-out max-h-[80vh] overflow-y-auto">
+        <div className="absolute top-full left-0 w-full bg-[#1E1E1E] text-white py-2 px-4 flex flex-col z-50 space-y-2 text-base transition-transform duration-300 ease-in-out max-h-[80vh] overflow-y-auto">
           <div className="relative">
             <div
-              className={`flex items-center gap-1 font-medium cursor-pointer py-2 ${
+              className={`flex items-center gap-1 font-normal cursor-pointer py-2 ${
                 showWhat ? "text-[#19BDE8] underline" : "hover:text-[#19BDE8]"
               }`}
               onClick={(e) => {
@@ -294,25 +297,24 @@ const Navbar = () => {
           </div>
 
           <li
-            className={`flex items-center gap-1 font-medium cursor-pointer ${location.pathname === '/who'
-                ? "text-[#19BDE8] underline "
-                : "hover:text-[#19BDE8]"
-              }`}
+            className={`flex items-center gap-1 font-normal text-base cursor-pointer ${
+              location.pathname === '/who' ? "text-[#19BDE8] underline" : "hover:text-[#19BDE8]"
+            }`}
             onClick={() => navigate("/who")}
           >
             Who we are
           </li>
 
-          <Link to="/careers" onClick={() => setIsMobileMenuOpen(false)} className={`py-2 hover:text-[#19BDE8] ${location.pathname === '/careers' && 'text-[#19BDE8] underline'}`}>
+          <Link to="/careers" onClick={() => setIsMobileMenuOpen(false)} className={`py-2 font-normal text-base hover:text-[#19BDE8] ${location.pathname === '/careers' && 'text-[#19BDE8] underline'}`}>
             Careers
           </Link>
-          <Link to="/insights" onClick={() => setIsMobileMenuOpen(false)} className={`py-2 hover:text-[#19BDE8] ${location.pathname === '/insights' && 'text-[#19BDE8] underline'}`}>
+          <Link to="/insights" onClick={() => setIsMobileMenuOpen(false)} className={`py-2 font-normal text-base hover:text-[#19BDE8] ${location.pathname === '/insights' && 'text-[#19BDE8] underline'}`}>
             Insights
           </Link>
-          <Link to="/product" onClick={() => setIsMobileMenuOpen(false)} className={`py-2 hover:text-[#19BDE8] ${location.pathname === '/product' && 'text-[#19BDE8] underline'}`}>
+          <Link to="/product" onClick={() => setIsMobileMenuOpen(false)} className={`py-2 font-normal text-base hover:text-[#19BDE8] ${location.pathname === '/product' && 'text-[#19BDE8] underline'}`}>
             Product
           </Link>
-          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className={`py-2 hover:text-[#19BDE8] ${location.pathname === '/contact' && 'text-[#19BDE8] underline'}`}>
+          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className={`py-2 font-normal text-base hover:text-[#19BDE8] ${location.pathname === '/contact' && 'text-[#19BDE8] underline'}`}>
             Contact
           </Link>
         </div>

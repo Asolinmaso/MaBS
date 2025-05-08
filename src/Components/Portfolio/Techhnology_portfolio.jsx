@@ -121,7 +121,7 @@ const Technology_Portfolio = () => {
         </section>
 
         {/* Impact */}
-        <section className='mt-10 mx-auto px-4 md:px-6 rounded-md'>
+        <section className='mt-20 mx-auto px-4 md:px-6 rounded-md'>
           <div className='px-4 md:px-10'>
             <h2 className="text-4xl font-semibold text-[#19BDE8] text-center mb-3">
               Impact of Our Technology Services
@@ -151,7 +151,7 @@ const Technology_Portfolio = () => {
         </section>
 
         {/* Value */}
-        <section className='mt-10 md:mt-[15px] mx-auto px-4 md:px-6 rounded-md'>
+        <section className='mt-10 md:mt-20 mx-auto px-4 md:px-6 rounded-md'>
           <div className='px-4 md:px-10'>
             <h2 className="text-4xl font-semibold text-[#19BDE8] text-center mb-3">
               Value We Delivered to Our Clients
