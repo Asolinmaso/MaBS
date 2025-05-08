@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react';
 import bg from '../../assets/Service/RAAS/HeroSection.png'
 import Footer from '../Footer/Footer';
 import one from '../../assets/Service/RAAS/1.png'
@@ -7,7 +7,39 @@ import three from '../../assets/Service/RAAS/3.png'
 import four from '../../assets/Service/RAAS/4.png'
 import Explore from './Explore';
 import CustomBtn from '../Button/CustomBtn';
+
 const RAAS = () => {
+    const [tiltStyles, setTiltStyles] = useState({});
+
+    const handleMouseMove = (e, index) => {
+        const card = e.currentTarget;
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left; // X position within the element
+        const y = e.clientY - rect.top; // Y position within the element
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * 30; // Adjust the multiplier for tilt intensity
+        const rotateY = ((x - centerX) / centerX) * -30;
+
+        setTiltStyles((prevStyles) => ({
+            ...prevStyles,
+            [index]: {
+                transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+            }
+        }));
+    };
+
+    const handleMouseLeave = (index) => {
+        setTiltStyles((prevStyles) => ({
+            ...prevStyles,
+            [index]: {
+                transform: 'rotateX(0deg) rotateY(0deg)'
+            }
+        }));
+    };
+
     const problems = [
         {
             title: "Slow Hiring Process",
@@ -58,8 +90,6 @@ const RAAS = () => {
         },
     ];
 
-
-
     return (
         <>
             {/* Header */}
@@ -109,6 +139,9 @@ const RAAS = () => {
                                             ? 'bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF]'
                                             : 'bg-gradient-to-b from-[#19BDE8] to-[#FFFFFF]'
                                         }`}
+                                    onMouseMove={(e) => handleMouseMove(e, index)}
+                                    onMouseLeave={() => handleMouseLeave(index)}
+                                    style={tiltStyles[index] || {}}
                                 >
                                     <div className="w-10 h-10 border-2 border-black text-black font-normal rounded-[50px] p-6 mx-auto mb-4 flex items-center justify-center text-4xl ">
                                         {index + 1}
