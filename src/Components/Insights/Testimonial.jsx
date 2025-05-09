@@ -79,7 +79,7 @@ const Testimonial = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 0, // Removed delay by setting autoplaySpeed to 0
+    autoplaySpeed: 3000, // Adjusted speed to slow down the slide
     cssEase: 'linear', // Ensures smooth continuous sliding
     responsive: [
       {
