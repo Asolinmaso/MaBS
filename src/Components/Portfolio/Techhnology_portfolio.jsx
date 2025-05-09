@@ -202,7 +202,12 @@ const Technology_Portfolio = () => {
                 alt="Value Key Outcomes"
               />
             </div>
-            <div className='w-full lg:w-[588px] bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] p-6 rounded-lg shadow-xl absolute right-0 z-10 top-10'>
+            <div
+              className='w-full lg:w-[588px] bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] p-6 rounded-lg shadow-xl absolute right-0 z-10 top-10'
+              style={tiltStyles[1]}
+              onMouseMove={(e) => handleMouseMove(e, 1)}
+              onMouseLeave={() => handleMouseLeave(1)}
+            >
               <h1 className='font-medium text-2xl md:text-3xl'>Key Outcomes:</h1>
               <ul className='list-disc pl-6 md:pl-10 mt-5 text-lg md:text-xl font-normal space-y-4'>
                 <li>Custom-built solutions tailored to their business model</li>
