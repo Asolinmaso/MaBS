@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import bg from '../../assets/Portfolio/Technology/HeroSection.png'
 import one from '../../assets/Portfolio/Technology/1.png'
 import two from '../../assets/Portfolio/Technology/2.png'
@@ -9,7 +9,39 @@ import key1 from '../../assets/Portfolio/MultiMedia-portfolio/keyOutCome1.webp';
 import CustomBtn from '../Button/CustomBtn';
 import value from  '../../assets/Portfolio/value.jpg'
 import impact from '../../assets/Portfolio/impact.jpg'
+
 const Technology_Portfolio = () => {
+  const [tiltStyles, setTiltStyles] = useState({});
+
+  const handleMouseMove = (e, index) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left; // X position within the element
+    const y = e.clientY - rect.top; // Y position within the element
+
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+
+    const rotateX = ((y - centerY) / centerY) * 30; // Adjust the multiplier for tilt intensity
+    const rotateY = ((x - centerX) / centerX) * -30;
+
+    setTiltStyles((prevStyles) => ({
+      ...prevStyles,
+      [index]: {
+        transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
+      }
+    }));
+  };
+
+  const handleMouseLeave = (index) => {
+    setTiltStyles((prevStyles) => ({
+      ...prevStyles,
+      [index]: {
+        transform: 'rotateX(0deg) rotateY(0deg)'
+      }
+    }));
+  };
+
   return (
     <>
       {/* header */}
@@ -128,7 +160,12 @@ const Technology_Portfolio = () => {
             </p>
           </div>
           <div className='relative w-full lg:w-[1041px] min-h-[481px] mt-8 mx-auto'>
-            <div className='w-full lg:w-[588px] bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] p-6 rounded-lg shadow-xl absolute z-10 top-10'>
+            <div
+              className='w-full lg:w-[588px] bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] p-6 rounded-lg shadow-xl absolute z-10 top-10'
+              style={tiltStyles[0]}
+              onMouseMove={(e) => handleMouseMove(e, 0)}
+              onMouseLeave={() => handleMouseLeave(0)}
+            >
               <h1 className='font-medium text-2xl md:text-3xl'>Key Outcomes:</h1>
               <ul className='list-disc pl-6 md:pl-10 mt-5 text-lg md:text-xl font-normal space-y-4'>
                 <li>Delivered custom solutions aligned with each client's business goals.</li>
