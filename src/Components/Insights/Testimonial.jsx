@@ -79,7 +79,8 @@ const Testimonial = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 0, // Removed delay by setting autoplaySpeed to 0
+    cssEase: 'linear', // Ensures smooth continuous sliding
     responsive: [
       {
         breakpoint: 1024,
@@ -186,6 +187,101 @@ const Testimonial = () => {
               </div>
             ))}
           </div>
+          <div className='scroll-container flex gap-20 w-max animate-scroll px-10 items-center'>
+            {[...testimonials, ...testimonials].map((items, index) => (
+              <div key={index} className='relative w-[547px] h-[459px]'>
+                <img
+                  className='absolute right-4 top-2 translate-y-0 rounded-[50%] z-30'
+                  src={items.image}
+                  alt="Client image"
+                />
+                <div className='absolute w-[265px] top-4 left-1 min-h-24 rounded-tr-4xl bg-[#1E1E1E] z-30'>
+                  <div className='relative'>
+                    <div className='mt-1 text-white ml-5 font-medium text-2xl'>{items.name}</div>
+                    <p className='text-white text-[12px] ml-10'>Review</p>
+                    <div className='absolute right-4 top-17'>{renderStars(items.rating)}</div>
+                  </div>
+                </div>
+                <div className='absolute top-26 left-1 z-10'>
+                  <svg
+                    width='74'
+                    height='95'
+                    viewBox='0 0 66 72'
+                    fill='none'
+                    xmlns='http://www.w3.org/2000/svg'
+                  >
+                    <g filter='url(#filter0_i_105_663)'>
+                      <path
+                        d='M33 72L0.957062 0.75L65.0429 0.75L33 72Z'
+                        fill='#19BDE8'
+                      />
+                    </g>
+                    <defs>
+                      <filter
+                        id='filter0_i_105_663'
+                        x='0.957062'
+                        y='0.75'
+                        width='64.0859'
+                        height='75.25'
+                        filterUnits='userSpaceOnUse'
+                        colorInterpolationFilters='sRGB'
+                      >
+                        <feFlood floodOpacity='0' result='BackgroundImageFix' />
+                        <feBlend
+                          mode='normal'
+                          in='SourceGraphic'
+                          in2='BackgroundImageFix'
+                          result='shape'
+                        />
+                        <feColorMatrix
+                          in='SourceAlpha'
+                          type='matrix'
+                          values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'
+                          result='hardAlpha'
+                        />
+                        <feOffset dy='4' />
+                        <feGaussianBlur stdDeviation='2' />
+                        <feComposite
+                          in2='hardAlpha'
+                          operator='arithmetic'
+                          k2='-1'
+                          k3='1'
+                        />
+                        <feColorMatrix
+                          type='matrix'
+                          values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'
+                        />
+                        <feBlend
+                          mode='normal'
+                          in2='shape'
+                          result='effect1_innerShadow_105_663'
+                        />
+                      </filter>
+                    </defs>
+                  </svg>
+                </div>
+                <div className='ml-8 w-[510px] h-[372px] pt-24 px-9 pb-8 border-white shadow-2xl overflow-hidden mt-[81px] rounded relative z-20 bg-white flex flex-col gap-2 items-center text-center'>
+                  <h1 className='text-[#19BDE8] text-lg font-normal w-[326px]'>{items.company}</h1>
+                  {items.text.length > 300 ? items.text.slice(0, 300) + '...' : items.text}
+                </div>
+              </div>
+            ))}
+          </div>
+          <style>
+            {`
+              @keyframes scroll {
+                0% {
+                  transform: translateX(0);
+                }
+                100% {
+                  transform: translateX(-50%); /* Adjusted to create a seamless loop */
+                }
+              }
+              .animate-scroll {
+                animation: scroll 40s linear infinite; /* Ensures smooth transition without jump */
+              }
+            `}
+          </style>
         </div>
       </div>
 
@@ -228,4 +324,3 @@ const Testimonial = () => {
 };
 
 export default Testimonial;
-
