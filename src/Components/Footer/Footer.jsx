@@ -140,7 +140,7 @@ const Footer = () => {
               placeholder="Message"
               className="mt-4 w-full p-2 rounded bg-white text-black h-24 outline-none"
             ></textarea>
-            <button type="submit" className="mt-4 px-6 py-2 border border-white rounded hover:bg-white hover:text-black transition">
+            <button type="submit" className="mt-4 px-6 py-2 border border-white rounded hover:bg-white hover:text-black transition cursor-pointer">
               Reach Us
             </button>
           </form>

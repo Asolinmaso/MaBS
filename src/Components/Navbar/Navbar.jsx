@@ -109,7 +109,7 @@ const Navbar = () => {
                     (item) =>
                       activeWhat === item.key && (
                         <div key={item.key} className="animate-fadeIn">
-                          <h4 className="text-[#19BDE8] font-medium text-xl  mb-3">
+                          <h4 className="text-[#19BDE8] font-bold text-lg  mb-3">
                             {item.label}
                           </h4>
                           {item.key === 'Services' ? (
@@ -191,7 +191,7 @@ const Navbar = () => {
                     (item) =>
                       activeWho === item.key && (
                         <div key={item.key} className="animate-fadeIn">
-                          <h4 className="text-[#19BDE8] font-medium text-xl mb-3">
+                          <h4 className="text-[#19BDE8] font-bold text-lg mb-3">
                             {item.label}
                           </h4>
                           <p>{item.description}</p>
