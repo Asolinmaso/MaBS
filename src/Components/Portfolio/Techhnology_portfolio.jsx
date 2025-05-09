@@ -6,7 +6,9 @@ import three from '../../assets/Portfolio/Technology/3.png'
 import Explore from '../Service/Explore';
 import Footer from '../Footer/Footer';
 import key1 from '../../assets/Portfolio/MultiMedia-portfolio/keyOutCome1.webp';
-
+import CustomBtn from '../Button/CustomBtn';
+import value from  '../../assets/Portfolio/value.jpg'
+import impact from '../../assets/Portfolio/impact.jpg'
 const Technology_Portfolio = () => {
   return (
     <>
@@ -17,20 +19,15 @@ const Technology_Portfolio = () => {
         <div className='absolute top-0 left-0 w-full h-full bg-black/65 z-10'></div>
         <div className='flex flex-col items-center gap-6 text-center w-full md:w-6xl h-auto z-20 text-white px-4'>
           <h1 className='text-[#19BDE8] font-semibold text-4xl sm:text-6xl'>Real Work. Real Results.</h1>
-          <p className='font-normal text-lg sm:text-xl'>
+          <p className='font-normal text-lg sm:text-xl mt-6'>
             Ready to power up your business with smart, scalable tech? From website design to AI-driven systems, we build digital solutions that drive real growth and success.
           </p>
           <a href="#">
-            <button className='flex items-center gap-3 font-semibold text-xl sm:text-2xl text-white bg-[#19BDE8] py-3 px-4 rounded-xl cursor-pointer'>
-              Start Your Digital Transformation
-              <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M1.50005 1.5C1.50005 1.5 7.5 5.9189 7.5 7.5C7.5 9.0812 1.5 13.5 1.5 13.5" stroke="#EBEBEB" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </button>
+           <CustomBtn>Start Your Digital Transformation</CustomBtn>   
           </a>
         </div>
       </header>
-      
+
       {/* main */}
       <main className='mb-15'>
         {/* Web Design */}
@@ -39,10 +36,10 @@ const Technology_Portfolio = () => {
             Cutting-Edge Tech Solutions
           </h2>
           <h2 className='font-medium text-2xl md:text-3xl mb-6'>Website Design</h2>
-          <img 
-            src={one} 
-            alt="Website Design" 
-            className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-lg shadow-lg" 
+          <img
+            src={one}
+            alt="Website Design"
+            className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-lg shadow-lg"
           />
           <div className="w-full max-w-[1200px] mx-auto mt-10">
             <div className="flex flex-col md:flex-row md:justify-between md:gap-16 gap-6">
@@ -65,7 +62,7 @@ const Technology_Portfolio = () => {
             </div>
           </div>
         </section>
-        
+
 
         {/* Ecommerce */}
         <section className='max-w-6xl mt-10 mx-auto p-6 rounded-md'>
@@ -80,13 +77,13 @@ const Technology_Portfolio = () => {
               <div className="flex flex-col ">
                 <h3 className="text-2xl md:text-3xl font-medium mb-4">What they do</h3>
                 <p className='text-lg text-gray-700 leading-relaxed'>
-                Motiff Bespoke leverages 17+ years of fashion expertise to create custom garments blending art and functionality. They offer personalized, high-quality clothing tailored for professionals.
+                  Motiff Bespoke leverages 17+ years of fashion expertise to create custom garments blending art and functionality. They offer personalized, high-quality clothing tailored for professionals.
                 </p>
               </div>
               <div className="flex flex-col ">
                 <h3 className="text-2xl md:text-3xl font-medium mb-4">Project overview</h3>
                 <p className='text-lg text-gray-700 leading-relaxed'>
-                Motiff Bespoke is an <strong>e-commerce platform</strong> built with <strong> Next.js, Astro.js, and Cloudflare,</strong> offering a seamless shopping experience with fast performance and security.
+                  Motiff Bespoke is an <strong>e-commerce platform</strong> built with <strong> Next.js, Astro.js, and Cloudflare,</strong> offering a seamless shopping experience with fast performance and security.
                 </p>
               </div>
             </div>
@@ -107,13 +104,13 @@ const Technology_Portfolio = () => {
               <div className="flex flex-col ">
                 <h3 className="text-2xl md:text-3xl font-medium mb-4">What they do</h3>
                 <p className='text-lg text-gray-700 leading-relaxed'>
-                KISEM (Kotak - IIT Madras Save Energy Mission) enhances energy efficiency in Indian MSMEs through assessments, sustainability studies, and energy conservation measures, promoting a sustainable future.
+                  KISEM (Kotak - IIT Madras Save Energy Mission) enhances energy efficiency in Indian MSMEs through assessments, sustainability studies, and energy conservation measures, promoting a sustainable future.
                 </p>
               </div>
               <div className="flex flex-col ">
                 <h3 className="text-2xl md:text-3xl font-medium mb-4">Project overview</h3>
                 <p className='text-lg text-gray-700 leading-relaxed'>
-                KISEM is a real-time <strong>chat application</strong>  built using <strong>WordPress, MariaDB, and Google Analytics.</strong> It provides seamless communication while integrating performance tracking for enhanced user experience.
+                  KISEM is a real-time <strong>chat application</strong>  built using <strong>WordPress, MariaDB, and Google Analytics.</strong> It provides seamless communication while integrating performance tracking for enhanced user experience.
                 </p>
               </div>
             </div>
@@ -143,7 +140,7 @@ const Technology_Portfolio = () => {
             <div className='w-full lg:w-[588px] absolute right-0'>
               <img
                 className='rounded-xl w-full h-[300px] lg:h-[450px] object-cover lg:block hidden'
-                src={key1}
+                src={impact}
                 alt="Impact Key Outcomes"
               />
             </div>
@@ -164,7 +161,7 @@ const Technology_Portfolio = () => {
             <div className='w-full lg:w-[588px] absolute left-0'>
               <img
                 className='rounded-xl w-full h-[300px] lg:h-[450px] object-cover lg:block hidden'
-                src={key1}
+                src={value}
                 alt="Value Key Outcomes"
               />
             </div>
@@ -179,9 +176,31 @@ const Technology_Portfolio = () => {
             </div>
           </div>
         </section>
+        {/* Want to expplore links and images */}
+        <section className="flex flex-col md:flex-row justify-between items-center px-10 py-16 mt-10 bg-white">
+          <div className="w-full md:w-1/2 pr-0 md:pr-10 text-center md:text-left">
+            <h2 className="text-3xl font-semibold text-[#19BDE8] mb-4">Want to Explore More?</h2>
+            <p className="text-lg text-gray-800 mb-6">
+              If you'd like to see more of our creative work and how we bring brands to life through design,
+              click the button below.
+            </p>
+            <div className="flex justify-center md:justify-start">
+              <button className="bg-[#19BDE8] hover:bg-[#0eaed4] text-white text-lg px-6 py-3 rounded-md font-medium mb-5 cursor-pointer hover:scale-[0.98]">
+                See More Multimedia Projects
+              </button>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-4 w-full md:w-1/2 ">
+            <img src={key1} alt="" className='w-full h-[140px] object-cover rounded-lg cursor-pointer' />
+            <img src={key1} alt="" className='w-full h-[140px] object-cover rounded-lg cursor-pointer' />
+            <img src={key1} alt="" className='w-full h-[140px] object-cover rounded-lg cursor-pointer' />
+            <img src={key1} alt="" className='w-full h-[140px] object-cover rounded-lg cursor-pointer' />
+          </div>
+        </section>
       </main>
 
-      <Explore/>
+      <Explore />
       <Footer />
     </>
   );

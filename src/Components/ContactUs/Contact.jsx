@@ -61,7 +61,7 @@ const Contact = () => {
                 {/* Main content container - adjusted positioning */}
                 <div className='flex flex-col items-center gap-6 text-center w-full max-w-6xl z-20 text-white px-4 mt-32 md:mt-40'>
                     <h1 className='text-[#19BDE8] font-semibold text-3xl sm:text-4xl md:text-6xl'>Contact Us</h1>
-                    <p className='font-normal text-base sm:text-lg md:text-2xl max-w-3xl'>
+                    <p className='font-normal text-base sm:text-lg md:text-2xl max-w-3xl mt-6'>
                         We'd love to hear from you! Whether you have a question, need assistance, or want to explore how we can work together, our team is here to help.
                     </p>
                     <a
@@ -148,7 +148,7 @@ const Contact = () => {
                         Didn't find your answer above? We're here to help. Just fill out the form below and we’ll get back to you soon.
                     </p>
                 </div>
-                <form onSubmit={handleSubmit} className='bg-white shadow-2xl rounded-xl px-4 sm:px-8 md:px-10 flex flex-col gap-6 w-full max-w-4xl mx-auto mt-15 mb-20 pb-10'>
+                <form onSubmit={handleSubmit} className='bg-white shadow-[25px_25px_25px_25px_rgba(0,0,0,0.1)]  rounded-xl px-4 sm:px-8 md:px-10 md:py-5 flex flex-col gap-6 w-full max-w-4xl mx-auto mt-15 mb-20 pb-10'>
                     <h1 className='text-[#19BDE8] font-semibold text-2xl sm:text-3xl md:text-4xl'>Get in Touch</h1>
                     <p className='font-normal text-sm sm:text-base md:text-lg text-[#1E1E1E]'>
                         Fill out our quick contact form, and we’ll get back to you promptly.
@@ -209,7 +209,7 @@ const Contact = () => {
             </div>
 
             {/* Follow Us */}
-            <section className="bg-gradient-to-t from-[#19BDE880]/50 to-white pb-8 pt-2 text-center px-4">
+            <section className="bg-gradient-to-t from-[#19BDE880]/50 to-white pb-8 pt-2 text-center px-4 mb-25">
                 <h3 className="text-lg md:text-3xl font-semibold text-[#19BDE8] mb-2">Follow Us</h3>
                 <p className="text-gray-700 mb-4 text-sm sm:text-base md:text-lg font-medium">
                     Stay connected with us on social media for updates, insights, and more.

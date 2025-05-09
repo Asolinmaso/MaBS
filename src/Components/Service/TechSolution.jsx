@@ -5,8 +5,7 @@ import one from '../../assets/Service/TechSolution/1.png'
 import two from '../../assets/Service/TechSolution/2.png'
 import three from '../../assets/Service/TechSolution/3.png'
 import four from '../../assets/Service/TechSolution/4.png'
-import Explore from './Explore';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import CustomBtn from '../Button/CustomBtn';
 
 const TechSolution = () => {
@@ -114,7 +113,7 @@ const TechSolution = () => {
                     <h1 className="text-[#19BDE8] font-semibold text-4xl sm:text-5xl md:text-6xl leading-tight">
                         Technology Solutions
                     </h1>
-                    <p className="font-normal text-base sm:text-lg md:text-xl max-w-3xl">
+                    <p className="font-normal text-base sm:text-lg md:text-xl max-w-3xl mt-6">
                         We don’t just build tech — we craft intelligent, scalable solutions that power your business growth. From stunning websites and intuitive apps to emerging technologies like blockchain and AI, we turn ideas into digital excellence.
                     </p>
                     <a href="#">
@@ -214,8 +213,35 @@ const TechSolution = () => {
                 </button>
 
             </div>
+            {/* Explore */}
+            <div className='w-full min-h-[300px] bg-gradient-to-t from-[#19BDE880]/50 to-white flex flex-col md:flex-row justify-around items-center px-8 py-12 lg:px-16 mb-20'>
+                <div className='w-full md:w-[35%] mb-8 md:mb-0'>
+                    <h1 className='font-semibold text-4xl lg:text-3xl md:text-2xl sm:text-xl mb-5'>
+                        Explore More Ways We Can Help You Grow
+                    </h1>
+                    <p className='text-base lg:text-sm md:text-xs'>
+                        Your business needs more than just Multimedia. Discover how our full suite of services works together to drive real results.
+                    </p>
+                </div>
 
-            <Explore />
+                <div className='w-full md:w-[55%] flex flex-wrap gap-3 justify-center'>
+                    <button className='text-white bg-black rounded-lg py-2 px-4 hover:bg-gray-800 transition-colors text-sm cursor-pointer underline'>
+                        <Link to="/portfolio/Multimedia"> Multimedia</Link>
+                    </button>
+                    <button className='text-white bg-black rounded-lg py-2 px-4 hover:bg-gray-800 transition-colors text-sm cursor-pointer underline'>
+                        <Link to="/service/Business">Business strategy consulting</Link>
+                    </button>
+                    <button className='text-white bg-black rounded-lg py-2 px-4 hover:bg-gray-800 transition-colors text-sm cursor-pointer underline'>
+                        <Link to="/service/RAAS"> RaaS Solutions</Link>
+                    </button>
+                    <button className='text-white bg-black rounded-lg py-2 px-4 hover:bg-gray-800 transition-colors text-sm cursor-pointer underline'>
+                        <Link to="/portfolio/Multimedia"> Multimedia</Link>
+                    </button>
+                    <button className='text-white bg-black rounded-lg py-2 px-4 hover:bg-gray-800 transition-colors text-sm cursor-pointer underline'>
+                        <Link to="/service/DigitalMarketing"> Digital Marketing</Link>
+                    </button>
+                </div>
+            </div>
             <Footer />
         </>
     )

@@ -71,7 +71,7 @@ const Careers = () => {
         {/* Content */}
         <div className='flex flex-col justify-center items-center gap-6 text-center max-w-4xl px-4 z-20 text-white'>
           <h1 className='text-[#19BDE8] font-semibold text-4xl sm:text-5xl md:text-6xl'>Join Our Team</h1>
-          <p className='font-light text-base sm:text-lg md:text-2xl'>
+          <p className='font-light text-base sm:text-lg md:text-2xl mt-6'>
             We’re driven by a passion for innovation and impact. At our company, you’ll collaborate on meaningful projects that empower brands and improve experiences. If you're looking for a place where your ideas matter and your growth is a priority — you’re in the right place.
           </p>
         <CustomBtn>View Openings</CustomBtn>
@@ -81,12 +81,9 @@ const Careers = () => {
 
       {/* Openings */}
       <div className="bg-white text-black font-sans min-h-screen relative">
-        <div className="text-center pt-20 pb-10">
-          <h2 className="text-3xl font-semibold text-[#19BDE8]">Current Openings</h2>
-        </div>
-
+       
         {/* Filter Buttons Container */}
-        <div className="flex flex-wrap justify-center gap-4 pb-10 relative z-10 px-4 sm:px-0">
+        <div className="flex flex-wrap justify-center gap-4 pb-10 relative z-10 px-4 sm:px-0 pt-15">
           {/* Role Dropdown */}
           <div className="relative w-full sm:w-auto">
             <button onClick={() => toggleDropdown("role")} className="w-full sm:w-auto border border-gray-300 text-gray-600 px-4 py-2 rounded-full flex items-center justify-between sm:justify-start gap-2">
@@ -164,7 +161,12 @@ const Careers = () => {
         </div>
 
         {/* Job Cards Container */}
+        <div className="pl-8 sm:pl-10 md:pl-20 lg:pl-47  pb-6">
+          <h2 className="text-3xl font-semibold text-[#19BDE8]">Current Openings</h2>
+        </div>
         <div className="flex justify-center gap-6 flex-wrap pb-20 px-4 sm:px-6 md:px-8">
+          
+
           {jobOpenings.length === 0 ? (
             <p className="text-center w-full">There are currently no job openings available.</p>
           ) : (

@@ -8,6 +8,8 @@ import Footer from '../Footer/Footer';
 import Explore from '../Service/Explore';
 import key1 from '../../assets/Portfolio/MultiMedia-portfolio/keyOutCome1.webp';
 import CustomBtn from '../Button/CustomBtn';
+import value from  '../../assets/Portfolio/value.jpg'
+import impact from '../../assets/Portfolio/impact.jpg'
 const MultiMedia_portfolio = () => {
   return (
     <>
@@ -19,7 +21,7 @@ const MultiMedia_portfolio = () => {
           <h1 className='text-[#19BDE8] font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl'>
             Real Work. Real Results.
           </h1>
-          <p className='font-normal text-base sm:text-lg md:text-xl'>
+          <p className='font-normal text-base sm:text-lg md:text-xl mt-6'>
             Ready to take your business to the next level? Whether you’re building a bold brand or creating something meaningful, we transform your ideas into powerful visuals and seamless digital experiences that make a real impact.
           </p>
           <a href="#">
@@ -132,7 +134,7 @@ const MultiMedia_portfolio = () => {
             <div className='w-full lg:w-[588px] absolute right-0 lg:block hidden'>
               <img
                 className='rounded-xl w-full h-[300px] lg:h-[450px] object-cover'
-                src={key1}
+                src={impact}
                 alt="Impact Key Outcomes"
               />
             </div>
@@ -152,7 +154,7 @@ const MultiMedia_portfolio = () => {
             <div className='w-full lg:w-[588px] absolute left-0'>
               <img
                 className='rounded-xl w-full h-[300px] lg:h-[450px] object-cover lg:block hidden'
-                src={key1}
+                src={value}
                 alt="Value Key Outcomes"
               />
             </div>
@@ -168,7 +170,7 @@ const MultiMedia_portfolio = () => {
           </div>
         </section>
 
-        {/* Explore */}
+        {/* Want to expplore links and images */}
         <section className="flex flex-col md:flex-row justify-between items-center px-10 py-16 mt-10 bg-white">
           <div className="w-full md:w-1/2 pr-0 md:pr-10 text-center md:text-left">
             <h2 className="text-3xl font-semibold text-[#19BDE8] mb-4">Want to Explore More?</h2>
@@ -183,19 +185,11 @@ const MultiMedia_portfolio = () => {
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4 w-full md:w-1/2">
-            <div className="bg-gray-200 h-30 rounded-md ">
-              <img src={key1} alt="" className='h-full w-full object-cover rounded-lg cursor-pointer' />
-            </div>
-            <div className="bg-gray-200 h-30 rounded-md">
-              <img src={key1} alt="" className='h-full w-full object-cover rounded-lg cursor-pointer' />
-            </div>
-            <div className="bg-gray-200 h-30 rounded-md">
-              <img src={key1} alt="" className='h-full w-full object-cover rounded-lg cursor-pointer' />
-            </div>
-            <div className="bg-gray-200 h-30 rounded-md">
-              <img src={key1} alt="" className='h-full w-full object-cover rounded-lg cursor-pointer' />
-            </div>
+          <div className="grid grid-cols-2 gap-4 w-full md:w-1/2 ">
+            <img src={key1} alt="" className='w-full h-[140px] object-cover rounded-lg cursor-pointer' />
+            <img src={key1} alt="" className='w-full h-[140px] object-cover rounded-lg cursor-pointer' />
+            <img src={key1} alt="" className='w-full h-[140px] object-cover rounded-lg cursor-pointer' />
+            <img src={key1} alt="" className='w-full h-[140px] object-cover rounded-lg cursor-pointer' />
           </div>
         </section>
 

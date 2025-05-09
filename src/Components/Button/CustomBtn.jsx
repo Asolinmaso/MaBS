@@ -3,7 +3,7 @@ import './Btn.css';
 
 const CustomBtn = ({ children }) => {
   return (
-    <div className="container">
+    <div className="container mt-10">
       <button id="auto" className="button">
         <span></span>
         <span></span>
