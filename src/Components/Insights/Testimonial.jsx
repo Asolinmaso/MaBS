@@ -101,7 +101,7 @@ const Testimonial = () => {
   return (
     <>
       {/* Desktop View */}
-      <div className='hidden md:block'>
+      <div className='hidden xl:block'>
         <div className='flex w-full justify-center mt-15'>
           <h1 className='font-semibold text-4xl text-[#19BDE8]'>Hear from Our Clients</h1>
         </div>
@@ -190,7 +190,7 @@ const Testimonial = () => {
       </div>
 
       {/* Mobile View */}
-      <div className="block md:hidden testimonial-slider relative">
+      <div className="block xl:hidden testimonial-slider relative">
         <h1 className="font-semibold text-2xl text-[#19BDE8] text-center mb-8">
           Hear from Our Clients
         </h1>
