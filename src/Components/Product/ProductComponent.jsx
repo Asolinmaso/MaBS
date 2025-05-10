@@ -1,9 +1,8 @@
 import React from 'react'
-import bg from '../../assets/Product/Product_Hero.png'
 import Footer from '../Footer/Footer'
-import oppti_black from '../../assets/Logo/opptiverse.svg'
 import Opptiverse_bg from '../../assets/Product/Opptiverse_Bg.png'
 import CustomBtn from '../Button/CustomBtn'
+import HeroSection from '../../assets/Product/HeroSection.mp4'
 // Logos
 
 const ProductComponent = () => {
@@ -49,10 +48,17 @@ const ProductComponent = () => {
                 {/* Hero Section with Background Image */}
                 <div className='relative w-full min-h-[900px] flex flex-col items-center justify-start'>
                     {/* Background Image */}
-                    <img className='absolute w-full h-full object-cover z-0' src={bg} alt="Background" />
+                    <video
+                        className="absolute w-full h-full object-cover z-0"
+                        src={HeroSection}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                    />
 
                     {/* Dark Overlay */}
-                    <div className='absolute inset-0 bg-black/70 z-10'></div>
+                    <div className='absolute inset-0 bg-black/20 z-10'></div>
 
                     {/* Content & Form */}
                     <div className='relative z-20 w-full max-w-5xl px-6 pt-15 pb-16'>

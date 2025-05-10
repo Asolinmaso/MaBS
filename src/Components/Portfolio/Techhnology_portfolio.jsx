@@ -7,9 +7,8 @@ import Explore from '../Service/Explore';
 import Footer from '../Footer/Footer';
 import key1 from '../../assets/Portfolio/MultiMedia-portfolio/keyOutCome1.webp';
 import CustomBtn from '../Button/CustomBtn';
-import value from  '../../assets/Portfolio/value.jpg'
-import impact from '../../assets/Portfolio/impact.jpg'
-
+import Value from '../../assets/Portfolio/Value.mp4'
+import Impact from '../../assets/Portfolio/Impact.mp4'
 const Technology_Portfolio = () => {
   const [tiltStyles, setTiltStyles] = useState({});
 
@@ -175,10 +174,13 @@ const Technology_Portfolio = () => {
               </ul>
             </div>
             <div className='w-full lg:w-[588px] absolute right-0'>
-              <img
-                className='rounded-xl w-full h-[300px] lg:h-[450px] object-cover lg:block hidden'
-                src={impact}
-                alt="Impact Key Outcomes"
+            <video
+                className="rounded-xl w-full h-[300px] lg:h-[450px] object-cover"
+                src={Impact}
+                autoPlay
+                muted
+                loop
+                playsInline
               />
             </div>
           </div>
@@ -196,10 +198,13 @@ const Technology_Portfolio = () => {
           </div>
           <div className='relative w-full lg:w-[1041px] min-h-[481px] mt-8 mx-auto'>
             <div className='w-full lg:w-[588px] absolute left-0'>
-              <img
-                className='rounded-xl w-full h-[300px] lg:h-[450px] object-cover lg:block hidden'
-                src={value}
-                alt="Value Key Outcomes"
+            <video
+                className="rounded-xl w-full h-[300px] lg:h-[450px] object-cover"
+                src={Value}
+                autoPlay
+                muted
+                loop
+                playsInline
               />
             </div>
             <div

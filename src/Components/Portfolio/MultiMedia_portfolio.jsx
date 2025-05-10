@@ -8,12 +8,11 @@ import Footer from '../Footer/Footer';
 import Explore from '../Service/Explore';
 import key1 from '../../assets/Portfolio/MultiMedia-portfolio/keyOutCome1.webp';
 import CustomBtn from '../Button/CustomBtn';
-import value from  '../../assets/Portfolio/value.jpg'
-import impact from '../../assets/Portfolio/impact.jpg'
+import Value from '../../assets/Portfolio/Value.mp4'
+import Impact from '../../assets/Portfolio/Impact.mp4'
 
 const MultiMedia_portfolio = () => {
   const [tiltStyles, setTiltStyles] = useState({});
-
   const handleMouseMove = (e, index) => {
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
@@ -170,11 +169,15 @@ const MultiMedia_portfolio = () => {
               </ul>
             </div>
             <div className='w-full lg:w-[588px] absolute right-0 lg:block hidden'>
-              <img
-                className='rounded-xl w-full h-[300px] lg:h-[450px] object-cover'
-                src={impact}
-                alt="Impact Key Outcomes"
+              <video
+                className="rounded-xl w-full h-[300px] lg:h-[450px] object-cover"
+                src={Impact}
+                autoPlay
+                muted
+                loop
+                playsInline
               />
+
             </div>
           </div>
         </section>
@@ -192,10 +195,13 @@ const MultiMedia_portfolio = () => {
             <div
               className='w-full lg:w-[588px] absolute left-0'
             >
-              <img
+              <video
                 className='rounded-xl w-full h-[300px] lg:h-[450px] object-cover lg:block hidden'
-                src={value}
-                alt="Value Key Outcomes"
+                src={Value}
+                autoPlay
+                muted
+                loop
+                playsInline
               />
             </div>
             <div

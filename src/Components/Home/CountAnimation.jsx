@@ -32,7 +32,7 @@ export default function StatsSection() {
   ];
 
   return (
-    <section className="rounded-xl shadow-2xl py-16 px-4 sm:px-6 lg:px-8 mb-15 mt-20">
+    <section className="rounded-xl shadow-2xl py-16 px-4 sm:px-6 lg:px-8 mb-15 mt-20 m-10">
       <div className="max-w-7xl mx-auto text-center">
         <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
