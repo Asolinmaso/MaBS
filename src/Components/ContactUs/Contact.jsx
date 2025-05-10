@@ -23,6 +23,17 @@ const faqs = [
 ];
 
 const Contact = () => {
+    const countries = [
+        "Afghanistan", "Algeria", "Argentina", "Australia", "Austria", "Bangladesh", "Belgium", "Botswana",
+        "Brazil", "Bulgaria", "Canada", "Chile", "China", "Colombia", "Croatia", "Czech Republic", "Denmark",
+        "Egypt", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Iceland", "India", "Indonesia",
+        "Iran", "Iraq", "Ireland", "Israel", "Italy", "Japan", "Kenya", "Kuwait", "Latvia", "Lithuania",
+        "Luxembourg", "Malaysia", "Mexico", "Morocco", "Namibia", "Nepal", "Netherlands", "New Zealand", "Nigeria",
+        "Norway", "Pakistan", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Saudi Arabia",
+        "Serbia", "Singapore", "Slovakia", "Slovenia", "South Africa", "South Korea", "Spain", "Sri Lanka", "Sweden",
+        "Switzerland", "Thailand", "Tunisia", "Turkey", "UAE", "Ukraine", "United Kingdom", "United States",
+        "Venezuela", "Vietnam", "Zambia", "Zimbabwe"
+    ];
     const [activeIndex, setActiveIndex] = useState(null);
     const toggleFAQ = (index) => {
         setActiveIndex(index === activeIndex ? null : index);
@@ -183,12 +194,18 @@ const Contact = () => {
                         </div>
                         <div>
                             <label className='block text-gray-700 mb-2 font-medium'>Location</label>
-                            <input
-                                type='text'
-                                placeholder='Enter Location'
-                                className='w-full border border-gray-300 p-3 rounded focus:outline-none'
-                                name="location"
-                            />
+                            <select
+                                        id="country"
+                                        name="country"
+                                        className='w-full border border-gray-300 p-3 rounded focus:outline-none [&:not(:focus)]:text-gray-500 [&:focus]:text-black'
+                                    >
+                                        <option value="" disabled selected>--Choose Country--</option>
+                                        {countries.map((country, index) => (
+                                            <option key={index} value={country}>
+                                                {country}
+                                            </option>
+                                        ))}
+                                    </select>
                         </div>
                     </div>
                     <div>
