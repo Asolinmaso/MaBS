@@ -9,17 +9,9 @@ import third from '../../assets/Home/1 What We Do/3_Tech_Solution.png'
 import fourth from '../../assets/Home/1 What We Do/4_Service.png'
 import fifth from '../../assets/Home/1 What We Do/5_Marketing.png'
 import sixth from '../../assets/Home/1 What We Do/6_Multi_Media_Solution.png'
-// who we work with
-import brand1 from '../../assets/Home/2 Work With/1.png'
-import brand2 from '../../assets/Home/2 Work With/2.png'
-import brand3 from '../../assets/Home/2 Work With/3.png'
-import brand4 from '../../assets/Home/2 Work With/4.png'
-import brand5 from '../../assets/Home/2 Work With/5.png'
-import brand6 from '../../assets/Home/2 Work With/6.png'
-import brand7 from '../../assets/Home/2 Work With/7.png'
+
 import { Link } from 'react-router-dom'
 import CountAnimation from './CountAnimation'
-import StatsSection from './CountAnimation'
 const FadeInSection = ({ children }) => {
     const [ref, inView] = useInView({
         triggerOnce: true,
@@ -88,8 +80,6 @@ const CountingNumber = ({ end, duration = 2 }) => {
 const WhatWeDo = () => {
     return (
         <main className='bg-white w-full mt-10 px-4 sm:px-6 lg:px-20'>
-{/* StatesSection */}
-            <StatsSection/>
             {/* head */}
             <div className='flex flex-col gap-1.5 text-center'>
                 <h1 className='text-[32px] sm:text-[40px] font-semibold text-[#19BDE8]'>What We Do</h1>
@@ -157,20 +147,7 @@ const WhatWeDo = () => {
             </div>
 
             {/* Who we Work With */}
-            <div className='w-screen relative left-[50%] right-[50%] ml-[-50vw] mr-[-50vw] bg-[#EEEDED] mt-15 mb-10'>
-                <div className='w-full max-w-[1200px] mx-auto py-16 px-4'>
-                    <h1 className='text-[#19BDE8] font-semibold text-2xl sm:text-4xl mb-12 text-center'>Who We Work With</h1>
-                    <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-10 justify-items-center items-center'>
-                        <img className='w-[100px] sm:w-[153px] h-auto' src={brand1} alt="" />
-                        <img className='w-[100px] sm:w-[153px] h-auto' src={brand2} alt="" />
-                        <img className='w-[100px] sm:w-[155px] h-auto' src={brand3} alt="" />
-                        <img className='w-[100px] sm:w-[153px] h-auto' src={brand4} alt="" />
-                        <img className='w-[100px] sm:w-[153px] h-auto bg-gray-100 p-2' src={brand5} alt="" />
-                        <img className='w-[100px] sm:w-[153px] h-auto' src={brand6} alt="" />
-                        <img className='h-[60px] sm:h-[80px] w-[60px] sm:w-[80px] rounded-full object-cover' src={brand7} alt="" />
-                    </div>
-                </div>
-            </div>
+
 
             {/* Hear from our Clients */}
             <div>

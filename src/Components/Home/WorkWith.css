@@ -1,0 +1,47 @@
+.logo-marquee-wrapper {
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .logo-marquee-track {
+    display: flex;
+    animation: scroll-left 20s linear infinite;
+  }
+  
+  .logo-img {
+    height: 60px;
+    width: 100px;
+    flex-shrink: 0;
+  }
+  
+  /* Ensure no margin breaks the loop */
+  .logo-img:not(:last-child) {
+    margin-right: 2rem;
+  }
+  
+  @media (min-width: 640px) {
+    .logo-img {
+      height: 80px;
+      width: 153px;
+    }
+  
+    .logo-img.rounded-full {
+      height: 80px;
+      width: 80px;
+    }
+  }
+  
+  /* This is key: smooth infinite horizontal loop */
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  /*pause on hover  */
+  /* .logo-marquee-track:hover {
+    animation-play-state: paused;
+  } */
+  
