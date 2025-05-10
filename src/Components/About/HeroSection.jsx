@@ -1,5 +1,6 @@
 import React from 'react';
 import Bg from '../../assets/About/HeroSection.jpeg';
+import CustomBtn from '../Button/CustomBtn';
 
 const HeroSection = () => {
   return (
@@ -22,6 +23,7 @@ const HeroSection = () => {
             provides a comprehensive ecosystem of support, education, and strategies tailored to your needs, whether
             you're a startup or an established business.
           </p>
+          <CustomBtn>About US</CustomBtn>
         </div>
       </header>
     </>

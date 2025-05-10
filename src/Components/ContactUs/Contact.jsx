@@ -77,7 +77,7 @@ const Contact = () => {
                     <div className='rounded-2xl p-6 flex flex-col justify-center gap-4 bg-white/10 w-full sm:w-[280px] min-h-[188px] text-white items-center text-center backdrop-blur-sm'>
                         <HiOutlineLocationMarker className='h-12 w-12 sm:h-16 sm:w-16 text-[#19BDE8]' />
                         <div>
-                            <p className='font-normal text-lg sm:text-xl'>Manvian Solutions</p>
+                            <p className='font-normal text-lg sm:text-xl'>Manvian Business Solutions</p>
                             <p className='font-normal text-lg sm:text-xl'>Ambattur, Chennai</p>
                         </div>
                     </div>
@@ -92,7 +92,7 @@ const Contact = () => {
                         <FiMail className='h-12 w-12 sm:h-16 sm:w-16 text-[#19BDE8]' />
                         <div>
                             <p className='font-normal text-lg sm:text-xl'>E-Mail Us</p>
-                            <p className='font-normal text-lg sm:text-xl'>admin@manvian.com</p>
+                            <p className='font-normal text-lg sm:text-xl'>operations@manvian.com</p>
                         </div>
                     </div>
                 </div>

@@ -7,6 +7,17 @@ import CustomBtn from '../Button/CustomBtn'
 // Logos
 
 const ProductComponent = () => {
+    const countries = [
+        "Afghanistan", "Algeria", "Argentina", "Australia", "Austria", "Bangladesh", "Belgium", "Botswana",
+        "Brazil", "Bulgaria", "Canada", "Chile", "China", "Colombia", "Croatia", "Czech Republic", "Denmark",
+        "Egypt", "Estonia", "Finland", "France", "Germany", "Greece", "Hungary", "Iceland", "India", "Indonesia",
+        "Iran", "Iraq", "Ireland", "Israel", "Italy", "Japan", "Kenya", "Kuwait", "Latvia", "Lithuania",
+        "Luxembourg", "Malaysia", "Mexico", "Morocco", "Namibia", "Nepal", "Netherlands", "New Zealand", "Nigeria",
+        "Norway", "Pakistan", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Romania", "Russia", "Saudi Arabia",
+        "Serbia", "Singapore", "Slovakia", "Slovenia", "South Africa", "South Korea", "Spain", "Sri Lanka", "Sweden",
+        "Switzerland", "Thailand", "Tunisia", "Turkey", "UAE", "Ukraine", "United Kingdom", "United States",
+        "Venezuela", "Vietnam", "Zambia", "Zimbabwe"
+    ];
     const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.target);
@@ -49,10 +60,10 @@ const ProductComponent = () => {
                         <div className='text-white text-center flex flex-col items-center mb-12 pt-26'>
                             <h1 className='text-[#19BDE8] font-semibold text-5xl md:text-6xl mb-6'>Explore our Product</h1>
                             <div className='w-full max-w-[800px] mx-auto'>
-                                <img 
-                                    src={Opptiverse_bg} 
-                                    className='w-full h-30 object-contain px-4 sm:px-6 md:px-8' 
-                                    alt="Opptiverse Background" 
+                                <img
+                                    src={Opptiverse_bg}
+                                    className='w-full h-30 object-contain px-4 sm:px-6 md:px-8'
+                                    alt="Opptiverse Background"
                                 />
                             </div>
                             <p className='text-xl md:text-2xl  mt-6'>
@@ -99,13 +110,19 @@ const ProductComponent = () => {
                                 </div>
 
                                 <div>
-                                    <label className='block text-gray-700 mb-2 font-medium'>Location</label>
-                                    <input
-                                        type='text'
-                                        name='location'
-                                        placeholder='Enter your Location'
-                                        className='w-full border border-gray-300 p-3 rounded focus:outline-none'
-                                    />
+                                    <label className='block text-gray-700 mb-2 font-medium'>Country</label>
+                                    <select
+                                        id="country"
+                                        name="country"
+                                        className='w-full border border-gray-300 p-3 rounded focus:outline-none [&:not(:focus)]:text-gray-500 [&:focus]:text-black'
+                                    >
+                                        <option value="" disabled selected>--Choose Country--</option>
+                                        {countries.map((country, index) => (
+                                            <option key={index} value={country}>
+                                                {country}
+                                            </option>
+                                        ))}
+                                    </select>
                                 </div>
                             </div>
 

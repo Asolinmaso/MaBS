@@ -72,7 +72,7 @@ const Careers = () => {
         <div className='flex flex-col justify-center items-center gap-6 text-center max-w-4xl px-4 z-20 text-white'>
           <h1 className='text-[#19BDE8] font-semibold text-4xl sm:text-5xl md:text-6xl'>Join Our Team</h1>
           <p className='font-light text-base sm:text-lg md:text-2xl mt-6'>
-            We’re driven by a passion for innovation and impact. At our company, you’ll collaborate on meaningful projects that empower brands and improve experiences. If you're looking for a place where your ideas matter and your growth is a priority — you’re in the right place.
+            We’re driven by a passion for innovation and impact. At our company, you’ll collaborate on meaningful projects that empower brands and improve experiences. If you're looking for a place where your ideas matter and your growth is a priority , you’re in the right place.
           </p>
         <CustomBtn>View Openings</CustomBtn>
         </div>

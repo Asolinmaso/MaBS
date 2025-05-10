@@ -8,12 +8,21 @@ const Navbar = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const [activeWhat, setActiveWhat] = useState('Overview');
-  const [activeWho, setActiveWho] = useState('About');
+  const [activeWho, setActiveWho] = useState('About Us');
 
   const [showWhat, setShowWhat] = useState(false);
   const [showWho, setShowWho] = useState(false);
 
-  const serviceList = [
+ 
+// what we do
+  const whatWeDoItems = [
+    { key: 'Overview', label: 'Overview', description: 'We provide a full spectrum of business technology services to help enterprises achieve their goals.' },
+    { key: 'Industries', label: 'Industries', description: 'Our experts provide insights and strategies tailored to solve your unique business challenges.' },
+    { key: 'Services', label: 'Services' }, // Description removed, will be replaced with serviceList
+    { key: 'Product & Platforms', label: 'Product & Platforms' },
+  ];
+  // Service List
+   const serviceList = [
     { name: 'RAAS', path: '/service/raas' },
     { name: 'Sales', path: '/service/sales' },
     { name: 'Multimedia Solution', path: '/service/multimedia' },
@@ -21,16 +30,13 @@ const Navbar = () => {
     { name: 'Digital Marketing Solution', path: '/service/DigitalMarketing' },
     { name: 'Business Strategy Consulting', path: '/service/Business' },
   ];
-
-  const whatWeDoItems = [
-    { key: 'Overview', label: 'Overview', description: 'We provide a full spectrum of business technology services to help enterprises achieve their goals.' },
-    { key: 'Industries', label: 'Industries', description: 'Our experts provide insights and strategies tailored to solve your unique business challenges.' },
-    { key: 'Services', label: 'Services' }, // Description removed, will be replaced with serviceList
-    { key: 'Product & Platforms', label: 'Product & Platforms', description: 'We provide tailored technology solutions to help startups and entrepreneurs build, optimize, and scale their digital products.' },
-  ];
+  // product list
+  const productList=[
+    {name:"Opptiverse",path:"https://opptiverse.com/"}
+  ]
 
   const whoWeAreItems = [
-    { key: 'About', label: 'About', description: 'A visionary force committed to delivering world-class solutions while uplifting society and creating a lasting global impact.' },
+    { key: 'About Us', label: 'About Us', description: 'A visionary force committed to delivering world-class solutions while uplifting society and creating a lasting global impact.' },
     { key: 'Vision', label: 'Our Vision', description: 'A visionary force committed to delivering world-class solutions while uplifting society and creating a lasting global impact.' },
     { key: 'Mission', label: 'Our Mission', description: 'Empowering businesses with tailored strategies to boost growth, elevate branding, and enrich client experiences.' },
     { key: 'Goal', label: 'Goal', description: 'Partnering with innovators and leaders to redefine industries and drive transformative change.' },
@@ -64,7 +70,7 @@ const Navbar = () => {
           >
             <li
               className={`flex items-center gap-1 font-medium text-lg cursor-pointer mr-6 ${
-                showWhat ? "text-[#19BDE8] underline" : "hover:text-[#19BDE8]"
+                showWhat ? "text-[#19BDE8] underline font-extrabold " : "hover:text-[#19BDE8]"
               }`}
               onClick={() => navigate("/")}
             >
@@ -92,9 +98,9 @@ const Navbar = () => {
                       key={item.key}
                       onClick={() => setActiveWhat(item.key)}
                       onMouseEnter={() => setActiveWhat(item.key)}
-                      className={`cursor-pointer transition-colors duration-200  ${
+                      className={`cursor-pointer transition-colors duration-200 text-[16px] ${
                         activeWhat === item.key
-                          ? "text-[#19BDE8] font-semibold"
+                          ? "text-[#19BDE8] font-semibold "
                           : "hover:text-[#19BDE8]"
                       }`}
                     >
@@ -129,6 +135,24 @@ const Navbar = () => {
                           ) : (
                             <p>{item.description}</p>
                           )}
+                          {item.key === 'Product & Platforms' ? (
+                            <div className="space-y-2">
+                              {productList.map(product => (
+                                <div key={product.name} className="flex justify-between items-center border-b border-[#444] pb-2  transition-colors duration-200 px-2 rounded">
+                                  <span className="text-sm">{product.name}</span>
+                                  <button
+                                   
+                                    className="bg-[#19BDE8] text-black px-3 py-1 rounded text-xs font-semibold hover:bg-[#17a1c7] transition-colors duration-200 cursor-pointer"
+                                  >
+                                  <a href={product.path} target='_blank'>View</a>
+                                    
+                                  </button>
+                                </div>
+                              ))}
+                            </div>
+                          ) : (
+                            <></>
+                          )}
                         </div>
                       )
                   )}
@@ -148,7 +172,7 @@ const Navbar = () => {
           >
             <li
               className={`flex items-center gap-1 font-medium text-lg cursor-pointer  mr-6 ${
-                showWho ? "text-[#19BDE8] underline" : "hover:text-[#19BDE8]"
+                showWho ? "text-[#19BDE8] underline font-extrabold" : "hover:text-[#19BDE8]"
               }`}
               onClick={() => navigate("/who")}
             >
@@ -176,7 +200,7 @@ const Navbar = () => {
                       key={item.key}
                       onClick={() => setActiveWho(item.key)}
                       onMouseEnter={() => setActiveWho(item.key)}
-                      className={`cursor-pointer transition-colors duration-200 ${
+                      className={`cursor-pointer transition-colors duration-200 text-[16px] ${
                         activeWho === item.key
                           ? "text-[#19BDE8] font-semibold"
                           : "hover:text-[#19BDE8]"
@@ -251,6 +275,7 @@ const Navbar = () => {
               onClick={(e) => {
                 e.preventDefault();
                 setShowWhat(!showWhat);
+                setShowWho(false);
               }}
             >
               What we do
@@ -296,15 +321,52 @@ const Navbar = () => {
             )}
           </div>
 
-          <li
-            className={`flex items-center gap-1 font-normal text-base cursor-pointer ${
-              location.pathname === '/who' ? "text-[#19BDE8] underline" : "hover:text-[#19BDE8]"
-            }`}
-            onClick={() => navigate("/who")}
-          >
-            Who we are
-          </li>
+          {/* Who we are section - modified */}
+          <div className="relative">
+            <div
+              className={`flex items-center gap-1 font-normal cursor-pointer py-2 ${
+                showWho ? "text-[#19BDE8] underline" : "hover:text-[#19BDE8]"
+              }`}
+              onClick={(e) => {
+                e.preventDefault();
+                setShowWho(!showWho);
+                setShowWhat(false);
+              }}
+            >
+              Who we are
+              <svg
+                className={`w-3 h-3 mt-0.5 transform transition-transform ${
+                  showWho ? 'rotate-180' : ''
+                }`}
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
 
+            {showWho && (
+              <div className="mt-2 bg-[#2C2C2C] rounded-md p-3 space-y-2">
+                {whoWeAreItems.map(item => (
+                  <div 
+                    key={item.key}
+                    className="cursor-pointer hover:text-[#19BDE8] py-2 border-b border-[#444]"
+                    onClick={() => {
+                      navigate(`/who#${item.key.toLowerCase()}`);
+                      setIsMobileMenuOpen(false);
+                      setShowWho(false);
+                    }}
+                  >
+                    {item.label}
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Rest of the mobile menu items */}
           <Link to="/careers" onClick={() => setIsMobileMenuOpen(false)} className={`py-2 font-normal text-base hover:text-[#19BDE8] ${location.pathname === '/careers' && 'text-[#19BDE8] underline'}`}>
             Careers
           </Link>

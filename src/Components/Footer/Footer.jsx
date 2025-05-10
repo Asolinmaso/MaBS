@@ -21,7 +21,6 @@ const Footer = () => {
     "Switzerland", "Thailand", "Tunisia", "Turkey", "UAE", "Ukraine", "United Kingdom", "United States",
     "Venezuela", "Vietnam", "Zambia", "Zimbabwe"
   ];
-  const [selectedCountry, setSelectedCountry] = useState("");
   const [formData, setFormData] = useState({
     name: '',
     email: '',
