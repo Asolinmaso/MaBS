@@ -1,4 +1,4 @@
- import { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
 
@@ -28,7 +28,7 @@ export default function MobMenu({ Menus }) {
       </button>
 
       <motion.div
-        className="fixed left-0 right-0 top-16 mt-4 overflow-y-auto h-full bg-[#18181A] backdrop-blur text-white p-6 pb-20"
+        className="fixed left-0 right-0 top-16 mt-4 overflow-y-auto h-full bg-[#18181A] backdrop-blur text-white p-6 pb-20 "
         initial={{ x: "-100%" }}
         animate={{ x: isOpen ? "0%" : "-100%" }}
       >
@@ -56,15 +56,18 @@ export default function MobMenu({ Menus }) {
                     variants={subMenuDrawer}
                     className="ml-5"
                   >
-                    {subMenu.map(({ name, icon: Icon }) => (
-                      <li
-                        key={name}
-                        className="p-2 flex-center hover:bg-white/5 rounded-md gap-x-2 cursor-pointer"
-                      >
-                        <Icon size={17} />
-                        {name}
-                      </li>
-                    ))}
+                    {subMenu
+                      .filter((item) => name === "What We Do" ? item.category === "Service" : true)
+                      .map(({ name, icon: Icon }) => (
+                        <li
+                          key={name}
+                          className="p-2 flex-center hover:bg-white/5 rounded-md gap-x-2 cursor-pointer"
+                        >
+                          <Icon size={17} />
+                          {name}
+                        </li>
+                      ))}
+
                   </motion.ul>
                 )}
               </li>

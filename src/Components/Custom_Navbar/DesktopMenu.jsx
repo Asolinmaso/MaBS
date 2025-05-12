@@ -49,7 +49,7 @@ export default function DesktopMenu({ menu }) {
 
       {hasSubMenu && (
         <motion.div
-          className="sub-menu bg-black/70 absolute left-1/2 -translate-x-1/2  z-50  min-w-[300px] rounded-xl shadow-lg "  //bg-for the dropdown4
+          className="sub-menu bg-black/70 absolute left-1/2 -translate-x-1/2  z-50  min-w-[300px] rounded-xl shadow-lg "  //bg-for the dropdown
           style={{ left: "100%", transform: "translateX(-50%)" }}
           initial="exit"
           animate={isHover ? "enter" : "exit"}

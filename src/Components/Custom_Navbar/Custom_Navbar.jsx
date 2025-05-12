@@ -1,4 +1,4 @@
- import { Menus } from "./utils";
+import { Menus } from "./utils";
 import DesktopMenu from "./DesktopMenu";
 import MobMenu from "./MobMenu";
 import Mabs from "../../assets/Logo/MABS.png";
@@ -7,13 +7,13 @@ import { Link } from "react-router-dom";
 import './Navbar.css'
 export default function Custom_Navbar() {
   return (
-    <header className="fixed top-0 left-0 w-full h-25 text-[15px] bg-black/85 text-white z-50 shadow">
+    <header className="fixed top-0 left-0 w-full h-25 text-[15px]  bg-[#18181A] lg:bg-black/90 text-white z-50 shadow">
       <nav className="px-4 flex items-center justify-between w-full max-w-7xl mx-auto h-full">
         <div className="flex items-center gap-x-3">
           <img src={Mabs} alt="Mabs Logo" className="h-10" />
         </div>
 
-        <ul className="gap-x-4 hidden lg:flex items-center ">
+        <ul className="gap-x-4 hidden lg:flex items-center">
           {Menus.map((menu) => (
             <DesktopMenu menu={menu} key={menu.name}  />
             
