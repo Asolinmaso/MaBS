@@ -74,8 +74,6 @@
   animation: scroll 75s linear infinite;
 }
 body {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-
+  cursor: url('/cursor.cur') !important;
+  cursor: -webkit-image-set(url('/cursor.cur') 1x, url('/cursor.png') 2x) !important;
 }
