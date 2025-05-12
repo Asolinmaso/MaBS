@@ -2,7 +2,6 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import ScrollToTop from './ScrollToTop'
-import Navbar from '../Navbar/Navbar'
 import Custom_Navbar from '../Custom_Navbar/Custom_Navbar'
 import AnimatedCursor from 'react-animated-cursor';
 
