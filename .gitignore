@@ -1,6 +1,6 @@
 /*************  ✨ Windsurf Command ⭐  *************/
 # Ignore large files
-*.mp4
+
 *.mov
 *.avi
 *.mkv
