@@ -17,6 +17,7 @@ import Sales from './Components/Service/Sales.jsx'
 import Business from './Components/Service/Business.jsx'
 import MultiMedia_portfolio from './Components/Portfolio/MultiMedia_portfolio.jsx'
 import Technology_Portfolio from './Components/Portfolio/Techhnology_portfolio.jsx'
+import Custom_Navbar from './Components/Custom_Navbar/Custom_Navbar.jsx'
 
 const Router = createBrowserRouter([
   {
@@ -25,15 +26,15 @@ const Router = createBrowserRouter([
     children: [
       { path: '/', element: <HomeComponent /> },
       { path: '/who', element: <AboutComponent /> },
-      { path: '/product', element: <ProductComponent /> },
-      { path: '/contact', element: <Contact /> },
       { path: "/insights", element: <InsightsComponent /> },
       { path: "/careers", element: <Careers /> },
+      { path: '/product', element: <ProductComponent /> },
+      { path: '/contact', element: <Contact /> },
+      { path: "/service/RAAS", element: <RAAS /> },
+      { path: "/service/Sales", element: <Sales /> },
       { path: "/service/multimedia", element: <MultiMedia /> },
       { path: "/service/TechSolution", element: <TechSolution /> },
       { path: "/service/DigitalMarketing", element: <DigitalMarketing /> },
-      { path: "/service/RAAS", element: <RAAS /> },
-      { path: "/service/Sales", element: <Sales /> },
       { path: "/service/Business", element: <Business /> },
       { path: "/portfolio/Multimedia", element: <MultiMedia_portfolio /> },
       { path: "/portfolio/Technology", element: <Technology_Portfolio /> }

@@ -5,7 +5,7 @@ import Linked from '../../assets/Logo/Linkedin.svg';
 import Insta from '../../assets/Logo/insta.svg';
 import Whatsapp from '../../assets/Logo/whatsapp.svg';
 import fb from '../../assets/Logo/facebook.svg';
-import MABS from '../../assets/Logo/MBS.svg';
+import MABS from '../../assets/Logo/MABS.png';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 
@@ -50,9 +50,9 @@ const Footer = () => {
       <div className="max-w-screen-xl mx-auto grid md:grid-cols-2 gap-10">
         {/* Left Section */}
         <div>
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-3 mb-5">
             {/* Logo Image */}
-            <img src={MABS} alt="MABS Logo" className="w-25 h-auto" />
+            <img src={MABS} alt="MABS Logo" className="w-auto  h-10" />
           </div>
           <p className="mt-4 text-sm">
             Empowering Businesses Through Design, Technology,<br />

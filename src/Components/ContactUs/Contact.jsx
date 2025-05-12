@@ -11,7 +11,7 @@ import Insta from '../../assets/Logo/insta.svg'
 import Whatsapp from '../../assets/Logo/whatsapp.svg'
 import fb from '../../assets/Logo/facebook.svg'
 import opptiverse from '../../assets/Logo/opptiverse_Black.svg'
-
+import Location_Icon from '../../assets/Contact/Loaction_Icon.svg'
 
 const faqs = [
     { question: "1. How do I get a quote for a project?", answer: "To get a quote, please contact us with your project details and requirements." },
@@ -68,7 +68,7 @@ const Contact = () => {
         <>
             <header className='flex flex-col w-full min-h-screen justify-start items-center relative pb-15'>
                 <img className='absolute w-full h-full z-0 object-cover' src={bg} alt="" />
-                <div className='absolute top-0 left-0 w-full h-full bg-black/70 z-10'></div>         
+                <div className='absolute top-0 left-0 w-full h-full bg-black/70 z-10'></div>
                 {/* Main content container - adjusted positioning */}
                 <div className='flex flex-col items-center gap-6 text-center w-full max-w-6xl z-20 text-white px-4 mt-32 md:mt-40'>
                     <h1 className='text-[#19BDE8] font-semibold text-3xl sm:text-4xl md:text-6xl'>Contact Us</h1>
@@ -85,13 +85,18 @@ const Contact = () => {
 
                 {/* Contact cards container - adjusted spacing */}
                 <div className='z-20 flex flex-wrap justify-center items-stretch gap-6 w-full max-w-6xl px-4 mt-16 md:mt-20'>
+                    {/* Location */}
                     <div className='rounded-2xl p-6 flex flex-col justify-center gap-4 bg-white/10 w-full sm:w-[280px] min-h-[188px] text-white items-center text-center backdrop-blur-sm'>
-                        <HiOutlineLocationMarker className='h-12 w-12 sm:h-16 sm:w-16 text-[#19BDE8]' />
+                        <div className='h-16 w-16 sm:h-16 sm:w-16 text-[#19BDE8] flex items-center justify-center mt-5 '>
+                            <img src={Location_Icon} className='h-full w-full object-contain' />
+                        </div>
                         <div>
                             <p className='font-normal text-lg sm:text-xl'>Manvian Business Solutions</p>
                             <p className='font-normal text-lg sm:text-xl'>Ambattur, Chennai</p>
                         </div>
                     </div>
+                    
+                    {/* Phone Number */}
                     <div className='rounded-2xl p-6 flex flex-col justify-center gap-4 bg-white/10 w-full sm:w-[280px] min-h-[188px] text-white items-center text-center backdrop-blur-sm'>
                         <FiPhone className='h-12 w-12 sm:h-16 sm:w-16 text-[#19BDE8]' />
                         <div>
@@ -99,6 +104,7 @@ const Contact = () => {
                             <p className='font-normal text-lg sm:text-xl'>+91 87783 59643</p>
                         </div>
                     </div>
+                    {/* Email */}
                     <div className='rounded-2xl p-6 flex flex-col justify-center gap-4 bg-white/10 w-full sm:w-[280px] min-h-[188px] text-white items-center text-center backdrop-blur-sm'>
                         <FiMail className='h-12 w-12 sm:h-16 sm:w-16 text-[#19BDE8]' />
                         <div>
@@ -195,17 +201,17 @@ const Contact = () => {
                         <div>
                             <label className='block text-gray-700 mb-2 font-medium'>Location</label>
                             <select
-                                        id="country"
-                                        name="country"
-                                        className='w-full border border-gray-300 p-3 rounded focus:outline-none [&:not(:focus)]:text-gray-500 [&:focus]:text-black'
-                                    >
-                                        <option value="" disabled selected>--Choose Country--</option>
-                                        {countries.map((country, index) => (
-                                            <option key={index} value={country}>
-                                                {country}
-                                            </option>
-                                        ))}
-                                    </select>
+                                id="country"
+                                name="country"
+                                className='w-full border border-gray-300 p-3 rounded focus:outline-none [&:not(:focus)]:text-gray-500 [&:focus]:text-black'
+                            >
+                                <option value="" disabled selected>--Choose Country--</option>
+                                {countries.map((country, index) => (
+                                    <option key={index} value={country}>
+                                        {country}
+                                    </option>
+                                ))}
+                            </select>
                         </div>
                     </div>
                     <div>
