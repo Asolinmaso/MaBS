@@ -53,7 +53,7 @@ const ClientsLogo = () => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-between gap-8 pl-6 pt-6 bg-white rounded-xl border-2 border-gray-200">
       {/* Left Content */}
-      <div className="w-full md:w-1/3 text-center md:text-left space-y-4 mt-15 md:mt-0">
+      <div className="w-full md:w-1/3 text-center md:text-left space-y-4 mt-20 lg:mt-0 ">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-800 break-words">Our Clients</h2>
         <p className="text-sm md:text-base text-gray-600">
           We’ve had the pleasure of working with some amazing brands. If you'd like to be one of them, let’s talk!

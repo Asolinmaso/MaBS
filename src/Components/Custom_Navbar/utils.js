@@ -101,7 +101,7 @@ export const Menus = [
   },
   // Who we are
   {
-    name: "Who we are",
+    name: "Who We Are",
     path: "/who",
     subMenu: [
       {
