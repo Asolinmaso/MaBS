@@ -10,7 +10,7 @@ export default function Custom_Navbar() {
   return (
     <header className="fixed top-0 left-0 w-full h-20 lg:h-25 text-[15px]  bg-black text-white z-50 shadow ">
       <nav className="px-4 flex items-center justify-between w-full max-w-7xl  mx-auto h-full ">
-        <div className="flex items-center gap-x-3 pl-10 lg:pl-0">
+        <div className="flex items-center gap-x-3 ml-5 lg:pl-0">
           <img src={Mabs} alt="Mabs Logo" className="h-10" />
         </div>
 
@@ -28,7 +28,7 @@ export default function Custom_Navbar() {
             src={Manvian}
             alt="Manvian"
           />
-          <div className="lg:hidden ml-10">
+          <div className="lg:hidden mr-2 ml-10 mt-5">
             <MobMenu Menus={Menus} />
           </div>
         </div>
