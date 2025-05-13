@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import CustomBtn from '../Button/CustomBtn';
-import Custom_Navbar from '../Custom_Navbar/Custom_Navbar';
-
+import bg from '../../assets/Home/Herosection.mp4'
 const HeroSection = () => {
     useEffect(() => {
         const script = document.createElement('script');
@@ -19,36 +18,19 @@ const HeroSection = () => {
             <header className="relative w-full h-screen overflow-hidden flex items-center justify-center">
 
                 {/* Desktop Vimeo Video */}
-                <div className="hidden lg:block absolute top-0 left-0 w-full h-full z-0">
-                    <div style={{ padding: '56.25% 0 0 0', position: 'relative', width: '100%', height: '100%' }}>
-                        <iframe
-                            src="https://player.vimeo.com/video/1082390860?h=1e0bb78ff4&autoplay=1&muted=1&loop=1&background=1"
-                            frameBorder="0"
-                            allow="autoplay; fullscreen; picture-in-picture"
-                            loading="lazy"
-                            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                            title="HomeVideo"
-                        />
 
-                    </div>
-                </div>
+                <video
+                    className="absolute w-full h-full object-cover z-0"
+                    src={bg}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                />
 
-                {/* Mobile Vimeo Video */}
-                <div className="block lg:hidden absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
-                    <div style={{ padding: '56.25% 0 0 0', position: 'relative', width: '100%', height: '100%' }}>
-                        <iframe
-                            src="https://player.vimeo.com/video/1082774892?h=1e0bb78ff4&autoplay=1&muted=1&loop=1&background=1"
-                            frameBorder="0"
-                            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media"
-                            loading="lazy"
-                            style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                            title="MobileVideo"
-                        />
-                    </div>
-                </div>
+
 
                 {/* Optional fallback image for mobile */}
-                <div className="absolute top-0 left-0 w-full h-full z-0 bg-cover bg-center bg-no-repeat lg:hidden" style={{ backgroundImage: "url('/fallback-image.jpg')" }}></div>
 
                 {/* Dark overlay */}
                 <div className="absolute bg-black/30 top-0 left-0 w-full h-full z-10"></div>
