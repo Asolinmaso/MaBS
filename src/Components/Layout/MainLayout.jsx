@@ -20,6 +20,7 @@ const MainLayout = () => {
           backgroundSize: 'cover',
           cursor: 'none'
         }}
+        trailingSpeed={1}
       />
       <Custom_Navbar />
       <ScrollToTop />
