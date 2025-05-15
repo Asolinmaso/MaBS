@@ -71,8 +71,8 @@ const Contact = () => {
                 <div className='absolute top-0 left-0 w-full h-full bg-black/70 z-10'></div>
                 {/* Main content container - adjusted positioning */}
                 <div className='flex flex-col items-center gap-6 text-center w-full max-w-6xl z-20 text-white px-4 mt-32 md:mt-40'>
-                    <h1 className='text-[#19BDE8] font-semibold text-3xl sm:text-4xl md:text-6xl'>Contact Us</h1>
-                    <p className='font-normal text-base sm:text-lg md:text-2xl max-w-3xl mt-6'>
+                    <h1 className='text-[#19BDE8] font-semibold text-3xl  md:text-5xl'>Contact Us</h1>
+                    <p className='font-normal text-base  md:text-2xl max-w-3xl mt-6'>
                         We'd love to hear from you! Whether you have a question, need assistance, or want to explore how we can work together, our team is here to help.
                     </p>
                     <a
@@ -91,8 +91,8 @@ const Contact = () => {
                             <img src={Location_Icon} className='h-full w-full object-contain' />
                         </div>
                         <div>
-                            <p className='font-normal text-lg sm:text-xl'>Manvian Business Solutions</p>
-                            <p className='font-normal text-lg sm:text-xl'>Ambattur, Chennai</p>
+                            <p className='font-normal text-base md:text-xl'>Manvian Business Solutions</p>
+                            <p className='font-normal text-base md:text-xl'>Ambattur, Chennai</p>
                         </div>
                     </div>
                     
@@ -100,16 +100,16 @@ const Contact = () => {
                     <div className='rounded-2xl p-6 flex flex-col justify-center gap-4 bg-white/10 w-full sm:w-[280px] min-h-[188px] text-white items-center text-center backdrop-blur-sm'>
                         <FiPhone className='h-12 w-12 sm:h-16 sm:w-16 text-[#19BDE8]' />
                         <div>
-                            <p className='font-normal text-lg sm:text-xl'>Call Us</p>
-                            <p className='font-normal text-lg sm:text-xl'>+91 87783 59643</p>
+                            <p className='font-normal text-base md:text-xl'>Call Us</p>
+                            <p className='font-normal text-base md:text-xl'>+91 87783 59643</p>
                         </div>
                     </div>
                     {/* Email */}
                     <div className='rounded-2xl p-6 flex flex-col justify-center gap-4 bg-white/10 w-full sm:w-[280px] min-h-[188px] text-white items-center text-center backdrop-blur-sm'>
                         <FiMail className='h-12 w-12 sm:h-16 sm:w-16 text-[#19BDE8]' />
                         <div>
-                            <p className='font-normal text-lg sm:text-xl'>E-Mail Us</p>
-                            <p className='font-normal text-lg sm:text-xl'>operations@manvian.com</p>
+                            <p className='font-normal text-base md:text-xl'>E-Mail Us</p>
+                            <p className='font-normal text-base md:text-xl'>operations@manvian.com</p>
                         </div>
                     </div>
                 </div>
@@ -117,7 +117,7 @@ const Contact = () => {
 
             {/* FAQS */}
             <section className="max-w-3xl mx-auto px-4 pt-20">
-                <h2 className="text-center text-xl sm:text-2xl font-semibold text-[#19BDE8] mb-8">
+                <h2 className="text-center text-xl md:text-2xl font-semibold text-[#19BDE8] mb-8">
                     Quick Answers to Your Questions
                 </h2>
                 <div className="space-y-4">

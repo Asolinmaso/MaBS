@@ -57,7 +57,7 @@ const CountingNumber = ({ end, duration = 2 }) => {
     return (
         <motion.div
             ref={ref}
-            className="font-light text-6xl text-[#19BDE8]"
+            className="font-light  text-xl lg:text-6xl text-[#19BDE8]"
         >
             <motion.span
                 initial={{ opacity: 0 }}
@@ -82,8 +82,8 @@ const WhatWeDo = () => {
         <main className='bg-white w-full mt-10 px-4 sm:px-6 lg:px-20'>
             {/* head */}
             <div className='flex flex-col gap-1.5 text-center'>
-                <h1 className='text-[32px] sm:text-[40px] font-semibold text-[#19BDE8]'>What We Do</h1>
-                <p className='text-xl sm:text-2xl'>“We support entrepreneurs to prohibit their prohibition”</p>
+                <h1 className='text-[32px] md:text-[40px] font-semibold text-[#19BDE8]'>What We Do</h1>
+                <p className='text-xl md:text-2xl'>“We support entrepreneurs to prohibit their prohibition”</p>
             </div>
 
             <div className='mt-10 flex flex-col gap-14'>
@@ -135,23 +135,15 @@ const WhatWeDo = () => {
                         </FadeInSection>
                         <FadeInSection>
                             <Link to={item.path}>  <div className='w-full lg:w-[570px] flex flex-col gap-4'>
-                                <h1 className='font-semibold text-2xl sm:text-3xl text-[#1E1E1E]'>
+                                <h1 className='font-semibold text-xl md:text-3xl text-[#1E1E1E]'>
                                     <span className='text-[#19BDE8]'>{item.title.slice(0, 4)}</span>
                                     {item.title.slice(4)}
                                 </h1>
-                                <p className='font-normal text-lg sm:text-2xl'>{item.desc}</p>
+                                <p className='font-normal text-base md:text-2xl'>{item.desc}</p>
                             </div> </Link>
                         </FadeInSection>
                     </div>
                 ))}
-            </div>
-
-            {/* Who we Work With */}
-
-
-            {/* Hear from our Clients */}
-            <div>
-                {/* Reserved space */}
             </div>
         </main>
     )

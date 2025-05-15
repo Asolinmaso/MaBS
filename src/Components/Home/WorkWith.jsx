@@ -15,7 +15,7 @@ const WorkWith = () => {
   return (
     <div className="w-screen bg-[#EEEDED] py-16 overflow-hidden mt-20 mb-20">
       <div className=" mx-auto px-4 text-center">
-        <h1 className="text-[#19BDE8] font-semibold text-2xl sm:text-4xl mb-12">
+        <h1 className="text-[#19BDE8] font-semibold text-2xl md:text-4xl mb-12">
           Who We Work With
         </h1>
 

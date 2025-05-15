@@ -14,10 +14,10 @@ const HeroSection = () => {
 
         {/* Content */}
         <div className="relative z-20 flex flex-col items-center text-center text-white px-4 sm:px-6 md:px-10 lg:px-16 w-full max-w-[1200px] gap-6">
-          <h1 className="text-[#19BDE8] font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight mt-10">
+          <h1 className="text-[#19BDE8] font-semibold text-3xl lg:text-6xl leading-tight mt-10">
             About Us
           </h1>
-          <p className= "mt-6 font-normal text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed max-w-4xl">
+          <p className= "mt-6 font-normal text-base lg:text-2xl leading-relaxed max-w-4xl">
             At Manvian, we empower entrepreneurs to unlock their potential and transform lives through business.
             Entrepreneurship is challenging, but with the right guidance, it becomes a path to success. Manvian
             provides a comprehensive ecosystem of support, education, and strategies tailored to your needs, whether

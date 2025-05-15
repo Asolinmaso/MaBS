@@ -40,11 +40,11 @@ export default function StatsSection() {
               key={index}
               className={`${index !== stats.length - 1 ? "md:border-r-2 md:border-gray-300" : ""} pr-4 py-4 md:py-0`}
             >
-              <div className="font-light text-6xl text-[#19BDE8]">
+              <div className="font-light text-3xl lg:text-6xl text-[#19BDE8]">
                 <CountingNumber value={stat.value} />
                 {stat.label === "Client Satisfaction" ? "%" : "+"}
               </div>
-              <div className="text-2xl font-normal text-black">{stat.label}</div>
+              <div className="text-xl lg:text-2xl font-normal text-black">{stat.label}</div>
             </div>
           ))}
         </div>

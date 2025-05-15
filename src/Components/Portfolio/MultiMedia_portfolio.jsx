@@ -49,10 +49,10 @@ const MultiMedia_portfolio = () => {
         {/* Overlay */}
         <div className='absolute top-0 left-0 w-full h-full bg-black/65 z-10'></div>
         <div className='flex flex-col items-center gap-6 text-center w-11/12 max-w-6xl z-20 text-white'>
-          <h1 className='text-[#19BDE8] font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-7xl'>
+          <h1 className='text-[#19BDE8] font-semibold text-3xl  md:text-6xl'>
             Real Work. Real Results.
           </h1>
-          <p className='font-normal text-base sm:text-lg md:text-xl mt-6'>
+          <p className='font-normal text-base  md:text-xl mt-6'>
             Ready to take your business to the next level? Whether you’re building a bold brand or creating something meaningful, we transform your ideas into powerful visuals and seamless digital experiences that make a real impact.
           </p>
           <a href="#">
@@ -64,10 +64,10 @@ const MultiMedia_portfolio = () => {
       <main>
         {/* Brand Identity */}
         <div className="max-w-6xl mt-20 mx-auto p-6 rounded-md">
-          <h2 className="text-4xl font-semibold text-[#19BDE8] text-center mb-4">
+          <h2 className="text-2xl md:text-4xl font-semibold text-[#19BDE8] text-center mb-4">
             Brand Identity That Stands Out
           </h2>
-          <h2 className='font-medium text-2xl mt-10'>Logo Design</h2>
+          <h2 className='font-medium text-xl md:text-2xl mt-10'>Logo Design</h2>
           <section className="grid md:grid-cols-2 gap-6 items-center">
             {/* Logo Section */}
             <div className="flex justify-center items-center">
@@ -80,16 +80,16 @@ const MultiMedia_portfolio = () => {
             {/* Textual Content */}
             <div>
               <p className="text-xl mb-1 font-medium">Client</p>
-              <p className="mb-2 text-md font-normal">
+              <p className="mb-2 text-base font-normal">
                 National Mission on Interdisciplinary Cyber-Physical Systems (NM-ICPS)
               </p>
               <p className="text-xl mb-1 font-medium">What they do</p>
-              <p className="mb-2 text-md font-normal">
+              <p className="mb-2 text-base font-normal">
                 NM-ICPS promotes innovation in CPS by connecting academia, industry, government,
                 and international bodies to develop impactful technologies and prototypes.
               </p>
               <p className="text-xl mb-1 font-medium">Logo Concept</p>
-              <p className="mb-2 text-md font-normal">
+              <p className="mb-2 text-base font-normal">
                 The logo combines Wi-Fi, antenna, and bulb icons to symbolize connectivity,
                 intelligence, and innovation. It reflects a fusion of hardware and software, with a
                 color palette inspired by the Indian national flag to represent the country.
@@ -120,19 +120,19 @@ const MultiMedia_portfolio = () => {
 
         {/* Visual Content */}
         <section className="max-w-6xl mt-20 mx-auto p-6 rounded-md">
-          <h2 className="text-4xl font-semibold text-[#19BDE8] text-center mb-3">
+          <h2 className= "text-2xl md:text-4xl font-semibold text-[#19BDE8] text-center mb-3">
             Visual Content That Engages
           </h2>
-          <p className='font-medium text-3xl pt-3'>Graphic Design & Print AD</p>
+          <p className='font-medium text-xl md:text-3xl pt-3'>Graphic Design & Print AD</p>
           <div className='flex flex-col md:flex-row justify-between gap-6 mt-7'>
             <div className='w-full md:w-[424px]'>
               <h1 className="font-medium text-xl mb-2">Client</h1>
-              <p className='font-normal text-md'>IITM Pravartak</p>
-              <p className='font-normal text-md'> Technology Innovation Hub at IIT Madras.</p>
+              <p className='font-normal text-base'>IITM Pravartak</p>
+              <p className='font-normal text-base'> Technology Innovation Hub at IIT Madras.</p>
             </div>
             <div className='w-full md:w-[736px]'>
               <h1 className='font-medium text-xl mb-2'>What They Do</h1>
-              <p className='font-normal text-md'>
+              <p className='font-normal text-base'>
                 IITM Pravartak drives innovation in Sensors, Networking, Actuators, and Control Systems (SNACS) through technology development, entrepreneurship, skill-building, and global collaborations.
               </p>
             </div>
@@ -144,10 +144,10 @@ const MultiMedia_portfolio = () => {
 
         <section className='mt-20 mx-auto px-4 md:px-6 rounded-md'>
           <div className='px-4 md:px-10'>
-            <h2 className="text-4xl font-semibold text-[#19BDE8] text-center mb-3">
+            <h2 className="text-xl md:text-4xl font-semibold text-[#19BDE8] text-center mb-3">
               Impact of Our Multimedia Services
             </h2>
-            <p className='font-normal text-xl pt-3 text-center'>
+            <p className='font-normal  text-base md:text-xl pt-3 text-center'>
               Our multimedia work helped clients strengthen brand identity, enhance visual communication,
               and connect more effectively with their audiences. Through design and storytelling, we made
               their message memorable.
@@ -160,8 +160,8 @@ const MultiMedia_portfolio = () => {
               onMouseMove={(e) => handleMouseMove(e, 0)}
               onMouseLeave={() => handleMouseLeave(0)}
             >
-              <h1 className='font-medium text-2xl md:text-3xl'>Key Outcomes:</h1>
-              <ul className='list-disc pl-6 md:pl-10 mt-5 text-lg md:text-xl font-normal space-y-4'>
+              <h1 className='font-medium text-xl md:text-3xl'>Key Outcomes:</h1>
+              <ul className='list-disc pl-6 md:pl-10 mt-5 text-base md:text-xl font-normal space-y-4'>
                 <li>Improved audience engagement through clean, creative visuals.</li>
                 <li>Boosted professional image with meaningful branding.</li>
                 <li>Elevated communication of complex ideas using graphics and video.</li>
@@ -184,10 +184,10 @@ const MultiMedia_portfolio = () => {
         {/* Value */}
         <section className='mt-20 md:mt-[15px] mx-auto px-4 md:px-6 rounded-md'>
           <div className='px-4 md:px-10'>
-            <h2 className="text-4xl font-semibold text-[#19BDE8] text-center mb-3">
+            <h2 className="text-xl md:text-4xl font-semibold text-[#19BDE8] text-center mb-3">
               Value We Delivered to Our Clients
             </h2>
-            <p className='font-normal text-xl pt-3 text-center'>
+            <p className='font-normal text-base md:text-xl pt-3 text-center'>
               By combining technical expertise with user-focused design, we created platforms that solve real problems and support business growth.
             </p>
           </div>
@@ -210,8 +210,8 @@ const MultiMedia_portfolio = () => {
               onMouseLeave={() => handleMouseLeave(1)}
               style={tiltStyles[1]}
             >
-              <h1 className='font-medium text-2xl md:text-3xl'>Key Outcomes:</h1>
-              <ul className='list-disc pl-6 md:pl-10 mt-5 text-lg md:text-xl font-normal space-y-4'>
+              <h1 className='font-medium text-xl md:text-3xl'>Key Outcomes:</h1>
+              <ul className='list-disc pl-6 md:pl-10 mt-5 text-base md:text-xl font-normal space-y-4'>
                 <li>Custom-built solutions tailored to their business model</li>
                 <li>Future-ready platforms using modern tech stacks</li>
                 <li>Improved customer interaction through intuitive interfaces</li>
@@ -224,13 +224,13 @@ const MultiMedia_portfolio = () => {
         {/* Want to expplore links and images */}
         <section className="flex flex-col md:flex-row justify-between items-center px-10 py-16 mt-10 bg-white">
           <div className="w-full md:w-1/2 pr-0 md:pr-10 text-center md:text-left">
-            <h2 className="text-3xl font-semibold text-[#19BDE8] mb-4">Want to Explore More?</h2>
-            <p className="text-lg text-gray-800 mb-6">
+            <h2 className="text-xl md:text-3xl font-semibold text-[#19BDE8] mb-4">Want to Explore More?</h2>
+            <p className="text-base md:text-lg text-gray-800 mb-6">
               If you'd like to see more of our creative work and how we bring brands to life through design,
               click the button below.
             </p>
             <div className="flex justify-center md:justify-start">
-              <button className="bg-[#19BDE8] hover:bg-[#0eaed4] text-white text-lg px-6 py-3 rounded-md font-medium mb-5 cursor-pointer hover:scale-[0.98]">
+              <button className="bg-[#19BDE8] hover:bg-[#0eaed4] text-white text-sm md:text-lg px-6 py-3 rounded-md font-medium mb-5 cursor-pointer hover:scale-[0.98]">
                 See More Multimedia Projects
               </button>
             </div>

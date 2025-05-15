@@ -64,8 +64,8 @@ const MainSection = () => {
           {/* Vision Section */}
           <Section>
             <div className="order-1 md:order-1 flex flex-col justify-center gap-6">
-              <h1 className="text-[#19BDE8] text-4xl font-semibold">Our Vision</h1>
-              <p className="text-lg md:text-xl leading-relaxed">
+              <h1 className="text-[#19BDE8] text-xl lg:text-4xl font-semibold">Our Vision</h1>
+              <p className="text-base md:text-xl leading-relaxed">
                 Our ultimate vision is to revolutionize the global industry by becoming a leader in providing world-class services and solutions. It's not just about driving profits but contributing to society, lifting others up, and leaving a positive mark on the world.
               </p>
             </div>
@@ -76,8 +76,8 @@ const MainSection = () => {
           <Section>
             <img className="order-2 md:order-1 w-full h-[590px] object-cover rounded-xl" src={mission} alt="Mission" />
             <div className="order-1 md:order-2 flex flex-col justify-center gap-6">
-              <h1 className="text-[#19BDE8] text-4xl font-semibold">Our Mission</h1>
-              <p className="text-lg md:text-xl leading-relaxed">
+              <h1 className="text-[#19BDE8] text-xl  lg:text-4xl font-semibold">Our Mission</h1>
+              <p className="text-base md:text-xl leading-relaxed">
                 Our mission is to empower businesses to realize their fullest potential by providing innovative, tailored strategies that enhance revenue, build brand identity, and improve client experiences.
               </p>
             </div>
@@ -86,8 +86,8 @@ const MainSection = () => {
           {/* Goal Section */}
           <Section>
             <div className="order-1 md:order-1 flex flex-col justify-center gap-6">
-              <h1 className="text-[#19BDE8] text-4xl font-semibold">Goal</h1>
-              <p className="text-lg md:text-xl leading-relaxed">
+              <h1 className="text-[#19BDE8] text-xl lg:text-4xl font-semibold">Goal</h1>
+              <p className="text-base md:text-xl leading-relaxed">
                 We work with visionary entrepreneurs and forward-thinking organizations ready to redefine their industries, set new standards, and lead the way in innovation.
               </p>
             </div>
@@ -98,8 +98,8 @@ const MainSection = () => {
           <Section>
             <img className="order-2 md:order-1 w-full h-[590px] object-cover rounded-xl" src={Aim} alt="Aim" />
             <div className="order-1 md:order-2 flex flex-col justify-center gap-6">
-              <h1 className="text-[#19BDE8] text-4xl font-semibold">Value</h1>
-              <p className="text-lg md:text-xl leading-relaxed">
+              <h1 className="text-[#19BDE8] text-xl lg:text-4xl font-semibold">Value</h1>
+              <p className="text-base md:text-xl leading-relaxed">
                 We strive to create a ripple effect where business success leads to meaningful societal impact — enriching lives and promoting a more equitable world.
               </p>
             </div>  
