@@ -108,10 +108,10 @@ const DigitalMarketing = () => {
 
                 {/* Content */}
                 <div className="relative z-20 flex flex-col items-center text-center text-white px-4 sm:px-6 md:px-12 lg:px-24 w-full max-w-[1200px] gap-6">
-                    <h1 className="text-[#19BDE8] font-semibold text-4xl sm:text-5xl md:text-6xl leading-tight">
+                    <h1 className="text-[#19BDE8] font-semibold text-3xl  md:text-6xl leading-tight">
                         Digital Marketing Solutions
                     </h1>
-                    <p className="font-normal text-base sm:text-lg md:text-xl max-w-3xl mt-6">
+                    <p className="font-normal text-base  md:text-xl max-w-3xl mt-6">
                         We help brands cut through the digital noise with tailored strategies across SEO, SEM, SMO, and Google My Business Optimization — so your business gets found, clicked, and remembered.
                     </p>
                     <a href="#">
@@ -124,10 +124,10 @@ const DigitalMarketing = () => {
                 <div className="px-4 py-12 bg-white text-gray-800">
                     {/* Problems Section */}
                     <section className="text-center mb-16">
-                        <h2 className="text-3xl font-bold text-[#19BDE8]">
+                        <h2 className="text-xl md:text-3xl font-bold text-[#19BDE8]">
                             The Problem – What Businesses Struggle With
                         </h2>
-                        <p className="mt-2 text-gray-600 text-2xl">
+                        <p className="mt-2 text-gray-600 text-base md:text-2xl">
                             Visual Noise is Everywhere – Are You Cutting Through?
                         </p>
 
@@ -156,7 +156,7 @@ const DigitalMarketing = () => {
 
                     {/* Solutions Section */}
                     <section className="max-w-4xl mx-auto">
-                        <h2 className="text-3xl font-bold text-[#19BDE8] text-center mb-8">
+                        <h2 className="text-xl md:text-3xl font-bold text-[#19BDE8] text-center mb-8">
                             Our Solutions – How Manvian Helps
                         </h2>
                         <div className="space-y-4">
@@ -168,8 +168,8 @@ const DigitalMarketing = () => {
                                     <div className='flex gap-4 items-center justify-center'>
                                         <img className='h-15 w-15' src={solution.image} alt="" />
                                         <div>
-                                            <h4 className="font-medium text-2xl">{solution.title}</h4>
-                                            <p className="text-md text-gray-600 mt-1">
+                                            <h4 className="font-medium text-xl md:text-2xl">{solution.title}</h4>
+                                            <p className="text-base md:text-lg text-gray-600 mt-1">
                                                 {solution.description}
                                             </p>
                                         </div>
@@ -186,7 +186,7 @@ const DigitalMarketing = () => {
             </main>
             {/* See Our Creativity in Action */}
             <div className='w-full flex flex-col items-center justify-center mb-8'>
-                <h1 className='text-[#19BDE8] font-semibold text-2xl text-center'> See Our Creativity in Action</h1>
+                <h1 className='text-[#19BDE8] font-semibold text-lg md:text-2xl text-center'> See Our Creativity in Action</h1>
             </div>
             <div className="grid grid-cols-2 gap-4 max-w-4xl mx-auto p-4">
 
@@ -202,7 +202,7 @@ const DigitalMarketing = () => {
             <div className='w-full flex flex-col items-center justify-center mt-3'>
 
                 <a href="#" className=''>
-                    <Link to="/portfolio/Multimedia"><button className='flex items-center gap-3 font-semibold text-2xl text-white bg-[#19BDE8] py-3 px-3.5 rounded-xl cursor-pointer'>
+                    <Link to="/portfolio/Multimedia"><button className='flex items-center gap-3 font-semibold text-lg md:text-2xl text-white bg-[#19BDE8] py-3 px-3.5 rounded-xl cursor-pointer'>
                         Explore Our Portfolio
                         <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1.50005 1.5C1.50005 1.5 7.5 5.9189 7.5 7.5C7.5 9.0812 1.5 13.5 1.5 13.5" stroke="#EBEBEB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -213,7 +213,7 @@ const DigitalMarketing = () => {
             {/* Explore */}
             <div className='w-full min-h-[300px] bg-gradient-to-t from-[#19BDE880]/50 to-white flex flex-col md:flex-row justify-around items-center px-8 py-12 lg:px-16 mb-20'>
                 <div className='w-full md:w-[35%] mb-8 md:mb-0'>
-                    <h1 className='font-semibold text-4xl lg:text-3xl md:text-2xl sm:text-xl mb-5'>
+                    <h1 className='font-semibold text-xl lg:text-3xl md:text-2xl  mb-5'>
                         Explore More Ways We Can Help You Grow
                     </h1>
                     <p className='text-base lg:text-sm md:text-xs'>

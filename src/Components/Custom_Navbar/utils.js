@@ -43,6 +43,14 @@ export const Menus = [
 
       },
       {
+        name: "Bussiness",
+        desc: "Site control",
+        icon: Bolt,
+        category: "Service",
+        path: "/service/Business",
+
+      },
+      {
         name: "Digital Marketing",
         desc: "Link pages",
         icon: PanelTop,
