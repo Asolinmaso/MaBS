@@ -152,7 +152,7 @@ export const Menus = [
   },
 
   {
-    name: "Carrer",
+    name: "Career",
     path: "/careers",
 
   },
