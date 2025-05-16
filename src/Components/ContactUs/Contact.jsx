@@ -165,7 +165,7 @@ const Contact = () => {
                         Didn't find your answer above? We're here to help. Just fill out the form below and we’ll get back to you soon.
                     </p>
                 </div>
-                <form onSubmit={handleSubmit} className='bg-white shadow-[25px_25px_25px_25px_rgba(0,0,0,0.1)]  rounded-xl px-4 sm:px-8 md:px-10 md:py-5 flex flex-col gap-6 w-full max-w-4xl mx-auto mt-15 mb-20 pb-10'>
+                <form onSubmit={handleSubmit} className='bg-white shadow-[0_0_25px_0_rgba(0,0,0,0.1)]  rounded-xl px-4 sm:px-8 md:px-10 md:py-5 flex flex-col gap-6 w-full max-w-4xl mx-auto mt-15 mb-20 pb-10'>
                     <h1 className='text-[#19BDE8] font-semibold text-2xl sm:text-3xl md:text-4xl pt-4'>Get in Touch</h1>
                     <p className='font-normal text-sm sm:text-base md:text-lg text-[#1E1E1E]'>
                         Fill out our quick contact form, and we’ll get back to you promptly.
