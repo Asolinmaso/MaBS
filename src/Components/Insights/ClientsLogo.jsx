@@ -51,11 +51,11 @@ const ClientsLogo = () => {
   }, []);
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between gap-8 pl-6 pt-6 bg-white rounded-xl border-2 border-gray-200">
+    <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:pl-6 pt-6 bg-white rounded-xl border-2 border-gray-200">
       {/* Left Content */}
-      <div className="w-full md:w-1/3 text-center md:text-left space-y-4 mt-20 lg:mt-0 ">
+      <div className="w-full md:w-1/3  md:text-left space-y-4 mt-20 lg:mt-0 text-center ">
         <h2 className="text-2xl md:text-3xl font-bold text-gray-800 break-words">Our Clients</h2>
-        <p className="text-sm md:text-base text-gray-600">
+        <p className="text-sm md:text-base text-gray-600 ">
           We’ve had the pleasure of working with some amazing brands. If you'd like to be one of them, let’s talk!
         </p>
         <button className="px-4 py-2 md:px-6 md:py-3 bg-[#19BDE8] text-white rounded-md hover:bg-[#17A9D1] transition cursor-pointer">
@@ -64,7 +64,8 @@ const ClientsLogo = () => {
       </div>
 
       {/* Right: Logos Scroll */}
-      <div className="w-full md:w-2/3 h-[300px] md:h-[500px] overflow-hidden relative bg-[rgba(25,189,232,0.25)] rounded-lg px-6">
+      <div className="w-full md:w-2/3 h-[300px] md:h-[500px] overflow-hidden relative bg-[rgba(25,189,232,0.25)] rounded-lg px-0 md:px-6 lg:px-6  md:ml-0">
+
         {/* Top and Bottom Gradient Shadows */}
         <div className="absolute top-0 left-0 w-full h-16 md:h-32 z-10 pointer-events-none bg-gradient-to-b from-[#FFFFFF] to-transparent" />
         <div className="absolute bottom-0 left-0 w-full h-16 md:h-32 z-10 pointer-events-none bg-gradient-to-t from-[#FFFFFF] to-transparent" />
