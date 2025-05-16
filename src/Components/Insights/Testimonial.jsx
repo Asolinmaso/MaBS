@@ -61,20 +61,26 @@ const renderStars = (rating) => {
   );
 };
 
+// Helper: slotIndex to scale and zIndex for ring effect
+const getRingStyle = (slotIndex, totalSlots) => {
+  const minScale = 0.7;
+  const maxScale = 1.2;
+  const scaleStep = (maxScale - minScale) / (totalSlots - 1);
+  const scale = minScale + scaleStep * slotIndex;
+  const zIndex = 10 + slotIndex;
+  return { transform: `scale(${scale})`, zIndex };
+};
+
 const Testimonial = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [mainMove, setMainMove] = useState(false); // NEW: for animation
+  const [hoveredRingIndex, setHoveredRingIndex] = useState(null); // Track hovered image in ring
   const timerRef = useRef();
   const numClients = testimonials.length - 1;
 
   // Helper to get the correct order of other clients for the ring
   const getOtherClients = (currentIndex) => {
-    // Get all other profiles except the current
     const others = testimonials.filter((_, i) => i !== currentIndex);
-    // The queue order: next, next+1, ..., last, first, ..., prev
-    // The first image in the ring should always be the next profile after the current
-    // The rest follow in order, wrapping around
-    // To match the CSS nth-child order, we need to rotate the 'others' array so that
-    // the first element is the next profile after the current, then next+1, etc.
     let queue = [];
     let idx = (currentIndex + 1) % testimonials.length;
     for (let i = 0; i < others.length; i++) {
@@ -92,54 +98,72 @@ const Testimonial = () => {
     return () => clearInterval(timerRef.current);
   }, []);
 
+  useEffect(() => {
+    setMainMove(true);
+    const timeout = setTimeout(() => setMainMove(false), 800);
+    return () => clearTimeout(timeout);
+  }, [activeIndex]);
+
   return (
     <div>
-      <h2 style={{ color: '#19BDE8', textAlign: 'center', marginBottom: '1.5rem', fontWeight: 700, fontSize: '2rem', letterSpacing: '0.02em' }}>
-        Our Client
-      </h2>
-      <div className="testimonial-section">
-        {testimonials.map((testimonial, index) => (
-          <div
-            key={index}
-            className={`testimonial-card ${
-              index === activeIndex ? "active" : "inactive"
-            }`}
-          >
-            <div className="other-clients-container">
-              {index === activeIndex && getOtherClients(activeIndex).map((client, clientIndex) => (
-                <img
-                  key={clientIndex}
-                  src={client.image}
-                  alt={client.name}
-                  className="other-client-image"
-                  style={{ zIndex: 10 - clientIndex }}
-                />
-              ))}
-              {index !== activeIndex && testimonials.filter((_, i) => i !== index).map((client, clientIndex) => (
-                <img
-                  key={clientIndex}
-                  src={client.image}
-                  alt={client.name}
-                  className="other-client-image"
-                  style={{ zIndex: 10 - clientIndex }}
-                />
-              ))}
+      <div style={{ position: 'relative', minHeight: 500 }}>
+        <div className="new-testimonial-background"></div>
+        <h2 style={{ color: '#19BDE8', textAlign: 'center', marginBottom: '1.5rem', fontWeight: 700, fontSize: '2rem', letterSpacing: '0.02em', position: 'relative', zIndex: 1, marginTop: 0 }}>
+          Our Client
+        </h2>
+        <div className="testimonial-section">
+          {testimonials.map((testimonial, index) => (
+            <div
+              key={index}
+              className={`testimonial-card ${index === activeIndex ? "active" : "inactive"}`}
+              style={{
+                zIndex: index === activeIndex ? 2 : 1,
+                opacity: index === activeIndex ? 1 : 0,
+                pointerEvents: index === activeIndex ? 'auto' : 'none',
+                transition: 'opacity 0.8s cubic-bezier(0.4,0,0.2,1)',
+                position: 'absolute',
+                width: '100%',
+                top: 0,
+                left: 0
+              }}
+            >
+              <div className="testimonial-card-bg-left"></div>
+              <div className="testimonial-card-bg-right"></div>
+              <div className="other-clients-container">
+                {(() => {
+                  const RING_SLOTS = 6;
+                  let queue = [];
+                  let idx = (activeIndex + 1) % testimonials.length;
+                  for (let i = 0; i < RING_SLOTS; i++) {
+                    queue.push(testimonials[idx]);
+                    idx = (idx + 1) % testimonials.length;
+                  }
+                  return Array.from({ length: RING_SLOTS }).map((_, slotIndex) => {
+                    const client = queue[slotIndex];
+                    const ringStyle = getRingStyle(slotIndex, RING_SLOTS);
+                    return (
+                      <img
+                        key={client.name + '-' + client.image}
+                        src={client.image}
+                        alt={client.name}
+                        className="other-client-image"
+                        style={{ ...ringStyle, transition: 'top 0.8s, left 0.8s, transform 0.5s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s cubic-bezier(0.4,0,0.2,1)' }}
+                      />
+                    );
+                  });
+                })()}
+              </div>
+              <div className="testimonial-content">
+                {renderStars(testimonial.rating)}
+                <p className="testimonial-text">{testimonial.text}</p>
+                <p className="testimonial-name">{testimonial.name}</p>
+                <p className="testimonial-title">
+                  {testimonial.role} at {testimonial.company}
+                </p>
+              </div>
             </div>
-            <img
-              src={testimonial.image}
-              alt={testimonial.name}
-              className="testimonial-image"
-            />
-            <div className="testimonial-content">
-              {renderStars(testimonial.rating)}
-              <p className="testimonial-text">{testimonial.text}</p>
-              <p className="testimonial-name">{testimonial.name}</p>
-              <p className="testimonial-title">
-                {testimonial.role} at {testimonial.company}
-              </p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
