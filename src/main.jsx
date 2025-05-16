@@ -17,7 +17,6 @@ import Sales from './Components/Service/Sales.jsx'
 import Business from './Components/Service/Business.jsx'
 import MultiMedia_portfolio from './Components/Portfolio/MultiMedia_portfolio.jsx'
 import Technology_Portfolio from './Components/Portfolio/Techhnology_portfolio.jsx'
-import Custom_Navbar from './Components/Custom_Navbar/Custom_Navbar.jsx'
 
 const Router = createBrowserRouter([
   {

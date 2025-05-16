@@ -2,10 +2,8 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import ScrollToTop from './ScrollToTop'
-import Navbar from '../Navbar/Navbar'
-import Custom_Navbar from '../Custom_Navbar/Custom_Navbar'
 import AnimatedCursor from 'react-animated-cursor'
-
+import Navbar from '../Navbar/Navbar.jsx'
 // Hide pointer (hand) cursor for all links and clickable elements
 if (typeof window !== 'undefined') {
   const style = document.createElement('style');
@@ -34,12 +32,12 @@ const MainLayout = () => {
           backgroundImage: 'url(/public/cursor.png)',
           backgroundSize: 'cover',
           cursor: 'none', // Ensures all default cursors are hidden
-          pointerEvents: 'none' ,
-           linkselect: 'none'
+          pointerEvents: 'none',
+          linkselect: 'none'
         }}
         trailingSpeed={1}
       />
-      <Custom_Navbar />
+      <Navbar />
       <ScrollToTop />
       <Outlet />
     </>
