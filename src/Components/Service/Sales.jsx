@@ -11,34 +11,51 @@ import { Link } from 'react-router-dom';
 const Sales = () => {
     const [tiltStyles, setTiltStyles] = useState({});
 
-    const handleMouseMove = (e, index) => {
-        const card = e.currentTarget;
-        const rect = card.getBoundingClientRect();
-        const x = e.clientX - rect.left; // X position within the element
-        const y = e.clientY - rect.top; // Y position within the element
+   const clamp = (value, min, max) => Math.max(min, Math.min(value, max));
 
-        const centerX = rect.width / 2;
-        const centerY = rect.height / 2;
+// Create a map to store animation frames (per card)
+const animationFrames = {};
 
-        const rotateX = ((y - centerY) / centerY) * 30; // Adjust the multiplier for tilt intensity
-        const rotateY = ((x - centerX) / centerX) * -30;
+const handleMouseMove = (e, index) => {
+    const card = e.currentTarget;
+    const rect = card.getBoundingClientRect();
+
+    // Cancel any previously queued animation
+    if (animationFrames[index]) {
+        cancelAnimationFrame(animationFrames[index]);
+    }
+
+    animationFrames[index] = requestAnimationFrame(() => {
+        const offsetX = ((e.clientX - rect.left) / rect.width - 0.5) * 2;
+        const offsetY = ((e.clientY - rect.top) / rect.height - 0.5) * 2;
+
+        const rotateX = clamp(offsetY * 20, -20, 20);
+        const rotateY = clamp(offsetX * 20, -20, 20);
 
         setTiltStyles((prevStyles) => ({
             ...prevStyles,
             [index]: {
                 transform: `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
-            }
+                // Note: no transition here to avoid jitter
+            },
         }));
-    };
+    });
+};
 
-    const handleMouseLeave = (index) => {
-        setTiltStyles((prevStyles) => ({
-            ...prevStyles,
-            [index]: {
-                transform: 'rotateX(0deg) rotateY(0deg)'
-            }
-        }));
-    };
+const handleMouseLeave = (index) => {
+    if (animationFrames[index]) {
+        cancelAnimationFrame(animationFrames[index]);
+    }
+
+    setTiltStyles((prevStyles) => ({
+        ...prevStyles,
+        [index]: {
+            transform: 'rotateX(0deg) rotateY(0deg)',
+            transition: 'transform 0.4s ease-out'
+        },
+    }));
+};
+
 
     const problems = [
         {
