@@ -3,9 +3,19 @@
 * {
   font-family: "Montserrat";
 }
-/* -------Navbar------ */
 
-/* Custom components */
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* ---Navbar--- */
+
 @layer components {
   .sub-menu {
     @apply absolute top-[4.2rem] p-[15px] rounded-[6px] origin-[50%_-170px];
@@ -13,7 +23,6 @@
   }
 }
 
-/* Custom utility classes */
 @layer utilities {
   .flex-center {
     @apply flex items-center;
@@ -24,57 +33,3 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-::-webkit-scrollbar {
-  display: none;
-}
-/* -------------------client logo scroll---------------- */
-.logo-scroll {
-  height: 200%;
-  animation: scrollVertical 30s linear infinite;
-}
-@keyframes scroll-up {
-  0% {
-    transform: translateY(0%);
-  }
-  100% {
-    transform: translateY(-50%);
-  }
-}
-
-.animate-scroll-up {
-  animation: scroll-up 30s linear infinite;
-}
-/* client  Testimonial */
-@keyframes scroll {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-scroll {
-  animation: scroll 75s linear infinite;
-}
-body {
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-
-}

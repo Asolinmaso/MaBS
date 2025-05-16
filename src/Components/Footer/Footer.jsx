@@ -37,11 +37,11 @@ const Footer = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/send-mail`, formData);
-        alert(response.data.message);
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/send-mail`, formData);
+      alert(response.data.message);
     } catch (error) {
-        console.error('Error submitting footer form:', error);
-        alert('Failed to submit the footer form. Please try again.');
+      console.error('Error submitting footer form:', error);
+      alert('Failed to submit the footer form. Please try again.');
     }
   };
 
@@ -98,7 +98,7 @@ const Footer = () => {
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Name"
-                className="p-2 rounded bg-white text-black outline-none"
+                className="p-2 rounded bg-white text-black outline-none placeholder:text-xs md:placeholder:text-[16px]  "
               />
               <input
                 type="email"
@@ -106,7 +106,7 @@ const Footer = () => {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Email ID"
-                className="p-2 rounded bg-white text-black outline-none"
+                className="p-2 rounded bg-white text-black outline-none placeholder:text-xs md:placeholder:text-[16px] "
               />
               <input
                 type="tel"
@@ -114,17 +114,24 @@ const Footer = () => {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="Phone Number"
-                className="p-2 rounded bg-white text-black outline-none"
+                className="p-2 rounded bg-white text-black outline-none placeholder:text-xs md:placeholder:text-[16px] "
               />
               <select
                 id="country"
                 name="country"
                 value={formData.country}
                 onChange={handleChange}
-                className={`bg-white p-2 w-full outline-none rounded 
-                 ${formData.country === "" ? "text-gray-400" : "text-black"}`}
+                className={`bg-white p-2 w-full outline-none rounded text-xs md:text-[16px] appearance-none pr-8
+    ${formData.country === "" ? "text-gray-400" : "text-black"}`}
+                style={{
+                  backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='${formData.country === "" ? "gray" : "black"}' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' d='M10 12a.75.75 0 0 1-.53-.22l-4-4a.75.75 0 1 1 1.06-1.06L10 10.19l3.47-3.47a.75.75 0 1 1 1.06 1.06l-4 4A.75.75 0 0 1 10 12z' clip-rule='evenodd'/%3E%3C/svg%3E")`,
+                  backgroundRepeat: "no-repeat",
+                  backgroundPosition: "right 0.75rem center",
+                  backgroundSize: "1rem 1rem",
+                }}
               >
-                <option value="" className="text-gray-300" disabled hidden>-- Choose Country --</option>
+
+                <option value="" className="text-gray-300 " disabled hidden>-- Choose Country --</option>
                 {countries.map((country, index) => (
                   <option key={index} value={country} className="text-black">
                     {country}
@@ -139,7 +146,7 @@ const Footer = () => {
               placeholder="Message"
               className="mt-4 w-full p-2 rounded bg-white text-black h-24 outline-none"
             ></textarea>
-            <button type="submit" className="mt-4 px-6 py-2 border border-white rounded hover:bg-white hover:text-black transition cursor-pointer">
+            <button type="submit" className="mt-4 px-6 py-2 border border-white rounded hover:bg-white hover:text-black transition cursor-pointer text-xs md:text-lg">
               Reach Us
             </button>
           </form>

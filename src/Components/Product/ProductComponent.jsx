@@ -120,9 +120,27 @@ const ProductComponent = () => {
                                     <select
                                         id="country"
                                         name="country"
-                                        className='w-full border border-gray-300 p-3 rounded focus:outline-none [&:not(:focus)]:text-gray-500 [&:focus]:text-black'
+                                        defaultValue=""
+                                        onChange={(e) => {
+                                            const isSelected = e.target.value !== "";
+                                            e.target.classList.toggle("text-gray-400", !isSelected);
+                                            e.target.classList.toggle("text-black", isSelected);
+
+                                            // Change dropdown icon color
+                                            e.target.style.backgroundImage = isSelected
+                                                ? `url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='black' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' d='M10 12a.75.75 0 0 1-.53-.22l-4-4a.75.75 0 1 1 1.06-1.06L10 10.19l3.47-3.47a.75.75 0 1 1 1.06 1.06l-4 4A.75.75 0 0 1 10 12z' clip-rule='evenodd'/%3E%3C/svg%3E")`
+                                                : `url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='%239CA3AF' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' d='M10 12a.75.75 0 0 1-.53-.22l-4-4a.75.75 0 1 1 1.06-1.06L10 10.19l3.47-3.47a.75.75 0 1 1 1.06 1.06l-4 4A.75.75 0 0 1 10 12z' clip-rule='evenodd'/%3E%3C/svg%3E")`;
+                                        }}
+                                        className="w-full border border-gray-300 p-3 pr-10 rounded focus:outline-none text-gray-400 appearance-none bg-no-repeat"
+                                        style={{
+                                            backgroundPosition: 'right 1.25rem center', // similar to `mr-5` (20px)
+                                            backgroundSize: '1rem 1rem',
+                                            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 20 20' fill='%239CA3AF' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' d='M10 12a.75.75 0 0 1-.53-.22l-4-4a.75.75 0 1 1 1.06-1.06L10 10.19l3.47-3.47a.75.75 0 1 1 1.06 1.06l-4 4A.75.75 0 0 1 10 12z' clip-rule='evenodd'/%3E%3C/svg%3E")`,
+                                        }}
                                     >
-                                        <option value="" disabled selected>--Choose Country--</option>
+                                        <option value="" disabled>
+                                            --Choose Country--
+                                        </option>
                                         {countries.map((country, index) => (
                                             <option key={index} value={country}>
                                                 {country}
