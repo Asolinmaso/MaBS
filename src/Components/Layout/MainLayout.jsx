@@ -21,7 +21,22 @@ if (typeof window !== 'undefined') {
 const MainLayout = () => {
   return (
     <>
-     
+     /* <AnimatedCursor
+        innerSize={0}
+        outerSize={35}
+        innerScale={0}
+        outerScale={1.7}
+        outerAlpha={0}
+        hasBlendMode={true}
+        outerStyle={{
+          backgroundImage: 'url(/public/cursor.png)',
+          backgroundSize: 'cover',
+          cursor: 'none', // Ensures all default cursors are hidden
+          pointerEvents: 'none',
+          linkselect: 'none'
+        }}
+        trailingSpeed={1}
+      />*/
       <Navbar />
       <ScrollToTop />
       <Outlet />
