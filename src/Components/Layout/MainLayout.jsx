@@ -21,7 +21,7 @@ if (typeof window !== 'undefined') {
 const MainLayout = () => {
   return (
     <>
-      <AnimatedCursor
+     /* <AnimatedCursor
         innerSize={0}
         outerSize={35}
         innerScale={0}
@@ -36,7 +36,7 @@ const MainLayout = () => {
           linkselect: 'none'
         }}
         trailingSpeed={1}
-      />
+      />*/
       <Navbar />
       <ScrollToTop />
       <Outlet />
