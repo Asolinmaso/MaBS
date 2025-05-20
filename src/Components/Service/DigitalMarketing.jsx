@@ -127,7 +127,7 @@ const handleMouseLeave = (index) => {
                     <h1 className="text-[#19BDE8] font-semibold text-3xl  md:text-6xl leading-tight">
                         Digital Marketing Solutions
                     </h1>
-                    <p className="font-normal text-base  md:text-xl max-w-3xl mt-6">
+                    <p className="font-normal text-base  md:text-xl  text-center  mt-6">
                         We help brands cut through the digital noise with tailored strategies across SEO, SEM, SMO, and Google My Business Optimization — so your business gets found, clicked, and remembered.
                     </p>
                     <a href="#">

@@ -130,7 +130,7 @@ const handleMouseLeave = (index) => {
                     <h1 className="text-[#19BDE8] font-semibold text-xl md:text-6xl leading-tight">
                         Technology Solutions
                     </h1>
-                    <p className="font-normal text-base  md:text-xl max-w-3xl mt-6">
+                    <p className="font-normal text-base  md:text-xl mt-6">
                         We don’t just build tech — we craft intelligent, scalable solutions that power your business growth. From stunning websites and intuitive apps to emerging technologies like blockchain and AI, we turn ideas into digital excellence.
                     </p>
                     <a href="#">

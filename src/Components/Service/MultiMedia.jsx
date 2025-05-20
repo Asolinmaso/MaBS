@@ -130,7 +130,7 @@ const handleMouseLeave = (index) => {
                     <h1 className="text-[#19BDE8] font-semibold text-3xl md:text-6xl leading-tight">
                         MultiMedia Solutions
                     </h1>
-                    <p className="font-normal text-base  md:text-xl max-w-3xl mt-6">
+                    <p className="font-normal text-base  md:text-xl  mt-6">
                         We bring your brand to life visually by crafting multimedia experiences that connect, communicate, and captivate. From engaging designs to compelling visual storytelling, our solutions ensure your message not only stands out but resonates with your audience across all platforms.
                     </p>
                     <a href="#">

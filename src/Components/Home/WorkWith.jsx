@@ -13,7 +13,7 @@ const brands = [brand1, brand2, brand3, brand4, brand5, brand6, brand7];
 
 const WorkWith = () => {
   return (
-    <div className="w-screen bg-[#EEEDED] py-16 overflow-hidden mt-20 mb-20">
+    <div className="w-screen bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] py-16 overflow-hidden mt-20 mb-20">
       <div className=" mx-auto px-4 text-center">
         <h1 className="text-[#19BDE8] font-semibold text-2xl md:text-4xl mb-12">
           Who We Work With
