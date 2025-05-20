@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import CustomBtn from '../Button/CustomBtn';
-import bg from '../../assets/Home/Herosection.mp4'
+import bg from '../../assets/Home/Herosection.mp4';
+
 const HeroSection = () => {
     useEffect(() => {
         const script = document.createElement('script');
@@ -14,13 +15,10 @@ const HeroSection = () => {
 
     return (
         <>
-            {/* <Custom_Navbar></Custom_Navbar> */}
             <header className="relative w-full h-screen overflow-hidden flex items-center justify-center">
-
-                {/* Desktop Vimeo Video */}
-
+                {/* Background Video */}
                 <video
-                    className="absolute w-full h-full object-cover z-0"
+                    className="absolute top-0 left-0 w-full h-full object-cover z-0"
                     src={bg}
                     autoPlay
                     loop
@@ -28,22 +26,18 @@ const HeroSection = () => {
                     playsInline
                 />
 
+                {/* Overlay */}
+                <div className="absolute top-0 left-0 w-full h-full bg-black/30 z-10"></div>
 
-
-                {/* Optional fallback image for mobile */}
-
-                {/* Dark overlay */}
-                <div className="absolute bg-black/30 top-0 left-0 w-full h-full z-10"></div>
-
-                {/* Foreground content */}
-                <div className="relative z-20 flex flex-col items-center justify-center gap-4 text-center text-white pt-20 pb-4 px-4 max-w-2xl">
+                {/* Foreground Content */}
+                <div className="relative z-20 w-full max-w-[1200px] px-4 sm:px-6 flex flex-col items-center justify-center text-center text-white">
                     <p className="font-Montserrat font-medium text-xl lg:text-3xl leading-tight">
                         Unlock the Secrets to Business Success
                     </p>
-                    <h1 className="font-Montserrat font-semibold text-3xl  lg:text-6xl text-[#19BDE8] leading-snug">
+                    <h1 className="font-Montserrat font-semibold text-3xl lg:text-6xl text-[#19BDE8] leading-snug mt-2">
                         Creating a Path
                     </h1>
-                    <p className="mt-4 font-normal text-base  md:text-xl  leading-relaxed text-center mx-auto ">
+                    <p className="mt-4 font-normal text-base md:text-xl leading-relaxed">
                         Welcome to Manvian, your trusted partner in business development. We empower entrepreneurs and their businesses to reach new heights
                         through innovative strategies and exceptional execution.
                     </p>
@@ -52,14 +46,13 @@ const HeroSection = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label="Book an appointment"
-                        className="pt-6"
+                        className="mt-6"
                     >
                         <CustomBtn>Booking Appointment</CustomBtn>
                     </a>
                 </div>
             </header>
         </>
-
     );
 };
 

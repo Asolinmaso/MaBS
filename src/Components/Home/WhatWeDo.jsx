@@ -12,6 +12,7 @@ import sixth from '../../assets/Home/1 What We Do/6_Multi_Media_Solution.png'
 
 import { Link } from 'react-router-dom'
 import CountAnimation from './CountAnimation'
+
 const FadeInSection = ({ children }) => {
     const [ref, inView] = useInView({
         triggerOnce: true,
@@ -119,7 +120,6 @@ const WhatWeDo = () => {
                         title: '05. Marketing Solutions',
                         desc: 'Our digital marketing services include SEO, PPC, social media marketing, and more. We tailor strategies to enhance your online visibility, attract targeted traffic, and convert leads into loyal customers.',
                         path: "/service/DigitalMarketing",
-
                     },
                     {
                         img: sixth,
@@ -129,18 +129,23 @@ const WhatWeDo = () => {
                         reverse: true,
                     }
                 ].map((item, index) => (
-                    <div key={index} className={`flex flex-col lg:flex-row ${item.reverse ? 'lg:flex-row-reverse' : ''} items-center gap-6 lg:gap-12`}>
+                    <div
+                        key={index}
+                        className={`flex ${item.reverse ? 'flex-col-reverse lg:flex-row-reverse' : 'flex-col-reverse lg:flex-row'} items-center gap-6 lg:gap-12`}
+                    >
                         <FadeInSection>
                             <img className='w-full lg:w-[570px] h-auto lg:h-[322.27px] rounded-[32px]' src={item.img} alt="" />
                         </FadeInSection>
                         <FadeInSection>
-                            <Link to={item.path}>  <div className='w-full lg:w-[570px] flex flex-col gap-4'>
-                                <h1 className='font-semibold text-xl md:text-3xl text-[#1E1E1E]'>
-                                    <span className='text-[#19BDE8]'>{item.title.slice(0, 4)}</span>
-                                    {item.title.slice(4)}
-                                </h1>
-                                <p className='font-normal text-base md:text-2xl'>{item.desc}</p>
-                            </div> </Link>
+                            <Link to={item.path}>
+                                <div className='w-full lg:w-[570px] flex flex-col gap-4'>
+                                    <h1 className='font-semibold text-xl md:text-3xl text-[#1E1E1E]'>
+                                        <span className='text-[#19BDE8]'>{item.title.slice(0, 4)}</span>
+                                        {item.title.slice(4)}
+                                    </h1>
+                                    <p className='font-normal text-base md:text-2xl'>{item.desc}</p>
+                                </div>
+                            </Link>
                         </FadeInSection>
                     </div>
                 ))}
