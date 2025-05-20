@@ -54,10 +54,11 @@ const Footer = () => {
             {/* Logo Image */}
             <img src={MABS} alt="MABS Logo" className="w-auto  h-10" />
           </div>
-          <p className="mt-4 text-sm">
-            Empowering Businesses Through Design, Technology,<br />
-            And Strategic Solutions.
-          </p>
+          <div className="mt-4 text-sm md:flex md:flex-col">
+            <span>Empowering Businesses Through Design, Technology,</span>
+            <span> and Strategic Solutions.</span>
+          </div>
+
           <div className="mt-6 text-sm space-y-2">
             <p className="flex items-center gap-2 text-sm">
               <MdEmail /> operations@manvian.com
