@@ -72,7 +72,7 @@ const Contact = () => {
                 {/* Main content container - adjusted positioning */}
                 <div className='flex flex-col items-center gap-6 text-center w-full max-w-6xl z-20 text-white px-4 mt-32 md:mt-40'>
                     <h1 className='text-[#19BDE8] font-semibold text-3xl  md:text-5xl'>Contact Us</h1>
-                    <p className='font-normal text-base  md:text-2xl max-w-3xl mt-6'>
+                    <p className='font-normal text-base  md:text-2xl px-4 mt-6'>
                         We'd love to hear from you! Whether you have a question, need assistance, or want to explore how we can work together, our team is here to help.
                     </p>
                     <a

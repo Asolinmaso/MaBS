@@ -72,7 +72,7 @@ const ProductComponent = () => {
                                     alt="Opptiverse Background"
                                 />
                             </div>
-                            <p className='text-base md:text-2xl  mt-6'>
+                            <p className='text-base md:text-2xl px-5  mt-6'>
                                 Welcome to Manvian, your trusted partner in business development. We empower entrepreneurs and their Businesses to Reach New Heights by providing valuable solutions through Innovative Strategies and Exceptional Execution
                             </p>
                             <a href="" className="mt-10">
