@@ -35,6 +35,14 @@ export const Menus = [
         path: "/service/RAAS",
       },
       {
+        name: "Sales",
+        desc: "Sales",
+        icon: Database,
+        category: "Service",
+        path: "/service/Sales",
+
+      },
+      {
         name: "MultiMedia Solution",
         desc: "Site control",
         icon: Bolt,
@@ -42,12 +50,13 @@ export const Menus = [
         path: "/service/multimedia",
 
       },
+
       {
-        name: "Bussiness",
-        desc: "Site control",
-        icon: Bolt,
+        name: "Technology solution",
+        desc: "Sales",
+        icon: Database,
         category: "Service",
-        path: "/service/Business",
+        path: "/service/TechSolution",
 
       },
       {
@@ -59,21 +68,15 @@ export const Menus = [
 
       },
       {
-        name: "Sales",
-        desc: "Sales",
-        icon: Database,
+        name: "Bussiness",
+        desc: "Site control",
+        icon: Bolt,
         category: "Service",
-        path: "/service/Sales",
+        path: "/service/Business",
 
       },
-      {
-        name: "Technology solution",
-        desc: "Sales",
-        icon: Database,
-        category: "Service",
-        path: "/service/TechSolution",
 
-      },
+
       {
         name: "Opptiverse",
         desc: "Sales",
@@ -98,10 +101,10 @@ export const Menus = [
         path: "/service",
 
       },
-    
-  
-      
-     
+
+
+
+
 
     ],
 
