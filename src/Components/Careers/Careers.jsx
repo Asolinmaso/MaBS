@@ -71,8 +71,8 @@ const Careers = () => {
         {/* Content */}
         <div className='flex flex-col justify-center items-center gap-6 text-center max-w-4xl px-4 z-20 text-white'>
           <h1 className='text-[#19BDE8] font-semibold text-3xl lg:text-5xl'>Join Our Team</h1>
-          <p className='font-light text-base md:text-2xl mt-6'>
-            We’re driven by a passion for innovation and impact. At our company, you’ll collaborate on meaningful projects that empower brands and improve experiences. If you're looking for a place where your ideas matter and your growth is a priority , you’re in the right place.
+          <p className='font-light text-base md:text-2xl mt-6 text-justify'>
+            We're driven by a passion for innovation and impact. At our company, you'll collaborate on meaningful projects that empower brands and improve experiences. If you're looking for a place where your ideas matter and your growth is a priority , you're in the right place.
           </p>
         <CustomBtn>View Openings</CustomBtn>
         </div>
@@ -168,15 +168,15 @@ const Careers = () => {
           
 
           {jobOpenings.length === 0 ? (
-            <p className="text-center w-full">There are currently no job openings available.</p>
+            <p className="text-center w-full text-justify">There are currently no job openings available.</p>
           ) : (
             jobOpenings.map((job, index) => (
               <div key={index} className="border border-gray-300 rounded-lg p-4 sm:p-6 w-full sm:w-80 shadow-md hover:shadow-xl transition duration-300">
-                <h3 className="font-semibold text-lg mb-1">{job.title}</h3>
-                <p className="text-sm text-gray-700 mb-2">
+                <h3 className="font-semibold text-lg mb-1 text-justify">{job.title}</h3>
+                <p className="text-sm text-gray-700 mb-2 text-justify">
                   Location: {job.location} | Experience: {job.experience}
                 </p>
-                <p className="text-sm text-gray-600 mb-4">{job.description}</p>
+                <p className="text-sm text-gray-600 mb-4 text-justify">{job.description}</p>
                 <button className="w-full sm:w-auto bg-cyan-400 text-white px-4 py-2 rounded hover:bg-cyan-500 cursor-pointer">
                   Apply Now
                 </button>
