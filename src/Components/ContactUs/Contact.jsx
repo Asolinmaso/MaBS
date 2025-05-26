@@ -72,7 +72,7 @@ const Contact = () => {
                 {/* Main content container - adjusted positioning */}
                 <div className='flex flex-col items-center gap-6 text-center w-full max-w-6xl z-20 text-white px-4 mt-32 md:mt-40'>
                     <h1 className='text-[#19BDE8] font-semibold text-3xl  md:text-5xl'>Contact Us</h1>
-                    <p className='font-normal text-base  md:text-2xl px-4 mt-6'>
+                    <p className='font-normal text-base md:text-2xl px-4 mt-6 text-justify'>
                         We'd love to hear from you! Whether you have a question, need assistance, or want to explore how we can work together, our team is here to help.
                     </p>
                     <a
@@ -101,7 +101,7 @@ const Contact = () => {
                         <FiPhone className='h-12 w-12 sm:h-16 sm:w-16 text-[#19BDE8]' />
                         <div>
                             <p className='font-normal text-base md:text-xl'>Call Us</p>
-                            <p className='font-normal text-base md:text-xl'>+91 87783 59643</p>
+                            <p className='font-normal text-base md:text-xl text-justify'>+91 87783 59643</p>
                         </div>
                     </div>
                     {/* Email */}
@@ -109,7 +109,7 @@ const Contact = () => {
                         <FiMail className='h-12 w-12 sm:h-16 sm:w-16 text-[#19BDE8]' />
                         <div>
                             <p className='font-normal text-base md:text-xl'>E-Mail Us</p>
-                            <p className='font-normal text-base md:text-xl'>operations@manvian.com</p>
+                            <p className='font-normal text-base md:text-xl text-justify'>operations@manvian.com</p>
                         </div>
                     </div>
                 </div>
@@ -161,14 +161,14 @@ const Contact = () => {
             <div className='w-full bg-white px-5 py-12 flex flex-col items-center'>
                 <div className='text-center max-w-2xl p-5'>
                     <h2 className='text-2xl sm:text-3xl md:text-4xl font-bold text-[#19BDE8] mb-3'>Still Have Questions?</h2>
-                    <p className='text-gray-600 text-sm sm:text-base md:text-lg'>
-                        Didn't find your answer above? We're here to help. Just fill out the form below and we’ll get back to you soon.
+                    <p className='text-gray-600 text-sm sm:text-base md:text-lg text-justify'>
+                        Didn't find your answer above? We're here to help. Just fill out the form below and we'll get back to you soon.
                     </p>
                 </div>
                 <form onSubmit={handleSubmit} className='bg-white shadow-[0_0_25px_0_rgba(0,0,0,0.1)]  rounded-xl px-4 sm:px-8 md:px-10 md:py-5 flex flex-col gap-6 w-full max-w-4xl mx-auto mt-15 mb-20 pb-10'>
                     <h1 className='text-[#19BDE8] font-semibold text-2xl sm:text-3xl md:text-4xl pt-4'>Get in Touch</h1>
-                    <p className='font-normal text-sm sm:text-base md:text-lg text-[#1E1E1E]'>
-                        Fill out our quick contact form, and we’ll get back to you promptly.
+                    <p className='font-normal text-sm sm:text-base md:text-lg text-[#1E1E1E] text-justify'>
+                        Fill out our quick contact form, and we'll get back to you promptly.
                     </p>
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                         <div>
@@ -247,7 +247,7 @@ const Contact = () => {
                     <img src={fb} alt="Facebook" className="h-12 sm:h-16 md:h-20 w-auto cursor-pointer" />
                 </div>
 
-                <p className="text-gray-600 text-sm sm:text-base">Let's start the conversation today!</p>
+                <p className="text-gray-600 text-sm sm:text-base text-justify">Let's start the conversation today!</p>
             </section>
 
 
