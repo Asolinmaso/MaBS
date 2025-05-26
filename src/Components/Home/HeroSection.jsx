@@ -31,13 +31,13 @@ const HeroSection = () => {
 
                 {/* Foreground Content */}
                 <div className="relative z-20 w-full max-w-[1200px] px-4 sm:px-6 flex flex-col items-center justify-center text-center text-white">
-                    <p className="font-Montserrat font-medium text-xl lg:text-3xl leading-tight">
+                    <p className="font-Montserrat font-medium text-xl lg:text-3xl leading-tight text-justify sm:text-center">
                         Unlock the Secrets to Business Success
                     </p>
-                    <h1 className="font-Montserrat font-semibold text-3xl lg:text-6xl text-[#19BDE8] leading-snug mt-2">
+                    <h1 className="font-Montserrat font-semibold text-3xl lg:text-6xl text-[#19BDE8] leading-snug mt-2 text-justify sm:text-center">
                         Creating a Path
                     </h1>
-                    <p className="mt-4 font-normal text-base md:text-xl leading-relaxed">
+                    <p className="mt-4 font-normal text-base md:text-xl leading-relaxed text-justify sm:text-center">
                         Welcome to Manvian, your trusted partner in business development. We empower entrepreneurs and their businesses to reach new heights
                         through innovative strategies and exceptional execution.
                     </p>
