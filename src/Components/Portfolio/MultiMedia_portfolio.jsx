@@ -52,7 +52,7 @@ const MultiMedia_portfolio = () => {
           <h1 className='text-[#19BDE8] font-semibold text-3xl  md:text-6xl'>
             Real Work. Real Results.
           </h1>
-          <p className='font-normal text-base  md:text-xl mt-6'>
+          <p className='font-normal text-base  md:text-xl mt-6 text-justify'>
             Ready to take your business to the next level? Whether you’re building a bold brand or creating something meaningful, we transform your ideas into powerful visuals and seamless digital experiences that make a real impact.
           </p>
           <a href="#">
@@ -79,17 +79,17 @@ const MultiMedia_portfolio = () => {
             </div>
             {/* Textual Content */}
             <div>
-              <p className="text-xl mb-1 font-medium">Client</p>
-              <p className="mb-2 text-base font-normal">
+              <p className="text-xl mb-1 font-medium text-justify">Client</p>
+              <p className="mb-2 text-base font-normal text-justify">
                 National Mission on Interdisciplinary Cyber-Physical Systems (NM-ICPS)
               </p>
-              <p className="text-xl mb-1 font-medium">What they do</p>
-              <p className="mb-2 text-base font-normal">
+              <p className="text-xl mb-1 font-medium text-justify">What they do</p>
+              <p className="mb-2 text-base font-normal text-justify">
                 NM-ICPS promotes innovation in CPS by connecting academia, industry, government,
                 and international bodies to develop impactful technologies and prototypes.
               </p>
-              <p className="text-xl mb-1 font-medium">Logo Concept</p>
-              <p className="mb-2 text-base font-normal">
+              <p className="text-xl mb-1 font-medium text-justify">Logo Concept</p>
+              <p className="mb-2 text-base font-normal text-justify">
                 The logo combines Wi-Fi, antenna, and bulb icons to symbolize connectivity,
                 intelligence, and innovation. It reflects a fusion of hardware and software, with a
                 color palette inspired by the Indian national flag to represent the country.
@@ -123,16 +123,16 @@ const MultiMedia_portfolio = () => {
           <h2 className= "text-2xl md:text-4xl font-semibold text-[#19BDE8] text-center mb-3">
             Visual Content That Engages
           </h2>
-          <p className='font-medium text-xl md:text-3xl pt-3'>Graphic Design & Print AD</p>
+          <p className='font-medium text-xl md:text-3xl pt-3 text-justify'>Graphic Design & Print AD</p>
           <div className='flex flex-col md:flex-row justify-between gap-6 mt-7'>
             <div className='w-full md:w-[424px]'>
               <h1 className="font-medium text-xl mb-2">Client</h1>
-              <p className='font-normal text-base'>IITM Pravartak</p>
-              <p className='font-normal text-base'> Technology Innovation Hub at IIT Madras.</p>
+              <p className='font-normal text-base text-justify'>IITM Pravartak</p>
+              <p className='font-normal text-base text-justify'> Technology Innovation Hub at IIT Madras.</p>
             </div>
             <div className='w-full md:w-[736px]'>
               <h1 className='font-medium text-xl mb-2'>What They Do</h1>
-              <p className='font-normal text-base'>
+              <p className='font-normal text-base text-justify'>
                 IITM Pravartak drives innovation in Sensors, Networking, Actuators, and Control Systems (SNACS) through technology development, entrepreneurship, skill-building, and global collaborations.
               </p>
             </div>
@@ -147,7 +147,7 @@ const MultiMedia_portfolio = () => {
             <h2 className="text-xl md:text-4xl font-semibold text-[#19BDE8] text-center mb-3">
               Impact of Our Multimedia Services
             </h2>
-            <p className='font-normal  text-base md:text-xl pt-3 text-center'>
+            <p className='font-normal  text-base md:text-xl pt-3 text-center text-justify'>
               Our multimedia work helped clients strengthen brand identity, enhance visual communication,
               and connect more effectively with their audiences. Through design and storytelling, we made
               their message memorable.
@@ -187,7 +187,7 @@ const MultiMedia_portfolio = () => {
             <h2 className="text-xl md:text-4xl font-semibold text-[#19BDE8] text-center mb-3">
               Value We Delivered to Our Clients
             </h2>
-            <p className='font-normal text-base md:text-xl pt-3 text-center'>
+            <p className='font-normal text-base md:text-xl pt-3 text-center text-justify'>
               By combining technical expertise with user-focused design, we created platforms that solve real problems and support business growth.
             </p>
           </div>
@@ -225,7 +225,7 @@ const MultiMedia_portfolio = () => {
         <section className="flex flex-col md:flex-row justify-between items-center px-10 py-16 mt-10 bg-white">
           <div className="w-full md:w-1/2 pr-0 md:pr-10 text-center md:text-left">
             <h2 className="text-xl md:text-3xl font-semibold text-[#19BDE8] mb-4">Want to Explore More?</h2>
-            <p className="text-base md:text-lg text-gray-800 mb-6">
+            <p className="text-base md:text-lg text-gray-800 mb-6 text-justify">
               If you'd like to see more of our creative work and how we bring brands to life through design,
               click the button below.
             </p>
