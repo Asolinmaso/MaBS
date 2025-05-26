@@ -64,7 +64,7 @@ const ProductComponent = () => {
                     <div className='relative z-20 w-full max-w-5xl px-6 pt-15 pb-16'>
                         {/* Heading & Description */}
                         <div className='text-white text-center flex flex-col items-center mb-12 pt-26'>
-                            <h1 className='text-[#19BDE8] font-semibold text-3xl md:text-5xl mb-6'>Explore our Product</h1>
+                            <h1 className='text-[#19BDE8] font-semibold text-3xl md:text-5xl mb-6 text-justify'>Explore our Product</h1>
                             <div className='w-full max-w-[800px] mx-auto'>
                                 <img
                                     src={Opptiverse_bg}
@@ -72,7 +72,7 @@ const ProductComponent = () => {
                                     alt="Opptiverse Background"
                                 />
                             </div>
-                            <p className='text-base md:text-2xl px-5  mt-6'>
+                            <p className='text-base md:text-2xl px-5 mt-6 text-justify'>
                                 Welcome to Manvian, your trusted partner in business development. We empower entrepreneurs and their Businesses to Reach New Heights by providing valuable solutions through Innovative Strategies and Exceptional Execution
                             </p>
                             <a href="" className="mt-10">
@@ -86,7 +86,7 @@ const ProductComponent = () => {
                             {/* Two Column Inputs */}
                             <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                                 <div>
-                                    <label className='block text-gray-700 mb-2 font-medium'>Name</label>
+                                    <label className='block text-gray-700 mb-2 font-medium text-justify'>Name</label>
                                     <input
                                         type='text'
                                         name='name'
@@ -96,7 +96,7 @@ const ProductComponent = () => {
                                 </div>
 
                                 <div>
-                                    <label className='block text-gray-700 mb-2 font-medium'>Email ID</label>
+                                    <label className='block text-gray-700 mb-2 font-medium text-justify'>Email ID</label>
                                     <input
                                         type='email'
                                         name='email'
@@ -106,7 +106,7 @@ const ProductComponent = () => {
                                 </div>
 
                                 <div>
-                                    <label className='block text-gray-700 mb-2 font-medium'>Phone Number</label>
+                                    <label className='block text-gray-700 mb-2 font-medium text-justify'>Phone Number</label>
                                     <input
                                         type='tel'
                                         name='phone'
@@ -116,7 +116,7 @@ const ProductComponent = () => {
                                 </div>
 
                                 <div>
-                                    <label className='block text-gray-700 mb-2 font-medium'>Country</label>
+                                    <label className='block text-gray-700 mb-2 font-medium text-justify'>Country</label>
                                     <select
                                         id="country"
                                         name="country"
@@ -152,7 +152,7 @@ const ProductComponent = () => {
 
                             {/* Message - full width */}
                             <div>
-                                <label className='block text-gray-700 mb-2 font-medium'>Message</label>
+                                <label className='block text-gray-700 mb-2 font-medium text-justify'>Message</label>
                                 <textarea
                                     rows='4'
                                     name='message'
