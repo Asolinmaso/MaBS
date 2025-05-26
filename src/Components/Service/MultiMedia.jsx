@@ -127,10 +127,10 @@ const handleMouseLeave = (index) => {
 
                 {/* Content */}
                 <div className="relative z-20 flex flex-col items-center text-center text-white px-4 sm:px-6 md:px-12 lg:px-24 xl:px-0 w-full max-w-[1200px] gap-6">
-                    <h1 className="text-[#19BDE8] font-semibold text-3xl md:text-6xl leading-tight">
+                    <h1 className="text-[#19BDE8] font-semibold text-3xl md:text-6xl leading-tight text-justify md:text-center">
                         MultiMedia Solutions
                     </h1>
-                    <p className="font-normal text-base  md:text-xl  mt-6">
+                    <p className="font-normal text-base  md:text-xl  mt-6 text-justify md:text-center">
                         We bring your brand to life visually by crafting multimedia experiences that connect, communicate, and captivate. From engaging designs to compelling visual storytelling, our solutions ensure your message not only stands out but resonates with your audience across all platforms.
                     </p>
                     <a href="#">
@@ -144,10 +144,10 @@ const handleMouseLeave = (index) => {
                 <div className="px-4 py-12 bg-white text-gray-800">
                     {/* Problems Section */}
                     <section className="text-center mb-16">
-                        <h2 className="text-xl md:text-3xl font-bold text-[#19BDE8]">
+                        <h2 className="text-xl md:text-3xl font-bold text-[#19BDE8] text-justify md:text-center">
                             The Problem – What Businesses Struggle With
                         </h2>
-                        <p className="mt-2 text-gray-600 text-base md:text-2xl">
+                        <p className="mt-2 text-gray-600 text-base md:text-2xl text-justify md:text-center">
                             Visual Noise is Everywhere – Are You Cutting Through?
                         </p>
 
@@ -167,8 +167,12 @@ const handleMouseLeave = (index) => {
                                     <div className="w-10 h-10 border-2 border-black text-black font-normal rounded-[50px] p-6 mx-auto mb-4 flex items-center justify-center text-4xl ">
                                         {index + 1}
                                     </div>
-                                    <h3 className="font-semibold text-lg md:text-2xl mb-4 text-black">{problem.title}</h3>
-                                    <p className="text-base md:text-lg font-normal text-black">{problem.description}</p>
+                                    <h3 className="font-semibold text-lg md:text-2xl mb-4 text-black text-justify">
+                                        {problem.title}
+                                    </h3>
+                                    <p className="text-base md:text-lg font-normal text-black text-justify">
+                                        {problem.description}
+                                    </p>
                                 </div>
                             ))}
                         </div>
@@ -176,7 +180,7 @@ const handleMouseLeave = (index) => {
 
                     {/* Solutions Section */}
                     <section className="max-w-4xl mx-auto">
-                        <h2 className="text-lg md:text-3xl font-bold text-[#19BDE8] text-center mb-8">
+                        <h2 className="text-lg md:text-3xl font-bold text-[#19BDE8] text-center mb-8 text-justify md:text-center">
                             Our Solutions – How Manvian Helps
                         </h2>
                         <div className="space-y-4">
@@ -188,8 +192,10 @@ const handleMouseLeave = (index) => {
                                     <div className='flex gap-4 items-center justify-center'>
                                         <img className='h-15 w-15' src={solution.image} alt="" />
                                         <div>
-                                            <h4 className="font-medium text-lg md:text-2xl">{solution.title}</h4>
-                                            <p className="text-base text-gray-600 mt-1">
+                                            <h4 className="font-medium text-lg md:text-2xl text-justify">
+                                                {solution.title}
+                                            </h4>
+                                            <p className="text-base text-gray-600 mt-1 text-justify">
                                                 {solution.description}
                                             </p>
                                         </div>
@@ -205,7 +211,7 @@ const handleMouseLeave = (index) => {
             </main>
             {/* See Our Creativity in Action */}
             <div className='w-full flex flex-col items-center justify-center mb-8'>
-                <h1 className='text-[#19BDE8] font-semibold text-lg md:text-2xl'> See Our Creativity in Action</h1>
+                <h1 className='text-[#19BDE8] font-semibold text-lg md:text-2xl text-justify md:text-center'> See Our Creativity in Action</h1>
             </div>
             <div className="grid grid-cols-2 gap-4 max-w-4xl mx-auto p-4">
 
@@ -235,10 +241,10 @@ const handleMouseLeave = (index) => {
             {/* Explore */}
             <div className='w-full min-h-[300px] bg-gradient-to-t from-[#19BDE880]/50 to-white flex flex-col md:flex-row justify-around items-center px-8 py-12 lg:px-16 mb-20'>
                 <div className='w-full md:w-[35%] mb-8 md:mb-0'>
-                    <h1 className='font-semibold text-xl lg:text-3xl md:text-2xl  mb-5'>
+                    <h1 className='font-semibold text-xl lg:text-3xl md:text-2xl  mb-5 text-justify md:text-left'>
                         Explore More Ways We Can Help You Grow
                     </h1>
-                    <p className='text-base lg:text-sm md:text-xs'>
+                    <p className='text-base lg:text-sm md:text-xs text-justify md:text-left'>
                         Your business needs more than just Multimedia. Discover how our full suite of services works together to drive real results.
                     </p>
                 </div>
