@@ -129,7 +129,7 @@ const handleMouseLeave = (index) => {
                     <h1 className="text-[#19BDE8] font-semibold text-3xl md:text-6xl leading-tight">
                         Sales Solutions
                     </h1>
-                    <p className="font-normal text-base md:text-xl  mt-6">
+                    <p className="font-normal text-base md:text-xl text-justify mt-6">
                         Manvian empowers your sales teams with strategic guidance, automation tools, and data-driven tactics — helping you convert leads faster, retain customers longer, and scale growth sustainably.
                     </p>
                     <a href="#">
@@ -167,7 +167,7 @@ const handleMouseLeave = (index) => {
                                         {index + 1}
                                     </div>
                                     <h3 className="font-semibold text-lg md:text-2xl mb-4 text-black">{problem.title}</h3>
-                                    <p className= "text-base md:text-lg font-normal text-black">{problem.description}</p>
+                                    <p className= "text-base md:text-lg font-normal text-black text-justify">{problem.description}</p>
                                 </div>
                             ))}
                         </div>
@@ -188,7 +188,7 @@ const handleMouseLeave = (index) => {
                                         <img className='h-15 w-15' src={solution.image} alt="" />
                                         <div>
                                             <h4 className="font-medium text-lg md:text-2xl">{solution.title}</h4>
-                                            <p className="text-base text-gray-600 mt-1">
+                                            <p className="text-base text-gray-600 mt-1 text-justify">
                                                 {solution.description}
                                             </p>
                                         </div>
@@ -209,7 +209,7 @@ const handleMouseLeave = (index) => {
                     <h1 className='font-semibold text-xl lg:text-3xl md:text-2xl  mb-5'>
                         Explore More Ways We Can Help You Grow
                     </h1>
-                    <p className='text-base lg:text-sm md:text-xs'>
+                    <p className='text-base lg:text-sm md:text-xs text-justify'>
                         Your business needs more than just Multimedia. Discover how our full suite of services works together to drive real results.
                     </p>
                 </div>
