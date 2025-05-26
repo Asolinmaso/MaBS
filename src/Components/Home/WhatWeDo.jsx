@@ -143,7 +143,7 @@ const WhatWeDo = () => {
                                         <span className='text-[#19BDE8]'>{item.title.slice(0, 4)}</span>
                                         {item.title.slice(4)}
                                     </h1>
-                                    <p className='font-normal text-base md:text-2xl'>{item.desc}</p>
+                                    <p className='font-normal text-base md:text-2xl text-justify'>{item.desc}</p>
                                 </div>
                             </Link>
                         </FadeInSection>
