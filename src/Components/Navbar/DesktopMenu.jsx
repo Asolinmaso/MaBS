@@ -4,11 +4,9 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 export default function DesktopMenu({ menu }) {
   const [isHover, toggleHover] = useState(false);
-
   const toggleHoverMenu = () => {
     toggleHover(!isHover);
   };
-
   const subMenuAnimate = {
     enter: {
       opacity: 1,
@@ -29,9 +27,7 @@ export default function DesktopMenu({ menu }) {
       },
     },
   };
-
   const hasSubMenu = menu?.subMenu?.length;
-
   return (
     <motion.li
       className="group/link relative"
@@ -67,19 +63,17 @@ export default function DesktopMenu({ menu }) {
                 return (
                   <div key={heading} className="max-h-96  pr-2">
 
-                    <p className="text-md font-semibold mb-4 text-sky-400 sticky top-0  z-10 py-1">{heading}</p>
+                    <p className="text-lg font-semibold mb-4 text-sky-400 sticky top-0  z-10 py-1">{heading}</p>
                     <div className="overflow-y-auto max-h-80 pr-1">
                       {filteredSubMenu.map((submenu, i) => (
                         <div className="relative cursor-pointer mb-5" key={i}>
                           <Link to={submenu.path} className="flex-center gap-x-4 group/menubox">
-
                             <div className="flex-center gap-x-4 group/menubox">
-
-                              <div className="bg-white/5 w-fit p-2 rounded-md group-hover/menubox:bg-white group-hover/menubox:text-gray-900 duration-300 text-white ">
+                              <div className="bg-white/5 w-fit p-2 rounded-md group-hover/menubox:bg-sky-400 group-hover/menubox:text-white duration-300 text-white ">
                                 {submenu.icon && <submenu.icon />}
                               </div>
                               <div>
-                                <h6 className="font-semibold text-white group-hover/menubox:text-sky-400 transition-colors duration-300 ">{submenu.name}</h6>
+                                <h6 className="font-semibold text-md text-white group-hover/menubox:text-sky-400 transition-colors duration-300 ">{submenu.name}</h6>
                                 <p className="text-sm  text-gray-200 group-hover/menubox:text-gray-400 transition-colors duration-300">{submenu.desc}</p>
                               </div>
                             </div></Link>
@@ -96,11 +90,11 @@ export default function DesktopMenu({ menu }) {
               {menu.subMenu.map((submenu, i) => (
                 <div className="relative cursor-pointer mb-5" key={i}>
                   <div className="flex-center gap-x-4 group/menubox">
-                    <div className="bg-white/5 w-fit p-2 rounded-md group-hover/menubox:bg-white group-hover/menubox:text-gray-900 duration-300">
+                    <div className="bg-white/5 w-fit p-2 rounded-md group-hover/menubox:bg-sky-400 group-hover/menubox:text-white duration-300">
                       {submenu.icon && <submenu.icon />}
                     </div>
                     <div>
-                      <h6 className=" font-semibold text-white group-hover/menubox:text-sky-400 transition-colors duration-300  ">{submenu.name}</h6>
+                      <h6 className=" font-semibold text-md text-white group-hover/menubox:text-sky-400 transition-colors duration-300  ">{submenu.name}</h6>
                       <p className="text-sm text-gray-200 group-hover/menubox:text-gray-400 transition-colors duration-300">{submenu.desc}</p>
                     </div>
                   </div>

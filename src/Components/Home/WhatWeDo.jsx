@@ -140,8 +140,7 @@ const WhatWeDo = () => {
                             <Link to={item.path}>
                                 <div className='w-full lg:w-[570px] flex flex-col gap-4'>
                                     <h1 className='font-semibold text-xl md:text-3xl text-[#1E1E1E]'>
-                                        <span className='text-[#19BDE8]'>{item.title.slice(0, 4)}</span>
-                                        {item.title.slice(4)}
+                                        <span className='text-[#19BDE8]'>{item.title.slice(0, 4)}{item.title.slice(4)}</span>
                                     </h1>
                                     <p className='font-normal text-base md:text-2xl text-justify'>{item.desc}</p>
                                 </div>

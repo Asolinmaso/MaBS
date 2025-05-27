@@ -101,11 +101,6 @@ export const Menus = [
         path: "/service",
 
       },
-
-
-
-
-
     ],
 
     gridCols: 3,
@@ -115,6 +110,13 @@ export const Menus = [
     name: "Who We Are",
     path: "/who",
     subMenu: [
+      {
+        name: "About us",
+        desc: "To deliver innovative and reliable technology services that empower industries across the globe.",
+        icon: ShoppingBag,
+        path: "/who",
+
+      },
       {
         name: "Vision",
         desc: "To deliver innovative and reliable technology services that empower industries across the globe.",
