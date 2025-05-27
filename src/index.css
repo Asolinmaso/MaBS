@@ -4,6 +4,9 @@
   font-family: "Montserrat";
 }
 
+* {
+  cursor: none !important;
+}
 body {
   overflow-x: hidden;
   margin: 0;
