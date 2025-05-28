@@ -13,7 +13,7 @@ import sixth from '../../assets/Home/1 What We Do/6_Multi_Media_Solution.png'
 import { Link } from 'react-router-dom'
 import CountAnimation from './CountAnimation'
 
-const FadeInSection = ({ children }) => {
+const FadeInSection = ({ children, direction }) => {
     const [ref, inView] = useInView({
         triggerOnce: true,
         threshold: 0.3,
@@ -23,11 +23,13 @@ const FadeInSection = ({ children }) => {
     const variants = {
         hidden: {
             opacity: 0,
-            scale: 0.98
+            scale: 0.98,
+            x: direction === 'left' ? -30 : 30
         },
         visible: {
             opacity: 1,
             scale: 1,
+            x: 0,
             transition: {
                 duration: 1.5,
                 ease: [0.6, 0.05, 0.01, 0.99],
@@ -80,7 +82,7 @@ const CountingNumber = ({ end, duration = 2 }) => {
 
 const WhatWeDo = () => {
     return (
-        <main className='bg-white w-full mt-10 px-4 sm:px-6 lg:px-20'>
+        <main className='bg-white w-full mt-10 px-4 sm:px-6 lg:px-20 overflow-x-hidden'>
             {/* head */}
             <div className='flex flex-col gap-1.5 text-center'>
                 <h1 className='text-[32px] md:text-[40px] font-semibold text-[#19BDE8]'>What We Do</h1>
@@ -128,26 +130,32 @@ const WhatWeDo = () => {
                         path: "/service/multimedia",
                         reverse: true,
                     }
-                ].map((item, index) => (
-                    <div
-                        key={index}
-                        className={`flex ${item.reverse ? 'flex-col-reverse lg:flex-row-reverse' : 'flex-col-reverse lg:flex-row'} items-center gap-6 lg:gap-12`}
-                    >
-                        <FadeInSection>
-                            <img className='w-full md:w-[570px] h-[250px] md:h-[322.27px] rounded-3xl' src={item.img} alt="" />
-                        </FadeInSection>
-                        <FadeInSection>
-                            <Link to={item.path}>
-                                <div className='w-full lg:w-[570px] flex flex-col gap-4'>
-                                    <h1 className='font-semibold text-xl md:text-3xl text-[#1E1E1E]'>
-                                        <span className='text-[#19BDE8]'>{item.title.slice(0, 4)}{item.title.slice(4)}</span>
-                                    </h1>
-                                    <p className='font-normal text-base md:text-2xl text-justify'>{item.desc}</p>
-                                </div>
-                            </Link>
-                        </FadeInSection>
-                    </div>
-                ))}
+                ].map((item, index) => {
+                    // For image: left-side (not reverse) comes from left, right-side (reverse) comes from right
+                    // For text: left-side (not reverse) comes from left, right-side (reverse) comes from right
+                    const imageDirection = item.reverse ? 'right' : 'left';
+                    const textDirection = item.reverse ? 'left' : 'right';
+                    return (
+                        <div
+                            key={index}
+                            className={`flex ${item.reverse ? 'flex-col-reverse lg:flex-row-reverse' : 'flex-col-reverse lg:flex-row'} items-center gap-6 lg:gap-12`}
+                        >
+                            <FadeInSection direction={imageDirection}>
+                                <img className='w-full md:w-[570px] h-[250px] md:h-[322.27px] rounded-3xl' src={item.img} alt="" />
+                            </FadeInSection>
+                            <FadeInSection direction={textDirection}>
+                                <Link to={item.path}>
+                                    <div className='w-full lg:w-[570px] flex flex-col gap-4'>
+                                        <h1 className='font-semibold text-xl md:text-3xl text-[#1E1E1E]'>
+                                            <span className='text-[#19BDE8]'>{item.title.slice(0, 4)}{item.title.slice(4)}</span>
+                                        </h1>
+                                        <p className='font-normal text-base md:text-2xl text-justify'>{item.desc}</p>
+                                    </div>
+                                </Link>
+                            </FadeInSection>
+                        </div>
+                    );
+                })}
             </div>
         </main>
     )
