@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import vision from '../../assets/About/Vision.png';
 import mission from '../../assets/About/Mission.png';
 import Goal from '../../assets/About/Goal.png';
@@ -7,17 +7,16 @@ import Footer from '../Footer/Footer';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+
+// Animation variants
 const variants = {
   hidden: {
-    opacity: 0,
-    scale: 0.98
+    opacity: 0
   },
   visible: {
     opacity: 1,
-    scale: 1,
-    transition: { 
-      duration: 1.5,
+    transition: {
+      duration: 1.2,
       ease: [0.6, 0.05, 0.01, 0.99],
       staggerChildren: 0.3
     }
@@ -26,47 +25,40 @@ const variants = {
 
 const leftVariants = {
   hidden: { x: -100, opacity: 0 },
-  visible: { 
-    x: 0, 
+  visible: {
+    x: 0,
     opacity: 1,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut"
-    }
+    transition: { duration: 0.8, ease: "easeOut" }
   }
 };
 
 const rightVariants = {
   hidden: { x: 100, opacity: 0 },
-  visible: { 
-    x: 0, 
+  visible: {
+    x: 0,
     opacity: 1,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut"
-    }
+    transition: { duration: 0.8, ease: "easeOut" }
   }
 };
 
+// Section wrapper
 const Section = ({ children }) => {
-  const [ref, inView] = useInView({ 
-    triggerOnce: true, 
+  const [ref, inView] = useInView({
+    triggerOnce: true,
     threshold: 0.3,
     rootMargin: '-50px'
   });
 
-
-
   return (
-    <motion.div
+    <motion.section
       ref={ref}
       initial="hidden"
       animate={inView ? 'visible' : 'hidden'}
       variants={variants}
-      className="flex flex-col md:grid md:grid-cols-2 gap-12 mt-12"
+      className="flex flex-col md:grid md:grid-cols-2 gap-8 md:gap-12 mt-8 md:mt-12"
     >
       {children}
-    </motion.div>
+    </motion.section>
   );
 };
 
@@ -83,9 +75,9 @@ const MainSection = () => {
   }, [location]);
 
   return (
-    <>
-      <main className="bg-white w-full flex justify-center p-4 mb-10">
-        <div className="w-full max-w-7xl mx-auto space-y-24">
+    <div className="overflow-x-hidden"> {/* Prevents horizontal overflow */}
+      <main className="bg-white w-full min-h-screen flex justify-center px-4 md:px-6 mb-10">
+        <div className="w-full max-w-6xl mx-auto space-y-16 md:space-y-24">
 
           {/* Vision Section */}
           <Section>
@@ -133,10 +125,8 @@ const MainSection = () => {
         </div>
       </main>
 
-     
-
       <Footer />
-    </>
+    </div>
   );
 };
 
