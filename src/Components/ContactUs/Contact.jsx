@@ -232,7 +232,7 @@ const Contact = () => {
             </div>
 
             {/* Follow Us */}
-            <section className="bg-gradient-to-t from-[#19BDE880]/50 to-white pb-8 pt-2 text-center px-4 mb-25">
+            <section className="bg-gradient-to-t from-[#19BDE880] to-white pb-8 pt-2 text-center px-4 mb-25">
                 <h3 className="text-lg md:text-3xl font-semibold text-[#19BDE8] mb-2">Follow Us</h3>
                 <p className="text-gray-700 mb-4 text-sm sm:text-base md:text-lg font-medium">
                     Stay connected with us on social media for updates, insights, and more.
@@ -247,7 +247,7 @@ const Contact = () => {
                     <img src={fb} alt="Facebook" className="h-12 sm:h-16 md:h-20 w-auto cursor-pointer" />
                 </div>
 
-                <p className="text-gray-600 text-sm sm:text-base text-justify">Let's start the conversation today!</p>
+                <p className="text-gray-600 text-sm sm:text-base text-center">Let's start the conversation today!</p>
             </section>
 
 

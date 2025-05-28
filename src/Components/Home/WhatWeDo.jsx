@@ -134,7 +134,7 @@ const WhatWeDo = () => {
                         className={`flex ${item.reverse ? 'flex-col-reverse lg:flex-row-reverse' : 'flex-col-reverse lg:flex-row'} items-center gap-6 lg:gap-12`}
                     >
                         <FadeInSection>
-                            <img className='w-full lg:w-[570px] h-auto lg:h-[322.27px] rounded-[32px]' src={item.img} alt="" />
+                            <img className='w-full md:w-[570px] h-[250px] md:h-[322.27px] rounded-3xl' src={item.img} alt="" />
                         </FadeInSection>
                         <FadeInSection>
                             <Link to={item.path}>

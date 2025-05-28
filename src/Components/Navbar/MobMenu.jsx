@@ -88,7 +88,7 @@ export default function MobMenu({ Menus }) {
                     )}
 
                     {/* Static submenu item for "Who We Are" - About Us */}
-                    {name === "Who We Are" && (
+                    {/* {name === "Who We Are" && (
                       <Link
                         to="/who" // Example path for the static submenu item
                         onClick={() => {
@@ -100,7 +100,7 @@ export default function MobMenu({ Menus }) {
                         <Users size={17} />
                         About Us
                       </Link>
-                    )}
+                    )} */}
 
                     {/* Dynamic submenu items */}
                     {subMenu &&

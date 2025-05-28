@@ -1,24 +1,7 @@
-import { path } from "framer-motion/client";
-import { Bolt } from "lucide-react";
-import { ShoppingBag } from "lucide-react";
-import { BellDot } from "lucide-react";
-import { BookOpenText } from "lucide-react";
-import { BriefcaseBusiness } from "lucide-react";
-import { CircleHelp } from "lucide-react";
-import { TriangleAlert } from "lucide-react";
-import { Users } from "lucide-react";
-import { Lock } from "lucide-react";
-import { Dessert } from "lucide-react";
-import { ShieldPlus } from "lucide-react";
-import { MessageCircle } from "lucide-react";
-import { Images } from "lucide-react";
-import { Figma } from "lucide-react";
-import { Play } from "lucide-react";
-import { MapPin } from "lucide-react";
-import { Database } from "lucide-react";
-import { PanelsTopLeft } from "lucide-react";
-import { PanelTop } from "lucide-react";
-
+import {
+  ShieldPlus, TrendingUp, MonitorPlay, Cpu, Megaphone, ShoppingCart
+  , HeartPulse, Archive, Layers, Eye, ArrowUpRight, Award, Info, Target
+} from "lucide-react";
 export const Menus = [
   // -----What we Do
   {
@@ -30,14 +13,14 @@ export const Menus = [
       {
         name: "RAAS",
         desc: "Requirement as a Service",
-        icon: PanelsTopLeft,
+        icon: ShieldPlus,
         category: "Service",
         path: "/service/RAAS",
       },
       {
         name: "Sales",
         desc: "Sales",
-        icon: Database,
+        icon: TrendingUp,
         category: "Service",
         path: "/service/Sales",
 
@@ -45,7 +28,7 @@ export const Menus = [
       {
         name: "MultiMedia Solution",
         desc: "Site control",
-        icon: Bolt,
+        icon: MonitorPlay,
         category: "Service",
         path: "/service/multimedia",
 
@@ -54,7 +37,7 @@ export const Menus = [
       {
         name: "Technology solution",
         desc: "Sales",
-        icon: Database,
+        icon: Cpu,
         category: "Service",
         path: "/service/TechSolution",
 
@@ -62,7 +45,7 @@ export const Menus = [
       {
         name: "Digital Marketing",
         desc: "Link pages",
-        icon: PanelTop,
+        icon: Megaphone,
         category: "Service",
         path: "/service/DigitalMarketing",
 
@@ -70,7 +53,7 @@ export const Menus = [
       {
         name: "Bussiness",
         desc: "Site control",
-        icon: Bolt,
+        icon: Layers,
         category: "Service",
         path: "/service/Business",
 
@@ -80,7 +63,7 @@ export const Menus = [
       {
         name: "Opptiverse",
         desc: "Sales",
-        icon: Database,
+        icon: Archive,
         category: "Product",
         path: "/service",
 
@@ -88,7 +71,7 @@ export const Menus = [
       {
         name: "E-commerce",
         desc: "Sales",
-        icon: Database,
+        icon: ShoppingCart,
         category: "Industries",
         path: "/service",
 
@@ -96,7 +79,7 @@ export const Menus = [
       {
         name: "Healthcare",
         desc: "Sales",
-        icon: Database,
+        icon: HeartPulse,
         category: "Industries",
         path: "/service",
 
@@ -113,35 +96,35 @@ export const Menus = [
       {
         name: "About us",
         desc: "To deliver innovative and reliable technology services that empower industries across the globe.",
-        icon: ShoppingBag,
+        icon: Info,
         path: "/who",
 
       },
       {
         name: "Vision",
         desc: "To deliver innovative and reliable technology services that empower industries across the globe.",
-        icon: ShoppingBag,
+        icon: Eye,
         path: "/service",
 
       },
       {
         name: "Mission",
         desc: "To provide high-quality, customer-centric IT solutions that drive business growth and operational excellence.",
-        icon: MapPin,
+        icon: ArrowUpRight,
         path: "/service",
 
       },
       {
         name: "Goal",
         desc: "To become a trusted global leader in delivering reliable and innovative technology services.",
-        icon: BellDot,
+        icon: Target,
         path: "/service",
 
       },
       {
         name: "Value",
         desc: "Integrity, customer-centricity, innovation, collaboration, and excellence.",
-        icon: Play,
+        icon: Award,
         path: "/service",
 
       },
