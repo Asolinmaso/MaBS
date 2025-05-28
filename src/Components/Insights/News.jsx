@@ -48,7 +48,7 @@ const newsData = [
 const News = () => {
   return (
     <div className="p-6 max-w-7xl mx-auto mt-10 md:mt-20">
-      <h2 className="font-semibold text-2xl md:text-4xl  text-center mb-15 text-[#19BDE8]">Manvian in news</h2>
+      <h2 className="font-semibold text-2xl md:text-5xl  text-center mb-12 text-[#19BDE8]">Manvian in News</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 auto-rows-[200px] grid-flow-dense">
         {newsData.map((news, index) => {
           let span = "";

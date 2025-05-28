@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import CustomBtn from "../Button/CustomBtn";
 
 const logos = [
   "https://logo.clearbit.com/google.com",
@@ -53,14 +54,12 @@ const ClientsLogo = () => {
   return (
     <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:pl-6 pt-6 bg-white rounded-xl border-2 border-gray-200">
       {/* Left Content */}
-      <div className="w-full md:w-1/3  md:text-left space-y-4 mt-20 lg:mt-0 text-center ">
-        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 break-words">Our Clients</h2>
+      <div className="w-full md:w-1/3   space-y-4 mt-20 lg:mt-0 text-center ">
+        <h2 className="text-2xl md:text-3xl font-bold text-[#19BDE8] break-words">Our Clients</h2>
         <p className="text-sm md:text-base text-gray-600 ">
           We’ve had the pleasure of working with some amazing brands. If you'd like to be one of them, let’s talk!
         </p>
-        <button className="px-4 py-2 md:px-6 md:py-3 bg-[#19BDE8] text-white rounded-md hover:bg-[#17A9D1] transition cursor-pointer">
-          Contact Us
-        </button>
+        <CustomBtn>Contact Us </CustomBtn>
       </div>
 
       {/* Right: Logos Scroll */}

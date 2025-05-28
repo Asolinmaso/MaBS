@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Bg from '../../assets/Career/HeroSection.jpg';
 import Footer from '../Footer/Footer';
 import CustomBtn from '../Button/CustomBtn';
+import CallToAction from './CallToAction';
 
 const Careers = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -74,14 +75,14 @@ const Careers = () => {
           <p className='font-light text-base md:text-2xl mt-6 text-justify'>
             We're driven by a passion for innovation and impact. At our company, you'll collaborate on meaningful projects that empower brands and improve experiences. If you're looking for a place where your ideas matter and your growth is a priority , you're in the right place.
           </p>
-        <CustomBtn>View Openings</CustomBtn>
+          <CustomBtn>View Openings</CustomBtn>
         </div>
       </header>
 
 
       {/* Openings */}
       <div className="bg-white text-black font-sans min-h-screen relative">
-       
+
         {/* Filter Buttons Container */}
         <div className="flex flex-wrap justify-center gap-4 pb-10 relative z-10 px-4 sm:px-0 pt-15">
           {/* Role Dropdown */}
@@ -162,13 +163,13 @@ const Careers = () => {
 
         {/* Job Cards Container */}
         <div className="pl-8 sm:pl-10 md:pl-20 lg:pl-47  pb-6">
-          <h2 className="text-xl lg:text-3xl font-semibold text-[#19BDE8]">Current Openings</h2>
+          <h2 className="text-xl lg:text-4xl font-semibold text-[#19BDE8]">Current Openings</h2>
         </div>
         <div className="flex justify-center gap-6 flex-wrap pb-20 px-4 sm:px-6 md:px-8">
-          
+
 
           {jobOpenings.length === 0 ? (
-            <p className="text-center w-full text-justify">There are currently no job openings available.</p>
+            <p className="text-center w-full ">There are currently no job openings available.</p>
           ) : (
             jobOpenings.map((job, index) => (
               <div key={index} className="border border-gray-300 rounded-lg p-4 sm:p-6 w-full sm:w-80 shadow-md hover:shadow-xl transition duration-300">
@@ -185,7 +186,7 @@ const Careers = () => {
           )}
         </div>
       </div>
-
+      <CallToAction />
       {/* Footer */}
       <Footer />
     </>

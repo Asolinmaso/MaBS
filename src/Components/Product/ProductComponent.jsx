@@ -3,6 +3,7 @@ import Footer from '../Footer/Footer'
 import Opptiverse_bg from '../../assets/Product/Opptiverse_Bg.png'
 import CustomBtn from '../Button/CustomBtn'
 import HeroSection from '../../assets/Product/HeroSection.mp4'
+import CallToAction from './CallToAction'
 // Logos
 
 const ProductComponent = () => {
@@ -72,7 +73,7 @@ const ProductComponent = () => {
                                     alt="Opptiverse Background"
                                 />
                             </div>
-                            <p className='text-base md:text-2xl px-5 mt-6 text-justify'>
+                            <p className='text-base md:text-2xl px-5 mt-6 text-center'>
                                 Welcome to Manvian, your trusted partner in business development. We empower entrepreneurs and their Businesses to Reach New Heights by providing valuable solutions through Innovative Strategies and Exceptional Execution
                             </p>
                             <a href="" className="mt-10">
@@ -181,7 +182,7 @@ const ProductComponent = () => {
                 </div>
 
                 {/* White Spacer to prevent footer collision */}
-
+<CallToAction/>
                 <Footer />
             </section>
         </>

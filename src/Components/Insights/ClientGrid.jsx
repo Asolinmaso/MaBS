@@ -54,7 +54,7 @@ const ClientsTable = () => {
       {clientData.map((item, idx) => (
         <div
           key={idx}
-          className="flex flex-col sm:flex-row  px-4 py-6 rounded-xl shadow-md mb-6"
+          className="flex flex-col sm:flex-row  px-6 py-8 rounded-xl shadow-[0_0_10px_rgba(0,0,0,0.2)] mb-6"
         >
           {/* Category Name */}
           <div className="w-full sm:w-1/4 font-medium text-gray-700 text-lg mb-4 sm:mb-0 sm:pr-6 sm:border-r border-gray-300">
