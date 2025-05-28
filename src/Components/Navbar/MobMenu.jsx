@@ -87,20 +87,7 @@ export default function MobMenu({ Menus }) {
                       </Link>
                     )}
 
-                    {/* Static submenu item for "Who We Are" - About Us */}
-                    {/* {name === "Who We Are" && (
-                      <Link
-                        to="/who" // Example path for the static submenu item
-                        onClick={() => {
-                          setIsOpen(false);
-                          setClicked(null);
-                        }}
-                        className="p-2 flex-center hover:bg-white/5 rounded-md gap-x-2 cursor-pointer"
-                      >
-                        <Users size={17} />
-                        About Us
-                      </Link>
-                    )} */}
+                    
 
                     {/* Dynamic submenu items */}
                     {subMenu &&
