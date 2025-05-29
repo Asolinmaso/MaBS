@@ -142,12 +142,12 @@ const MultiMedia_portfolio = () => {
 
         {/* Impact */}
 
-        <section className='mt-20 mx-auto px-4 md:px-6 rounded-md'>
+        <section className=' mt-5 md:mt-20 mx-auto px-4 md:px-6 rounded-md'>
           <div className='px-4 md:px-10'>
             <h2 className="text-xl md:text-4xl font-semibold text-[#19BDE8] text-center mb-3">
               Impact of Our Multimedia Services
             </h2>
-            <p className='font-normal  text-base md:text-xl pt-3 text-center text-justify'>
+            <p className='font-normal  text-base md:text-xl pt-3 text-center'>
               Our multimedia work helped clients strengthen brand identity, enhance visual communication,
               and connect more effectively with their audiences. Through design and storytelling, we made
               their message memorable.
@@ -182,12 +182,12 @@ const MultiMedia_portfolio = () => {
           </div>
         </section>
         {/* Value */}
-        <section className='mt-20 md:mt-[15px] mx-auto px-4 md:px-6 rounded-md'>
+        <section className='mt-0 md:mt-20  mx-auto px-4 md:px-6 rounded-md'>
           <div className='px-4 md:px-10'>
             <h2 className="text-xl md:text-4xl font-semibold text-[#19BDE8] text-center mb-3">
               Value We Delivered to Our Clients
             </h2>
-            <p className='font-normal text-base md:text-xl pt-3 text-center text-justify'>
+            <p className='font-normal text-base md:text-xl pt-3 text-center'>
               By combining technical expertise with user-focused design, we created platforms that solve real problems and support business growth.
             </p>
           </div>
@@ -222,7 +222,7 @@ const MultiMedia_portfolio = () => {
         </section>
 
         {/* Want to expplore links and images */}
-        <section className="flex flex-col md:flex-row justify-between items-center px-10 py-16 mt-10 bg-white">
+        <section className="flex flex-col md:flex-row justify-between items-center px-10 md:py-16 md:mt-10 bg-white mb-5">
           <div className="w-full md:w-1/2 pr-0 md:pr-10 text-center md:text-left">
             <h2 className="text-xl md:text-3xl font-semibold text-[#19BDE8] mb-4">Want to Explore More?</h2>
             <p className="text-base md:text-lg text-gray-800 mb-6 text-justify">

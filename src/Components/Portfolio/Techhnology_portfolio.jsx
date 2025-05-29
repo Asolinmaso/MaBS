@@ -62,15 +62,15 @@ const Technology_Portfolio = () => {
       {/* main */}
       <main className='mb-15'>
         {/* Web Design */}
-        <section className='max-w-6xl mt-10 mx-auto px-4 md:px-6 lg:px-8 py-10'>
-          <h2 className="text-2xl md:text-4xl font-semibold text-[#19BDE8] text-center mb-8 text-justify">
+        <section className='max-w-6xl mt-10 mx-auto px-4 md:px-6 lg:px-8 md:py-10 py-3'>
+          <h2 className="text-2xl md:text-4xl font-semibold text-[#19BDE8] text-center mb-8 ">
             Cutting-Edge Tech Solutions
           </h2>
           <h2 className='font-medium text-xl md:text-3xl mb-6 text-justify'>Website Design</h2>
           <img
             src={one}
             alt="Website Design"
-            className="w-full h-[300px] md:h-[400px] lg:h-[500px] object-cover rounded-lg shadow-lg"
+            className="w-full rounded-lg"
           />
           <div className="w-full max-w-[1200px] mx-auto mt-10">
             <div className="flex flex-col md:flex-row md:justify-between md:gap-16 gap-6">
@@ -87,7 +87,7 @@ const Technology_Portfolio = () => {
               <div className="flex flex-col ">
                 <h3 className="text-xl md:text-3xl font-medium mb-4 text-justify">Project overview</h3>
                 <p className='md:text-lg text-base text-gray-700 leading-relaxed text-justify'>
-                  <strong>Shimmr Studios website</strong> blends musical artistry with intuitive navigation and high user engagement. Built with <strong>PHP, JavaScript, and Firebase</strong>, it offers a dynamic and responsive experience.
+                  <span className='font-medium'>Shimmr Studios website</span> blends musical artistry with intuitive navigation and high user engagement. Built with <span className='font-medium'>PHP, JavaScript, and Firebase</span>, it offers a dynamic and responsive experience.
                 </p>
               </div>
             </div>
@@ -95,7 +95,7 @@ const Technology_Portfolio = () => {
         </section>
 
         {/* Ecommerce */}
-        <section className='max-w-6xl mt-10 mx-auto p-6 rounded-md'>
+        <section className='max-w-6xl md:mt-10 mx-auto px-6 py-2 rounded-md'>
           <h2 className='font-medium  text-xl md:text-2xl mt-8 sm:mt-15 mb-5 text-justify'>E-commerce Platform</h2>
           <img src={two} alt="E-commerce Platform" className="w-full rounded-lg" />
           <div className="w-full max-w-[1200px] mx-auto mt-10">
@@ -113,7 +113,7 @@ const Technology_Portfolio = () => {
               <div className="flex flex-col ">
                 <h3 className="text-xl md:text-3xl font-medium mb-4 text-justify">Project overview</h3>
                 <p className='md:text-lg text-base text-gray-700 leading-relaxed text-justify'>
-                  Motiff Bespoke is an <strong>e-commerce platform</strong> built with <strong> Next.js, Astro.js, and Cloudflare,</strong> offering a seamless shopping experience with fast performance and security.
+                  Motiff Bespoke is an <span className='font-medium'>e-commerce platform</span> built with <span className='font-medium'> Next.js, Astro.js, and Cloudflare,</span> offering a seamless shopping experience with fast performance and security.
                 </p>
               </div>
             </div>
@@ -139,7 +139,7 @@ const Technology_Portfolio = () => {
               <div className="flex flex-col ">
                 <h3 className="text-xl md:text-3xl font-medium mb-4 text-justify">Project overview</h3>
                 <p className='md:text-lg text-base text-gray-700 leading-relaxed text-justify'>
-                  KISEM is a real-time <strong>chat application</strong>  built using <strong>WordPress, MariaDB, and Google Analytics.</strong> It provides seamless communication while integrating performance tracking for enhanced user experience.
+                  KISEM is a real-time <span className='font-medium'>chat application</span>  built using <span className='font-medium'>WordPress, MariaDB, and Google Analytics.</span> It provides seamless communication while integrating performance tracking for enhanced user experience.
                 </p>
               </div>
             </div>
@@ -147,12 +147,12 @@ const Technology_Portfolio = () => {
         </section>
 
         {/* Impact */}
-        <section className='mt-20 mx-auto px-4 md:px-6 rounded-md'>
+        <section className='mt-5  md:mt-20 mx-auto px-4 md:px-6 rounded-md'>
           <div className='px-4 md:px-10'>
-            <h2 className="text-xl md:text-4xl font-semibold text-[#19BDE8] text-center mb-3 text-justify">
+            <h2 className="text-xl md:text-4xl font-semibold text-[#19BDE8] text-center mb-3 ">
               Impact of Our Technology Services
             </h2>
-            <p className='font-normal text-base md:text-xl pt-3 text-center text-justify'>
+            <p className='font-normal text-base md:text-xl pt-3 text-center '>
               Our tech solutions enabled clients to digitally transform, streamline their user experience, and present their services more efficiently online.
             </p>
           </div>
@@ -185,12 +185,12 @@ const Technology_Portfolio = () => {
         </section>
 
         {/* Value */}
-        <section className='mt-10 md:mt-20 mx-auto px-4 md:px-6 rounded-md'>
+        <section className='mt-5 md:mt-20 mx-auto px-4 md:px-6 rounded-md'>
           <div className='px-4 md:px-10'>
-            <h2 className="text-xl md:text-4xl font-semibold text-[#19BDE8] text-center mb-3 text-justify">
+            <h2 className="text-xl md:text-4xl font-semibold text-[#19BDE8] text-center mb-3 ">
               Value We Delivered to Our Clients
             </h2>
-            <p className='font-normal text-base md:text-xl pt-3 text-center text-justify'>
+            <p className='font-normal text-base md:text-xl pt-3 text-center '>
               By combining technical expertise with user-focused design, we created platforms that solve real problems and support business growth.
             </p>
           </div>
@@ -222,10 +222,10 @@ const Technology_Portfolio = () => {
           </div>
         </section>
         {/* Want to expplore links and images */}
-        <section className="flex flex-col md:flex-row justify-between items-center px-10 py-16 mt-10 bg-white">
+        <section className="flex flex-col md:flex-row justify-between items-center px-10 py-2 md:py-16 mt-1 md:mt-10 bg-white">
           <div className="w-full md:w-1/2 pr-0 md:pr-10 text-center md:text-left">
-            <h2 className="text-xl md:text-3xl font-semibold text-[#19BDE8] mb-4 text-justify">Want to Explore More?</h2>
-            <p className="text-base md:text-lg text-gray-800 mb-6 text-justify">
+            <h2 className="text-xl md:text-3xl font-semibold text-[#19BDE8] mb-4 text-center">Want to Explore More?</h2>
+            <p className="text-base md:text-lg text-gray-800 mb-6 text-center">
               If you'd like to see more of our creative work and how we bring brands to life through design,
               click the button below.
             </p>
