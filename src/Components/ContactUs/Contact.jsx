@@ -72,7 +72,7 @@ const Contact = () => {
                 {/* Main content container - adjusted positioning */}
                 <div className='flex flex-col items-center gap-6 text-center w-full max-w-6xl z-20 text-white px-4 mt-32 md:mt-40'>
                     <h1 className='text-[#19BDE8] font-semibold text-3xl  md:text-5xl'>Contact Us</h1>
-                    <p className='font-normal text-base md:text-2xl px-4 mt-6 text-justify'>
+                    <p className='font-normal text-base md:text-2xl px-4 mt-6 text-center'>
                         We'd love to hear from you! Whether you have a question, need assistance, or want to explore how we can work together, our team is here to help.
                     </p>
                     <a
@@ -84,31 +84,32 @@ const Contact = () => {
                 </div>
 
                 {/* Contact cards container - adjusted spacing */}
-                <div className='z-20 flex flex-wrap justify-center items-stretch gap-6 w-full max-w-6xl px-4 mt-16 md:mt-20'>
-                    {/* Location */}
-                    <div className='rounded-2xl p-6 flex flex-col justify-center gap-4 bg-white/10 w-full sm:w-[280px] min-h-[188px] text-white items-center text-center backdrop-blur-sm'>
-                        <div className='h-16 w-16 sm:h-16 sm:w-16 text-[#19BDE8] flex items-center justify-center mt-5 '>
+                <div className='z-20 flex flex-wrap justify-center items-stretch gap-20 w-full max-w-6xl px-4 mt-16 md:mt-20'>
+                    {/* Location */}   
+                    <div className='rounded-2xl p-6 flex flex-col justify-center gap-4 bg-white/10 w-full md:w-[300px] md:h-[260px] text-white items-center text-center backdrop-blur-sm'>
+                       
+                        <div className='h-16 w-16 md:h-18 sm:w-16 text-[#19BDE8] flex items-center justify-center mt-5 '>
                             <img src={Location_Icon} className='h-full w-full object-contain' />
                         </div>
-                        <div>
+                        <div className='space-y-4'>
                             <p className='font-normal text-base md:text-xl'>Manvian Business Solutions</p>
                             <p className='font-normal text-base md:text-xl'>Ambattur, Chennai</p>
                         </div>
                     </div>
-                    
+
                     {/* Phone Number */}
-                    <div className='rounded-2xl p-6 flex flex-col justify-center gap-4 bg-white/10 w-full sm:w-[280px] min-h-[188px] text-white items-center text-center backdrop-blur-sm'>
+                    <div className='rounded-2xl p-6 flex flex-col justify-center gap-4 bg-white/10 w-full md:w-[300px] md:h-[260px] text-white items-center text-center backdrop-blur-sm'>
                         <FiPhone className='h-12 w-12 sm:h-16 sm:w-16 text-[#19BDE8]' />
-                        <div>
-                            <p className='font-normal text-base md:text-xl'>Call Us</p>
+                        <div className='space-y-4'>
+                            <p className='font-normal text-base md:text-2xl'>Call Us</p>
                             <p className='font-normal text-base md:text-xl text-justify'>+91 87783 59643</p>
                         </div>
                     </div>
                     {/* Email */}
-                    <div className='rounded-2xl p-6 flex flex-col justify-center gap-4 bg-white/10 w-full sm:w-[280px] min-h-[188px] text-white items-center text-center backdrop-blur-sm'>
+                    <div className='rounded-2xl p-6 flex flex-col justify-center gap-4 bg-white/10 w-full md:w-[300px] md:h-[260px] text-white items-center text-center backdrop-blur-sm'>
                         <FiMail className='h-12 w-12 sm:h-16 sm:w-16 text-[#19BDE8]' />
-                        <div>
-                            <p className='font-normal text-base md:text-xl'>E-Mail Us</p>
+                        <div className='space-y-4'>
+                            <p className='font-normal text-base md:text-2xl'>E-Mail Us</p>
                             <p className='font-normal text-base md:text-xl text-justify'>operations@manvian.com</p>
                         </div>
                     </div>
