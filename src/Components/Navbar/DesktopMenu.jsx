@@ -42,7 +42,7 @@ export default function DesktopMenu({ menu }) {
       <span className="flex-center gap-1 hover:bg-white/5 cursor-pointer px-3 py-1 rounded-xl">
         <Link
           to={menu.path}
-          className={`hover:text-white transition ${isActive ? "text-sky-400 underline font-semibold" : "text-white"
+          className={`hover:text-sky-400  transition ${isActive ? "text-sky-400 underline font-semibold" : "text-white"
             }`}
         >
           {menu.name}
