@@ -16,6 +16,13 @@ const articles = [
     tags: ["#TechUpdate", "#BizTech"],
   },
   {
+    title: "Master Short-Form Content: Win Audiences in 30 Seconds or Less",
+    description:
+      "Reels, Shorts, TikToks they’re not just trends, they’re the new battlefield of marketing. In this post, Manvian’s digital team discusses how brands are creating high-impact micro-content backed by data insights, influencer power, and platform-specific storytelling.",
+    author: "Aditya Rao",
+    tags: ["#DigitalMarketing", "#2025Trends"],
+  },
+  {
     title: "Smart Sales Strategies for the Digital-First Era",
     description:
       "Customers are smarter than ever. Hard selling is out, solution-based selling is in.",
@@ -29,28 +36,21 @@ const articles = [
     author: "Neha Kulkarni",
     tags: ["#Innovation", "#RaaS"],
   },
-  {
-    title: "Master Short-Form Content: Win Audiences in 30 Seconds or Less",
-    description:
-      "Reels, Shorts, TikToks they’re not just trends, they’re the new battlefield of marketing. In this post, Manvian’s digital team discusses how brands are creating high-impact micro-content backed by data insights, influencer power, and platform-specific storytelling.",
-    author: "Aditya Rao",
-    tags: ["#DigitalMarketing", "#2025Trends"],
-  },
 ];
 
 export default function SmartReads() {
   return (
     <div className="bg-white py-16 px-4 md:px-10 lg:px-32">
-      <h2 className="text-center text-2xl md:text-3xl font-semibold text-sky-500 mb-10">
+      <h2 className="text-center text-2xl md:text-3xl font-semibold text-sky-400 mb-10">
         Smart Reads for Smart Growth
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
         {articles.map((article, index) => {
           let colSpanClass = "";
 
           if (index === 0) colSpanClass = "md:row-span-2";
-          else if (index === 1) colSpanClass = "md:col-span-1";
+          else if (index === 1) colSpanClass = "md:col-span-2";
           else if (index === 2) colSpanClass = "md:row-span-2";
           else colSpanClass = "md:col-span-1";
 
@@ -80,8 +80,9 @@ export default function SmartReads() {
       </div>
 
       <div className="flex justify-center mt-10">
-        <button className="bg-sky-500 text-white px-6 py-2 rounded-full text-sm font-medium hover:bg-sky-600">
-          Explore More
+                <button className='flex items-center gap-3 font-semibold text-lg md:text-2xl text-white bg-[#19BDE8] py-3 px-7 rounded-xl cursor-pointer'>
+
+          Explore More 
         </button>
       </div>
     </div>

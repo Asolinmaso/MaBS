@@ -180,7 +180,7 @@ const handleMouseLeave = (index) => {
 
                     {/* Solutions Section */}
                     <section className="max-w-4xl mx-auto">
-                        <h2 className="text-lg md:text-3xl font-bold text-[#19BDE8] text-center mb-8 text-justify md:text-center">
+                        <h2 className="text-lg md:text-3xl font-bold text-[#19BDE8] text-center mb-8 md:text-center">
                             Our Solutions – How Manvian Helps
                         </h2>
                         <div className="space-y-4">
