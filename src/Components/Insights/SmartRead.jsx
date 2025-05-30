@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const articles = [
   {
     title: "The Rise of AI-Generated Visuals: Threat or Tool for Creators?",
@@ -80,10 +80,11 @@ export default function SmartReads() {
       </div>
 
       <div className="flex justify-center mt-10">
+              <Link to="/Insights/Articles">
                 <button className='flex items-center gap-3 font-semibold text-lg md:text-2xl text-white bg-[#19BDE8] py-3 px-7 rounded-xl cursor-pointer'>
 
           Explore More 
-        </button>
+        </button></Link>
       </div>
     </div>
   );

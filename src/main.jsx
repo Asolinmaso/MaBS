@@ -17,6 +17,7 @@ import Sales from './Components/Service/Sales.jsx'
 import Business from './Components/Service/Business.jsx'
 import MultiMedia_portfolio from './Components/Portfolio/MultiMedia_portfolio.jsx'
 import Technology_Portfolio from './Components/Portfolio/Techhnology_portfolio.jsx'
+import Articles from './Components/Blogs/Articles.jsx'
 
 const Router = createBrowserRouter([
   {
@@ -36,7 +37,8 @@ const Router = createBrowserRouter([
       { path: "/service/DigitalMarketing", element: <DigitalMarketing /> },
       { path: "/service/Business", element: <Business /> },
       { path: "/portfolio/Multimedia", element: <MultiMedia_portfolio /> },
-      { path: "/portfolio/Technology", element: <Technology_Portfolio /> }
+      { path: "/portfolio/Technology", element: <Technology_Portfolio /> },
+      { path: "/Insights/Articles", element: <Articles /> }
     ]
   }
 ])

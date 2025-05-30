@@ -6,6 +6,7 @@ import News from './News'
 import ClientGrid from './ClientGrid'
 import CallToAction from './CallToAction'
 import SmartReads from './SmartRead'
+import Articles from '../Blogs/Articles'
 
 const InsightsComponent = () => {
   return (

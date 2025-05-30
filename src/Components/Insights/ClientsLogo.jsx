@@ -59,7 +59,12 @@ const ClientsLogo = () => {
         <p className="text-sm md:text-base text-gray-600 ">
           We’ve had the pleasure of working with some amazing brands. If you'd like to be one of them, let’s talk!
         </p>
-        <CustomBtn>Contact Us </CustomBtn>
+        <div className="w-full flex justify-center">
+        <button className='flex  items-center gap-3 font-semibold text-lg md:text-lg text-white bg-[#19BDE8] py-3 px-7 rounded-xl cursor-pointer'>
+          Contact US
+        </button>
+
+        </div>
       </div>
 
       {/* Right: Logos Scroll */}
