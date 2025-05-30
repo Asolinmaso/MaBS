@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { FiFile, FiClock } from 'react-icons/fi';
 import Footer from '../Footer/Footer';
+import CallToAction from './CallToAction';
 
 const blogData = [
     {
@@ -68,7 +69,7 @@ const Articles = () => {
     return (
         <>
        
-        <div className="max-w-7xl mx-auto px-4 py-12 mt-20">
+        <div className="max-w-7xl mx-auto px-4 py-8 pb-0 mt-20">
             {/* Section Title */}
             <h2 className="text-3xl font-bold text-center mb-2">
                 Explore All Blogs at <span className="text-sky-400">Manvian</span>
@@ -105,8 +106,8 @@ const Articles = () => {
             {/* Blog Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredBlogs.map((blog) => (
-                    <div key={blog.id} className="bg-white rounded-lg shadow hover:shadow-md transition duration-300 p-3 relative h-[500px] " >
-                        <img src={blog.image} alt={blog.title} className=" h-[304px] w-full object-cover rounded-t-lg" />
+                    <div key={blog.id} className="bg-white rounded-lg shadow hover:shadow-md transition duration-300 p-3 relative h-[480px] " >
+                        <img src={blog.image} alt={blog.title} className=" h-[250px] w-full object-cover " />
                         <div className="p-4">
                             <h3 className="text-lg font-semibold mb-1">{blog.title}</h3>
                             <p className="text-sm text-gray-600 mb-3">{blog.description}</p>
@@ -118,6 +119,10 @@ const Articles = () => {
                 ))}
             </div>
         </div>
+  {/* Call to Action */}
+
+  <CallToAction/>
+
         <Footer/>
          </>
     );
