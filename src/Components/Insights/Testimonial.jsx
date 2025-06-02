@@ -2,171 +2,245 @@ import React, { useState, useEffect, useRef } from "react";
 import "./TestimonialSlider.css";
 
 const testimonials = [
-  {
-    name: "Malina John",
-    role: "HR Partner",
-    image: "https://randomuser.me/api/portraits/women/1.jpg",
-    company: "Vertech Advisor Consultant Services (OPC) Pvt Ltd",
-    text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit...",
-    rating: 5,
-  },
-  {
-    name: "Ravi Kumar",
-    role: "Software Engineer",
-    image: "https://randomuser.me/api/portraits/men/2.jpg",
-    company: "Turing Inc",
-    text: "Lorem, ipsum dolor sit amet consectetur adipisicing elit...",
-    rating: 4,
-  },
-  {
-    name: "Priya Sharma",
-    role: "Data Analyst",
-    image: "https://randomuser.me/api/portraits/women/3.jpg",
-    company: "Infosys",
-    text: "The personalized approach and guidance helped me get placed in a dream role. Thanks to Catherine!",
-    rating: 5,
-  },
-  {
-    name: "Alex Mathew",
-    role: "UX Designer",
-    image: "https://randomuser.me/api/portraits/men/4.jpg",
-    company: "Zoho Corporation",
-    text: "One of the most professional hiring experiences I’ve had. Very supportive from start to finish.",
-    rating: 4,
-  },
-  {
-    name: "Sneha Das",
-    role: "Cloud Engineer",
-    image: "https://randomuser.me/api/portraits/women/5.jpg",
-    company: "Amazon AWS",
-    text: "Catherine made the process stress-free and seamless. Highly appreciate the effort and time!",
-    rating: 5,
-  },
-  {
-    name: "Arjun Reddy",
-    role: "Backend Developer",
-    image: "https://randomuser.me/api/portraits/men/6.jpg",
-    company: "Wipro Ltd",
-    text: "Very satisfied with the mentorship and opportunity guidance provided by Catherine and her team.",
-    rating: 5,
-  },
+	{
+		name: "Malina John",
+		role: "HR Partner",
+		image: "https://randomuser.me/api/portraits/women/1.jpg",
+		company: "Vertech Advisor Consultant Services (OPC) Pvt Ltd",
+		text: "Collaborating with Manvian was a turning point for our brand. Their team understood our vision and delivered a multimedia revamp that perfectly aligned with our goals. The transformation led to a 45% increase in online engagement. Manvian didn’t just deliver services they delivered impact.",
+		rating: 5,
+	},
+	{
+		name: "Ravi Kumar",
+		role: "Software Engineer",
+		image: "https://randomuser.me/api/portraits/men/2.jpg",
+		company: "Turing Inc",
+		text: "The creative vision and execution from Manvian impressed our entire team. They brought fresh ideas to the table and turned our concepts into stunning visuals that truly resonate with our audience. Their passion for creativity is evident in every detail.",
+		rating: 4,
+	},
+	{
+		name: "Priya Sharma",
+		role: "Data Analyst",
+		image: "https://randomuser.me/api/portraits/women/3.jpg",
+		company: "Infosys",
+		text: "Manvian delivered exceptional mobile solutions tailored perfectly to our needs. Their technical proficiency and agile process ensured timely delivery without compromising quality. Our app’s performance and user satisfaction have never been better",
+		rating: 5,
+	},
+	{
+		name: "Alex Mathew",
+		role: "UX Designer",
+		image: "https://randomuser.me/api/portraits/men/4.jpg",
+		company: "Zoho Corporation",
+		text: "Working with Manvian was a game-changer for our product’s user experience. Their UX expertise and attention to detail brought clarity and simplicity to our design process. The collaboration was smooth, and the outcomes significantly improved user engagement.",
+		rating: 4,
+	},
+	{
+		name: "Sneha Das",
+		role: "Cloud Engineer",
+		image: "https://randomuser.me/api/portraits/women/5.jpg",
+		company: "Amazon AWS",
+		text: "Manvian has truly transformed our marketing strategy with their insightful and innovative approach. Their team’s dedication and deep understanding of our goals helped us achieve remarkable growth. The results exceeded our expectations — highly recommend!",
+		rating: 5,
+	},
+	{
+		name: "Arjun Reddy",
+		role: "Backend Developer",
+		image: "https://randomuser.me/api/portraits/men/6.jpg",
+		company: "Wipro Ltd",
+		text: "We were struggling to scale sales efficiently until we partnered with Manvian. Their experts streamlined operations with automation, and the RaaS model helped us build a high-performing team fast. In just 3 months, conversions rose by 38% and productivity doubled. Manvian delivers smart, scalable solutions that work.",
+		rating: 5,
+	},
+	{
+		name: "Riya Sen",
+		role: "Frontend Developer",
+		image: "https://randomuser.me/api/portraits/women/7.jpg",
+		company: "Google",
+		text: "The team was very helpful and responsive throughout the process.",
+		rating: 5,
+	},
+	{
+		name: "Vikram Singh",
+		role: "DevOps Engineer",
+		image: "https://randomuser.me/api/portraits/men/8.jpg",
+		company: "Microsoft",
+		text: "Great experience, would recommend to anyone looking for a new role.",
+		rating: 4,
+	},
+	{
+		name: "Anjali Mehra",
+		role: "QA Analyst",
+		image: "https://randomuser.me/api/portraits/women/9.jpg",
+		company: "Capgemini",
+		text: "Catherine and her team made everything so easy!",
+		rating: 5,
+	},
+	{
+		name: "Rahul Verma",
+		role: "Full Stack Developer",
+		image: "https://randomuser.me/api/portraits/men/10.jpg",
+		company: "Accenture",
+		text: "Very professional and supportive.",
+		rating: 5,
+	},
+	{
+		name: "Neha Kapoor",
+		role: "Product Manager",
+		image: "https://randomuser.me/api/portraits/women/11.jpg",
+		company: "Flipkart",
+		text: "Excellent communication and guidance.",
+		rating: 5,
+	},
+	{
+		name: "Siddharth Jain",
+		role: "AI Engineer",
+		image: "https://randomuser.me/api/portraits/men/12.jpg",
+		company: "NVIDIA",
+		text: "The best hiring experience I have had so far.",
+		rating: 5,
+	},
 ];
 
 const renderStars = (rating) => {
-  const fullStar = "★";
-  return (
-    <div className="testimonial-stars">
-      {fullStar.repeat(rating)}
-    </div>
-  );
+	const fullStar = "★";
+	return <div className="testimonial-stars">{fullStar.repeat(rating)}</div>;
 };
 
 // Helper: slotIndex to scale and zIndex for ring effect
 const getRingStyle = (slotIndex, totalSlots) => {
-  const minScale = 0.7;
-  const maxScale = 1.2;
-  const scaleStep = (maxScale - minScale) / (totalSlots - 1);
-  const scale = minScale + scaleStep * slotIndex;
-  const zIndex = 10 + slotIndex;
-  return { transform: `scale(${scale})`, zIndex };
+	const minScale = 0.7;
+	const maxScale = 1.2;
+	const scaleStep = (maxScale - minScale) / (totalSlots - 1);
+	const scale = minScale + scaleStep * slotIndex;
+	const zIndex = 10 + slotIndex;
+	return { transform: `scale(${scale})`, zIndex };
 };
 
 const Testimonial = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [mainMove, setMainMove] = useState(false); // NEW: for animation
-  const [hoveredRingIndex, setHoveredRingIndex] = useState(null); // Track hovered image in ring
-  const timerRef = useRef();
-  const numClients = testimonials.length - 1;
+	const [activeIndex, setActiveIndex] = useState(0);
+	const [mainMove, setMainMove] = useState(false); // NEW: for animation
+	const [hoveredRingIndex, setHoveredRingIndex] = useState(null); // Track hovered image in ring
+	const timerRef = useRef();
+	const numClients = testimonials.length - 1;
 
-  // Helper to get the correct order of other clients for the ring
-  const getOtherClients = (currentIndex) => {
-    const others = testimonials.filter((_, i) => i !== currentIndex);
-    let queue = [];
-    let idx = (currentIndex + 1) % testimonials.length;
-    for (let i = 0; i < others.length; i++) {
-      queue.push(testimonials[idx]);
-      idx = (idx + 1) % testimonials.length;
-      if (queue.length === others.length) break;
-    }
-    return queue;
-  };
+	// Helper to get the correct order of other clients for the ring
+	const getOtherClients = (currentIndex) => {
+		const others = testimonials.filter((_, i) => i !== currentIndex);
+		let queue = [];
+		let idx = (currentIndex + 1) % testimonials.length;
+		for (let i = 0; i < others.length; i++) {
+			queue.push(testimonials[idx]);
+			idx = (idx + 1) % testimonials.length;
+			if (queue.length === others.length) break;
+		}
+		return queue;
+	};
 
-  useEffect(() => {
-    timerRef.current = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-    }, 3000);
-    return () => clearInterval(timerRef.current);
-  }, []);
+	useEffect(() => {
+		timerRef.current = setInterval(() => {
+			setActiveIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+		}, 9000); // Changed from 3000ms to 6000ms for slower profile change
+		return () => clearInterval(timerRef.current);
+	}, []);
 
-  useEffect(() => {
-    setMainMove(true);
-    const timeout = setTimeout(() => setMainMove(false), 800);
-    return () => clearTimeout(timeout);
-  }, [activeIndex]);
+	useEffect(() => {
+		setMainMove(true);
+		const timeout = setTimeout(() => setMainMove(false), 800);
+		return () => clearTimeout(timeout);
+	}, [activeIndex]);
 
-  return (
-    <div>
-      <div style={{ position: 'relative', minHeight: 500 }}>
-        <div className="new-testimonial-background"></div>
-        <h2 style={{ color: '#19BDE8', textAlign: 'center', marginBottom: '1.5rem', fontWeight: 700, fontSize: '2rem', letterSpacing: '0.02em', position: 'relative', zIndex: 1, marginTop: 0 }}>
-          Our Client
-        </h2>
-        <div className="testimonial-section">
-          {testimonials.map((testimonial, index) => (
-            <div
-              key={index}
-              className={`testimonial-card ${index === activeIndex ? "active" : "inactive"}`}
-              style={{
-                zIndex: index === activeIndex ? 2 : 1,
-                opacity: index === activeIndex ? 1 : 0,
-                pointerEvents: index === activeIndex ? 'auto' : 'none',
-                transition: 'opacity 0.8s cubic-bezier(0.4,0,0.2,1)',
-                position: 'absolute',
-                width: '100%',
-                top: 0,
-                left: 0
-              }}
-            >
-              <div className="testimonial-card-bg-left"></div>
-              <div className="testimonial-card-bg-right"></div>
-              <div className="other-clients-container">
-                {(() => {
-                  const RING_SLOTS = 6;
-                  let queue = [];
-                  let idx = (activeIndex + 1) % testimonials.length;
-                  for (let i = 0; i < RING_SLOTS; i++) {
-                    queue.push(testimonials[idx]);
-                    idx = (idx + 1) % testimonials.length;
-                  }
-                  return Array.from({ length: RING_SLOTS }).map((_, slotIndex) => {
-                    const client = queue[slotIndex];
-                    const ringStyle = getRingStyle(slotIndex, RING_SLOTS);
-                    return (
-                      <img
-                        key={client.name + '-' + client.image}
-                        src={client.image}
-                        alt={client.name}
-                        className="other-client-image"
-                        style={{ ...ringStyle, transition: 'top 0.8s, left 0.8s, transform 0.5s cubic-bezier(0.4,0,0.2,1), box-shadow 0.35s cubic-bezier(0.4,0,0.2,1)' }}
-                      />
-                    );
-                  });
-                })()}
-              </div>
-              <div className="testimonial-content">
-                {renderStars(testimonial.rating)}
-                <p className="testimonial-text">{testimonial.text}</p>
-                <p className="testimonial-name">{testimonial.name}</p>
-                <p className="testimonial-title">
-                  {testimonial.role} at {testimonial.company}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+	return (
+		<div>
+			<div style={{ position: 'relative', minHeight: 500 }}>
+				<div className="new-testimonial-background">
+					<video
+						src="/background.mp4"
+						autoPlay
+						loop
+						muted
+						playsInline
+					/>
+				</div>
+				<h2 style={{ color: '#FFFFFF', textAlign: 'center', marginBottom: '1.5rem', fontWeight: 700, fontSize: '2rem', letterSpacing: '0.02em', position: 'relative', zIndex: 1, marginTop: 0 }}>
+					Hear from Our Clients
+				</h2>
+				<div className="testimonial-section">
+					{testimonials.map((testimonial, index) => (
+						<div
+							key={index}
+							className={`testimonial-card ${index === activeIndex ? "active" : "inactive"}`}
+							style={{
+								zIndex: index === activeIndex ? 2 : 1,
+								opacity: index === activeIndex ? 1 : 0,
+								pointerEvents: index === activeIndex ? 'auto' : 'none',
+								transition: 'opacity 0.8s cubic-bezier(0.4,0,0.2,1)',
+								position: 'absolute',
+								width: '100%',
+								top: 0,
+								left: 0
+							}}
+						>
+							<div className="testimonial-card-bg-left"></div>
+							<div className="testimonial-card-bg-right"></div>
+							{/* Remove main profile image from center */}
+							<div className="other-clients-container">
+								{(() => {
+									const RING_SLOTS = 12;
+									let queue = [];
+									let idx = (activeIndex + 1) % testimonials.length;
+									for (let i = 0; i < RING_SLOTS - 1; i++) {
+										queue.push(testimonials[idx]);
+										idx = (idx + 1) % testimonials.length;
+									}
+									// Place main profile image at slot 0 (top of the ring)
+									// To avoid touching, increase the radius for other images and offset their angles
+									const mainRadius = 80; // reduced from 100
+									const otherRadius = 120; // reduced from 160
+									const mainImgHalf = 60; // 120px/2
+									return [
+										<img
+											key={testimonials[activeIndex].name + '-main-in-ring'}
+											src={testimonials[activeIndex].image}
+											alt={testimonials[activeIndex].name}
+											className="main-profile-image-in-ring"
+											style={{
+												left: `${100 + mainRadius - mainImgHalf + 37.8}px`, // move 1cm (37.8px) right
+												top: `${100 - mainImgHalf + 10}px`,
+												position: 'absolute',
+											}}
+										/>,
+										...Array.from({ length: RING_SLOTS - 1 }).map((_, slotIndex) => {
+											const client = queue[slotIndex];
+											const totalSlots = RING_SLOTS;
+											const angle = (2 * Math.PI * (slotIndex + 1)) / (RING_SLOTS + 1) + (Math.PI / (RING_SLOTS + 1));
+											const left = 100 + otherRadius * Math.cos(angle) - 20;
+											const top = 100 + otherRadius * Math.sin(angle) - 20;
+											return (
+												<img
+													key={client.name + '-' + client.image}
+													src={client.image}
+													alt={client.name}
+													className="other-client-image"
+													style={{ left: `${left}px`, top: `${top}px`, position: 'absolute' }}
+												/>
+											);
+										})
+									];
+								})()}
+							</div>
+							<div className="testimonial-content">
+								{renderStars(testimonial.rating)}
+								<p className="testimonial-text">{testimonial.text}</p>
+								<p className="testimonial-name">{testimonial.name}</p>
+								<p className="testimonial-title">
+									{testimonial.role} at {testimonial.company}
+								</p>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default Testimonial;
