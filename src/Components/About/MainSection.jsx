@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import vision from '../../assets/About/Vision.png';
-import mission from '../../assets/About/Mission.png';
+import missionVideo from '../../assets/About/mission.mp4';
 import Goal from '../../assets/About/Goal.png';
 import Aim from '../../assets/About/Aim.png';
 import Footer from '../Footer/Footer';
