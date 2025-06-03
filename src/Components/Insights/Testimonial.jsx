@@ -47,7 +47,7 @@ const testimonials = [
 		role: "Backend Developer",
 		image: "https://randomuser.me/api/portraits/men/6.jpg",
 		company: "Wipro Ltd",
-		text: "We were struggling to scale sales efficiently until we partnered with Manvian. Their experts streamlined operations with automation, and the RaaS model helped us build a high-performing team fast. In just 3 months, conversions rose by 38% and productivity doubled. Manvian delivers smart, scalable solutions that work.",
+		text: "Very satisfied with the mentorship and opportunity guidance provided by Catherine and her team.",
 		rating: 5,
 	},
 	{
@@ -193,9 +193,11 @@ const Testimonial = () => {
 									}
 									// Place main profile image at slot 0 (top of the ring)
 									// To avoid touching, increase the radius for other images and offset their angles
-									const mainRadius = 80; // reduced from 100
-									const otherRadius = 120; // reduced from 160
-									const mainImgHalf = 60; // 120px/2
+									const isMobile = window.innerWidth <= 600;
+									const mainRadius = isMobile ? 20 : 80;
+									const otherRadius = isMobile ? 28 : 120;
+									const mainImgHalf = isMobile ? 16 : 60;
+									const center = isMobile ? 35 : 100;
 									return [
 										<img
 											key={testimonials[activeIndex].name + '-main-in-ring'}
@@ -203,8 +205,12 @@ const Testimonial = () => {
 											alt={testimonials[activeIndex].name}
 											className="main-profile-image-in-ring"
 											style={{
-												left: `${100 + mainRadius - mainImgHalf + 37.8}px`, // move 1cm (37.8px) right
-												top: `${100 - mainImgHalf + 10}px`,
+												left: isMobile
+													? `${center + mainRadius - mainImgHalf}px`
+													: `${center + mainRadius + 62.1 - mainImgHalf}px`, // Move 2cm to the right in desktop
+												top: isMobile
+													? `${center - mainImgHalf}px`
+													: `${center - mainImgHalf + 14.8}px`, // Move 1cm down in desktop
 												position: 'absolute',
 											}}
 										/>,
@@ -212,8 +218,8 @@ const Testimonial = () => {
 											const client = queue[slotIndex];
 											const totalSlots = RING_SLOTS;
 											const angle = (2 * Math.PI * (slotIndex + 1)) / (RING_SLOTS + 1) + (Math.PI / (RING_SLOTS + 1));
-											const left = 100 + otherRadius * Math.cos(angle) - 20;
-											const top = 100 + otherRadius * Math.sin(angle) - 20;
+											const left = center + otherRadius * Math.cos(angle) - (isMobile ? 7 : 20);
+											const top = center + otherRadius * Math.sin(angle) - (isMobile ? 7 : 20);
 											return (
 												<img
 													key={client.name + '-' + client.image}
