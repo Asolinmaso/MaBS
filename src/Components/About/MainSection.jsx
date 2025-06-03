@@ -90,9 +90,19 @@ const MainSection = () => {
             <motion.img variants={rightVariants} className="order-2 md:order-2 w-full h-[300px] md:h-[590px] object-cover rounded-xl" src={vision} alt="Vision" />
           </Section>
 
+         
           {/* Mission Section */}
           <Section>
-            <motion.img variants={leftVariants} className="order-2 md:order-1 w-full h-[300px] md:h-[590px] object-cover rounded-xl" src={mission} alt="Mission" />
+            <motion.video
+              variants={leftVariants}
+              className="order-2 md:order-1 w-full h-[300px] md:h-[590px] object-cover rounded-xl"
+              src={missionVideo}
+              autoPlay
+              loop
+              muted
+              playsInline
+              alt="Mission"
+            />
             <motion.div variants={rightVariants} className="order-1 md:order-2 flex flex-col justify-center gap-6">
               <h1 className="text-[#19BDE8] text-xl  lg:text-4xl font-semibold">Our Mission</h1>
               <p className="text-base md:text-xl leading-relaxed">
