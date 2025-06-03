@@ -43,6 +43,7 @@
   z-index: 1;
   margin-bottom: 0; /* Remove gap below card */
   opacity: 0.9;
+  overflow: hidden; /* Prevent overflow of content */
 }
 
 
@@ -253,76 +254,102 @@
     min-height: 20vh;
   }
   .testimonial-card {
-    padding: 0.3rem;
-    gap: 0.3rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-    min-width: 0;
-    width: 98vw;
-    max-width: 99vw;
-    position: absolute;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    margin: 0 auto 0 auto; /* Remove extra bottom margin in mobile view */
-    left: 0;
-    right: 0;
-    height: auto;
+    height: 520px;
+    padding: 0.7rem;
+    gap: 0.7rem;
+  }
+  .testimonial-content {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.2rem 0.2rem 20px; /* Ensure 20px left gap */
+    margin-left: 130px !important; /* Remove any left margin that could cause overlap */
+    margin-top: 0;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start !important; /* Force right alignment */
+    text-align: left !important; /* Force right text alignment */
+    order: -1; /* Move words to the top */
+    box-sizing: border-box;
   }
   .other-clients-container {
-    width: 70px;
-    height: 70px;
-    left: 16px; /* Moved 1cm right for mobile as well */
-    top: 50%;
+    width: 40px;
+    height: 40px;
+    left: 0;
+    right: 0;
+    margin: auto 0;
+    /* Ensure the ring stays inside the card */
+    box-sizing: border-box;
+    overflow: visible;
+    top: 10%;
     transform: translateY(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
+    border-radius: 30%;
     pointer-events: none;
     background: transparent;
     z-index: 1;
     position: absolute;
+    order: 1; /* Images below words */
+  }
+  .main-profile-image-in-ring {
+    width: 32px;
+    height: 32px;
+    border-width: 2px;
   }
   .other-client-image {
     width: 14px;
     height: 14px;
-    border-width: 1.5px;
+    border-width: 1px;
   }
   .testimonial-content {
-    font-size: 0.7rem;
-    padding: 0.3rem 0.3rem 0.3rem 0;
-    margin-left: 75px; /* Prevent overlap on mobile, matches .other-clients-container width */
+    font-size: 0.65rem;
+    padding: 0.2rem 0.2rem 0.2rem 20px;
+    margin-left: 0;
+    margin-top: 0;
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    top: 0;
+    order: -1; /* Move words to the top */
   }
   .testimonial-stars {
-    font-size: 0.7rem;
-    margin-bottom: 0.2rem;
+    font-size: 0.6rem;
+    margin-bottom: 0.1rem;
   }
   .testimonial-text {
-    font-size: 0.7rem;
-    margin-bottom: 0.2rem;
+    font-size: 0.65rem;
+    margin-bottom: 0.1rem;
   }
   .testimonial-name {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
   }
   .testimonial-title {
-    font-size: 0.6rem;
+    font-size: 0.55rem;
   }
   .testimonial-card .testimonial-card-bg-left {
-    width: 60px;
-    height: 180px;
-    left: 30px;
-    top: -20px;
-    filter: blur(30px);
+    width: 40px;
+    height: 100px;
+    left: 20px;
+    top: -10px;
+    filter: blur(20px);
   }
   .testimonial-card .testimonial-card-bg-right {
-    width: 60px;
-    height: 250px;
+    width: 40px;
+    height: 120px;
     left: auto;
-    right: 30px;
-    top: -40px;
-    filter: blur(40px);
+    right: 20px;
+    top: -20px;
+    filter: blur(25px);
   }
-  /* Mobile view: Position other client images in a circular layout, scaled down */
 }
 
 /* Keyframes for rolling ring animation */
