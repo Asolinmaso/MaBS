@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./TestimonialSlider.css";
+import StarImg from '../../assets/Star.png';
 
 const testimonials = [
 	{
@@ -101,8 +102,18 @@ const testimonials = [
 ];
 
 const renderStars = (rating) => {
-	const fullStar = "★";
-	return <div className="testimonial-stars">{fullStar.repeat(rating)}</div>;
+	return (
+		<div className="testimonial-stars">
+			{Array.from({ length: rating }).map((_, i) => (
+				<img
+					key={i}
+					src={StarImg}
+					alt="star"
+					style={{ width: 32, height: 32, display: 'inline-block', verticalAlign: 'middle', marginRight: 2 }}
+				/>
+			))}
+		</div>
+	);
 };
 
 // Helper: slotIndex to scale and zIndex for ring effect
@@ -151,14 +162,17 @@ const Testimonial = () => {
 	return (
 		<div>
 			<div style={{ position: 'relative', minHeight: 500 }}>
-				<div className="new-testimonial-background">
+				<div className="new-testimonial-background" style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
 					<video
 						src="/background.mp4"
 						autoPlay
 						loop
 						muted
 						playsInline
+						style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'brightness(0.4) blur(1px)' }}
 					/>
+					{/* Overlay for further dimming if needed */}
+					<div style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.45)', zIndex: 1 }} />
 				</div>
 				<h2 style={{ color: '#FFFFFF', textAlign: 'center', marginBottom: '1.5rem', fontWeight: 700, fontSize: '2rem', letterSpacing: '0.02em', position: 'relative', zIndex: 1, marginTop: 0 }}>
 					Hear from Our Clients
@@ -236,8 +250,8 @@ const Testimonial = () => {
 							<div className="testimonial-content">
 								{renderStars(testimonial.rating)}
 								<p className="testimonial-text">{testimonial.text}</p>
-								<p className="testimonial-name">{testimonial.name}</p>
-								<p className="testimonial-title">
+								<p className="testimonial-name" style={{ color: '#19BDE8' }}>{testimonial.name}</p>
+								<p className="testimonial-title" style={{ color: '#19BDE8' }}>
 									{testimonial.role} at {testimonial.company}
 								</p>
 							</div>
