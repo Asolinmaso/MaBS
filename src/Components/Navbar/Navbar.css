@@ -1,4 +1,3 @@
-
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -36,6 +35,11 @@
 }
 .sub-menu {
   min-width: 810px;
+}
+.menu-desc-nowrap {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 
