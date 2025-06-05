@@ -84,7 +84,7 @@ export default function DesktopMenu({ menu }) {
                               </div>
                               <div>
                                 <h6 className="font-semibold text-md text-white group-hover/menubox:text-sky-400 transition-colors duration-300 ">{submenu.name}</h6>
-                                <p className="text-sm  text-gray-200 group-hover/menubox:text-gray-400 transition-colors duration-300">{submenu.desc}</p>
+                                <p className="text-sm menu-desc-nowrap text-gray-200 group-hover/menubox:text-gray-400 transition-colors duration-300">{submenu.desc}</p>
                               </div>
                             </div></Link>
                         </div>
@@ -105,7 +105,7 @@ export default function DesktopMenu({ menu }) {
                     </div>
                     <div>
                       <h6 className=" font-semibold text-md text-white group-hover/menubox:text-sky-400 transition-colors duration-300  ">{submenu.name}</h6>
-                      <p className="text-sm text-gray-200 group-hover/menubox:text-gray-400 transition-colors duration-300">{submenu.desc}</p>
+                      <p className="text-sm menu-desc-nowrap text-gray-200 group-hover/menubox:text-gray-400 transition-colors duration-300">{submenu.desc}</p>
                     </div>
                   </div>
                 </div>
