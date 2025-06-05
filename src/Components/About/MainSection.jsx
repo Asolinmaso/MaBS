@@ -6,7 +6,7 @@ import Aim from '../../assets/About/Aim.png';
 import Footer from '../Footer/Footer';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 
 // Animation variants
 const variants = {
@@ -132,6 +132,11 @@ const MainSection = () => {
               </p>
             </motion.div>
           </Section>
+           <section className='w-full flex justify-center'>
+        <Link to='/insights'>
+        <button className='mb-10 mt-7 bg-cyan-400 text-white px-4 py-2 rounded hover:bg-cyan-500 cursor-pointer '>Explore more</button>
+        </Link>
+      </section>
         </div>
       </main>
 
