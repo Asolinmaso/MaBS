@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 import bg from "../../assets/Contact/Contact_Hero.png"
 import { HiOutlineLocationMarker } from "react-icons/hi";
-import { FiPhone, FiMail } from 'react-icons/fi';
+import { FiMail } from 'react-icons/fi';
 import CustomBtn from '../Button/CustomBtn';
 import ContactFooter from './ContactFooter';
 // Logo
@@ -11,7 +11,10 @@ import Insta from '../../assets/Logo/insta.svg'
 import Whatsapp from '../../assets/Logo/whatsapp.svg'
 import fb from '../../assets/Logo/facebook.svg'
 import opptiverse from '../../assets/Logo/opptiverse_Black.svg'
-import Location_Icon from '../../assets/Contact/Loaction_Icon.svg'
+import Location_Icon from '../../assets/Contact/Loaction.png'
+import ContactUs_Icon from '../../assets/Contact/contact-us.png';
+import contactUsIcon from '../../assets/Contact/contact-us.png';
+import Email_Icon from '../../assets/Contact/email.png';
 
 const faqs = [
     { question: "1. How do I get a quote for a project?", answer: "To get a quote, please contact us with your project details and requirements." },
@@ -84,9 +87,9 @@ const Contact = () => {
                 </div>
 
                 {/* Contact cards container - adjusted spacing */}
-                <div className='z-20 flex flex-wrap justify-center items-stretch gap-20 w-full max-w-6xl px-4 mt-16 md:mt-20'>
+                <div className='z-20 flex flex-row flex-wrap justify-center items-stretch gap-10 w-full max-w-6xl px-4 mt-16 md:mt-20'>
                     {/* Location */}   
-                    <div className='rounded-2xl p-6 flex flex-col justify-center gap-4 bg-white/10 w-full md:w-[300px] md:h-[260px] text-white items-center text-center backdrop-blur-sm'>
+                    <div className='rounded-2xl p-6 flex flex-col justify-center gap-4 bg-white/10 w-full md:w-[340px] md:h-[320px] text-white items-center text-center backdrop-blur-sm'>
                        
                         <div className='h-16 w-16 md:h-18 sm:w-16 text-[#19BDE8] flex items-center justify-center mt-5 '>
                             <img src={Location_Icon} className='h-full w-full object-contain' />
@@ -98,16 +101,20 @@ const Contact = () => {
                     </div>
 
                     {/* Phone Number */}
-                    <div className='rounded-2xl p-6 flex flex-col justify-center gap-4 bg-white/10 w-full md:w-[300px] md:h-[260px] text-white items-center text-center backdrop-blur-sm'>
-                        <FiPhone className='h-12 w-12 sm:h-16 sm:w-16 text-[#19BDE8]' />
+                    <div className='rounded-2xl p-6 flex flex-col justify-center gap-4 bg-white/10 w-full md:w-[340px] md:h-[320px] text-white items-center text-center backdrop-blur-sm'>
+                        <div className='h-16 w-16 md:h-18 sm:w-16 flex items-center justify-center mt-5'>
+                            <img src={ContactUs_Icon} alt="Phone Icon" className='h-full w-full object-contain' />
+                        </div>
                         <div className='space-y-4'>
                             <p className='font-normal text-base md:text-2xl'>Call Us</p>
                             <p className='font-normal text-base md:text-xl text-justify'>+91 87783 59643</p>
                         </div>
                     </div>
                     {/* Email */}
-                    <div className='rounded-2xl p-6 flex flex-col justify-center gap-4 bg-white/10 w-full md:w-[300px] md:h-[260px] text-white items-center text-center backdrop-blur-sm'>
-                        <FiMail className='h-12 w-12 sm:h-16 sm:w-16 text-[#19BDE8]' />
+                    <div className='rounded-2xl p-6 flex flex-col justify-center gap-4 bg-white/10 w-full md:w-[340px] md:h-[320px] text-white items-center text-center backdrop-blur-sm'>
+                        <div className='h-16 w-16 md:h-18 sm:w-16 flex items-center justify-center mt-5'>
+                            <img src={Email_Icon} alt="Email Icon" className='h-full w-full object-contain' />
+                        </div>
                         <div className='space-y-4'>
                             <p className='font-normal text-base md:text-2xl'>E-Mail Us</p>
                             <p className='font-normal text-base md:text-xl text-justify'>operations@manvian.com</p>
@@ -233,7 +240,7 @@ const Contact = () => {
             </div>
 
             {/* Follow Us */}
-            <section className="bg-gradient-to-t from-[#19BDE880] to-white pb-8 pt-2 text-center px-4 mb-25">
+            <section className="rounded-xl shadow-2xl py-5 md:py-10 px-2 lg:px-8 mb-15 mt-8 m-10 bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] backdrop-blur-lg bg-white/30 border border-white/40 text-center">
                 <h3 className="text-lg md:text-3xl font-semibold text-[#19BDE8] mb-2">Follow Us</h3>
                 <p className="text-gray-700 mb-4 text-sm sm:text-base md:text-lg font-medium">
                     Stay connected with us on social media for updates, insights, and more.
