@@ -140,9 +140,8 @@ const MultiMedia_portfolio = () => {
           <img src={work_img} className='mt-4 w-full h-auto' alt="Work Image" />
         </section>
 
-        {/* Impact */}
-
-        <section className=' mt-5 md:mt-20 mx-auto px-4 md:px-6 rounded-md'>
+        {/* Impact (Desktop Only) */}
+        <section className='hidden lg:block mt-5 md:mt-20 mx-auto px-4 md:px-6 rounded-md'>
           <div className='px-4 md:px-10'>
             <h2 className="text-xl md:text-4xl font-semibold text-[#19BDE8] text-center mb-3">
               Impact of Our Multimedia Services
@@ -168,7 +167,7 @@ const MultiMedia_portfolio = () => {
                 <li>Increased recognition through consistent and tailored design assets.</li>
               </ul>
             </div>
-            <div className='w-full lg:w-[588px] absolute right-0 lg:block hidden'>
+            <div className='w-full lg:w-[588px] absolute right-0 lg:block'>
               <video
                 className="rounded-xl w-full h-[300px] lg:h-[450px] object-cover"
                 src={Impact}
@@ -181,8 +180,8 @@ const MultiMedia_portfolio = () => {
             </div>
           </div>
         </section>
-        {/* Value */}
-        <section className='mt-0 md:mt-20  mx-auto px-4 md:px-6 rounded-md'>
+        {/* Value (Desktop Only) */}
+        <section className='hidden lg:block mt-0 md:mt-20  mx-auto px-4 md:px-6 rounded-md'>
           <div className='px-4 md:px-10'>
             <h2 className="text-xl md:text-4xl font-semibold text-[#19BDE8] text-center mb-3">
               Value We Delivered to Our Clients
@@ -196,7 +195,7 @@ const MultiMedia_portfolio = () => {
               className='w-full lg:w-[588px] absolute left-0'
             >
               <video
-                className='rounded-xl w-full h-[300px] lg:h-[450px] object-cover lg:block hidden'
+                className='rounded-xl w-full h-[300px] lg:h-[450px] object-cover lg:block'
                 src={Value}
                 autoPlay
                 muted
@@ -220,6 +219,67 @@ const MultiMedia_portfolio = () => {
             </div>
           </div>
         </section>
+
+        {/* Mobile Only: Key Outcomes and Video Stacked */}
+        <div className="block lg:hidden w-full max-w-full overflow-x-hidden">
+          {/* Impact Section - Mobile */}
+          <section className="mt-6 px-0 w-full max-w-full">
+            <h2 className="text-xl font-semibold text-[#19BDE8] text-center mb-3">
+              Impact of Our Multimedia Services
+            </h2>
+            <p className="font-normal text-base pt-3 text-center">
+              Our multimedia work helped clients strengthen brand identity, enhance visual communication, and connect more effectively with their audiences. Through design and storytelling, we made their message memorable.
+            </p>
+            <div className="flex flex-col items-center mt-4 gap-3 w-full max-w-full">
+              <video
+                className="rounded-xl w-full h-[180px] object-cover max-w-full"
+                src={Impact}
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+              <div className="w-full bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] p-2 rounded-lg shadow-xl text-xs">
+                <h1 className="font-medium text-sm mb-2">Key Outcomes:</h1>
+                <ul className="list-disc pl-4 space-y-1">
+                  <li>Improved audience engagement through clean, creative visuals.</li>
+                  <li>Boosted professional image with meaningful branding.</li>
+                  <li>Elevated communication of complex ideas using graphics and video.</li>
+                  <li>Increased recognition through consistent and tailored design assets.</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          {/* Value Section - Mobile */}
+          <section className="mt-8 px-0 w-full max-w-full">
+            <h2 className="text-xl font-semibold text-[#19BDE8] text-center mb-3">
+              Value We Delivered to Our Clients
+            </h2>
+            <p className="font-normal text-base pt-3 text-center">
+              By combining technical expertise with user-focused design, we created platforms that solve real problems and support business growth.
+            </p>
+            <div className="flex flex-col items-center mt-4 gap-3 w-full max-w-full">
+              <video
+                className="rounded-xl w-full h-[180px] object-cover max-w-full"
+                src={Value}
+                autoPlay
+                muted
+                loop
+                playsInline
+              />
+              <div className="w-full bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] p-2 rounded-lg shadow-xl text-xs">
+                <h1 className="font-medium text-sm mb-2">Key Outcomes:</h1>
+                <ul className="list-disc pl-4 space-y-1">
+                  <li>Custom-built solutions tailored to their business model</li>
+                  <li>Future-ready platforms using modern tech stacks</li>
+                  <li>Improved customer interaction through intuitive interfaces</li>
+                  <li>Stronger online presence backed by performance and reliability</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+        </div>
 
         {/* Want to expplore links and images */}
         <section className="flex flex-col md:flex-row justify-between items-center px-10 md:py-16 md:mt-10 bg-white mb-5">
