@@ -16,7 +16,7 @@ const Technology_Portfolio = () => {
     const card = e.currentTarget;
     const rect = card.getBoundingClientRect();
     const x = e.clientX - rect.left; // X position within the element
-    const y = e.clientY - rect.top; // Y position within the element
+    const y = e.clientY - rect.top; // Y Position within the element
 
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
@@ -44,7 +44,8 @@ const Technology_Portfolio = () => {
   return (
     <>
       {/* header */}
-      <header className='flex w-full h-[822.86px] justify-center items-center relative'>
+      {/* Desktop header (md+) */}
+      <header className="hidden md:flex w-full h-[822.86px] justify-center items-center relative">
         <img className='absolute w-full h-full z-0 object-cover' src={bg} alt="Background" />
         {/* overlay */}
         <div className='absolute top-0 left-0 w-full h-full bg-black/65 z-10'></div>
@@ -54,13 +55,27 @@ const Technology_Portfolio = () => {
             Ready to power up your business with smart, scalable tech? From website design to AI-driven systems, we build digital solutions that drive real growth and success.
           </p>
           <a href="#">
-           <CustomBtn>Start Your Digital Transformation</CustomBtn>   
+           <CustomBtn className="!px-4 !py-2 !text-xs md:!px-5 md:!py-2 md:!text-base">Start Your Digital Transformation</CustomBtn>  
+          </a>
+        </div>
+      </header>
+      {/* Mobile header */}
+      <header className="flex md:hidden w-full min-h-[420px] flex-col justify-center items-center relative p-0 m-0 overflow-x-hidden">
+        <img className="absolute w-full h-full z-0 object-cover" src={bg} alt="Background" />
+        <div className="absolute top-0 left-0 w-full h-full bg-black/65 z-10"></div>
+        <div className="flex flex-col items-center gap-4 text-center w-full h-auto z-20 text-white px-2 py-10">
+          <h1 className="text-[#19BDE8] font-semibold text-2xl leading-tight">Real Work. Real Results.</h1>
+          <p className="font-normal text-sm mt-2">
+            Ready to power up your business with smart, scalable tech? From website design to AI-driven systems, we build digital solutions that drive real growth and success.
+          </p>
+          <a href="#">
+            <CustomBtn className="!px-4 !py-2 !text-xs md:!px-5 md:!py-2 md:!text-base">Start </CustomBtn>
           </a>
         </div>
       </header>
 
       {/* main */}
-      <main className='mb-15'>
+      <main className="mb-15 w-full max-w-full overflow-x-hidden px-0">
         {/* Web Design */}
         <section className='max-w-6xl mt-10 mx-auto px-4 md:px-6 lg:px-8 md:py-10 py-3'>
           <h2 className="text-2xl md:text-4xl font-semibold text-[#19BDE8] text-center mb-8 ">
@@ -147,7 +162,7 @@ const Technology_Portfolio = () => {
         </section>
 
         {/* Impact */}
-        <section className='mt-5  md:mt-20 mx-auto px-4 md:px-6 rounded-md'>
+        <section className='hidden md:block mt-5 md:mt-20 mx-auto px-4 md:px-6 rounded-md'>
           <div className='px-4 md:px-10'>
             <h2 className="text-xl md:text-4xl font-semibold text-[#19BDE8] text-center mb-3 ">
               Impact of Our Technology Services
@@ -183,9 +198,35 @@ const Technology_Portfolio = () => {
             </div>
           </div>
         </section>
+        {/* Impact Section - Mobile */}
+        <section className="block md:hidden w-full px-0 mt-8">
+          <div className="w-full flex flex-col gap-4 items-center">
+            <h2 className="text-lg font-semibold text-[#19BDE8] text-center">Impact of Our Technology Services</h2>
+            <p className="text-sm font-normal text-center px-2">
+              Our tech solutions enabled clients to digitally transform, streamline their user experience, and present their services more efficiently online.
+            </p>
+            <video
+              className="rounded-xl w-full h-[220px] object-cover"
+              src={Impact}
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+            <div className="w-full bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] p-4 rounded-lg shadow-xl">
+              <h1 className="font-medium text-base text-justify">Key Outcomes:</h1>
+              <ul className="list-disc pl-5 mt-3 text-sm font-normal space-y-2 text-justify">
+                <li>Delivered custom solutions aligned with each client's business goals.</li>
+                <li>Built future-ready platforms using the latest technologies.</li>
+                <li>Enhanced customer experience through intuitive interface design.</li>
+                <li>Strengthened online presence with high-performing, reliable systems.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
 
-        {/* Value */}
-        <section className='mt-5 md:mt-20 mx-auto px-4 md:px-6 rounded-md'>
+        {/* Value Section - Desktop (md+) */}
+        <section className="hidden md:block mt-5 md:mt-20 mx-auto px-4 md:px-6 rounded-md">
           <div className='px-4 md:px-10'>
             <h2 className="text-xl md:text-4xl font-semibold text-[#19BDE8] text-center mb-3 ">
               Value We Delivered to Our Clients
@@ -213,6 +254,32 @@ const Technology_Portfolio = () => {
             >
               <h1 className='font-medium text-xl md:text-3xl text-justify'>Key Outcomes:</h1>
               <ul className='list-disc pl-6 md:pl-10 mt-5 text-base md:text-xl font-normal space-y-4 text-justify'>
+                <li>Custom-built solutions tailored to their business model</li>
+                <li>Future-ready platforms using modern tech stacks</li>
+                <li>Improved customer interaction through intuitive interfaces</li>
+                <li>Stronger online presence backed by performance and reliability</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        {/* Value Section - Mobile */}
+        <section className="block md:hidden w-full px-0 mt-8">
+          <div className="w-full flex flex-col gap-4 items-center">
+            <h2 className="text-lg font-semibold text-[#19BDE8] text-center">Value We Delivered to Our Clients</h2>
+            <p className="text-sm font-normal text-center px-2">
+              By combining technical expertise with user-focused design, we created platforms that solve real problems and support business growth.
+            </p>
+            <video
+              className="rounded-xl w-full h-[220px] object-cover"
+              src={Value}
+              autoPlay
+              muted
+              loop
+              playsInline
+            />
+            <div className="w-full bg-gradient-to-t from-[#19BDE8] to-[#FFFFFF] p-4 rounded-lg shadow-xl">
+              <h1 className="font-medium text-base text-justify">Key Outcomes:</h1>
+              <ul className="list-disc pl-5 mt-3 text-sm font-normal space-y-2 text-justify">
                 <li>Custom-built solutions tailored to their business model</li>
                 <li>Future-ready platforms using modern tech stacks</li>
                 <li>Improved customer interaction through intuitive interfaces</li>
