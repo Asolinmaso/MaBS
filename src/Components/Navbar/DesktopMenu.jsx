@@ -71,10 +71,10 @@ export default function DesktopMenu({ menu }) {
                   (item) => item.category === heading
                 );
                 return (
-                  <div key={heading} className="max-h-96  pr-2">
+                  <div key={heading} className="max-h-100  pr-2">
 
                     <p className="text-lg font-semibold mb-4 text-sky-400 sticky top-0  z-10 py-1">{heading}</p>
-                    <div className="overflow-y-auto max-h-80 pr-1">
+                    <div className="overflow-y-auto max-h-100 pr-1">
                       {filteredSubMenu.map((submenu, i) => (
                         <div className="relative cursor-pointer mb-5" key={i}>
                           <Link to={submenu.path} className="flex-center gap-x-4 group/menubox">
