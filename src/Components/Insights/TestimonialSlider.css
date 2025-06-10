@@ -259,7 +259,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 20vh;
+    min-height: 23vh;
   }
   .testimonial-card {
     flex-direction: column;
@@ -271,17 +271,22 @@
   .testimonial-content {
     font-size: 0.65rem;
     padding: 0.2rem 0.2rem 0.2rem 20px; /* Ensure 20px left gap */
-    margin-left: 130px !important; /* Remove any left margin that could cause overlap */
+    margin-left: 120px !important;
+    margin-right: 0 !important;
     margin-top: 0;
-    width: 100%;
-    max-width: 100%;
+    width: 80px;
+    max-width: 80px;
+    min-width: 0;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start !important; /* Force right alignment */
-    text-align: left !important; /* Force right text alignment */
+    align-items: flex-start !important;
+    text-align: justify !important;
     order: -1; /* Move words to the top */
-    box-sizing: border-box;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    overflow-x: hidden;
   }
   .other-clients-container {
     width: 40px;
