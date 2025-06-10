@@ -198,7 +198,9 @@ const Testimonial = () => {
 							{/* Remove main profile image from center */}
 							<div className="other-clients-container">
 								{(() => {
-									const RING_SLOTS = 12;
+									// Show 6 slots (1 main + 5 others) on mobile, 12 on desktop
+									const isMobile = window.innerWidth <= 600;
+									const RING_SLOTS = isMobile ? 6 : 12;
 									let queue = [];
 									let idx = (activeIndex + 1) % testimonials.length;
 									for (let i = 0; i < RING_SLOTS - 1; i++) {
@@ -207,7 +209,6 @@ const Testimonial = () => {
 									}
 									// Place main profile image at slot 0 (top of the ring)
 									// To avoid touching, increase the radius for other images and offset their angles
-									const isMobile = window.innerWidth <= 600;
 									const mainRadius = isMobile ? 20 : 80;
 									const otherRadius = isMobile ? 28 : 120;
 									const mainImgHalf = isMobile ? 16 : 60;
