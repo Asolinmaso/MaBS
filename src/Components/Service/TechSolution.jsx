@@ -127,7 +127,7 @@ const handleMouseLeave = (index) => {
 
                 {/* Content */}
                 <div className="relative z-20 flex flex-col items-center text-center text-white px-4 sm:px-6 md:px-12 lg:px-24 xl:px-0 w-full max-w-[1200px] gap-6">
-                    <h1 className="text-[#19BDE8] font-semibold text-xl md:text-6xl leading-tight">
+                    <h1 className="text-[#19BDE8] font-semibold text-3xl md:text-6xl leading-tight md:text-center">
                         Technology Solutions
                     </h1>
                     <p className="font-normal text-base md:text-xl text-justify mt-6">
