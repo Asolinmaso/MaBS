@@ -2,13 +2,18 @@ import React, { useState } from 'react';
 import { FiFile, FiClock } from 'react-icons/fi';
 import Footer from '../Footer/Footer';
 import CallToAction from './CallToAction';
+import Img1 from '../../assets/Blogs/Trending/1.png';
+import Img2 from '../../assets/Blogs/Trending/2.png';
+import Img3 from '../../assets/Blogs/Trending/3.png';
+import Img4 from '../../assets/Blogs/Trending/4.png';
+import Img5 from '../../assets/Blogs/Trending/5.png';
 
 const blogData = [
     {
         id: 1,
         title: 'The Future of AI in Content: Beyond the Buzz',
         description: 'AI tools like ChatGPT and MidJourney... Let’s decode the new content equation.',
-        image: 'src/assets/Blogs/Trending/1.png',
+        image: Img1,
         author: 'Priya Mehta',
         readTime: '4 min read',
         category: 'Tech & Innovation'
@@ -17,7 +22,7 @@ const blogData = [
         id: 2,
         title: 'Why Micro-Content is Dominating 2025',
         description: 'Short-form videos are the key. Find out...',
-        image: 'src/assets/Blogs/Trending/2.png',
+        image: Img2,
         author: 'Aditya Rao',
         readTime: '3 min read',
         category: 'Marketing'
@@ -26,9 +31,7 @@ const blogData = [
         id: 3,
         title: 'Branding that Sticks in the Digital Age',
         description: 'How to build a magnetic and memorable brand...',
-
-        image: 'src/assets/Blogs/Trending/3.png',
-
+        image: Img3,
         author: 'Sonali Nair',
         readTime: '5 min read',
         category: 'Business Strategy'
@@ -37,9 +40,7 @@ const blogData = [
         id: 4,
         title: 'AI-Generated Visuals: Tool or Threat?',
         description: 'From voiceovers to video editing. AI is changing the game...',
-
-        image: 'src/assets/Blogs/Trending/4.png',
-
+        image: Img4,
         author: 'Priya Mehta',
         readTime: '5 min read',
         category: 'Multimedia'
@@ -48,8 +49,7 @@ const blogData = [
         id: 5,
         title: 'Decoding What Your Metrics Are Really Saying',
         description: 'Which KPIs tell the real story behind the numbers?',
-        image: 'src/assets/Blogs/Trending/5.png',
-
+        image: Img5,
         author: 'Karan Shah',
         readTime: '6 min read',
         category: 'Data & Insights'
