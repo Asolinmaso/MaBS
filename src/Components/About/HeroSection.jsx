@@ -1,14 +1,13 @@
 import React from 'react';
-import Bg from '../../assets/About/HeroSection.jpeg';
+import HeroVideo from '../../assets/About/HeroSection.mp4';
 import CustomBtn from '../Button/CustomBtn';
 
 const HeroSection = () => {
   return (
     <>
       <header className="relative w-full min-h-screen flex justify-center items-center">
-        {/* Background Image */}
-        <img className="absolute w-full h-full object-cover z-0" src={Bg} alt="Hero Background" />
-
+        {/* Background Video */}
+        <video className="absolute w-full h-full object-cover z-0" src={HeroVideo} autoPlay loop muted playsInline />
         {/* Overlay */}
         <div className="absolute top-0 left-0 w-full h-full bg-black/70 z-10"></div>
 
