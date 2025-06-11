@@ -38,13 +38,14 @@ export default function StatsSection() {
 
   return (
     <section
-      className="stats-animated-section rounded-xl shadow-2xl py-5 md:py-10 px-2 lg:px-8 mb-15 mt-8 m-10 border border-white/40 backdrop-blur-lg"
+      className="stats-animated-section rounded-xl shadow-2xl mb-15 mt-8 m-10 border border-white/40 backdrop-blur-lg"
       style={{
         background: "#00222E",
         boxShadow: "0 8px 32px 0 rgba(25, 189, 232, 0.37)",
         borderRadius: "20px",
         border: "2px solid #19BDE8",
-        position: "relative"
+        position: "relative",
+        padding: "40px"
       }}
     >
       <div className="stats-animated-glow"></div>
