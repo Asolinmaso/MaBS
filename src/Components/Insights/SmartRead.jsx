@@ -57,7 +57,13 @@ export default function SmartReads() {
           return (
             <div
               key={index}
-              className={`bg-white shadow-md border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow ${colSpanClass}`}
+              className={`bg-white rounded-2xl p-6 relative overflow-hidden ${colSpanClass}`}
+              style={{
+                
+                boxShadow: 'inset 0 0 40px 7px #19BDE855',
+                backdropFilter: 'blur(2px)',
+                WebkitBackdropFilter: 'blur(2px)'
+              }}
             >
               <h3 className="text-lg font-semibold mb-2">
                 {article.title}
