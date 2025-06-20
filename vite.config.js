@@ -9,4 +9,7 @@ export default defineConfig({
     tailwindcss(),
     svgr(),
     react()],
+    optimizeDeps: {
+    include: ['animejs'] // ✅ Ensures animejs works smoothly with Vite
+  }
 })
