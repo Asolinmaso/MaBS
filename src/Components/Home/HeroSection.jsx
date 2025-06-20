@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import CustomBtn from '../Button/CustomBtn';
 import bg from '../../assets/Home/Herosection.mp4';
-
+import AnimatedText from './AnimatedText';
 const HeroSection = () => {
     useEffect(() => {
         const script = document.createElement('script');
@@ -41,6 +41,9 @@ const HeroSection = () => {
                         Welcome to Manvian, your trusted partner in business development. We empower entrepreneurs and their businesses to reach new heights
                         through innovative strategies and exceptional execution.
                     </p>
+                    <div className="mt-8">
+                      <AnimatedText />
+                    </div>
                     <a
                         href="https://outlook.office365.com/book/Catherine1@deepdarkcreations.com/"
                         target="_blank"
