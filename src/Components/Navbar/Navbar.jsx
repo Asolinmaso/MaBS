@@ -11,7 +11,9 @@ export default function Custom_Navbar() {
     <header className="fixed top-0 left-0 w-full h-20 lg:h-25 text-[15px]  bg-black text-white z-50 shadow ">
       <nav className="px-4 flex items-center justify-between w-full max-w-7xl  mx-auto h-full ">
         <div className="flex items-center gap-x-3 ml-5 lg:pl-0">
-          <img src={Mabs} alt="Mabs Logo" className="h-10" />
+         <Link to="/">
+            <img src={Mabs} alt="Mabs Logo" className="h-10 cursor-pointer" />
+          </Link>
         </div>
 
         <ul className="gap-x-4 hidden lg:flex items-center">
