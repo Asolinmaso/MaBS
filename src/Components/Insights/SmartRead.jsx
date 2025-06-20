@@ -59,8 +59,7 @@ export default function SmartReads() {
               key={index}
               className={`bg-white rounded-2xl p-6 relative overflow-hidden ${colSpanClass}`}
               style={{
-                
-                boxShadow: 'inset 0 0 40px 7px #19BDE855',
+                boxShadow: 'inset 0 0 24px 3px #19BDE855',
                 backdropFilter: 'blur(2px)',
                 WebkitBackdropFilter: 'blur(2px)'
               }}
