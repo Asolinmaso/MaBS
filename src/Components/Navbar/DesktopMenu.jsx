@@ -2,6 +2,7 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 import { matchPath, useLocation } from "react-router-dom";
 
 export default function DesktopMenu({ menu }) {
@@ -77,7 +78,7 @@ export default function DesktopMenu({ menu }) {
                     <div className="overflow-y-auto max-h-100 pr-1">
                       {filteredSubMenu.map((submenu, i) => (
                         <div className="relative cursor-pointer mb-5" key={i}>
-                          <Link to={submenu.path} className="flex-center gap-x-4 group/menubox">
+                          <HashLink to={submenu.path} className="flex-center gap-x-4 group/menubox">
                             <div className="flex-center gap-x-4 group/menubox">
                               <div className="bg-white/5 w-fit p-2 rounded-md group-hover/menubox:bg-sky-400 group-hover/menubox:text-white duration-300 text-white ">
                                 {submenu.icon && <submenu.icon />}
@@ -86,7 +87,7 @@ export default function DesktopMenu({ menu }) {
                                 <h6 className="font-semibold text-md text-white group-hover/menubox:text-sky-400 transition-colors duration-300 ">{submenu.name}</h6>
                                 <p className="text-sm menu-desc-nowrap text-gray-200 group-hover/menubox:text-gray-400 transition-colors duration-300">{submenu.desc}</p>
                               </div>
-                            </div></Link>
+                            </div></HashLink>
                         </div>
                       ))}  </div>
                   </div>
@@ -99,7 +100,37 @@ export default function DesktopMenu({ menu }) {
             >
               {menu.subMenu.map((submenu, i) => (
                 <div className="relative cursor-pointer mb-5" key={i}>
-                  <div className="flex-center gap-x-4 group/menubox">
+                  <a
+                    href="#"
+                    className="flex-center gap-x-4 group/menubox"
+                    onClick={e => {
+                      if (menu.name === "Insights") {
+                        let detail = null;
+                        if (submenu.name === "Our Clients") detail = "clients-logo";
+                        if (submenu.name === "Testimonials") detail = "testimonial";
+                        if (submenu.name === "News") detail = "news";
+                        // Blogs: navigate to /Insights/Articles
+                        if (submenu.name === "Blogs") {
+                          e.preventDefault();
+                          window.location.href = "/Insights/Articles";
+                          return;
+                        }
+                        if (window.location.pathname === "/insights" && detail) {
+                          e.preventDefault();
+                          window.dispatchEvent(new CustomEvent("insights-nav", { detail }));
+                          return;
+                        } else if (detail) {
+                          e.preventDefault();
+                          // Store the target section in sessionStorage
+                          sessionStorage.setItem('insights-scroll-target', detail);
+                          window.location.href = "/insights";
+                        }
+                      } else {
+                        // fallback: normal navigation for other menus
+                        window.location.href = submenu.path;
+                      }
+                    }}
+                  >
                     <div className="bg-white/5 w-fit p-2 rounded-md group-hover/menubox:bg-sky-400 group-hover/menubox:text-white duration-300">
                       {submenu.icon && <submenu.icon />}
                     </div>
@@ -107,7 +138,7 @@ export default function DesktopMenu({ menu }) {
                       <h6 className=" font-semibold text-md text-white group-hover/menubox:text-sky-400 transition-colors duration-300  ">{submenu.name}</h6>
                       <p className="text-sm menu-desc-nowrap text-gray-200 group-hover/menubox:text-gray-400 transition-colors duration-300">{submenu.desc}</p>
                     </div>
-                  </div>
+                  </a>
                 </div>
               ))}
             </div>
