@@ -1,6 +1,7 @@
 import {
   ShieldPlus, TrendingUp, MonitorPlay, Cpu, Megaphone, ShoppingCart
-  , HeartPulse, Archive, Layers, Eye, ArrowUpRight, Award, Info, Target
+  , HeartPulse, Archive, Layers, Eye, ArrowUpRight, Award, Info, Target, Users, MessageCircle, NotebookPen, Newspaper,
+  icons,
 } from "lucide-react";
 export const Menus = [
   // -----What we Do
@@ -136,6 +137,28 @@ export const Menus = [
   {
     name: "Insights",
     path: "/insights",
+    subMenu: [
+      {
+        name: "Our Clients",
+        icon: Users,
+        path: "/insights/clientslogo", // Unique path for smooth scroll logic
+      },
+      {
+        name: "Testimonials",
+        icon: MessageCircle,
+        path: "/insights/testimonials",
+      },
+      {
+        name: "Blogs",
+        icon: NotebookPen,
+        path: "/insights/blogs",
+      },
+      {
+        name: "News",
+        icon: Newspaper,
+        path: "/insights/news",
+      },
+    ],
 
   },
 
