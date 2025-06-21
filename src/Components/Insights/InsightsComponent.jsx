@@ -46,7 +46,7 @@ const InsightsComponent = () => {
         <Testimonial/>
       </div>
       <SmartReads/>
-      <div id="news-section" style={{ scrollMarginTop: '100px' }}>
+      <div id="news-section" style={{ scrollMarginTop: '100px', marginTop: '-52px' }}>
         <News/>
       </div>
       
