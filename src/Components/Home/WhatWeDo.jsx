@@ -1,6 +1,7 @@
 import React from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
+import './click.css';
 
 // what we do
 import first from '../../assets/Home/1 What We Do/1_Bussiness_Consultancy.png'
@@ -82,63 +83,65 @@ const CountingNumber = ({ end, duration = 2 }) => {
 
 const WhatWeDo = () => {
     return (
-        <main className='bg-white w-full mt-10 px-4 sm:px-6 lg:px-20 overflow-x-hidden'>
+        <main className='bg-white w-full mt-10 px-4 sm:px-6 lg:px-10 overflow-x-hidden flex flex-col items-center'>
             {/* head */}
-            <div className='flex flex-col gap-1.5 text-center'>
+            <div className='flex flex-col gap-1.5 text-center items-center'>
                 <h1 className='text-[32px] md:text-[40px] font-semibold text-[#19BDE8]'>What We Do</h1>
                 <p className='text-xl md:text-2xl'>“We support entrepreneurs to prohibit their prohibition”</p>
             </div>
 
-            <div className='mt-10 flex flex-col gap-14'>
+            <div className='mt-10 flex flex-col gap-14 items-center w-full'>
                 {[
                     {
                         img: first,
-                        title: '01. Business Consulting',
-                        desc: 'We develop comprehensive business strategies that align with your vision and objectives. Our approach includes market research, competitive analysis, and strategic planning to ensure long-term success.',
+                        title: '01. Business Strategy & Consultation',
+                        desc: 'Feeling stuck or unsure about your next big move? We support in identifying your unique challenges and delivering solutions that align with your vision and objectives. Our approach includes deep market research, competitive analysis, strategic planning, and positioning to set you up for long-term success. Ready to turn your confusion into a clear roadmap for growth?',
                         path: "/service/Business"
+                    },
+                     {
+                        img: fourth,
+                        title: '02. Requirements as a Services',
+                        desc: 'Right People, at the right time, for the right impact. Behind every great business is a team that gets it done - but finding, nurturing, and retaining that team? That’s where most companies fall behind. We don’t just help you hire - we help you build a workforce that’s aligned, skilled, and built to grow with you. Ready to stop hiring guesswork?',
+                        path: "/service/RAAS",
+                        reverse: true,
                     },
                     {
                         img: second,
-                        title: '02. Sales',
-                        desc: 'Access valuable mentorship and investment opportunities. Connect with industry experts and investors who can provide the guidance and resources you need to succeed.',
+                        title: '03. Sales as a Service',
+                        desc: 'Sales isn’t just about pitching. It’s about understanding psychology, building trust, and solving problems. Marketing brings people to the door. Sales gets them to walk in, stay, and invest. In 2025, with rising competition, saturated attention, and digital noise - what businesses need isn’t more noise; they need smarter systems and human-centric strategies.',
                         path: "/service/Sales",
                         reverse: true
                     },
                     {
                         img: third,
-                        title: '03. Technology Solutions',
-                        desc: 'We specialize in website and app development, providing custom solutions that drive engagement and streamline user experiences. Our technology services ensure your digital platforms are cutting-edge and effective.',
+                        title: '04. Technology Solutions',
+                        desc: 'A good website is not about being online - it’s about being remembered. We specialize in website and app development, providing custom solutions that drive engagement and streamline user experiences. Our technology services ensure your digital platforms are cutting-edge and effective. Is your tech just online - or actually working for you?',
                         path: "/service/TechSolution",
                     },
-                    {
-                        img: fourth,
-                        title: '04. Requirements as a Services',
-                        desc: 'Our RAAS services focus on talent acquisition and management. We help you find and retain the right talent, ensuring your team has the skills and expertise to drive success.',
-                        path: "/service/RAAS",
-                        reverse: true,
-                    },
+                   
                     {
                         img: fifth,
-                        title: '05. Marketing Solutions',
-                        desc: 'Our digital marketing services include SEO, PPC, social media marketing, and more. We tailor strategies to enhance your online visibility, attract targeted traffic, and convert leads into loyal customers.',
+                        title: '05. Digital Marketing Solutions',
+                        desc: '“Visibility is no longer a luxury - it’s the lifeline of your brand. We help you cut through the digital noise with strategies that connect, converts, and create real growth. From SEO, ads to social media and storytelling - we make your brand matter. It’s not about more followers; it’s about more impact, more leads, and more trust. Is your marketing just being seen, or actually selling?”',
                         path: "/service/DigitalMarketing",
                     },
                     {
                         img: sixth,
                         title: '06. Multimedia Solutions',
-                        desc: 'We offer dynamic content creation services to engage your audience. From captivating videos to compelling graphic design, our multimedia solutions help you communicate your brand’s story effectively.',
+                        desc: 'Design That Moves. Stories That Stick. In a world flooded with content, what you say isn’t enough - it’s how you show it. We offer dynamic content creation services to engage your audience. From captivating videos to compelling graphic design, our multimedia solutions help you communicate your brand’s story effectively. Want to turn heads and hearts?',
                         path: "/service/multimedia",
                         reverse: true,
                     }
                 ].map((item, index) => {
                     // For image: left-side (not reverse) comes from left, right-side (reverse) comes from right
                     // For text: left-side (not reverse) comes from left, right-side (reverse) comes from right
-                    const imageDirection = item.reverse ? 'right' : 'left';
-                    const textDirection = item.reverse ? 'left' : 'right';
+                    const isZigzag = index % 2 === 1;
+                    const imageDirection = isZigzag ? 'right' : 'left';
+                    const textDirection = isZigzag ? 'left' : 'right';
                     return (
                         <div
                             key={index}
-                            className={`flex ${item.reverse ? 'flex-col-reverse lg:flex-row-reverse' : 'flex-col-reverse lg:flex-row'} items-center gap-6 lg:gap-12`}
+                            className={`flex ${isZigzag ? 'flex-col-reverse lg:flex-row-reverse' : 'flex-col-reverse lg:flex-row'} items-center gap-6 lg:gap-12`}
                         >
                             <FadeInSection direction={imageDirection}>
                                 <img className='w-full md:w-[570px] h-[250px] md:h-[322.27px] rounded-3xl' src={item.img} alt="" />
@@ -150,6 +153,18 @@ const WhatWeDo = () => {
                                             <span className='text-[#19BDE8]'>{item.title.slice(0, 4)}{item.title.slice(4)}</span>
                                         </h1>
                                         <p className='font-normal text-base md:text-2xl text-justify'>{item.desc}</p>
+                                        {/* Add Explore more button for all sections */}
+                                        {['01. Business Strategy & Consultation',
+                                          '02. Requirements as a Services',
+                                          '03. Sales as a Service',
+                                          '04. Technology Solutions',
+                                          '05. Digital Marketing Solutions',
+                                          '06. Multimedia Solutions'].includes(item.title) && (
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                              <button className="ui-btn"><span>Explore more</span></button>
+                                              <button className="bounce-btn right"><span>→</span></button>
+                                            </div>
+                                        )}
                                     </div>
                                 </Link>
                             </FadeInSection>
