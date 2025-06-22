@@ -1,0 +1,190 @@
+.ui-btn {
+  --btn-default-bg: #010314;
+  --btn-padding: 15px 20px;
+  --btn-hover-bg: rgb(51, 51, 51);
+  --btn-transition: .3s;
+  --btn-letter-spacing: .1rem;
+  --btn-animation-duration: 1.2s;
+  --btn-shadow-color: rgba(0, 0, 0, 0.137);
+  --btn-shadow: 0 2px 10px 0 var(--btn-shadow-color);
+  --hover-btn-color: #19BDE8;
+  --default-btn-color: #fff;
+  --font-size: 16px;
+  /* 👆 this field should not be empty */
+  --font-weight: 600;
+  --font-family: Menlo,Roboto Mono,monospace;
+}
+
+/* button settings 👆 */
+
+.ui-btn {
+  box-sizing: border-box;
+  padding: var(--btn-padding);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--default-btn-color);
+  font: var(--font-weight) var(--font-size) var(--font-family);
+  background: var(--btn-default-bg);
+  cursor: pointer;
+  transition: var(--btn-transition);
+  overflow: hidden;
+  box-shadow: var(--btn-shadow);
+  border-radius: 10px;
+  border: 2px solid #2A2B3A;
+  width: max-content;
+  min-width: 120px;
+}
+
+.ui-btn span {
+  letter-spacing: var(--btn-letter-spacing);
+  transition: var(--btn-transition);
+  box-sizing: border-box;
+  position: relative;
+  background: inherit;
+}
+
+.ui-btn span::before {
+  box-sizing: border-box;
+  position: absolute;
+  content: "";
+  background: inherit;
+}
+
+.ui-btn:hover, .ui-btn:focus {
+  background: var(--btn-default-bg);
+  box-shadow: 0px 0px 10px 0px rgba(10, 165, 204, 0.7);
+  border: 2px solid #19BDE8;
+}
+
+.ui-btn:hover span, .ui-btn:focus span {
+  color: var(--hover-btn-color);
+}
+
+.ui-btn:hover span::before, .ui-btn:focus span::before {
+  animation: chitchat linear both var(--btn-animation-duration);
+}
+
+@keyframes chitchat {
+  0% {
+    content: "E";
+  }
+
+  5% {
+    content: "X";
+  }
+
+  10% {
+    content: "P";
+  }
+
+  15% {
+    content: "L";
+  }
+
+  20% {
+    content: "O";
+  }
+
+  25% {
+    content: "R";
+  }
+
+  30% {
+    content: "E";
+  }
+
+  35% {
+    content: "";
+  }
+
+  40% {
+    content: "M";
+  }
+
+  45% {
+    content: "O";
+  }
+
+  50% {
+    content: "R";
+  }
+
+  55% {
+    content: "E";
+  }
+
+  60% {
+    content: "X";
+    right: 0;
+  }
+
+  65% {
+    content: "P";
+    right: 0;
+  }
+
+  70% {
+    content: "L";
+    right: 0;
+  }
+
+  75% {
+    content: "'O";
+    right: 0;
+  }
+
+  80% {
+    content: "R";
+    right: 0;
+  }
+
+  85% {
+    content: "E";
+    right: 0;
+  }
+
+  90% {
+    content: "M";
+    right: 0;
+  }
+
+  95% {
+    content: "O";
+    right: 0;
+  }
+
+  100% {
+    content: "e";
+    right: 0;
+  }
+}
+
+/* From Uiverse.io by ozgeozkaraa01 */ 
+.bounce-btn {
+  font-size: 20px;
+  background-color: white;
+  color: #19BDE8;
+  width: 45px;
+  height: 45px;
+  opacity: 0.75;
+  cursor: pointer;
+  animation: bounce_horizontal 1s infinite;
+}
+
+.bounce-btn.right span {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+@keyframes bounce_horizontal {
+  0%,
+  100% {
+    transform: translateX(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateX(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
