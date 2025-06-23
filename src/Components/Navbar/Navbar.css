@@ -35,7 +35,19 @@
 }
 .sub-menu {
   min-width: 810px;
+  min-height: 420px; /* Increased height for What We Do card */
 }
+.sub-menu .grid-cols-3 > :last-child {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Optionally, increase the max height for scrollable columns */
+.max-h-100 {
+  max-height: 380px;
+}
+
 .menu-desc-nowrap {
   white-space: nowrap;
   overflow: hidden;
