@@ -8,7 +8,7 @@ export const Menus = [
   {
     name: "What We Do",
     path: "/",
-    subMenuHeading: ["Service", "Industries", "Product"],
+    subMenuHeading: ["Service", "Industries"],
     subMenu: [
       // Service
       {
@@ -24,7 +24,6 @@ export const Menus = [
         icon: TrendingUp,
         category: "Service",
         path: "/service/Sales",
-
       },
       {
         name: "MultiMedia Solution",
@@ -32,16 +31,13 @@ export const Menus = [
         icon: MonitorPlay,
         category: "Service",
         path: "/service/multimedia",
-
       },
-
       {
         name: "Technology solution",
         desc: "Sales",
         icon: Cpu,
         category: "Service",
         path: "/service/TechSolution",
-
       },
       {
         name: "Digital Marketing",
@@ -49,7 +45,6 @@ export const Menus = [
         icon: Megaphone,
         category: "Service",
         path: "/service/DigitalMarketing",
-
       },
       {
         name: "Bussiness",
@@ -57,25 +52,15 @@ export const Menus = [
         icon: Layers,
         category: "Service",
         path: "/service/Business",
-
       },
 
-
-      {
-        name: "Opptiverse",
-        desc: "Sales",
-        icon: Archive,
-        category: "Product",
-        path: "/service",
-
-      },
+      // Industry items
       {
         name: "E-commerce",
         desc: "Sales",
         icon: ShoppingCart,
         category: "Industries",
         path: "/service",
-
       },
       {
         name: "Healthcare",
@@ -83,7 +68,46 @@ export const Menus = [
         icon: HeartPulse,
         category: "Industries",
         path: "/service",
-
+      },
+      {
+        name: "Startups & Entrepreneurs",
+        category: "Industries",
+      },
+      {
+        name: "Software Industry",
+        category: "Industries",
+      },
+      {
+        name: "Health Care",
+        category: "Industries",
+      },
+      {
+        name: "FinTech",
+        category: "Industries",
+      },
+      {
+        name: "Fashion",
+        category: "Industries",
+      },
+      {
+        name: "Real estate",
+        category: "Industries",
+      },
+      {
+        name: "Food Industry",
+        category: "Industries",
+      },
+      {
+        name: "Manfacturing",
+        category: "Industries",
+      },
+      {
+        name: "Sustainablity",
+        category: "Industries",
+      },
+      {
+        name: "Media",
+        category: "Industries",
       },
     ],
 
@@ -165,16 +189,9 @@ export const Menus = [
   {
     name: "Career",
     path: "/careers",
-
-  },
-  {
-    name: "Product",
-    path: "/product",
-
   },
   {
     name: "Contact",
     path: "/contact",
-
   },
 ];
