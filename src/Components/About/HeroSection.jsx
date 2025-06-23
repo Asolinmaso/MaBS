@@ -5,18 +5,26 @@ import CustomBtn from '../Button/CustomBtn';
 const HeroSection = () => {
   return (
     <>
-      <header className="relative w-full min-h-screen flex justify-center items-center">
+      <header className="relative w-full min-h-screen flex justify-center items-center overflow-hidden">
         {/* Background Video */}
-        <video className="absolute w-full h-full object-cover z-0" src={HeroVideo} autoPlay loop muted playsInline />
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          src={HeroVideo}
+          autoPlay
+          loop
+          muted
+          playsInline
+          style={{ top: '30px'}}
+        />
         {/* Overlay */}
-        <div className="absolute top-0 left-0 w-full h-full bg-black/70 z-10"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-black/30 z-10"></div>
 
         {/* Content */}
-        <div className="relative z-20 flex flex-col items-center text-center text-white px-4 sm:px-6 md:px-10 lg:px-16 w-full max-w-[1200px] gap-6">
+        <div className="relative z-20 flex flex-col items-center text-center text-white px-4 sm:px-6 md:px-10 lg:px-16 w-full max-w-[1200px] gap-6 pt-24">
           <h1 className="text-[#19BDE8] font-semibold text-3xl lg:text-6xl leading-tight mt-10">
             About Us
           </h1>
-          <p className= "mt-6 font-normal text-base lg:text-2xl leading-relaxed max-w-4xl">
+          <p className="mt-6 font-normal text-base lg:text-2xl leading-relaxed max-w-4xl">
             At Manvian, we empower entrepreneurs to unlock their potential and transform lives through business.
             Entrepreneurship is challenging, but with the right guidance, it becomes a path to success. Manvian
             provides a comprehensive ecosystem of support, education, and strategies tailored to your needs, whether
