@@ -26,3 +26,12 @@
   line-height: 1em;
   opacity: 0;
 }
+
+@media (max-width: 600px) {
+  .ml11 {
+    font-size: 0.9rem !important;
+  }
+  .ml11 .letters {
+    font-size: 0.9rem !important;
+  }
+}
