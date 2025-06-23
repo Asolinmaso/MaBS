@@ -5,10 +5,11 @@ import { Link } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 import { matchPath, useLocation } from "react-router-dom";
 
-export default function DesktopMenu({ menu }) {
+export default function DesktopMenu({ menu, isOpen, onOpen, onClose }) {
   const location = useLocation();
   const isActive = location.pathname === menu.path;
   const [isClicked, setClicked] = useState(false);
+  const hasSubMenu = menu?.subMenu?.length;
   const subMenuAnimate = {
     enter: {
       opacity: 1,
@@ -29,7 +30,6 @@ export default function DesktopMenu({ menu }) {
       },
     },
   };
-  const hasSubMenu = menu?.subMenu?.length;
   return (
     <li
       className="group/link relative"
@@ -37,7 +37,14 @@ export default function DesktopMenu({ menu }) {
     >
       <span
         className="flex-center-between p-4 hover:bg-white/5 rounded-md cursor-pointer relative"
-        onClick={() => setClicked(!isClicked)}
+        onClick={() => {
+          setClicked(!isClicked);
+          if (isOpen) {
+            onClose && onClose();
+          } else {
+            onOpen && onOpen();
+          }
+        }}
       >
         <Link
           to={menu.path}
@@ -47,7 +54,7 @@ export default function DesktopMenu({ menu }) {
           {menu.name}
         </Link>
         {hasSubMenu && (
-          <ChevronDown className={`mt-[0.6px] duration-200 ${isClicked ? "rotate-180" : ""}`} />
+          <ChevronDown className={`mt-[0.6px] duration-200 ${(isClicked && isOpen) ? "rotate-180" : ""}`} />
         )}
       </span>
       {hasSubMenu && (
@@ -55,7 +62,7 @@ export default function DesktopMenu({ menu }) {
           className="sub-menu bg-black/70 absolute left-1/2 -translate-x-1/2  z-50  min-w-[300px] rounded-xl shadow-lg "
           style={{ left: "100%", transform: "translateX(-50%)" }}
           initial="exit"
-          animate={isClicked ? "enter" : "exit"}
+          animate={(isClicked && isOpen) ? "enter" : "exit"}
           variants={subMenuAnimate}
           transformOrigin="top center"
         >
