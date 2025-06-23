@@ -38,10 +38,11 @@ export default function DesktopMenu({ menu, isOpen, onOpen, onClose }) {
       <span
         className="flex-center-between p-4 hover:bg-white/5 rounded-md cursor-pointer relative"
         onClick={() => {
-          setClicked(!isClicked);
           if (isOpen) {
+            setClicked(false);
             onClose && onClose();
           } else {
+            setClicked(true);
             onOpen && onOpen();
           }
         }}
