@@ -5,7 +5,11 @@ import Mabs from "../../assets/Logo/MABS.png";
 import Manvian from '../../assets/Logo/ManvianLogo.png'
 import { Link } from "react-router-dom";
 import './Navbar.css'
+import { useState } from "react";
+
 export default function Custom_Navbar() {
+  const [openMenuIndex, setOpenMenuIndex] = useState(null);
+
   return (
     <header className="fixed top-0 left-0 w-full h-20 lg:h-25 text-[15px]  bg-black text-white z-50 shadow ">
       <nav className="px-4 flex items-center justify-between w-full max-w-7xl  mx-auto h-full ">
@@ -16,9 +20,14 @@ export default function Custom_Navbar() {
         </div>
 
         <ul className="gap-x-4 hidden lg:flex items-center">
-          {Menus.map((menu) => (
-            <DesktopMenu menu={menu} key={menu.name}  />
-            
+          {Menus.map((menu, idx) => (
+            <DesktopMenu
+              menu={menu}
+              key={menu.name}
+              isOpen={openMenuIndex === idx}
+              onOpen={() => setOpenMenuIndex(idx)}
+              onClose={() => setOpenMenuIndex(null)}
+            />
           ))}
         </ul>
 
