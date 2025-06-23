@@ -191,6 +191,11 @@ export const Menus = [
     path: "/careers",
   },
   {
+    name: "Product",
+    path: "/product",
+
+  },
+  {
     name: "Contact",
     path: "/contact",
   },
