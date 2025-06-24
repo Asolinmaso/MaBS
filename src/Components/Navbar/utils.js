@@ -1,6 +1,6 @@
 import {
   ShieldPlus, TrendingUp, MonitorPlay, Cpu, Megaphone, ShoppingCart
-  , HeartPulse, Archive, Layers, Eye, ArrowUpRight, Award, Info, Target, Users, MessageCircle, NotebookPen, Newspaper,
+  , HeartPulse, Archive, Layers, Eye, ArrowUpRight, Award, Info, Target, Users, MessageCircle, NotebookPen, Newspaper,Rocket,Laptop,DollarSign,Shirt,Home,Table2,Factory,Leaf,Mic2,
   icons,
 } from "lucide-react";
 export const Menus = [
@@ -13,42 +13,38 @@ export const Menus = [
       // Service
       {
         name: "RAAS",
-        desc: "Requirement as a Service",
+        
         icon: ShieldPlus,
         category: "Service",
         path: "/service/RAAS",
       },
       {
         name: "Sales",
-        desc: "Sales",
+        
         icon: TrendingUp,
         category: "Service",
         path: "/service/Sales",
       },
       {
         name: "MultiMedia Solution",
-        desc: "Site control",
         icon: MonitorPlay,
         category: "Service",
         path: "/service/multimedia",
       },
       {
         name: "Technology solution",
-        desc: "Sales",
         icon: Cpu,
         category: "Service",
         path: "/service/TechSolution",
       },
       {
         name: "Digital Marketing",
-        desc: "Link pages",
         icon: Megaphone,
         category: "Service",
         path: "/service/DigitalMarketing",
       },
       {
         name: "Bussiness",
-        desc: "Site control",
         icon: Layers,
         category: "Service",
         path: "/service/Business",
@@ -57,56 +53,59 @@ export const Menus = [
       // Industry items
       {
         name: "E-commerce",
-        desc: "Sales",
         icon: ShoppingCart,
         category: "Industries",
         path: "/service",
       },
       {
         name: "Healthcare",
-        desc: "Sales",
         icon: HeartPulse,
         category: "Industries",
         path: "/service",
       },
       {
         name: "Startups & Entrepreneurs",
+        icon: Rocket,
         category: "Industries",
       },
       {
         name: "Software Industry",
-        category: "Industries",
-      },
-      {
-        name: "Health Care",
+        icon: Laptop,
         category: "Industries",
       },
       {
         name: "FinTech",
+        icon: DollarSign,
         category: "Industries",
       },
       {
         name: "Fashion",
+        icon: Shirt,
         category: "Industries",
       },
       {
         name: "Real estate",
+        icon: Home,
         category: "Industries",
       },
       {
         name: "Food Industry",
+        icon: Table2,
         category: "Industries",
       },
       {
         name: "Manfacturing",
+        icon: Factory,
         category: "Industries",
       },
       {
         name: "Sustainablity",
+        icon: Leaf,
         category: "Industries",
       },
       {
         name: "Media",
+        icon: Mic2,
         category: "Industries",
       },
     ],
@@ -189,11 +188,6 @@ export const Menus = [
   {
     name: "Career",
     path: "/careers",
-  },
-  {
-    name: "Product",
-    path: "/product",
-
   },
   {
     name: "Contact",
