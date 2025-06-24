@@ -35,7 +35,7 @@
 }
 .sub-menu {
   min-width: 810px;
-  min-height: 420px; /* Increased height for What We Do card */
+  min-height: 430px; /* Increased height for What We Do card */
 }
 .sub-menu .grid-cols-3 > :last-child {
   align-items: flex-end;
