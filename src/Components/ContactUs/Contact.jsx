@@ -6,7 +6,7 @@ import { FiMail } from 'react-icons/fi';
 import CustomBtn from '../Button/CustomBtn';
 import ContactFooter from './ContactFooter';
 // Logo
-import Linked from '../../assets/Logo/Linkedin.svg'
+import Linked from '../../assets/Logo/linkedin.svg'
 import Insta from '../../assets/Logo/insta.svg'
 import Whatsapp from '../../assets/Logo/whatsapp.svg'
 import fb from '../../assets/Logo/facebook.svg'
