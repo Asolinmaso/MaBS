@@ -184,6 +184,11 @@ export const Menus = [
     ],
 
   },
+   {
+    name: "Product",
+    path: "/product",
+
+  },
 
   {
     name: "Career",
