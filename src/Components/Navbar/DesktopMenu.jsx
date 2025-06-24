@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -10,6 +10,23 @@ export default function DesktopMenu({ menu, isOpen, onOpen, onClose }) {
   const isActive = location.pathname === menu.path;
   const [isClicked, setClicked] = useState(false);
   const hasSubMenu = menu?.subMenu?.length;
+  const menuRef = useRef(null);
+
+  // Close menu when clicking outside
+  useEffect(() => {
+    if (!(isClicked && isOpen)) return;
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setClicked(false);
+        onClose && onClose();
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isClicked, isOpen, onClose]);
+
   const subMenuAnimate = {
     enter: {
       opacity: 1,
@@ -34,6 +51,7 @@ export default function DesktopMenu({ menu, isOpen, onOpen, onClose }) {
     <li
       className="group/link relative"
       key={menu.name}
+      ref={menuRef}
     >
       <span
         className="flex-center-between p-4 hover:bg-white/5 rounded-md cursor-pointer relative"
@@ -76,22 +94,36 @@ export default function DesktopMenu({ menu, isOpen, onOpen, onClose }) {
                 const filteredSubMenu = menu.subMenu.filter(
                   (item) => item.category === heading
                 );
-               const colStyle = heading === 'Industries'
+                // Define isIndustries inside the map callback
+                const isIndustries = heading === 'Industries';
+                const colStyle = isIndustries
                   ? { gridColumnStart: 3, transform: 'translateX(-50%)' }
                   : {};
                 return (
                   <div key={heading} className="max-h-100 pr-2" style={colStyle}>
                     <p className="text-lg font-semibold mb-4 text-sky-400 sticky top-0  z-10 py-1"
-                      style={heading === 'Industries' ? { textAlign: 'left', width: '100%' } : {}}>
+                      style={isIndustries ? { textAlign: 'left', width: '100%' } : {}}>
                       {heading}
                     </p>
-                    <div className="overflow-y-auto max-h-100 pr-1" style={heading === 'Industries' ? {textAlign: 'left'} : {}}>
+                    <div
+                      className={`pr-1 ${isIndustries ? 'overflow-y-auto max-h-90 custom-scrollbar' : 'overflow-y-auto max-h-100'}`}
+                      style={isIndustries ? { textAlign: 'left' } : {}}
+                      onClick={() => {
+                        setClicked(false);
+                        onClose && onClose();
+                      }}
+                    >
                       {filteredSubMenu.map((submenu, i) => (
                         <div
                           className="relative cursor-pointer mb-5"
                           key={i}
                         >
-                          <HashLink to={submenu.path} className="flex-center gap-x-4 group/menubox">
+                          <HashLink to={submenu.path} className="flex-center gap-x-4 group/menubox"
+                            onClick={() => {
+                              setClicked(false);
+                              onClose && onClose();
+                            }}
+                          >
                             <div className="flex-center gap-x-4 group/menubox">
                               <div className="bg-white/5 w-fit p-2 rounded-md group-hover/menubox:bg-sky-400 group-hover/menubox:text-white duration-300 text-white ">
                                 {submenu.icon && <submenu.icon />}
