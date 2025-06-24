@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { MdEmail, MdPhone } from 'react-icons/md';
 import opptiverse from '../../assets/Logo/opptiverse.svg';
-import Linked from '../../assets/Logo/Linkedin.svg';
+import Linked from '../../assets/Logo/linkedin.svg';
 import Insta from '../../assets/Logo/insta.svg';
 import Whatsapp from '../../assets/Logo/whatsapp.svg';
 import fb from '../../assets/Logo/facebook.svg';
