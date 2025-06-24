@@ -49,7 +49,7 @@ export default function DesktopMenu({ menu, isOpen, onOpen, onClose }) {
       >
         <Link
           to={menu.path}
-          className={`hover:text-sky-400  transition ${isActive ? "text-sky-400 underline font-semibold" : "text-white"
+          className={`hover:text-sky-400  transition ${isActive ? "text-sky-400 underline font-bold" : "text-white"
             }`}
         >
           {menu.name}
