@@ -164,17 +164,10 @@ const WhatWeDo = () => {
                                         </h1>
                                         <p className='font-normal text-base md:text-2xl text-justify'>{item.desc}</p>
                                         {/* Add Explore more button for all sections */}
-                                        {['01. Business Strategy & Consultation',
-                                          '02. Requirements as a Services',
-                                          '03. Sales as a Service',
-                                          '04. Technology Solutions',
-                                          '05. Digital Marketing Solutions',
-                                          '06. Multimedia Solutions',
-                                          '07. Sustainability-as-a-Service'
-                                        ].includes(item.title) && (
-                                            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-                                              <button className="ui-btn"><span>Explore more</span></button>
-                                            </div>
+                                        {index <= 6 && (
+                                          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+                                            <button className="ui-btn"><span>Explore more</span></button>
+                                          </div>
                                         )}
                                     </div>
                                 </Link>
