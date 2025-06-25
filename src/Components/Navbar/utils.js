@@ -19,7 +19,7 @@ export const Menus = [
         path: "/service/RAAS",
       },
       {
-        name: "SALES as a service",
+        name: "Sales as a Service",
         
         icon: TrendingUp,
         category: "Service",
@@ -38,7 +38,7 @@ export const Menus = [
         path: "/service/TechSolution",
       },
       {
-        name: "Digital Marketing Solutions",
+        name: "Digital Marketing Solution",
         icon: Megaphone,
         category: "Service",
         path: "/service/DigitalMarketing",
@@ -49,6 +49,13 @@ export const Menus = [
         category: "Service",
         path: "/service/Business",
       },
+      {
+        name: "Sustainability-as-a-Service",
+        icon: Layers,
+        category: "Service",
+        path: "/service/SaaS",
+      },
+
 
       // Industry items
       {
@@ -184,6 +191,7 @@ export const Menus = [
     ],
 
   },
+
   {
     name: "Career",
     path: "/careers",
