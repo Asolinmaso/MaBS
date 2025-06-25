@@ -13,6 +13,7 @@ import MultiMedia from './Components/Service/MultiMedia.jsx'
 import TechSolution from './Components/Service/TechSolution.jsx'
 import DigitalMarketing from './Components/Service/DigitalMarketing.jsx'
 import RAAS from './Components/Service/RAAS.jsx'
+import Saas from './Components/Service/SaaS.jsx'
 import Sales from './Components/Service/Sales.jsx'
 import Business from './Components/Service/Business.jsx'
 import MultiMedia_portfolio from './Components/Portfolio/MultiMedia_portfolio.jsx'
@@ -32,6 +33,7 @@ const Router = createBrowserRouter([
       { path: '/contact', element: <Contact /> },
       { path: "/service/RAAS", element: <RAAS /> },
       { path: "/service/Sales", element: <Sales /> },
+      { path: "/service/SaaS", element: <Saas /> },
       { path: "/service/multimedia", element: <MultiMedia /> },
       { path: "/service/TechSolution", element: <TechSolution /> },
       { path: "/service/DigitalMarketing", element: <DigitalMarketing /> },
