@@ -155,36 +155,58 @@
   }
 
   100% {
-    content: "e";
+    content: "more";
     right: 0;
   }
 }
 
 /* From Uiverse.io by ozgeozkaraa01 */ 
 .bounce-btn {
-  font-size: 20px;
+  font-size: 2.5rem;
   background-color: white;
   color: #19BDE8;
-  width: 45px;
-  height: 45px;
+  width: 70px;
+  height: 70px;
+  min-width: 0;
+  min-height: 0;
+  box-sizing: border-box;
   opacity: 0.75;
   cursor: pointer;
-  animation: bounce_horizontal 1s infinite;
+  animation: bounce_diagonal 0.5s infinite; /* Faster bounce */
+  border-radius: 50%; /* Make the button circular */
+  border: 3px solid #19BDE8; /* Thicker, more visible border */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px 0 rgba(25, 189, 232, 0.15);
+  transition: box-shadow 0.2s;
+  padding: 0;
+}
+
+.bounce-btn:active,
+.bounce-btn:focus {
+  box-shadow: 0 0 0 2px #19BDE8;
+}
+
+.bounce-btn.right {
+  margin-top: -20px;
 }
 
 .bounce-btn.right span {
   font-size: 2rem;
   line-height: 1;
+  display: inline-block;
+    transform: rotate(-40deg); /* Rotate icon to match bounce direction */
+
 }
 
-@keyframes bounce_horizontal {
-  0%,
-  100% {
-    transform: translateX(-25%);
+@keyframes bounce_diagonal {
+  0%, 100% {
+    transform: translate(-10px, 6px); /* -40° direction bounce */
     animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
   }
   50% {
-    transform: translateX(0);
+    transform: translate(0, 0);
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 }
