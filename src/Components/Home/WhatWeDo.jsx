@@ -10,7 +10,7 @@ import third from '../../assets/Home/1 What We Do/3_Tech_Solution.png'
 import fourth from '../../assets/Home/1 What We Do/4_Service.png'
 import fifth from '../../assets/Home/1 What We Do/5_Marketing.png'
 import sixth from '../../assets/Home/1 What We Do/6_Multi_Media_Solution.png'
-
+import seven from '../../assets/Home/1 What We Do/7_Sustainability.jpg'
 import { Link } from 'react-router-dom'
 import CountAnimation from './CountAnimation'
 
@@ -131,7 +131,14 @@ const WhatWeDo = () => {
                         desc: 'Design That Moves. Stories That Stick. In a world flooded with content, what you say isn’t enough - it’s how you show it. We offer dynamic content creation services to engage your audience. From captivating videos to compelling graphic design, our multimedia solutions help you communicate your brand’s story effectively. Want to turn heads and hearts?',
                         path: "/service/multimedia",
                         reverse: true,
-                    }
+                    } ,
+                    {
+                        img: seven,
+                        title: '07.Sustainability-as-a-Service',
+                        desc: 'The future isn’t just digital — it’s sustainable. And your business should be both. Our Sustainability-as-a-Service model embeds eco-friendly practices, impact partnerships, and circular-economy design directly into your operations - so you lead the market and preserve the planet. What if sustainability wasn’t a cost—but a competitive advantage?',
+                        path: "/service/SaaS",
+                        reverse: true,
+                    },
                 ].map((item, index) => {
                     // For image: left-side (not reverse) comes from left, right-side (reverse) comes from right
                     // For text: left-side (not reverse) comes from left, right-side (reverse) comes from right
@@ -149,8 +156,11 @@ const WhatWeDo = () => {
                             <FadeInSection direction={textDirection}>
                                 <Link to={item.path}>
                                     <div className='w-full lg:w-[570px] flex flex-col gap-4'>
-                                        <h1 className='font-semibold text-xl md:text-3xl text-[#1E1E1E]'>
-                                            <span className='text-[#19BDE8]'>{item.title.slice(0, 4)}{item.title.slice(4)}</span>
+                                        <h1 className='font-semibold text-xl md:text-3xl text-[#1E1E1E] flex items-center'>
+                                            <span className='text-[#19BDE8]'>
+                                              {item.title.slice(0, 4)}{item.title.slice(4)}
+                                            </span>
+                                            <button className="bounce-btn right ml-4 align-middle text-bold"><span>→</span></button>
                                         </h1>
                                         <p className='font-normal text-base md:text-2xl text-justify'>{item.desc}</p>
                                         {/* Add Explore more button for all sections */}
@@ -159,10 +169,11 @@ const WhatWeDo = () => {
                                           '03. Sales as a Service',
                                           '04. Technology Solutions',
                                           '05. Digital Marketing Solutions',
-                                          '06. Multimedia Solutions'].includes(item.title) && (
+                                          '06. Multimedia Solutions',
+                                          '07. Sustainability-as-a-Service'
+                                        ].includes(item.title) && (
                                             <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
                                               <button className="ui-btn"><span>Explore more</span></button>
-                                              <button className="bounce-btn right"><span>→</span></button>
                                             </div>
                                         )}
                                     </div>
