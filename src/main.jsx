@@ -15,12 +15,9 @@ import DigitalMarketing from './Components/Service/DigitalMarketing.jsx'
 import RAAS from './Components/Service/RAAS.jsx'
 import Sales from './Components/Service/Sales.jsx'
 import Business from './Components/Service/Business.jsx'
-import Saas from './Components/Service/SaaS.jsx'
 import MultiMedia_portfolio from './Components/Portfolio/MultiMedia_portfolio.jsx'
-import DigitalMarketing_portfolio from './Components/Portfolio/Digital_Marketing_portfolio.jsx'
 import Technology_Portfolio from './Components/Portfolio/Techhnology_portfolio.jsx'
 import Articles from './Components/Blogs/Articles.jsx'
-import Blogs from './Components/Blogs/Blogs.jsx'
 
 const Router = createBrowserRouter([
   {
@@ -36,15 +33,12 @@ const Router = createBrowserRouter([
       { path: "/service/RAAS", element: <RAAS /> },
       { path: "/service/Sales", element: <Sales /> },
       { path: "/service/multimedia", element: <MultiMedia /> },
-      { path: "/service/SaaS", element: <Saas /> },
       { path: "/service/TechSolution", element: <TechSolution /> },
       { path: "/service/DigitalMarketing", element: <DigitalMarketing /> },
       { path: "/service/Business", element: <Business /> },
       { path: "/portfolio/Multimedia", element: <MultiMedia_portfolio /> },
       { path: "/portfolio/Technology", element: <Technology_Portfolio /> },
-      { path: "/portfolio/DigitalMarketing", element: <DigitalMarketing_portfolio /> },
-      { path: "/Insights/Articles", element: <Articles /> },
-      { path: "/Insights/Blogs/:id", element: <Blogs /> }
+      { path: "/Insights/Articles", element: <Articles /> }
     ]
   }
 ])
