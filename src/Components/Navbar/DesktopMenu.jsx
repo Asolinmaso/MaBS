@@ -96,9 +96,9 @@ export default function DesktopMenu({ menu, isOpen, onOpen, onClose }) {
                 );
                 // Define isIndustries and isService inside the map callback
                 const isIndustries = heading === 'Industries';
-                const isService = heading === 'Service';
+               
                 const colStyle = isIndustries
-                  ? { gridColumnStart: 3, transform: 'translateX(-50%)' }
+                  ? { gridColumnStart: 3, transform: 'translateX(-40%)' }
                   : {};
                 return (
                   <div key={heading} className="max-h-100 pr-2" style={colStyle}>
@@ -107,7 +107,7 @@ export default function DesktopMenu({ menu, isOpen, onOpen, onClose }) {
                       {heading}
                     </p>
                     <div
-                      className={`pr-1 ${isIndustries || isService ? 'overflow-y-auto max-h-90 custom-scrollbar' : 'overflow-y-auto max-h-100'}`}
+                      className={`pr-1 ${isIndustries ? 'overflow-y-auto max-h-98 custom-scrollbar' : 'overflow-y-auto max-h-100'}`}
                       style={isIndustries ? { textAlign: 'left' } : {}}
                       onClick={() => {
                         setClicked(false);
