@@ -1,5 +1,6 @@
 import React from 'react';
 import './WorkWith.css';
+import './click.css';
 
 import brand1 from '../../assets/Home/2 Work With/1.png';
 import brand2 from '../../assets/Home/2 Work With/2.png';
@@ -39,7 +40,9 @@ const WorkWith = () => {
       </section>
       <section className='w-full flex justify-center'>
         <Link to='/insights'>
-        <button className='mb-10 mt-7 bg-cyan-400 text-white px-4 py-2 rounded hover:bg-cyan-500 cursor-pointer '>Explore more</button>
+         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '20px' ,marginBottom: '20px'}}>
+            <button className="ui-btn"><span>Explore More</span></button>
+         </div>
         </Link>
       </section>
 
