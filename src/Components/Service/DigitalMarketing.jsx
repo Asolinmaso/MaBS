@@ -196,9 +196,11 @@ const handleMouseLeave = (index) => {
                                             </p>
                                         </div>
                                     </div>
+                                    {/*
                                     <button className="w-12 h-12 min-w-[3rem] min-h-[3rem] aspect-square bg-black text-white text-3xl cursor-pointer font-normal rounded-full flex items-center justify-center hover:bg-sky-600 transition">
                                         ↗
                                     </button>
+                                     */ }
 
                                 </div>
                             ))}
@@ -222,7 +224,7 @@ const handleMouseLeave = (index) => {
                 ))}
             </div>
             <div className='w-full flex flex-col items-center justify-center mt-3'>
-
+                {/*
                 <a href="#" className=''>
                     <Link to="/portfolio/Multimedia"><button className='flex items-center gap-3 font-semibold text-lg md:text-2xl text-white bg-[#19BDE8] py-3 px-3.5 rounded-xl cursor-pointer'>
                         Explore Our Portfolio
@@ -231,6 +233,7 @@ const handleMouseLeave = (index) => {
                         </svg>
                     </button></Link>
                 </a>
+                */}
             </div>
             {/* Explore */}
             <div className='w-full min-h-[300px] bg-gradient-to-t from-[#19BDE880]/50 to-white flex flex-col md:flex-row justify-around items-center px-8 py-12 lg:px-16 mb-20'>
@@ -256,6 +259,9 @@ const handleMouseLeave = (index) => {
                     <button className='text-white bg-black rounded-lg py-2 px-4 hover:bg-gray-800 transition-colors text-sm cursor-pointer underline'>
                         <Link to="/service/RAAS"> RaaS Solutions</Link>
                     </button>
+                     <button className='text-white bg-black rounded-lg py-2 px-4 hover:bg-gray-800 transition-colors text-sm cursor-pointer underline'>
+                                                                <Link to="/service/SaaS">Sustainability-as-a-Service</Link>
+                                                            </button>
                     <button className='text-white bg-black rounded-lg py-2 px-4 hover:bg-gray-800 transition-colors text-sm cursor-pointer underline'>
                         <Link to="/portfolio/Multimedia"> Multimedia</Link>
                     </button>
