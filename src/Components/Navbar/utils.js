@@ -1,3 +1,4 @@
+import { desc } from "framer-motion/client";
 import {
   ShieldPlus, TrendingUp, MonitorPlay, Cpu, Megaphone, ShoppingCart
   , HeartPulse, Archive, Layers, Eye, ArrowUpRight, Award, Info, Target, Users, MessageCircle, NotebookPen, Newspaper,Rocket,Laptop,DollarSign,Shirt,Home,Table2,Factory,Leaf,Mic2,
@@ -171,21 +172,25 @@ export const Menus = [
       {
         name: "Our Clients",
         icon: Users,
+        desc: "Proud partners to visionary brands - join the list and let's create something great together!",
         path: "/insights/clientslogo", // Unique path for smooth scroll logic
       },
       {
         name: "Testimonials",
-        icon: MessageCircle,
+        icon: MessageCircle, 
+        desc: "Hear directly from those who’ve experienced the impact of our work.",
         path: "/insights/testimonials",
       },
       {
         name: "Blogs",
         icon: NotebookPen,
+        desc: "Insights, ideas, and innovations - explore our latest thoughts and stories.",
         path: "/insights/blogs",
       },
       {
         name: "News",
         icon: Newspaper,
+        desc: "Stay updated with our latest milestones, media features, and big announcements.",
         path: "/insights/news",
       },
     ],
