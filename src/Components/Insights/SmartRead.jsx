@@ -86,10 +86,10 @@ export default function SmartReads() {
 
       <div className="flex justify-center mt-10">
               <Link to="/Insights/Articles">
-                <button className='flex items-center gap-3 font-semibold text-lg md:text-2xl text-white bg-[#19BDE8] py-3 px-7 rounded-xl cursor-pointer'>
-
-          Explore More 
-        </button></Link>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '20px' }}>
+            <button className="ui-btn"><span>Explore More</span></button>
+         </div>
+         </Link>
       </div>
     </div>
   );
