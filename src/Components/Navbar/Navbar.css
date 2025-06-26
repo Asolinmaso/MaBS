@@ -35,9 +35,9 @@
 }
 .sub-menu {
   min-width: 810px;
-  min-height: 430px; /* Increased height for What We Do card */
+  min-height: 480px; /* Increased height for What We Do card */
 }
-.sub-menu .grid-cols-3 > :last-child {
+.sub-menu .grid-cols-2 > :last-child {
   align-items: flex-end;
   display: flex;
   flex-direction: column;
@@ -45,7 +45,8 @@
 
 /* Optionally, increase the max height for scrollable columns */
 .max-h-100 {
-  max-height: 380px;
+  max-height: 430px;
+  width: 340px;
 }
 
 .menu-desc-nowrap {
@@ -69,6 +70,11 @@
 .custom-scrollbar::-webkit-scrollbar-track {
   background: #1e293b; /* slate-800 */
   border-radius: 8px;
+}
+
+.grid-cols-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 
