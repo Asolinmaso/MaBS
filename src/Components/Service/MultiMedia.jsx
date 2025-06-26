@@ -200,9 +200,11 @@ const handleMouseLeave = (index) => {
                                             </p>
                                         </div>
                                     </div>
+                                    {/*
                                     <button className="w-12 h-12 min-w-[3rem] min-h-[3rem] aspect-square bg-black text-white text-3xl cursor-pointer font-normal rounded-full flex items-center justify-center hover:bg-sky-600 transition">
                                         ↗
                                     </button>
+                                    */}
                                 </div>
                             ))}
                         </div>
@@ -226,7 +228,7 @@ const handleMouseLeave = (index) => {
             </div>
             <div className='w-full flex flex-col items-center justify-center mt-3'>
 
-
+                {/*
                 <button className='flex items-center gap-3 font-semibold text-lg md:text-2xl text-white bg-[#19BDE8] py-3 px-3.5 rounded-xl cursor-pointer'
                     onClick={() => navigate('/portfolio/Multimedia')}>
                     Explore Our Portfolio
@@ -234,7 +236,7 @@ const handleMouseLeave = (index) => {
                         <path d="M1.50005 1.5C1.50005 1.5 7.5 5.9189 7.5 7.5C7.5 9.0812 1.5 13.5 1.5 13.5" stroke="#EBEBEB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </button>
-
+                    */}
             </div>
 
 
@@ -262,6 +264,9 @@ const handleMouseLeave = (index) => {
                     <button className='text-white bg-black rounded-lg py-2 px-4 hover:bg-gray-800 transition-colors text-sm cursor-pointer underline'>
                         <Link to="/service/RAAS"> RaaS Solutions</Link>
                     </button>
+                     <button className='text-white bg-black rounded-lg py-2 px-4 hover:bg-gray-800 transition-colors text-sm cursor-pointer underline'>
+                                                                <Link to="/service/SaaS">Sustainability-as-a-Service</Link>
+                                                            </button>
                     <button className='text-white bg-black rounded-lg py-2 px-4 hover:bg-gray-800 transition-colors text-sm cursor-pointer underline'>
                         <Link to="/service/DigitalMarketing"> Digital Marketing</Link>
                     </button>
