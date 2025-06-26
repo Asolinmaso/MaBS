@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 import { matchPath, useLocation } from "react-router-dom";
 
+import './Navbar.css';
+
 export default function DesktopMenu({ menu, isOpen, onOpen, onClose }) {
   const location = useLocation();
   const isActive = location.pathname === menu.path;
@@ -142,54 +144,81 @@ export default function DesktopMenu({ menu, isOpen, onOpen, onClose }) {
               })}
             </div>
           ) : (
-            <div
-              className={`grid gap-7 ${menu.gridCols === 3 ? "grid-cols-3" : menu.gridCols === 2 ? "grid-cols-2" : "grid-cols-1"}`}
-            >
-              {menu.subMenu.map((submenu, i) => (
-                <div className="relative cursor-pointer mb-5" key={i}>
-                  <a
-                    href="#"
-                    className="flex-center gap-x-4 group/menubox"
-                    onClick={e => {
-                      if (menu.name === "Insights") {
-                        let detail = null;
-                        if (submenu.name === "Our Clients") detail = "clients-logo";
-                        if (submenu.name === "Testimonials") detail = "testimonial";
-                        if (submenu.name === "News") detail = "news";
-                        if (submenu.name === "Blogs") {
-                          e.preventDefault();
-                          setClicked(false);
-                          window.location.href = "/Insights/Articles";
-                          return;
-                        }
-                        if (window.location.pathname === "/insights" && detail) {
-                          e.preventDefault();
-                          window.dispatchEvent(new CustomEvent("insights-nav", { detail }));
-                          setClicked(false);
-                          return;
-                        } else if (detail) {
-                          e.preventDefault();
-                          sessionStorage.setItem('insights-scroll-target', detail);
-                          setClicked(false);
-                          window.location.href = "/insights";
-                        }
-                      } else {
+            menu.name === "Insights" ? (
+              <div className="insights-menu">
+                <div
+                  className={`grid  ${ menu.gridCols === 2 ? "grid-cols-2" : "grid-cols-1"}`}
+                >
+                  {menu.subMenu.map((submenu, i) => (
+                    <div className="relative cursor-pointer mb-1 card" key={i}>
+                      <a
+                        href="#"
+                        className="flex-center gap-x-3 group/menubox"
+                        onClick={e => {
+                          let detail = null;
+                          if (submenu.name === "Our Clients") detail = "clients-logo";
+                          if (submenu.name === "Testimonials") detail = "testimonial";
+                          if (submenu.name === "News") detail = "news";
+                          if (submenu.name === "Blogs") {
+                            e.preventDefault();
+                            setClicked(false);
+                            window.location.href = "/Insights/Articles";
+                            return;
+                          }
+                          if (window.location.pathname === "/insights" && detail) {
+                            e.preventDefault();
+                            window.dispatchEvent(new CustomEvent("insights-nav", { detail }));
+                            setClicked(false);
+                            return;
+                          } else if (detail) {
+                            e.preventDefault();
+                            sessionStorage.setItem('insights-scroll-target', detail);
+                            setClicked(false);
+                            window.location.href = "/insights";
+                          } else {
+                            setClicked(false);
+                            window.location.href = submenu.path;
+                          }
+                        }}
+                      >
+                        <div className="bg-white/5 w-fit p-2 rounded-md group-hover/menubox:bg-sky-400 group-hover/menubox:text-white duration-300">
+                          {submenu.icon && <submenu.icon />}
+                        </div>
+                        <div>
+                          <h6 className=" font-semibold text-md text-white group-hover/menubox:text-sky-400 transition-colors duration-300  ">{submenu.name}</h6>
+                          <p className="text-sm menu-desc-nowrap text-gray-200 group-hover/menubox:text-gray-400 transition-colors duration-300">{submenu.desc}</p>
+                        </div>
+                      </a>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ) : (
+              <div
+                className={`grid gap-7 ${menu.gridCols === 3 ? "grid-cols-3" : menu.gridCols === 2 ? "grid-cols-2" : "grid-cols-1"}`}
+              >
+                {menu.subMenu.map((submenu, i) => (
+                  <div className="relative cursor-pointer mb-5" key={i}>
+                    <a
+                      href="#"
+                      className="flex-center gap-x-4 group/menubox"
+                      onClick={e => {
                         setClicked(false);
                         window.location.href = submenu.path;
-                      }
-                    }}
-                  >
-                    <div className="bg-white/5 w-fit p-2 rounded-md group-hover/menubox:bg-sky-400 group-hover/menubox:text-white duration-300">
-                      {submenu.icon && <submenu.icon />}
-                    </div>
-                    <div>
-                      <h6 className=" font-semibold text-md text-white group-hover/menubox:text-sky-400 transition-colors duration-300  ">{submenu.name}</h6>
-                      <p className="text-sm menu-desc-nowrap text-gray-200 group-hover/menubox:text-gray-400 transition-colors duration-300">{submenu.desc}</p>
-                    </div>
-                  </a>
-                </div>
-              ))}
-            </div>
+                      }}
+                    >
+                      <div className="bg-white/5 w-fit p-2 rounded-md group-hover/menubox:bg-sky-400 group-hover/menubox:text-white duration-300">
+                        {submenu.icon && <submenu.icon />}
+                      </div>
+                      <div>
+                        <h6 className=" font-semibold text-md text-white group-hover/menubox:text-sky-400 transition-colors duration-300  ">{submenu.name}</h6>
+                        <p className="text-sm menu-desc-nowrap text-gray-200 group-hover/menubox:text-gray-400 transition-colors duration-300">{submenu.desc}</p>
+                      </div>
+                    </a>
+                  </div>
+                ))}
+              </div>
+            )
           )}
         </motion.div>
       )}
