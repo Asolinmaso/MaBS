@@ -224,6 +224,9 @@ const handleMouseLeave = (index) => {
                     <button className='text-white bg-black rounded-lg py-2 px-4 hover:bg-gray-800 transition-colors text-sm cursor-pointer underline'>
                         <Link to="/service/RAAS"> RaaS Solutions</Link>
                     </button>
+                     <button className='text-white bg-black rounded-lg py-2 px-4 hover:bg-gray-800 transition-colors text-sm cursor-pointer underline'>
+                                                                <Link to="/service/SaaS">Sustainability-as-a-Service</Link>
+                                                            </button>
                     <button className='text-white bg-black rounded-lg py-2 px-4 hover:bg-gray-800 transition-colors text-sm cursor-pointer underline'>
                         <Link to="/portfolio/Multimedia"> Multimedia</Link>
                     </button>
