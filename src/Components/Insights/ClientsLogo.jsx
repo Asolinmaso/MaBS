@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import CustomBtn from "../Button/CustomBtn";
+import '../Home/click.css';
 
 const logos = [
   "https://logo.clearbit.com/google.com",
@@ -60,9 +61,9 @@ const ClientsLogo = () => {
           We’ve had the pleasure of working with some amazing brands. If you'd like to be one of them, let’s talk!
         </p>
         <div className="w-full flex justify-center">
-        <button className='bg-black text-white px-6 py-2 rounded hover:bg-gray-800 transition cursor-pointer'>
-          Contact US
-        </button>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginTop: '20px' ,marginBottom: '20px'}}>
+            <button className="ui-btn"><span>Contact Us</span></button>
+         </div>
 
         </div>
       </div>
