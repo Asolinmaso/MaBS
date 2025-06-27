@@ -58,51 +58,57 @@ const handleMouseLeave = (index) => {
 
     const problems = [
         {
-            title: "Slow Hiring Process",
+            title: "High Attrition & Job Hopping",
             description:
-                "Lengthy recruitment cycles delay operations and hurt productivity."
+                "Employees often leave and struggle to retain the talents."
         },
         {
             title:
-                "Unqualified Candidates",
+                "Time-Consuming Hiring Cycles",
             description:
-                "Too much time spent screening poor-fit applicants."
+                "From sourcing to the final round losing months to find the right fit?"
         },
 
         {
-            title: "High Recruiting Costs",
+            title: "Hiring the Good, But Not the Right",
             description:
-                "Recruiting in-house or externally strains your budget."
+                "not aligned with the company’s culture results in slow growth"
         },
         {
-            title: "No Scalable Support",
-            description: "Hard to scale teams fast for projects or peak demand.",
+            title: "Lack of HR Expertise and Systems",
+            description: "Relying on guesswork without proper system and support",
         },
     ];
     const solutions = [
         {
-            title: "Manpower Augmentation",
+            title: "Talent Acquisition",
             image: one,
             description:
-                "We provide skilled professionals on demand to help you scale fast and smart."
+                " Hire the right talent that aligns with your business goals and culture"
         },
         {
-            title: "Manpower Outsourcing",
+            title: "Outsourcing",
             image: two,
             description:
-                "We simplify hiring by delivering vetted professionals without full-time overhead."
+                "Blue-collar & white-collar job placement, across sectors."
         },
         {
-            title: "Interviewing",
+            title: "HR Process Setup for startups /MSME’s",
             image: three,
             description:
-                "We conduct bias-free, structured interviews to shortlist the best-fit talent for your team."
+                "From SOPs for hiring, onboarding, documentation."
         },
         {
-            title: "Hiring Process",
+            title: "Training & Upskilling Programs",
             image: four,
             description:
-                "From sourcing to onboarding, we manage the entire recruitment journey — fast, efficient, and aligned with your needs."
+                "Soft Skills Training, Leadership Development"
+        },
+        {
+            title: "Employer Branding & Culture",
+            image: four,
+            description:
+                "Make your Workplace a Brand People want to belong to."
         },
     ];
 
@@ -125,8 +131,11 @@ const handleMouseLeave = (index) => {
                     <h1 className="text-[#19BDE8] font-semibold text-3xl md:text-6xl leading-tight">
                         Recruitment As a Service
                     </h1>
+                    <span className="font-semibold text-1xl lg:text-3xl">“If You Don’t Hire Them, Your Competitor Will.”</span>
                     <p className="font-normal text-base  md:text-xl  text-center mt-6">
-                        Finding the right talent shouldn't slow down your growth. At Manvian, our Recruitment-as-a-Service (RaaS) model offers agile, efficient, and scalable hiring solutions - so you can focus on building your business while we build your team.
+                        Struggling to find the right people - or losing them just when you need them most? You’re not alone. In today’s fast-paced market, businesses face the constant pressure of hiring fast and hiring good. But the right talent is hard to find and even harder to keep.
+                        Don’t lose top talent because your hiring process is slow, scattered, or stuck. 
+
                     </p>
                     <a href="#" className="">
                         <CustomBtn>Get the Right Talent Today</CustomBtn>
