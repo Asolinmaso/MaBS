@@ -57,53 +57,53 @@ const handleMouseLeave = (index) => {
 
     const problems = [
         {
-            title: "Inefficient Operations",
+            title: "What’s Actually Wrong?s",
             description:
-                "Resources are underutilized, causing low output & high costs."
+                "Not knowing what the real problem is. Strategy, product, people, or positioning?"
         },
         {
             title:
-                "Market Misalignment",
+                "Inefficient Systems and Operations",
             description:
-                "Strategies that don't adapt lose relevance and impact."
+                "Resources are underutilized, causing low output & high costs."
         },
 
         {
-            title: " Lack of Clear Direction",
+            title: " Market Misalignment",
             description:
-                "Unclear goals and planning slow growth and decision-making."
+                "Businesses that don't adapt Future trends lose relevance and impact."
         },
         {
-            title: "Scaling Challenges",
+            title: "Scaling / Branding / Revenue Challenges",
             description:
-                "Businesses struggle to grow without structured models."
+                "Businesses struggle to grow without structured models and support"
         },
     ];
     const solutions = [
         {
-            title: "Strategic Roadmapping",
+            title: "Business Clarity Framework",
             image: one,
             description:
-                "We define short and long-term goals, backed by actionable plans."
+                "We understand your challenges and uncover blind spots to strategize clarity and control your growth journey."
         },
         {
-            title: "Market & Competitor Analysis",
+            title: " Market, Customer & Competitor Intelligence",
             image: two,
             description:
-                "We analyze your industry to keep your strategy focused and future-ready."
+                "No more guesswork. We bring you data-backed insights to position your brand right and future-proof your strategy."
         },
 
         {
-            title: "Operational Optimization",
+            title: "Mentor & Expert Access",
             image: three,
             description:
-                "We refine workflows and systems for higher efficiency and profitability."
+                "Connect with industry advisors, domain experts, and successful founders—because every founder deserves a sounding board."
         },
         {
-            title: "Scalable Growth Planning",
+            title: "Collaboration, Investment & Ecosystem Support",
             image: four,
             description:
-                "We help you build frameworks for sustainable expansion and team scaling."
+                "We bring funding connects, strategic partnerships, and co-creation opportunities to help you grow beyond internal limits."
         },
     ];
     return (
@@ -125,8 +125,12 @@ const handleMouseLeave = (index) => {
                     <h1 className="text-[#19BDE8] font-semibold text-3xl md:text-6xl leading-tight text-justify sm:text-center">
                         Business Strategy Consulting
                     </h1>
-                    <p className="font-normal text-base md:text-xl  mt-6 text-center text-justify sm:text-center">
-                        At Manvian, we help businesses move with clarity and confidence. From refining your value proposition to scaling operations, we design strategies rooted in market insight, innovation, and measurable impact.
+                    <span className="font-semibold text-1xl lg:text-3xl">“Direction is more important than speed.”</span>
+                    <p className="font-normal text-base md:text-xl  mt-6 text-center  sm:text-center">
+                        
+                        Running a business can feel like solving a puzzle blindfolded.
+                        You’re wearing all the hats — founder, marketer, HR, operations — and still asking:<br/> “What’s the next move?” | “Why aren’t we growing?” | “Am I doing this right?”
+
                     </p>
                     <a href="#">
                         <CustomBtn> Start Building a Smarter Strategy</CustomBtn>
