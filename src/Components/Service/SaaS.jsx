@@ -65,7 +65,7 @@ const handleMouseLeave = (index) => {
             title:
                 "Greenwashing Risks",
             description:
-                "Without proper strategy, companies end up doing surface-level “eco” campaigns without real change - damaging trust and credibility."
+                "Without a solid strategy, companies risk shallow eco-campaigns that erode trust and credibility."
         },
 
         {
