@@ -62,6 +62,7 @@ const handleMouseLeave = (index) => {
 };
 
 
+    
     const problems = [
         {
             title: "Outdated Digital Presence",
@@ -82,32 +83,31 @@ const handleMouseLeave = (index) => {
     ];
     const solutions = [
         {
-            title: "Website Design & Development",
+            title: "Web & App Development (Your Digital Gateway)",
             image: one,
             description:
-                "We craft responsive, SEO-friendly websites that attract, engage, and convert.",
+                "We build modern, high-performance websites and apps designed for speed, trust, and conversion.",
         },
         {
-            title: "Mobile App Development",
+            title: "E-Commerce Solutions (Your 24/7 Storefront)",
             image: two,
             description:
-                "We build custom apps for iOS & Android that boost engagement and user experience.",
+                "End-to-end eCommerce setup with payment integration, inventory, and analytics.",
         },
         {
-            title: " Blockchain Solutions",
-            image: three,
+            title: " AI/ML, Blockchain & Future-Tech",
+            image: four,
 
             description:
-                "We develop secure, decentralized systems for trust, transparency, and smart automation.",
+                "Make your business future-ready with AI-powered personalization, smart automation, and blockchain integration.",
         },
         {
-            title: "Artificial Intelligence",
-            image: four,
+            title: "CRM, ERP & Process Tools",
+            image: three,
             description:
-                "We integrate AI to streamline operations, personalize experiences, and drive growth.",
+                "We build and integrate systems that actually work for you.",
         },
     ];
-
    const CreativityAction = [
         { id: 1, src: img1, alt: 'Image 1', description: 'Opptiverse ', extra: 'Entrepreneurs can showcase ideas, discover collaborators, and grow ventures.', link: 'https://opptiverse.com/' },
         { id: 2, src: img5, alt: 'Image 5', description: 'Farmer\'s Angadi', extra: 'Ensures ethical sourcing and freshness while empowering small farmers with fair income.', link: 'https://www.farmersangadi.com/' },
