@@ -56,7 +56,7 @@ const handleMouseLeave = (index) => {
     }));
 };
 
-    const problems = [
+   const problems = [
         {
             title: "Low Search Visibility",
             description: "Your site ranks low or for irrelevant keywords."
@@ -76,31 +76,30 @@ const handleMouseLeave = (index) => {
     ];
     const solutions = [
         {
-            title: "Strategic SEO Implementation",
+            title: "Strategic SEO, AEO, GEO Implementation",
             image: one,
             description:
-                "We boost visibility with keyword strategy, SEO structure, and compelling content that ranks."
+                "We amplify your digital presence with strategic SEO, AEO, and GEO techniques to drive targeted traffic."
         },
         {
-            title: "High-Performance SEM Campaigns",
+            title: "Social Media Marketing & Performance Marketing",
             image: two,
             description:
-                "We run data-driven ads with precise targeting, testing, and measurable ROI."
+                "We drive growth through engaging social media campaigns and data-driven performance marketing strategies."
         },
         {
-            title: "Social Media Optimization (SMO)",
+            title: "Content Marketing & Influencer Collaborations",
             image: three,
             description:
-                "We build your brand on social media through content, engagement, and strategy."
+                "We craft impactful content and partner with influencers to boost brand credibility and audience engagement."
         },
         {
-            title: "Google My Business Optimization",
+            title: " Video Ad Shooting & Editing",
             image: four,
             description:
-                "We boost local visibility through SEO, better listings, and stronger reviews."
+                "We produce high-impact video ads with seamless shooting and editing to captivate and convert audiences."
         },
     ];
-
     const CreativityAction = [
         { id: 1, src: '/images/img1.png', alt: 'Image 1' },
         { id: 2, src: '/images/img2.png', alt: 'Image 2' },
@@ -127,9 +126,9 @@ const handleMouseLeave = (index) => {
                     <h1 className="text-[#19BDE8] font-semibold text-3xl  md:text-6xl leading-tight text-justify md:text-center">
                         Digital Marketing Solutions
                     </h1>
-                    <p className="font-normal text-base  md:text-xl  text-center md:text-center mt-6 text-justify">
-                        We help brands cut through the digital noise with tailored strategies across SEO, SEM, SMO, and Google My Business Optimization — so your business gets found, clicked, and remembered.
-                    </p>
+                    <span className="font-semibold text-1xl lg:text-3xl">“Visibility is no longer a luxury — it's the lifeline of your brand.”</span>
+                   
+                    <p>In today’s business world, it’s not just about being good -it’s about being found. From startup to MNC or an institute,   the question is :"If your ideal customer searched for what you offer, would they find you or your competitor?"</p>
                     <a href="#">
                         <CustomBtn>Boost Your Brand Reach</CustomBtn>
                     </a>
