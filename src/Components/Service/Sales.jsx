@@ -57,23 +57,23 @@ const handleMouseLeave = (index) => {
 };
 
 
-    const problems = [
+   const problems = [
         {
-            title: "Low Lead Conversion",
+            title: "No proper leads and Conversation",
             description:
-                "Sales teams struggle to turn prospects into paying customers."
+                "Businesses struggle to generate quality leads and convert them into loyal customers."
         },
         {
             title:
-                "Ineffective Sales Strategy",
+                "Ineffective Teams and Sales Strategy",
             description:
-                "Lack of structure and insights hurts sales performance."
+                "Underperforming teams and unclear sales strategies hinder growth and revenue potential."
         },
 
         {
-            title: " Unqualified Leads",
+            title: " We don’t know what’s working.",
             description:
-                "Time and resources are lost on leads that won't convert."
+                "Lack of clear analytics and insights leaves teams guessing instead of optimizing for results."
         },
         {
             title: "Disconnected Sales & Marketing",
@@ -83,20 +83,20 @@ const handleMouseLeave = (index) => {
     ];
     const solutions = [
         {
-            title: "Sales Process Consulting",
+            title: "Sales Training & Consulting",
             image: one,
             description:
                 "We help you define and optimize a predictable, repeatable sales strategy."
         },
         {
-            title: "CRM & Automation",
+            title: "Outsourced Sales Team",
             image: two,
             description:
-                "We implement tools that streamline lead nurturing, follow-ups, and data tracking."
+                "We provide expert outsourced sales teams that accelerate growth and close deals faster."
         },
 
         {
-            title: "Lead Qualification Support",
+            title: " Lead Generation Strategy",
             image: three,
             description:
                 "We provide systems and support to identify, score, and prioritize sales-ready leads."
@@ -127,10 +127,10 @@ const handleMouseLeave = (index) => {
                 {/* Content */}
                 <div className="relative z-20 flex flex-col items-center text-center text-white px-4 sm:px-6 md:px-12 lg:px-24 xl:px-0 w-full max-w-[1200px] gap-6">
                     <h1 className="text-[#19BDE8] font-semibold text-3xl md:text-6xl leading-tight">
-                        Sales Solutions
+                        SALES as a service
                     </h1>
-                    <p className="font-normal text-base md:text-xl text-center mt-6">
-                        Manvian empowers your sales teams with strategic guidance, automation tools, and data - driven tactics - helping you convert leads faster, retain customers longer, and scale growth sustainably.
+                    <span className="font-semibold text-1xl lg:text-3xl">“In today’s market, sales isn’t marketing - market sales by fixing, <br/> not just pitching!”</span>
+                    <p> It’s about understanding psychology, building trust, and solving problems. Marketing brings people to the door. Sales gets them to walk in, stay, and invest.
                     </p>
                     <a href="#">
                         <CustomBtn>Let’s Boost Your Sales</CustomBtn>
