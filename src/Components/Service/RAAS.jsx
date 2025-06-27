@@ -125,8 +125,8 @@ const handleMouseLeave = (index) => {
                     <h1 className="text-[#19BDE8] font-semibold text-3xl md:text-6xl leading-tight">
                         Recruitment As a Service
                     </h1>
-                    <p className="font-normal text-base  md:text-xl text-justify text-center mt-6">
-                        Finding the right talent shouldn't slow down your growth. At Manvian, our Recruitment-as-a-Service (RaaS) model offers agile, efficient, and scalable hiring solutions — so you can focus on building your business while we build your team.
+                    <p className="font-normal text-base  md:text-xl  text-center mt-6">
+                        Finding the right talent shouldn't slow down your growth. At Manvian, our Recruitment-as-a-Service (RaaS) model offers agile, efficient, and scalable hiring solutions - so you can focus on building your business while we build your team.
                     </p>
                     <a href="#" className="">
                         <CustomBtn>Get the Right Talent Today</CustomBtn>
