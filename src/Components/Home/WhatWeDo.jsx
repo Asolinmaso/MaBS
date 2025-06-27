@@ -135,7 +135,7 @@ const WhatWeDo = () => {
                     {
                         img: seven,
                         title: '07.Sustainability-as-a-Service',
-                        desc: 'The future isn’t just digital — it’s sustainable. And your business should be both. Our Sustainability-as-a-Service model embeds eco-friendly practices, impact partnerships, and circular-economy design directly into your operations - so you lead the market and preserve the planet. What if sustainability wasn’t a cost—but a competitive advantage?',
+                        desc: 'The future isn’t just digital - it’s sustainable. And your business should be both. Our Sustainability-as-a-Service model embeds eco-friendly practices, impact partnerships, and circular-economy design directly into your operations - so you lead the market and preserve the planet. What if sustainability wasn’t a cost—but a competitive advantage?',
                         path: "/service/SaaS",
                         reverse: true,
                     },
