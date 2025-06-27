@@ -5,6 +5,7 @@ import one from '../../assets/Service/TechSolution/1.png'
 import two from '../../assets/Service/TechSolution/2.png'
 import three from '../../assets/Service/TechSolution/3.png'
 import four from '../../assets/Service/TechSolution/4.png'
+import img5 from '../../assets/Service/TechSolution/5.png';
 import { useNavigate, Link } from 'react-router-dom';
 import CustomBtn from '../Button/CustomBtn';
 
