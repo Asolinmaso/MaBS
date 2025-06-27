@@ -110,9 +110,9 @@ const handleMouseLeave = (index) => {
 
    const CreativityAction = [
         { id: 1, src: img1, alt: 'Image 1', description: 'Opptiverse ', extra: 'Entrepreneurs can showcase ideas, discover collaborators, and grow ventures.', link: 'https://opptiverse.com/' },
-        { id: 2, src: img5, alt: 'Image 5', description: 'Farmer\'s Angadi', extra:'Ensures ethical sourcing and freshness while empowering small farmers with fair income.', link: 'https://www.farmersangadi.com/' },
-        { id: 3, src: img6, alt: 'Image 6', description: 'Mommy\'s Farm', link: '#' },
-        { id: 4, src: img7, alt: 'Image 4', description: 'Description Generator',extra:'Create and share opportunities - post your own (CROP) or pass them on (POP) to help talents and ideas grow together.', link: 'https://app.opptiverse.com/requirements' },
+        { id: 2, src: img5, alt: 'Image 5', description: 'Farmer\'s Angadi', extra: 'Ensures ethical sourcing and freshness while empowering small farmers with fair income.', link: 'https://www.farmersangadi.com/' },
+        { id: 3, src: img6, alt: 'Image 6', description: 'Mommy\'s Farm', extra: 'Delivers farm-fresh and organic goodness: fruits, vegetables, millets, dairy, and more — straight from farmers to your home.', link: '#' },
+        { id: 4, src: img7, alt: 'Image 4', description: 'Description Generator',extra: 'Create and share opportunities - post your own (CROP) or pass them on (POP) to help talents and ideas grow together.', link: 'https://app.opptiverse.com/requirements' },
 
     ];
 
