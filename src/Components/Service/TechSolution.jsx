@@ -7,6 +7,8 @@ import three from '../../assets/Service/TechSolution/3.png'
 import four from '../../assets/Service/TechSolution/4.png'
 import img5 from '../../assets/Service/TechSolution/5.png';
 import img6 from '../../assets/Service/TechSolution/6.png';
+import img1 from '../../assets/Service/TechSolution/opptiverse.png';
+import img7 from '../../assets/Service/TechSolution/7.png';
 import { useNavigate, Link } from 'react-router-dom';
 import CustomBtn from '../Button/CustomBtn';
 
