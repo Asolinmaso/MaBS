@@ -129,8 +129,8 @@ const handleMouseLeave = (index) => {
                     <h1 className="text-[#19BDE8] font-semibold text-3xl md:text-6xl leading-tight">
                         Sales Solutions
                     </h1>
-                    <p className="font-normal text-base md:text-xl text-justify mt-6">
-                        Manvian empowers your sales teams with strategic guidance, automation tools, and data-driven tactics — helping you convert leads faster, retain customers longer, and scale growth sustainably.
+                    <p className="font-normal text-base md:text-xl text-center mt-6">
+                        Manvian empowers your sales teams with strategic guidance, automation tools, and data-driven tactics - helping you convert leads faster, retain customers longer, and scale growth sustainably.
                     </p>
                     <a href="#">
                         <CustomBtn>Let’s Boost Your Sales</CustomBtn>
