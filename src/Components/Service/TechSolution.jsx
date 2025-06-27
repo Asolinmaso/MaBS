@@ -118,7 +118,7 @@ const handleMouseLeave = (index) => {
 
     return (
         <>
-            {/* Header */}
+           {/* Header */}
             <header className="relative w-full min-h-screen flex justify-center items-center">
                 {/* Background Image */}
                 <img
@@ -135,8 +135,12 @@ const handleMouseLeave = (index) => {
                     <h1 className="text-[#19BDE8] font-semibold text-3xl md:text-6xl leading-tight md:text-center">
                         Technology Solutions
                     </h1>
-                    <p className="font-normal text-base md:text-xl text-justify mt-6">
-                        We don't just build tech — we craft intelligent, scalable solutions that power your business growth. From stunning websites and intuitive apps to emerging technologies like blockchain and AI, we turn ideas into digital excellence.
+                    <span className="font-semibold text-1xl lg:text-3xl">“Creating Real Impact, Not Just Interfaces”</span>
+                    <p className="font-normal text-base md:text-xl text-center mt-6">
+                        
+                        Your website is not just digital real estate.
+                        It’s the first handshake, the first impression, and often the first deal-breaker.
+
                     </p>
                     <a href="#">
                         <CustomBtn> Power Your Business with Innovation</CustomBtn>
