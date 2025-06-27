@@ -108,11 +108,12 @@ const handleMouseLeave = (index) => {
         },
     ];
 
-    const CreativityAction = [
-        { id: 1, src: '/images/img1.png', alt: 'Image 1' },
-        { id: 2, src: '/images/img2.png', alt: 'Image 2' },
-        { id: 3, src: '/images/img3.png', alt: 'Image 3' },
-        { id: 4, src: '/images/img4.png', alt: 'Image 4' },
+   const CreativityAction = [
+        { id: 1, src: img1, alt: 'Image 1', description: 'Opptiverse ', extra: 'Entrepreneurs can showcase ideas, discover collaborators, and grow ventures.', link: 'https://opptiverse.com/' },
+        { id: 2, src: img5, alt: 'Image 5', description: 'Farmer\'s Angadi', extra:'Ensures ethical sourcing and freshness while empowering small farmers with fair income.', link: 'https://www.farmersangadi.com/' },
+        { id: 3, src: img6, alt: 'Image 6', description: 'Mommy\'s Farm', link: '#' },
+        { id: 4, src: img7, alt: 'Image 4', description: 'Description Generator',extra:'Create and share opportunities - post your own (CROP) or pass them on (POP) to help talents and ideas grow together.', link: 'https://app.opptiverse.com/requirements' },
+
     ];
 
     return (
