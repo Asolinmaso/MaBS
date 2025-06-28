@@ -9,6 +9,7 @@ import Img2 from '../../assets/Blogs/Trending/2.png';
 import Img3 from '../../assets/Blogs/Trending/3.png';
 import Img4 from '../../assets/Blogs/Trending/4.png';
 import Img5 from '../../assets/Blogs/Trending/5.png';
+import Imag1 from '../../assets/Blogs/Author/Touheed_Fathima.jpg';
 
 const blogData = [
   {
@@ -17,6 +18,7 @@ const blogData = [
     description: 'AI doesn’t replace people — it empowers them to explore new possibilities and redefine what’s achievable.',
     image: Img1,
     author: 'Touheed Fathima',
+    authorImage: Imag1,
     date: 'June 01, 2025',
     category: 'Tech & Innovation',
     content: [
@@ -204,9 +206,9 @@ const ArticlePage = () => {
         <div className="flex items-center space-x-3 text-sm mb-6 text-gray-600">
           <div className="flex items-center space-x-2">
             <img
-              src="https://www.gravatar.com/avatar"
-              alt="Author"
-              className="w-6 h-6 rounded-full border"
+              src={blog.authorImage || "https://www.gravatar.com/avatar"}
+              alt={blog.author}
+              className="w-6 h-6 rounded-full border object-cover"
             />
             <span>{blog.author}</span>
           </div>
@@ -245,9 +247,9 @@ const ArticlePage = () => {
           <h3 className="text-lg font-semibold mb-2">Author Bio</h3>
           <div className="flex items-center space-x-2 text-sm mt-2">
             <img
-              src="https://www.gravatar.com/avatar"
+              src={blog.authorImage || "https://www.gravatar.com/avatar"}
               alt={blog.author}
-              className="w-6 h-6 rounded-full border"
+              className="w-6 h-6 rounded-full border object-cover"
             />
             <span>{blog.author}</span>
           </div>
