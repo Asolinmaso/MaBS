@@ -211,7 +211,7 @@ const blogData = [
       'In addition to these solutions, Cyber Security Solutions offers security awareness training for employees. Educating staff about the importance of cybersecurity best practices, such as creating strong passwords and recognizing phishing emails, can help prevent security incidents caused by human error.',
       'Overall, Cyber Security Solutions\' comprehensive approach to cybersecurity offers businesses the peace of mind knowing that their digital assets and data are well-protected. By implementing these top solutions, individuals and businesses can enhance their cybersecurity posture and effectively mitigate the risks posed by cyber threats.'
     ],
-    authorBio: 'Aditya is a marketing analyst and content creator who specializes in digital trends and video storytelling. He loves exploring how brands can connect in seconds.'
+    authorBio: 'Pranav Jeyan is a cybersecurity expert and content creator who specializes in digital protection and threat analysis, exploring how security can build instant trust for brands.'
   },
   {
     id: 3,
