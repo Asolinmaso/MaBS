@@ -15,7 +15,7 @@ const blogData = [
         title: 'AI Doesn’t Replace People — It Reshapes Possibilities',
         description: 'AI doesn’t replace people — it empowers them to explore new possibilities and redefine what’s achievable.',
         image: Img1,
-        author: 'Touheed Fathima',
+        author: 'Touheed Fathima Shaik',
         date: 'June 01, 2025',
         category: 'Tech & Innovation'
     },
@@ -30,12 +30,12 @@ const blogData = [
     },
     {
         id: 3,
-        title: 'Branding that Sticks in the Digital Age',
-        description: 'How to build a magnetic and memorable brand...',
+        title: 'Testing Doesn’t Replace Developers — It Empowers Quality',
+        description: 'Testing doesn’t replace developers — it strengthens their work by ensuring reliability, performance, and quality in every line of code.',
         image: Img3,
-        author: 'Sonali Nair',
-        readTime: '5 min read',
-        category: 'Business Strategy'
+        author: 'A.Aravind',
+        date: 'May 15, 2025',
+        category: 'Tech & Innovation'
     },
     {
         id: 4,
