@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { FiFile, FiClock } from 'react-icons/fi';
+import { FiFile, FiClock, FiCalendar } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 import Footer from '../Footer/Footer';
 import CallToAction from './CallToAction';
 import Img1 from '../../assets/Blogs/Trending/1.png';
@@ -11,11 +12,11 @@ import Img5 from '../../assets/Blogs/Trending/5.png';
 const blogData = [
     {
         id: 1,
-        title: 'The Future of AI in Content: Beyond the Buzz',
-        description: 'AI tools like ChatGPT and MidJourney... Let’s decode the new content equation.',
+        title: 'AI Doesn’t Replace People — It Reshapes Possibilities',
+        description: 'AI doesn’t replace people — it empowers them to explore new possibilities and redefine what’s achievable.',
         image: Img1,
-        author: 'Priya Mehta',
-        readTime: '4 min read',
+        author: 'Touheed Fathima',
+        date: 'June 01, 2025',
         category: 'Tech & Innovation'
     },
     {
@@ -60,11 +61,16 @@ const tabs = ['Trending', 'Tech & Innovation', 'Business Strategy', 'Sales', 'Mu
 
 const Articles = () => {
     const [selectedTab, setSelectedTab] = useState('Trending');
+    const navigate = useNavigate();
 
     const filteredBlogs =
         selectedTab === 'Trending'
             ? blogData
             : blogData.filter((blog) => blog.category === selectedTab);
+
+    const handleBlogClick = (id) => {
+        navigate(`/Insights/Blogs/${id}`);
+    };
 
     return (
         <>
@@ -106,13 +112,13 @@ const Articles = () => {
             {/* Blog Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 {filteredBlogs.map((blog) => (
-                    <div key={blog.id} className="bg-white rounded-lg shadow hover:shadow-md transition duration-300 p-3 relative h-[480px] " >
+                    <div key={blog.id} className="bg-white rounded-lg shadow hover:shadow-md transition duration-300 p-3 relative h-[480px] cursor-pointer" onClick={() => handleBlogClick(blog.id)} >
                         <img src={blog.image} alt={blog.title} className=" h-[250px] w-full object-cover " />
                         <div className="p-4">
                             <h3 className="text-lg font-semibold mb-1">{blog.title}</h3>
                             <p className="text-sm text-gray-600 mb-3">{blog.description}</p>
                             <div className="text-xs text-gray-500 flex items-center absolute bottom-2 pb-2">
-                                <FiFile className='mr-1' /> By {blog.author} <FiClock className='ml-4 mr-1' />  {blog.readTime}
+                                <FiFile className='mr-1' /> By {blog.author} <FiCalendar className='ml-4 mr-1' />  {blog.date}
                             </div>
                         </div>
                     </div>
