@@ -41,7 +41,7 @@ const Router = createBrowserRouter([
       { path: "/service/Business", element: <Business /> },
       { path: "/portfolio/Multimedia", element: <MultiMedia_portfolio /> },
       { path: "/portfolio/Technology", element: <Technology_Portfolio /> },
-      { path: "/Insights/Articles", element: <Articles /> }
+      { path: "/Insights/Articles", element: <Articles /> },
       { path: "/Insights/Blogs/:id", element: <Blogs /> }
     ]
   }
