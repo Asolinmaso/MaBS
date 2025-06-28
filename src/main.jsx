@@ -19,6 +19,7 @@ import Business from './Components/Service/Business.jsx'
 import MultiMedia_portfolio from './Components/Portfolio/MultiMedia_portfolio.jsx'
 import Technology_Portfolio from './Components/Portfolio/Techhnology_portfolio.jsx'
 import Articles from './Components/Blogs/Articles.jsx'
+import Blogs from './Components/Blogs/Blogs.jsx'
 
 const Router = createBrowserRouter([
   {
@@ -41,6 +42,7 @@ const Router = createBrowserRouter([
       { path: "/portfolio/Multimedia", element: <MultiMedia_portfolio /> },
       { path: "/portfolio/Technology", element: <Technology_Portfolio /> },
       { path: "/Insights/Articles", element: <Articles /> }
+      { path: "/Insights/Blogs/:id", element: <Blogs /> }
     ]
   }
 ])
