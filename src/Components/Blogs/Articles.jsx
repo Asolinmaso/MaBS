@@ -21,12 +21,12 @@ const blogData = [
     },
     {
         id: 2,
-        title: 'Why Micro-Content is Dominating 2025',
-        description: 'Short-form videos are the key. Find out...',
+        title: 'Enhancing Cybersecurity: Top Solutions for Digital Protection',
+        description: 'Enhancing Cybersecurity with cutting-edge solutions to safeguard your digital world.',
         image: Img2,
-        author: 'Aditya Rao',
-        readTime: '3 min read',
-        category: 'Marketing'
+        author: 'V Pranav Jeyan',
+        date: 'May 03, 2025',
+        category: 'Tech & Innovation'
     },
     {
         id: 3,
