@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { CalendarDays, Clock } from "lucide-react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import Footer from '../Footer/Footer';
 import SubscribeNow from '../Blogs/Subscribenow';
 
@@ -11,6 +11,8 @@ import Img4 from '../../assets/Blogs/Trending/4.png';
 import Img5 from '../../assets/Blogs/Trending/5.png';
 import Imag1 from '../../assets/Blogs/Author/Touheed_Fathima.jpg';
 import Imag2 from '../../assets/Blogs/Author/Pranav_Jeyan.jpg';
+import Imag3 from '../../assets/Blogs/Author/Aravind.jpg';
+import { a } from "framer-motion/client";
 
 const blogData = [
   {
@@ -215,17 +217,65 @@ const blogData = [
   },
   {
     id: 3,
-    title: 'Branding that Sticks in the Digital Age',
-    description: 'How to build a magnetic and memorable brand...',
+    title: 'Testing Doesn’t Replace Developers — It Empowers Quality',
+    description: 'Testing doesn’t replace developers — it strengthens their work by ensuring reliability, performance, and quality in every line of code.',
     image: Img3,
-    author: 'Sonali Nair',
-    readTime: '5 min read',
-    category: 'Business Strategy',
-    date: 'May 20, 2025',
+    authorImage: Imag3,
+    author: 'A.Aravind',
+    date: 'May 15, 2025',
     content: [
-      'Building a memorable brand in the digital age requires...'
+      '“Testing Doesn’t Replace Developers — It Empowers Quality”: How Smart Teams Are Approaching Software Testing Differently',
+      'June 28, 2025',
+      '“The best software doesn’t just run — it performs reliably under pressure, for everyone.”',
+      'In today’s fast-paced digital world, speed isn’t everything — reliability is. With every feature release, update, or integration, users expect seamless, bug-free experiences. But how do you ensure software works as intended across all scenarios and systems?',
+      'The answer doesn’t lie in more coding — it lies in smarter testing. And software testing is no longer just a checkpoint — it’s a continuous quality enabler.',
+      'The Real Problem: Shipping Fast Without Quality Checks',
+      'Too many teams focus on speed, leaving testing for the last minute — or worse, skipping it. But this leads to:',
+      'Missed bugs in production',
+      'Poor user experience',
+      'Reputational damage',
+      'Costly hotfixes and rework',
+      'Developer–tester blame games',
+      '“We’re not short on features — we’re short on confidence.”',
+      'The Testing Shift: From Manual Guessing to Continuous Quality',
+      'Modern testing practices don’t aim to slow teams down — they aim to boost delivery confidence.',
+      'With automation, tools, and smarter test strategies, software testers can:',
+      'Catch bugs earlier with shift-left testing',
+      'Automate repetitive tests like regression and smoke tests',
+      'Simulate real-world usage across devices, browsers, and networks',
+      'Test APIs and backend logic alongside UI checks',
+      'Provide fast feedback loops to the dev team',
+      'Brands like Google, Microsoft, and Salesforce have invested heavily in automated and continuous testing pipelines. Their secret? They don’t wait for users to find bugs — they test smarter, earlier, and more often.',
+      'But Isn’t Testing Slowing Down Development?',
+      'Not at all. Modern testing accelerates releases by catching issues early. It reshapes workflows, not blocks them.',
+      '“Testing won’t stop releases. But not testing will stop users from trusting your product.”',
+      'What Testers Bring That Tools Can’t',
+      'While automation handles routine checks, human testers focus on:',
+      'Creative exploratory testing',
+      'Understanding real user behavior',
+      'Testing edge cases and emotional flows',
+      'Risk-based prioritization',
+      'Imagine a QA team that no longer just “checks boxes” but champions quality throughout the development cycle.',
+      'How Any Team Can Start Smarter Testing — Today',
+      'You don’t need a testing lab or a QA department to begin. Even lean dev teams and startups can integrate testing in powerful ways.',
+      'Here’s how:',
+      '1. Test Automation',
+      'Use tools like Selenium, Cypress, or Playwright to automate UI and API testing across environments.',
+      '2. CI/CD Integration',
+      'Plug your test suite into pipelines using tools like Jenkins, GitHub Actions, or GitLab CI — so tests run with every code change.',
+      '3. Exploratory Testing',
+      'Allocate time in each sprint for manual testers or developers to explore and uncover unexpected behavior.',
+      '4. Bug Reporting Tools',
+      'Integrate platforms like Jira, Bugzilla, or TestRail for structured bug tracking and feedback.',
+      '5. Performance & Load Testing',
+      'Use tools like JMeter, k6, or BlazeMeter to test system behavior under stress.',
+      'Final Takeaway: It’s Not Too Late to Test Smart',
+      'Software testing is not a barrier — it’s a growth engine. In an age of complex apps and high user expectations, testing is how brands win trust.',
+      '“We understand the pressure to move fast — but we never skip on testing smart.”',
+      'At [Your Company Name], we believe in making quality visible, continuous, and scalable. From test automation to exploratory testing, we help teams grow faster — with confidence.',
+      'In the end, software testing doesn’t slow you down — it helps you move forward with certainty.'
     ],
-    authorBio: 'Sonali is a brand strategist and business consultant with a decade of experience helping startups and enterprises build memorable brands.'
+    authorBio: 'A.Aravind is a software engineer and testing advocate who believes in the power of quality assurance to enhance software development.'
   },
   {
     id: 4,
@@ -269,8 +319,8 @@ const ArticlePage = () => {
   const [showSubscribe, setShowSubscribe] = useState(false);
   const blog = blogData.find((b) => b.id === Number(id));
 
-  // Related articles: pick 2 others, excluding current
-  const related = blogData.filter((b) => b.id !== Number(id)).slice(0, 2);
+  // Related articles: pick 4 others, excluding current
+  const related = blogData.filter((b) => b.id !== Number(id)).slice(0, 4);
 
   if (!blog) {
     return <div className="px-6 md:px-24 py-10 text-gray-800 font-sans">Blog not found.</div>;
@@ -281,7 +331,9 @@ const ArticlePage = () => {
       <div className="px-6 md:px-24 pt-25 pb-10 text-gray-800 font-sans max-w-5xl mx-auto w-full">
         <h1 className="text-2xl md:text-3xl font-semibold mb-2 leading-tight">{blog.title}</h1>
         <div className="flex flex-wrap gap-2 text-xs text-gray-400 mb-4">
-          <span>#{blog.category.replace(/\s/g, '')}</span>
+          {blog.category ? (
+            <span>#{blog.category.replace(/\s/g, '')}</span>
+          ) : null}
           <span>#Trending</span>
           {blog.category === 'Multimedia' && <span>#Multimedia</span>}
         </div>
@@ -307,10 +359,7 @@ const ArticlePage = () => {
             <span>{blog.date}</span>
           </span>
           <span>•</span>
-          <span className="flex items-center space-x-1">
-            <Clock className="w-4 h-4" />
-            <span>{blog.readTime}</span>
-          </span>
+        
         </div>
         <div className="space-y-6 leading-relaxed text-base">
           {blog.content.map((para, idx) => {
@@ -357,9 +406,9 @@ const ArticlePage = () => {
         {/* Related Articles */}
         <div className="mt-10">
           <h3 className="text-lg font-semibold mb-3">Related Articles</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {related.map((rel) => (
-              <div key={rel.id} className="border p-3 rounded-md bg-gray-50 flex flex-col">
+              <Link key={rel.id} to={`/Insights/Blogs/${rel.id}`} className="border p-3 rounded-md bg-gray-50 flex flex-col hover:shadow transition-shadow">
                 <img src={rel.image} alt={rel.title} className="mb-2 rounded aspect-video object-cover" />
                 <h4 className="font-semibold text-sm">{rel.title}</h4>
                 <p className="text-xs text-gray-500 mt-1">{rel.description}</p>
@@ -368,7 +417,7 @@ const ArticlePage = () => {
                   <span>•</span>
                   <span>{rel.readTime}</span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>
