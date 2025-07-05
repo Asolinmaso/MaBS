@@ -234,8 +234,27 @@ const Contact = () => {
                                 <option value="Business Strategy Consulting">Business Strategy Consulting</option>
                                 <option value="Recruitment As a Service">Recruitment As A Service</option>
                                 <option value="Sustainability as a Service">Sustainability As A Service</option>
+                                <option value="Sales as a Service">Sales As A Service</option>
                                 <option value="Digital Marketing">Digital Marketing Solutions</option>
                             </select>
+                        </div>
+                        <div>
+                            <label className='block text-gray-700 mb-2 font-medium'>Mentorship</label>
+                            <input
+                                type='text'
+                                placeholder='Describe your mentorship needs'
+                                className='w-full border border-gray-300 p-3 rounded focus:outline-none'
+                                name='mentorship'
+                            />
+                        </div>
+                        <div>
+                            <label className='block text-gray-700 mb-2 font-medium'>Collaboration</label>
+                            <input
+                                type='text'
+                                placeholder='Describe your collaboration interest'
+                                className='w-full border border-gray-300 p-3 rounded focus:outline-none'
+                                name='collaboration'
+                            />
                         </div>
                     </div>
                     <div>

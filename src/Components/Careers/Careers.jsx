@@ -76,7 +76,7 @@ const Careers = () => {
             We're driven by a passion for innovation and impact. At our company, you'll collaborate on meaningful projects that empower brands and improve experiences. If you're looking for a place where your ideas matter and your growth is a priority , you're in the right place.
           </p>
           
-          <a href="https://app.opptiverse.com/" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block' }}>
+          <a href="mailto:hiring@manvian.com" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block' }}>
             <CustomBtn>View Openings</CustomBtn>
           </a>
         </div>

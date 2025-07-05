@@ -88,7 +88,7 @@ const ContactFooter = () => {
                     </ul>
                 </div>
                 <div>
-                    <h4 className="font-semibold mb-2">Quick Links</h4>
+                    <h4 className="font-semibold mb-2 mt-4">Quick Links</h4>
                     <ul className="space-y-1">
                         <li> <Link to='/careers'> Career </Link></li>
                         <li><Link to='/insights'> Insights</Link></li>
