@@ -34,16 +34,40 @@ const Footer = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/send-mail`, formData);
-      alert(response.data.message);
-    } catch (error) {
-      console.error('Error submitting footer form:', error);
-      alert('Failed to submit the footer form. Please try again.');
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+  try {
+    const response = await fetch(
+      "https://script.google.com/macros/s/AKfycbwKa_L9jPryBuC7gPg-rZqfPcTGHZcyHlCfiwlvtcpVsokJFRMOlOXR7Y60EsP7Opgzlg/exec",
+      {
+        method: 'POST',
+        // headers: {
+        //   'Content-Type': 'application/json',
+        // },
+        body: JSON.stringify(formData),
+      }
+    );
+
+    const result = await response.json();
+
+    if (result.success) {
+      alert('Thank you for contacting us! We’ll get back to you soon.');
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        country: '',
+        message: ''
+      });
+    } else {
+      alert('Something went wrong. Please try again later.');
     }
-  };
+  } catch (error) {
+    console.error('Error submitting footer form:', error);
+    alert('Failed to submit the form. Please try again.');
+  }
+};
+
 
   return (
     <footer className="bg-[#1E1E1E] text-white py-10 px-5 md:px-20">

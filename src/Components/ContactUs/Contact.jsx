@@ -48,19 +48,21 @@ const Contact = () => {
         const data = Object.fromEntries(formData.entries());
 
         try {
-            const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/send-mail`, {
+            // const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/send-mail`, {
+            const response = await fetch("https://script.google.com/macros/s/AKfycbz4t50ww9fBOmPHOGU4TySEUGOhp5jXBLGeOSCEd3DXVVErN_XBBHqW4qOeU7Uau9_d5g/exec", {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                // headers: {
+                //     'Content-Type': 'application/json',
+                // },
                 body: JSON.stringify(data),
             });
+            // console.log('Response:', response);
 
-            if (response.ok) {
-                alert('Message sent successfully!');
-            } else {
-                alert('Failed to send message. Please try again.');
-            }
+            // if (response.ok) {
+            //     alert('Message sent successfully!');
+            // } else {
+            //     alert('Failed to send message. Please try again.');
+            // }
         } catch (error) {
             console.error('Error sending message:', error);
             alert('An error occurred. Please try again later.');
@@ -88,9 +90,9 @@ const Contact = () => {
 
                 {/* Contact cards container - adjusted spacing */}
                 <div className='z-20 flex flex-row flex-wrap justify-center items-stretch gap-10 w-full max-w-6xl px-4 mt-16 md:mt-20'>
-                    {/* Location */}   
+                    {/* Location */}
                     <div className='rounded-2xl p-6 flex flex-col justify-center gap-4 bg-white/10 w-full md:w-[340px] md:h-[320px] text-white items-center text-center backdrop-blur-sm'>
-                       
+
                         <div className='h-16 w-16 md:h-18 sm:w-16 text-[#19BDE8] flex items-center justify-center mt-5 '>
                             <img src={Location_Icon} className='h-full w-full object-contain' />
                         </div>
