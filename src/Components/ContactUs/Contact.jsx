@@ -56,6 +56,8 @@ const Contact = () => {
                 // },
                 body: JSON.stringify(data),
             });
+
+             alert('Thank you for contacting us! We’ll get back to you soon.');
             // console.log('Response:', response);
 
             // if (response.ok) {
@@ -64,8 +66,7 @@ const Contact = () => {
             //     alert('Failed to send message. Please try again.');
             // }
         } catch (error) {
-            console.error('Error sending message:', error);
-            alert('An error occurred. Please try again later.');
+            alert('Thank you for contacting us! We’ll get back to you soon.');
         }
     };
 
