@@ -384,7 +384,7 @@ const Careers = () => {
           >
             {/* Close button */}
             <button 
-              className="absolute top-6 right-6 text-gray-500 hover:text-black text-2xl z-10" 
+              className="absolute top-0 right-6 text-gray-500 hover:text-black text-2xl z-10" 
               onClick={() => setShowApplyForm(false)}
             >
               ×
