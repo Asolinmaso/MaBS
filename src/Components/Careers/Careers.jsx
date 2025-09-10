@@ -13,15 +13,21 @@ const Careers = () => {
   // Popup form state
   const [showApplyForm, setShowApplyForm] = useState(false);
   const [applyJobTitle, setApplyJobTitle] = useState("");
-  const [applyForm, setApplyForm] = useState({ name: "", email: "", phone: "", resume: null, jobTitle: "" });
+  const [applyForm, setApplyForm] = useState({ name: "", email: "", phone: "", resume: null, jobTitle: "", message: "" });
   const [applyError, setApplyError] = useState("");
   const [applySuccess, setApplySuccess] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  // Carousel state
+  const [currentPage, setCurrentPage] = useState(0);
+  const cardsPerPage = 12;
+  
+  
   // Handle Apply Now button click
   const handleApplyClick = (jobTitle) => {
     setApplyJobTitle(jobTitle);
     setShowApplyForm(true);
-    setApplyForm({ name: "", email: "", phone: "", resume: null, jobTitle });
+    setApplyForm({ name: "", email: "", phone: "", resume: null, jobTitle, message: "" });
     setApplyError("");
     setApplySuccess("");
   };
@@ -29,10 +35,27 @@ const Careers = () => {
   // Handle form field changes
   const handleApplyFormChange = (e) => {
     const { name, value, files } = e.target;
-    setApplyForm((prev) => ({
-      ...prev,
-      [name]: files ? files[0] : value,
-    }));
+    
+    if (files && files[0]) {
+      const file = files[0];
+      const maxSize = 5 * 1024 * 1024; // 5MB in bytes
+      
+      if (file.size > maxSize) {
+        setApplyError("File size must be under 5MB.");
+        return;
+      }
+      
+      setApplyForm((prev) => ({
+        ...prev,
+        [name]: file,
+      }));
+      setApplyError(""); // Clear any previous errors
+    } else {
+      setApplyForm((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
   };
 
   // Email validation helper
@@ -44,33 +67,24 @@ const Careers = () => {
     setApplyError("");
     setApplySuccess("");
 
-    const { name, email, phone, resume, jobTitle } = applyForm;
+    const { message, resume, jobTitle } = applyForm;
 
-    if (!isValidEmail(email)) {
-      setApplyError("Please enter a valid email address.");
+    if (!message || !resume || !jobTitle) {
+      setApplyError("Please fill in the message and attach your resume.");
       return;
     }
 
-    if (!name || !email || !phone || !resume || !jobTitle) {
-      setApplyError("Please fill in all fields and attach your resume (PDF).");
-      return;
-    }
-
-    if (resume.type !== "application/pdf") {
-      setApplyError("Resume must be a PDF file.");
-      return;
-    }
+    // File type validation is handled in the file input accept attribute
 
     const reader = new FileReader();
     reader.onload = async () => {
       const base64 = reader.result.split(",")[1];
       const payload = {
-        name,
-        email,
-        phone,
+        message,
         jobTitle,
         resumeFileName: resume.name,
         resumeBase64: base64,
+        to: "hiring@manvian.com"
       };
       try {
         setIsSubmitting(true);
@@ -142,6 +156,20 @@ const Careers = () => {
   };
 
   const jobOpenings = filterJobOpenings();
+
+  // Carousel navigation functions
+  const totalPages = Math.ceil(jobOpenings.length / cardsPerPage);
+  const startIndex = currentPage * cardsPerPage;
+  const endIndex = startIndex + cardsPerPage;
+  const currentCards = jobOpenings.slice(startIndex, endIndex);
+  
+  const handlePreviousPage = () => {
+    setCurrentPage(prev => Math.max(0, prev - 1));
+  };
+  
+  const handleNextPage = () => {
+    setCurrentPage(prev => Math.min(totalPages - 1, prev + 1));
+  };
 
   // Update filter when a new selection is made
   const handleDropdownSelection = (type, value) => {
@@ -266,17 +294,17 @@ const Careers = () => {
         </div>
 
         {/* Job Cards Container */}
-        <div className="pl-8 sm:pl-10 md:pl-20 lg:pl-47  pb-6">
+        <div className="pl-8 sm:pl-10 md:pl-20 lg:pl-47 pb-6">
           <h2 className="text-xl lg:text-4xl font-semibold text-[#19BDE8]">Current Openings</h2>
         </div>
-        <div className="flex justify-center gap-6 flex-wrap pb-20 px-4 sm:px-6 md:px-8">
-
-
+        
+        {/* Job Cards Grid */}
+        <div className="flex justify-center gap-6 flex-wrap px-4 sm:px-6 md:px-8">
           {jobOpenings.length === 0 ? (
-            <p className="text-center w-full ">There are currently no job openings available.</p>
+            <p className="text-center w-full">There are currently no job openings available.</p>
           ) : (
-            jobOpenings.map((job, index) => (
-            <div key={index} className="border border-gray-300 rounded-lg p-4 sm:p-6 w-full sm:w-80 shadow-md hover:shadow-xl transition duration-300 flex flex-col justify-between h-[340px] min-h-[340px] max-h-[340px]">
+            currentCards.map((job, index) => (
+              <div key={startIndex + index} className="border border-gray-300 rounded-lg p-4 sm:p-6 w-full sm:w-80 shadow-md hover:shadow-xl transition duration-300 flex flex-col justify-between h-[340px] min-h-[340px] max-h-[340px]">
                 <div>
                   <h3 className="font-semibold text-lg mb-1 text-justify">{job.title}</h3>
                   <p className="text-sm text-gray-700 mb-2 text-justify">
@@ -295,59 +323,168 @@ const Careers = () => {
           )}
         </div>
 
+        {/* Navigation Arrows - Below cards, above banner */}
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center gap-8 my-8">
+            <button
+              onClick={handlePreviousPage}
+              disabled={currentPage === 0}
+              className={`w-12 h-12 rounded-lg border border-gray-300 flex items-center justify-center transition ${
+                currentPage === 0 
+                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed' 
+                  : 'bg-white text-gray-700 hover:bg-gray-50 cursor-pointer'
+              }`}
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+            
+            <span className="text-gray-600 text-sm">
+              Page {currentPage + 1} of {totalPages}
+            </span>
+            
+            <button
+              onClick={handleNextPage}
+              disabled={currentPage === totalPages - 1}
+              className={`w-12 h-12 rounded-lg border border-gray-300 flex items-center justify-center transition ${
+                currentPage === totalPages - 1 
+                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed' 
+                  : 'bg-white text-gray-700 hover:bg-gray-50 cursor-pointer'
+              }`}
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          </div>
+        )}
+
+        {/* Career Banner */}
+        <div className="w-full mt-8">
+          <img 
+            src="/carreer_banner.png" 
+            alt="Career Banner" 
+            className="w-full h-auto object-cover"
+          />
+        </div>
+
       {/* Apply Now Popup Form */}
       {showApplyForm && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center ">
-          <div className="bg-white rounded-lg shadow-lg p-6 w-full max-w-md relative">
-            <button className="absolute top-2 right-3 text-gray-500 hover:text-black text-2xl" onClick={() => setShowApplyForm(false)}>&times;</button>
-            <h2 className="text-xl font-semibold mb-4 text-cyan-600">Apply for: <span className="text-black">{applyJobTitle}</span></h2>
-            <form onSubmit={handleApplyFormSubmit} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium mb-1">Name</label>
-                <input type="text" name="name" value={applyForm.name} onChange={handleApplyFormChange} className="w-full border border-gray-300 rounded px-3 py-2" required />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-1">Email</label>
-                <input type="email" name="email" value={applyForm.email} onChange={handleApplyFormChange} className="w-full border border-gray-300 rounded px-3 py-2" required />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-1">Phone Number</label>
-                <input type="tel" name="phone" value={applyForm.phone} onChange={handleApplyFormChange} className="w-full border border-gray-300 rounded px-3 py-2" required />
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-1">Resume for</label>
-                <div className="flex items-center gap-2">
-                  <label className="bg-cyan-500 hover:bg-cyan-600 text-white px-4 py-2 rounded cursor-pointer transition text-sm mb-0">
-                    Choose File
-                    <input
-                      type="file"
-                      name="resume"
-                      accept="application/pdf"
-                      onChange={handleApplyFormChange}
-                      className="hidden"
-                      required
-                    />
-                  </label>
-                  <span className="text-xs text-gray-600">
-                    {applyForm.resume ? applyForm.resume.name : 'No file chosen'}
-                  </span>
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <div 
+            className="bg-white relative"
+            style={{
+              width: '700px',
+              height: '600px',
+              border: '2px solid #19BDE8',
+              boxShadow: '0px 0px 25px rgba(0, 0, 0, 0.25), inset 0px 0px 25px rgba(25, 189, 232, 0.25)',
+              borderRadius: '24px'
+            }}
+          >
+            {/* Close button */}
+            <button 
+              className="absolute top-6 right-6 text-gray-500 hover:text-black text-2xl z-10" 
+              onClick={() => setShowApplyForm(false)}
+            >
+              ×
+            </button>
+            
+            {/* Form content */}
+            <div className="p-8 h-full flex flex-col">
+              <form onSubmit={handleApplyFormSubmit} className="flex flex-col h-full space-y-6">
+                {/* To field */}
+                <div className="flex items-center space-x-4">
+                  <label className="text-gray-700 font-medium min-w-[60px]">To :</label>
+                  <input 
+                    type="email" 
+                    value="hiring@manvian.com" 
+                    readOnly
+                    className="flex-1 border border-gray-300 rounded px-3 py-2 bg-gray-50 text-gray-600"
+                  />
                 </div>
-              </div>
-              {applyError && <div className="text-red-500 text-sm">{applyError}</div>}
-              {applySuccess && <div className="text-green-600 text-sm">{applySuccess}</div>}
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className={`w-full bg-cyan-500 text-white py-2 rounded hover:bg-cyan-600 transition ${isSubmitting ? 'bg-gray-400 cursor-not-allowed' : ''}`}
-              >
-                {isSubmitting ? 'Submitting...' : 'Submit Application'}
-              </button>
-            </form>
-            {isSubmitting && (
-              <div className="absolute inset-0 bg-white bg-opacity-70 flex items-center justify-center z-10">
-                <div className="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-8 w-8"></div>
-              </div>
-            )}
+                
+                {/* Subject field */}
+                <div className="flex items-center space-x-4">
+                  <label className="text-gray-700 font-medium min-w-[80px]">Subject :</label>
+                  <input 
+                    type="text" 
+                    name="jobTitle"
+                    value={applyJobTitle}
+                    readOnly
+                    className="flex-1 border border-gray-300 rounded px-3 py-2 bg-gray-50 text-gray-600"
+                  />
+                </div>
+                
+                {/* Message body area */}
+                <div className="flex-1 flex flex-col">
+                  <textarea 
+                    name="message"
+                    value={applyForm.message || ''}
+                    onChange={handleApplyFormChange}
+                    placeholder="Type Here..."
+                    className="flex-1 border border-gray-300 rounded px-3 py-2 resize-none"
+                    required
+                  />
+                </div>
+                
+                {/* Bottom section with attached file and buttons */}
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center space-x-4">
+                    {/* Show attached file as button-like element */}
+                    {applyForm.resume ? (
+                      <div className="relative inline-block">
+                        <div className="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded pr-8">
+                          {applyForm.resume.name}
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => setApplyForm(prev => ({ ...prev, resume: null }))}
+                          className="absolute top-1 right-1 text-red-500 hover:text-red-700 text-sm"
+                        >
+                          ✕
+                        </button>
+                      </div>
+                    ) : (
+                      <span className="text-gray-700 text-sm">Note: Attach Your Resume.</span>
+                    )}
+                  </div>
+                  
+                  <div className="flex items-center space-x-4">
+                    <label className="bg-white border border-gray-300 text-gray-700 px-4 py-2 rounded cursor-pointer hover:bg-gray-50 transition">
+                      Attach File
+                      <input
+                        type="file"
+                        name="resume"
+                        accept="application/pdf,.doc,.docx"
+                        onChange={handleApplyFormChange}
+                        className="hidden"
+                        required
+                      />
+                    </label>
+                    
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="bg-[#19BDE8] hover:bg-[#17A8D1] text-white px-6 py-2 rounded transition disabled:bg-gray-400 disabled:cursor-not-allowed"
+                    >
+                      {isSubmitting ? 'Submitting...' : 'Submit'}
+                    </button>
+                  </div>
+                </div>
+                
+                {/* Error and success messages */}
+                {applyError && <div className="text-red-500 text-sm">{applyError}</div>}
+                {applySuccess && <div className="text-green-600 text-sm">{applySuccess}</div>}
+              </form>
+              
+              {/* Loading overlay */}
+              {isSubmitting && (
+                <div className="absolute inset-0 bg-white bg-opacity-70 flex items-center justify-center z-10 rounded-3xl">
+                  <div className="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-8 w-8"></div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       )}
