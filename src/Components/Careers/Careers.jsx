@@ -3,6 +3,7 @@ import Bg from '../../assets/Career/HeroSection.jpg';
 import Footer from '../Footer/Footer';
 import CustomBtn from '../Button/CustomBtn';
 import CallToAction from './CallToAction';
+import { careerAPI } from '../../utils/api';
 
 const Careers = () => {
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -88,20 +89,10 @@ const Careers = () => {
       };
       try {
         setIsSubmitting(true);
-        const response = await fetch(
-          "https://script.google.com/macros/s/AKfycbwNAIEbP6lV3boa_nslTgBpOH8kP9nKcxevZzLAHYv1mftZGFbIjGvP_EvRk4dz7jcMiw/exec",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(payload),
-          }
-        );
-        const result = await response.json();
+        const result = await careerAPI.apply(payload);
+        
         console.log("Success:", result);
-        // Optionally, update UI on success
-        setApplySuccess("Application submitted successfully! Thank you.");
+        setApplySuccess(result.message || "Application submitted successfully! Thank you.");
         setApplyForm({ name: "", email: "", phone: "", resume: null, jobTitle: applyJobTitle });
         setTimeout(() => setShowApplyForm(false), 1500);
       } catch (error) {
