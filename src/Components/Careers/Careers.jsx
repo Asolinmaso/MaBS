@@ -360,13 +360,26 @@ const Careers = () => {
           </div>
         )}
 
-        {/* Career Banner */}
-        <div className="w-full mt-8">
+        {/* Mpowher Banner */}
+        <div className="w-full mt-8 relative">
           <img 
-            src="/carreer_banner.png" 
-            alt="Career Banner" 
+            src="/mpowher banner.png" 
+            alt="Mpowher Banner" 
             className="w-full h-auto object-cover"
           />
+          
+          {/* Register Now Button - Left side center */}
+          <div className="absolute top-4/5 left-1/4 transform -translate-y-1/2">
+            <a 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeMyMRllPvVv0_Z5N1iMSWSIZ0r4q1N6j88uh6DU-CA4BXZog/viewform?usp=header"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button className="bg-[#19BDE8] hover:bg-[#17A8D1] text-white px-3 py-2 sm:px-6 sm:py-3 rounded-lg text-sm sm:text-base font-semibold transition shadow-lg">
+                Register Now
+              </button>
+            </a>
+          </div>
         </div>
 
       {/* Apply Now Popup Form */}

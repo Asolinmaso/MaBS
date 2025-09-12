@@ -76,9 +76,9 @@ const ProductComponent = () => {
                             <p className='text-base md:text-2xl px-5 mt-6 text-center'>
                                 Welcome to Manvian, your trusted partner in business development. We empower entrepreneurs and their Businesses to Reach New Heights by providing valuable solutions through Innovative Strategies and Exceptional Execution
                             </p>
-                            <a href="/insights" className="mt-10">
+                            <a href="https://app.opptiverse.com" target="_blank" rel="noopener noreferrer" className="mt-10">
                                 {/* <img className='w-[100px] h-[100px] cursor-pointer' src={oppti_black} alt="Logo" /> */}
-                                <CustomBtn>explore now</CustomBtn>
+                                <CustomBtn>explore now</CustomBtn>
                             </a>
                         </div>
 
